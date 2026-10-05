@@ -1,0 +1,418 @@
+"use client";
+
+import { type PointerEvent, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { GitHubMark, LinkedInMark, PdfDoc, RecycleBin, VSCodeLogo, WinFlag, XPFolder } from "./icons";
+import { onDrag } from "./drag";
+import { type Cell, ICON_H, ICON_W, makeGrid, settle } from "./grid";
+import { GITHUB, LINKEDIN } from "./vscode/data";
+import type { Live } from "./vscode/live";
+import VSCode from "./vscode/VSCode";
+
+type Win = "closed" | "open" | "min";
+type Rect = { x: number; y: number; w: number; h: number };
+const TASKBAR = 30;
+const MIN_W = 480, MIN_H = 320;
+const ICON_IDS = ["vscode", "cv", "github", "linkedin", "lixeira"];
+const grid = () => makeGrid(innerWidth, innerHeight - TASKBAR);
+
+function defaultLayout() {
+  const { cols, rows } = grid();
+  const right = cols - 1;
+  return settle(
+    { lixeira: { c: 0, r: 0 }, vscode: { c: right, r: 0 }, linkedin: { c: right, r: 1 }, github: { c: right, r: 2 }, cv: { c: right, r: 3 } },
+    ICON_IDS,
+    cols,
+    rows,
+  );
+}
+const gesture = { dragged: false };
+
+function zoom(el: HTMLElement, target: Element | null, out: boolean) {
+  const a = el.getBoundingClientRect();
+  const b = target?.getBoundingClientRect() ?? { left: innerWidth / 2, top: innerHeight, width: 0, height: 0 };
+  const dx = b.left + b.width / 2 - (a.left + a.width / 2);
+  const dy = b.top + b.height / 2 - (a.top + a.height / 2);
+  const small = { transform: `translate(${dx}px, ${dy}px) scale(.12)`, opacity: 0 };
+  const full = { transform: "none", opacity: 1 };
+  return el.animate(out ? [full, small] : [small, full], { duration: out ? 220 : 280, easing: "cubic-bezier(.2,.8,.2,1)" }).finished;
+}
+
+export default function Desktop({ live }: { live: Live }) {
+  const [selected, setSelected] = useState<string[]>([]);
+  const [win, setWin] = useState<Win>("closed");
+  const [max, setMax] = useState(false);
+  const [rect, setRect] = useState<Rect>({ x: 0, y: 0, w: 0, h: 0 });
+  const [busy, setBusy] = useState(false);
+  const [focused, setFocused] = useState(true);
+  const [startOpen, setStartOpen] = useState(false);
+  const [balloon, setBalloon] = useState(false);
+  const [off, setOff] = useState<null | "desligando" | "seguro">(null);
+  const [band, setBand] = useState<{ x: number; y: number; w: number; h: number } | null>(null);
+  const [request, setRequest] = useState<{ path: string; n: number } | null>(null);
+  const [boot, setBoot] = useState(0);
+  const [clock, setClock] = useState("");
+  const [cells, setCells] = useState<Record<string, Cell> | null>(null);
+  const [iconDrag, setIconDrag] = useState<{ ids: string[]; dx: number; dy: number } | null>(null);
+  const winRef = useRef<HTMLDivElement>(null);
+  const iconRef = useRef<HTMLButtonElement>(null);
+  const taskRef = useRef<HTMLButtonElement>(null);
+  const prev = useRef<Win>("closed");
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setCells(defaultLayout()));
+    const onResize = () => setCells(defaultLayout());
+    addEventListener("resize", onResize);
+    return () => (cancelAnimationFrame(frame), removeEventListener("resize", onResize));
+  }, []);
+
+  useEffect(() => {
+    if (off !== "desligando") return;
+    const t = setTimeout(() => {
+      window.close();
+      setTimeout(() => setOff("seguro"), 400);
+    }, 1800);
+    return () => clearTimeout(t);
+  }, [off]);
+
+  useEffect(() => {
+    const tick = () => setClock(new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }));
+    tick();
+    const t = setInterval(tick, 10_000);
+    const show = setTimeout(() => setBalloon(true), 1500);
+    const hide = setTimeout(() => setBalloon(false), 16_000);
+    return () => [t, show, hide].forEach(clearTimeout);
+  }, []);
+
+  useLayoutEffect(() => {
+    const from = prev.current;
+    prev.current = win;
+    if (win !== "open" || !winRef.current) return;
+    if (from === "closed") zoom(winRef.current, iconRef.current, false);
+    if (from === "min") zoom(winRef.current, taskRef.current, false);
+  }, [win]);
+
+  const open = (path?: string) => {
+    setStartOpen(false);
+    setBalloon(false);
+    if (path) setRequest((r) => ({ path, n: (r?.n ?? 0) + 1 }));
+    if (win !== "closed") return (setWin("open"), setFocused(true));
+    if (busy) return;
+    setBusy(true);
+    setTimeout(() => {
+      const vw = innerWidth, vh = innerHeight - TASKBAR;
+      const w = Math.min(1280, vw - 80), h = Math.min(820, vh - 60);
+      setRect({ x: Math.round((vw - w) / 2), y: Math.max(8, Math.round((vh - h) / 2)), w, h });
+      setMax(vw < 900);
+      setWin("open");
+      setFocused(true);
+      setBusy(false);
+    }, 700);
+  };
+
+  const minimize = async () => {
+    if (winRef.current) await zoom(winRef.current, taskRef.current, true);
+    setWin("min");
+    setFocused(false);
+  };
+
+  const close = async () => {
+    if (winRef.current) await winRef.current.animate([{ opacity: 1 }, { opacity: 0, transform: "scale(.96)" }], { duration: 160 }).finished;
+    setWin("closed");
+    setMax(false);
+  };
+
+  const dragWindow = (e: PointerEvent) => {
+    if ((e.target as HTMLElement).closest("button, input, [data-nodrag]")) return;
+    let r = rect, wasMax = max;
+    onDrag(e, (dx, dy) => {
+      if (wasMax) {
+        if (Math.hypot(dx, dy) < 6) return;
+        r = { ...r, x: e.clientX - r.w * (e.clientX / innerWidth), y: 0 };
+        wasMax = false;
+        setMax(false);
+      }
+      setRect({ ...r, x: r.x + dx, y: Math.min(innerHeight - TASKBAR - 30, Math.max(0, r.y + dy)) });
+    });
+  };
+
+  const resize = (e: PointerEvent, dir: string) => {
+    e.stopPropagation();
+    const r0 = rect;
+    onDrag(e, (dx, dy) => {
+      let { x, y, w, h } = r0;
+      if (dir.includes("e")) w = Math.max(MIN_W, r0.w + dx);
+      if (dir.includes("s")) h = Math.max(MIN_H, r0.h + dy);
+      if (dir.includes("w")) {
+        w = Math.max(MIN_W, r0.w - dx);
+        x = r0.x + r0.w - w;
+      }
+      if (dir.includes("n")) {
+        h = Math.max(MIN_H, r0.h - dy);
+        y = r0.y + r0.h - h;
+      }
+      setRect({ x, y, w, h });
+    }, `${dir}-resize`);
+  };
+
+  const startBand = (e: PointerEvent) => {
+    if (e.target !== e.currentTarget) return;
+    setSelected([]);
+    setFocused(false);
+    setStartOpen(false);
+    const x0 = e.clientX, y0 = e.clientY;
+    const icons = [...document.querySelectorAll<HTMLElement>("[data-icon]")].map((el) => ({ id: el.dataset.icon!, r: el.getBoundingClientRect() }));
+    onDrag(e, (dx, dy) => {
+      const b = { x: Math.min(x0, x0 + dx), y: Math.min(y0, y0 + dy), w: Math.abs(dx), h: Math.abs(dy) };
+      setBand(b);
+      setSelected(icons.filter(({ r }) => r.left < b.x + b.w && r.right > b.x && r.top < b.y + b.h && r.bottom > b.y).map((i) => i.id));
+    });
+    addEventListener("pointerup", () => setBand(null), { once: true });
+  };
+
+  const taskClick = () => {
+    if (win === "min") return (setWin("open"), setFocused(true));
+    if (focused) minimize();
+    else setFocused(true);
+  };
+
+  const clampPx = (x: number, y: number) => ({
+    x: Math.min(innerWidth - ICON_W, Math.max(0, x)),
+    y: Math.min(innerHeight - TASKBAR - ICON_H, Math.max(0, y)),
+  });
+
+  const iconDown = (e: PointerEvent, id: string) => {
+    e.stopPropagation();
+    setStartOpen(false);
+    setFocused(false);
+    if (e.ctrlKey) return setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]));
+    const ids = selected.includes(id) ? selected : [id];
+    setSelected(ids);
+    let moved = false;
+    onDrag(
+      e,
+      (dx, dy) => {
+        if (!moved && Math.hypot(dx, dy) < 5) return;
+        moved = true;
+        setIconDrag({ ids, dx, dy });
+      },
+      "",
+      (dx, dy) => {
+        gesture.dragged = moved;
+        setIconDrag(null);
+        if (!moved || !cells) return setSelected([id]);
+        const want = { ...cells };
+        for (const i of ids) {
+          const p = grid().toPx(cells[i]);
+          const { x, y } = clampPx(p.x + dx, p.y + dy);
+          want[i] = grid().toCell(x, y);
+        }
+        const { cols, rows } = grid();
+        setCells(settle(want, [...ICON_IDS.filter((i) => !ids.includes(i)), ...ids], cols, rows));
+      },
+    );
+  };
+
+  const ICONS = [
+    { id: "vscode", label: "Visual Studio Code", img: <VSCodeLogo size={44} />, run: () => open() },
+    { id: "cv", label: "Meu Currículo", img: <PdfDoc size={46} />, run: () => open("curriculo.md") },
+    { id: "github", label: "Meu GitHub", img: <GitHubMark size={42} color="#fff" />, run: () => window.open(GITHUB, "_blank") },
+    { id: "linkedin", label: "Meu LinkedIn", img: <LinkedInMark size={42} />, run: () => window.open(LINKEDIN, "_blank") },
+    { id: "lixeira", label: "Lixeira", img: <RecycleBin size={48} />, run: undefined },
+  ];
+
+  return (
+    <div className={`xp ${busy ? "busy" : ""}`} onContextMenu={(e) => e.preventDefault()}>
+      <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden>
+        <filter id="xp-sel">
+          <feFlood floodColor="#316ac5" floodOpacity=".55" />
+          <feComposite in2="SourceAlpha" operator="in" />
+          <feMerge>
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode />
+          </feMerge>
+        </filter>
+      </svg>
+
+      <div className="xp-desktop" onPointerDown={startBand}>
+        {cells &&
+          ICONS.map(({ id, label, img, run }) => {
+            const moving = iconDrag?.ids.includes(id);
+            const p = grid().toPx(cells[id]);
+            const { x, y } = moving ? clampPx(p.x + iconDrag!.dx, p.y + iconDrag!.dy) : p;
+            return (
+              <button
+                key={id}
+                ref={id === "vscode" ? iconRef : undefined}
+                data-icon={id}
+                className={`xp-icon ${selected.includes(id) ? "sel" : ""} ${moving ? "moving" : ""}`}
+                style={{ left: x, top: y }}
+                onPointerDown={(e) => iconDown(e, id)}
+                onDoubleClick={() => !gesture.dragged && run?.()}
+                onClick={(e) => {
+                  const touch = (e.nativeEvent as globalThis.PointerEvent).pointerType === "touch" || matchMedia("(pointer: coarse)").matches;
+                  if (touch && !gesture.dragged) run?.();
+                }}
+                onKeyDown={(e) => e.key === "Enter" && run?.()}
+              >
+                <span className="xp-icon-img">{img}</span>
+                <span className="xp-icon-label">{label}</span>
+              </button>
+            );
+          })}
+        {band && <div className="xp-band" style={{ left: band.x, top: band.y, width: band.w, height: band.h }} />}
+      </div>
+
+      {win !== "closed" && (
+        <div
+          ref={winRef}
+          className={`xp-win ${max ? "max" : ""}`}
+          style={max ? { left: 0, top: 0, width: "100%", height: `calc(100% - ${TASKBAR}px)` } : { left: rect.x, top: rect.y, width: rect.w, height: rect.h }}
+          hidden={win === "min"}
+          onPointerDownCapture={() => (setFocused(true), setStartOpen(false))}
+        >
+          <VSCode
+            key={boot}
+            live={live}
+            focused={focused && win === "open"}
+            maximized={max}
+            request={request}
+            onMinimize={minimize}
+            onMaximize={() => setMax((m) => !m)}
+            onClose={close}
+            onReload={() => setBoot((b) => b + 1)}
+            onDragStart={dragWindow}
+          />
+          {!max && ["n", "s", "e", "w", "ne", "nw", "se", "sw"].map((d) => <div key={d} className={`rz rz-${d}`} onPointerDown={(e) => resize(e, d)} />)}
+        </div>
+      )}
+
+      {startOpen && (
+        <div className="xp-sm">
+          <div className="xp-sm-head">
+            <img src="/yhago.jpg" alt="" onError={(e) => (e.currentTarget.style.visibility = "hidden")} />
+            <span>Yhago Felipe</span>
+          </div>
+          <div className="xp-sm-body">
+            <div className="xp-sm-left">
+              <button className="xp-sm-item big" onClick={() => open()}>
+                <VSCodeLogo size={32} />
+                <span>
+                  <b>Visual Studio Code</b>
+                  <small>Meu portfólio</small>
+                </span>
+              </button>
+              <a className="xp-sm-item big" href={GITHUB} target="_blank" rel="noreferrer" onClick={() => setStartOpen(false)}>
+                <GitHubMark size={32} color="#222" />
+                <span>
+                  <b>GitHub</b>
+                  <small>Meus repositórios</small>
+                </span>
+              </a>
+              <a className="xp-sm-item big" href={LINKEDIN} target="_blank" rel="noreferrer" onClick={() => setStartOpen(false)}>
+                <LinkedInMark size={32} />
+                <span>
+                  <b>LinkedIn</b>
+                  <small>Vamos conectar</small>
+                </span>
+              </a>
+              <div className="xp-sm-sep" />
+              <div className="xp-sm-all">
+                Todos os programas <span className="xp-arrow">
+                  <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden>
+                    <path d="M1 0l7 4-7 4Z" fill="#fff" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div className="xp-sm-right">
+              <button className="xp-sm-item" onClick={() => open("sobre-mim.md")}>
+                <XPFolder /> <b>Sobre mim</b>
+              </button>
+              <button className="xp-sm-item" onClick={() => open("projetos.md")}>
+                <XPFolder /> <b>Meus projetos</b>
+              </button>
+              <button className="xp-sm-item" onClick={() => open("experiencia.md")}>
+                <XPFolder /> <b>Experiência</b>
+              </button>
+              <button className="xp-sm-item" onClick={() => open("contato.md")}>
+                <XPFolder /> <b>Contato</b>
+              </button>
+              <div className="xp-sm-sep" />
+              <button className="xp-sm-item" onClick={() => open("habilidades.md")}>
+                <XPFolder /> Habilidades
+              </button>
+              <button className="xp-sm-item" onClick={() => open("curriculo.md")}>
+                <XPFolder /> <b>Meu currículo</b>
+              </button>
+              <button className="xp-sm-item" onClick={() => open("certificados.md")}>
+                <XPFolder /> Certificações
+              </button>
+              <button className="xp-sm-item" onClick={() => open("repositorios.md")}>
+                <XPFolder /> Repositórios
+              </button>
+            </div>
+          </div>
+          <div className="xp-sm-foot">
+            <button onClick={() => location.reload()}>
+              <span className="xp-pw key">⟲</span> Fazer logoff
+            </button>
+            <button onClick={() => (setStartOpen(false), setOff("desligando"))}>
+              <span className="xp-pw">⏻</span> Desligar
+            </button>
+          </div>
+        </div>
+      )}
+
+      {balloon && (
+        <div className="xp-balloon" role="status">
+          <button className="xp-balloon-x" onClick={() => setBalloon(false)} aria-label="Fechar">
+            ×
+          </button>
+          <b>
+            <span className="xp-info">i</span> E aí, tudo certo?
+          </b>
+          <p>
+            Esse é meu portfólio. Dá dois cliques no <b>Visual Studio Code</b> aqui do lado para ver o que eu faço. No celular, é só tocar.
+          </p>
+        </div>
+      )}
+
+      <div className="xp-taskbar">
+        <button className={`xp-start ${startOpen ? "on" : ""}`} onClick={() => setStartOpen((o) => !o)}>
+          <WinFlag size={22} />
+          <span>iniciar</span>
+        </button>
+        <div className="xp-tasks">
+          {win !== "closed" && (
+            <button ref={taskRef} className={`xp-task ${win === "open" && focused ? "on" : ""}`} onClick={taskClick}>
+              <VSCodeLogo size={16} />
+              <span>Visual Studio Code</span>
+            </button>
+          )}
+        </div>
+        <div className="xp-tray">
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden>
+            <path d="M2 6h3l4-3v10l-4-3H2Z" fill="#fff" />
+            <path d="M11 5.5a3.5 3.5 0 0 1 0 5M12.5 3.5a6 6 0 0 1 0 9" stroke="#fff" fill="none" strokeWidth="1.2" />
+          </svg>
+          <span title={new Date().toLocaleDateString("pt-BR", { dateStyle: "full" })} suppressHydrationWarning>
+            {clock}
+          </span>
+        </div>
+      </div>
+
+      {off === "desligando" && (
+        <div className="xp-off">
+          <WinFlag size={64} />
+          <p>Desligando...</p>
+        </div>
+      )}
+      {off === "seguro" && (
+        <div className="xp-safe" onClick={() => setOff(null)} title="Clique para ligar de novo">
+          <p>É seguro desligar o computador.</p>
+          <small>Pode fechar esta aba. Ou clique para ligar de novo.</small>
+        </div>
+      )}
+    </div>
+  );
+}
