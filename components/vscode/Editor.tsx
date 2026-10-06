@@ -51,7 +51,8 @@ export default function Editor({ tabs, active, preview, booting, cursor, setCurs
   const file = files.find((f) => f.path === active);
   const ext = exts.find((e) => `ext:${e.id}` === active);
   const isMd = !!file && langOf(file.path) === "md";
-  const rendered = isMd && !raw.has(file.path);
+  const isPdf = !!file?.href;
+  const rendered = isPdf || (isMd && !raw.has(file.path));
 
   return (
     <div className="editor">
@@ -98,7 +99,8 @@ export default function Editor({ tabs, active, preview, booting, cursor, setCurs
       )}
       <div className="ed-content">
         {active === "welcome" && <Welcome api={api} />}
-        {rendered && <Markdown key={file.path} src={file.content} open={(p) => api.open(p)} />}
+        {isPdf && <PdfView key={file.path} file={file} />}
+        {rendered && !isPdf && <Markdown key={file.path} src={file.content} open={(p) => api.open(p)} />}
         {file && !rendered && <Code key={file.path} file={file} cursor={cursor} setCursor={setCursor} reveal={reveal} />}
         {ext && <ExtPage ext={ext} api={api} />}
       </div>
@@ -328,6 +330,34 @@ function ExtPage({ ext, api }: { ext: Ext; api: Api }) {
         <h2>{L(`${ext.name} no meu dia a dia`, `${ext.name} in my day to day`)}</h2>
         <p>{ext.about}</p>
       </div>
+    </div>
+  );
+}
+
+function PdfView({ file }: { file: VFile }) {
+  const L = useL();
+  const [inline] = useState(() => navigator.pdfViewerEnabled !== false && !matchMedia("(pointer: coarse)").matches);
+  const name = baseName(file.path);
+  return (
+    <div className="pdfview">
+      <div className="pdf-bar">
+        <i className="codicon codicon-file-pdf" />
+        <span className="pdf-name">{name}</span>
+        <a className="btn" href={file.href} download={name}>
+          <i className="codicon codicon-cloud-download" /> {L("Baixar", "Download")}
+        </a>
+        <a className="btn pdf-alt" href={file.href} target="_blank" rel="noreferrer">
+          <i className="codicon codicon-link-external" /> {L("Abrir em nova aba", "Open in new tab")}
+        </a>
+      </div>
+      {inline ? (
+        <iframe className="pdf-frame" src={`${file.href}#view=FitH`} title={name} />
+      ) : (
+        <div className="pdf-fallback">
+          <i className="codicon codicon-file-pdf" />
+          <p>{L("Seu navegador não mostra PDF aqui dentro. Use os botões acima para abrir ou baixar.", "Your browser can't show the PDF in here. Use the buttons above to open or download it.")}</p>
+        </div>
+      )}
     </div>
   );
 }

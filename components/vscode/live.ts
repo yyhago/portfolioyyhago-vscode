@@ -31,6 +31,7 @@ export type Live = { files: VFile[]; gh: GitHubData | null; cvs: Cv[] };
 
 export const FEATURED_TOPIC = "portfolio";
 export const DOCS = "docs/";
+export const CV_DIR = "cv/";
 
 export const fmtDate = (iso: string, locale: Locale = "pt") =>
   new Date(iso).toLocaleDateString(dateLocale(locale), { day: "numeric", month: "short", year: "numeric", timeZone: "America/Sao_Paulo" });
@@ -112,9 +113,23 @@ function curriculo(cvs: Cv[], locale: Locale) {
       "",
     );
   else {
-    out.push(L("Escolha a versão.", "Pick a version."), "");
-    for (const cv of cvs) out.push(`* :cloud-download: **${label[cv.lang]}**, [${cv.name}](${cv.href}), ${cv.kb} KB`);
-    out.push("", L("> No terminal, **cv** abre direto e **cv en** abre a versão em inglês.", "> In the terminal, **cv** opens it right away and **cv en** opens the English version."), "");
+    out.push(
+      L(
+        "Meu currículo completo, em português e em inglês. Dá para ler aqui mesmo no editor ou baixar o PDF.",
+        "My full resume, in Portuguese and in English. You can read it right here in the editor or download the PDF.",
+      ),
+      "",
+    );
+    for (const cv of cvs)
+      out.push(`* :file-pdf: **${label[cv.lang]}**, [${L("abrir aqui", "open here")}](${CV_DIR}${cv.name}) ${L("ou", "or")} [:cloud-download: ${L("baixar o PDF", "download the PDF")}](${cv.href}), ${cv.kb} KB`);
+    out.push(
+      "",
+      L(
+        "> Os dois PDFs também ficam na pasta **cv** do Explorador e na área de trabalho. No terminal, **cv** abre a versão em português e **cv en** a versão em inglês.",
+        "> Both PDFs are also in the **cv** folder of the Explorer and on the desktop. In the terminal, **cv** opens the Portuguese version and **cv en** the English one.",
+      ),
+      "",
+    );
   }
   return out.join("\n");
 }
@@ -164,6 +179,8 @@ export function buildFiles(gh: GitHubData | null, cvs: Cv[], images: string[] = 
   const extra: VFile[] = [{ path: `${DOCS}curriculo.md`, content: curriculo(cvs, locale), git: cvs.length ? undefined : "U" }];
   if (gh) extra.push({ path: `${DOCS}atividade.md`, content: atividade(gh, locale) });
   files.splice(files.findIndex((f) => f.path === `${DOCS}contato.md`), 0, ...extra);
+  const pdfs: VFile[] = cvs.map((cv) => ({ path: `${CV_DIR}${cv.name}`, content: "", href: cv.href, git: "U" }));
+  files.splice(files.findIndex((f) => f.path.startsWith(DOCS)), 0, ...pdfs);
   if (locale === "pt") return files;
   return files.map((f) => {
     const alias = localePath(f.path, "en");

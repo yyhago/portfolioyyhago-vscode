@@ -190,12 +190,12 @@ export default function Terminal({ tab, setTab, request, api, onClose, onToggleM
     } else if (name === "cv") {
       if (!cvs.length) out = text(L("O currículo em PDF chega em breve. Enquanto isso, digite open experiencia.md", "The PDF resume is coming soon. In the meantime, type open experience.md"), DIM);
       else {
-        const cv = cvs.find((c) => c.lang === (arg ? (arg.toLowerCase().startsWith("en") ? "en" : "pt") : locale)) ?? cvs[0];
-        window.open(cv.href, "_blank");
+        const cv = cvs.find((c) => c.lang === (arg ? (arg.toLowerCase().startsWith("en") ? "en" : "pt") : "pt")) ?? cvs[0];
+        api.open(`cv/${cv.name}`);
         out = [
-          ...text(`${L("Abrindo", "Opening")} ${cv.name}...`, DIM),
+          ...text(`${L("Abrindo", "Opening")} ${cv.name} ${L("no editor...", "in the editor...")}`, DIM),
           ...cvs.map((c) => ({ t: `  ${c.lang === "pt" ? L("Português", "Portuguese") : L("Inglês   ", "English   ")}  ${location.origin}${c.href}` })),
-          ...text(L("Use cv en para abrir a versão em inglês.", "Use cv pt to open the Portuguese version."), DIM),
+          ...text(L("Use cv en para abrir a versão em inglês.", "Use cv en to open the English version."), DIM),
           { t: "" },
         ];
       }
@@ -241,7 +241,7 @@ export default function Terminal({ tab, setTab, request, api, onClose, onToggleM
         case "code": {
           const f = findFile(files, arg);
           if (!f) out = text(L(`Não encontrei o arquivo ${arg || "informado"}. Digite ls para ver a lista.`, `Couldn't find the file ${arg || "you asked for"}. Type ls to see the list.`), RED);
-          else if (name === "open" || name === "code") {
+          else if (name === "open" || name === "code" || f.href) {
             api.open(f.path);
             out = text(`${L("Abrindo", "Opening")} ${label(f)} ${L("no editor...", "in the editor...")}`, DIM);
           } else out = text(f.content);

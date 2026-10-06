@@ -43,6 +43,9 @@ assert.ok(get("docs/sobre-mim.md").includes("**2 repositórios públicos**"));
 assert.ok(sobre.includes("em breve") && get("docs/sobre-mim.md").includes("[Currículo em PDF](curriculo.md)"), "link do CV muda quando o PDF existe");
 assert.ok(get("docs/curriculo.md").includes("/cv/cv-en.pdf") && get("docs/curriculo.md").includes("**Inglês**"));
 assert.equal(new Set(on.map((f) => f.path)).size, on.length, "sem arquivos duplicados");
+assert.ok(on.some((f) => f.path === "cv/cv-en.pdf" && f.href === "/cv/cv-en.pdf"), "PDF aparece na pasta cv");
+assert.ok(get("docs/curriculo.md").includes("(cv/cv.pdf)"), "currículo abre o PDF no editor");
+assert.ok(!off.some((f) => f.path.startsWith("cv/")), "sem PDF, sem pasta cv");
 
 assert.ok(get("docs/projetos.md").includes("![Site da CUBE Inteligência, cliente da plataforma](/projetos/clientecube.jpg)"));
 assert.ok(get("docs/projetos.md").includes("![CUBE, telas da plataforma](/projetos/cube-1.png)"), "print do projeto não pega a legenda do site do cliente");

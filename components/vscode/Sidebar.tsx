@@ -7,6 +7,7 @@ import { ExtIcon, headingId } from "./Markdown";
 import type { Api, View } from "./VSCode";
 
 const dir = (p: string) => (p.includes("/") ? p.slice(0, p.lastIndexOf("/")) : "");
+const OPEN_DIRS = ["cv", "docs"];
 
 type Props = { view: View; width: number; active: string | null; booting: boolean; api: Api };
 
@@ -86,7 +87,7 @@ function Explorer({ active, api }: { active: string | null; api: Api }) {
   const [outlineOpen, setOutlineOpen] = useState(false);
   const outline = useMemo(() => symbols(files.find((f) => f.path === active)), [files, active]);
   const tree = useMemo(() => buildTree(files), [files]);
-  const [openDirs, setOpenDirs] = useState(() => new Set(["docs"]));
+  const [openDirs, setOpenDirs] = useState(() => new Set(OPEN_DIRS));
   const [rootOpen, setRootOpen] = useState(true);
   const [sel, setSel] = useState<string | null>(null);
 
@@ -130,7 +131,7 @@ function Explorer({ active, api }: { active: string | null; api: Api }) {
         <div className="sec-actions" onClick={(e) => e.stopPropagation()}>
           <button className="tb codicon codicon-new-file" title={L("Novo Arquivo...", "New File...")} onClick={api.readOnly} />
           <button className="tb codicon codicon-new-folder" title={L("Nova Pasta...", "New Folder...")} onClick={api.readOnly} />
-          <button className="tb codicon codicon-refresh" title={L("Atualizar Explorador", "Refresh Explorer")} onClick={() => setOpenDirs(new Set(["docs"]))} />
+          <button className="tb codicon codicon-refresh" title={L("Atualizar Explorador", "Refresh Explorer")} onClick={() => setOpenDirs(new Set(OPEN_DIRS))} />
           <button className="tb codicon codicon-collapse-all" title={L("Recolher Pastas no Explorador", "Collapse Folders in Explorer")} onClick={() => setOpenDirs(new Set())} />
         </div>
       </div>

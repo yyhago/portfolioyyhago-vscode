@@ -105,6 +105,7 @@ export function FileIcon({ name }: { name: string }) {
   if (name === "package.json") return <span style={{ ...box, color: "#cc3e44", font: "700 8px/1 Arial, sans-serif" }}>npm</span>;
   if (name.toLowerCase() === "readme.md") return <i className="codicon codicon-info" style={{ ...box, color: "#519aba", fontSize: 14 }} />;
   if (ext === "md") return <i className="codicon codicon-markdown" style={{ ...box, color: "#519aba" }} />;
+  if (ext === "pdf") return <i className="codicon codicon-file-pdf" style={{ ...box, color: "#f14c4c" }} />;
   if (ext === "json") return <i className="codicon codicon-json" style={{ ...box, color: "#cbcb41" }} />;
   if (ext === "tsx")
     return (
@@ -140,6 +141,7 @@ export const PdfDoc = ({ size = 48 }: { size?: number }) => (
 
 const FOLDER_COLORS: Record<string, string> = {
   ".vscode": "#42a5f5",
+  cv: "#ef5350",
   docs: "#29b6f6",
   src: "#4caf50",
   config: "#26a69a",

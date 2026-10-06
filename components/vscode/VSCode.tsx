@@ -406,7 +406,7 @@ export default function VSCode(p: Props) {
           <i className="codicon codicon-question" /> {L("Guia", "Guide")}
         </button>
         <span style={{ flex: 1 }} />
-        {file && !(file.path.endsWith(".md") && !raw.has(file.path)) && (
+        {file && !file.href && !(file.path.endsWith(".md") && !raw.has(file.path)) && (
           <>
             <span className="sb sb-info">Ln {cursor.ln}, Col {cursor.col}</span>
             <span className="sb sb-info sb-extra">{L("Espaços", "Spaces")}: 2</span>

@@ -4,8 +4,8 @@ export const LINKEDIN = "https://www.linkedin.com/in/yhagofelipe";
 export const EMAIL = "yhago.felipe.teles@gmail.com";
 export const INSTAGRAM = "https://www.instagram.com/yyhago_";
 
-export type Lang = "ts" | "tsx" | "json" | "md";
-export type VFile = { path: string; content: string; git?: "M" | "U"; alias?: string };
+export type Lang = "ts" | "tsx" | "json" | "md" | "pdf";
+export type VFile = { path: string; content: string; git?: "M" | "U"; alias?: string; href?: string };
 
 export const shown = (files: VFile[], id: string) => files.find((f) => f.path === id)?.alias ?? id;
 export const baseName = (p: string) => p.split("/").pop()!;
@@ -933,4 +933,4 @@ instagram  https://www.instagram.com/yyhago_`,
 
 export const langOf = (path: string): Lang => (path.split(".").pop() as Lang) ?? "ts";
 
-export const LANG_NAME: Record<Lang, string> = { ts: "TypeScript", tsx: "TypeScript JSX", json: "JSON", md: "Markdown" };
+export const LANG_NAME: Record<Lang, string> = { ts: "TypeScript", tsx: "TypeScript JSX", json: "JSON", md: "Markdown", pdf: "PDF" };

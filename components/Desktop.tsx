@@ -14,14 +14,21 @@ type Win = "closed" | "open" | "min";
 type Rect = { x: number; y: number; w: number; h: number };
 const TASKBAR = 30;
 const MIN_W = 480, MIN_H = 320;
-const ICON_IDS = ["vscode", "cv", "github", "linkedin", "lixeira"];
+const ICON_IDS = ["vscode", "cv-pt", "cv-en", "github", "linkedin", "lixeira"];
 const grid = () => makeGrid(innerWidth, innerHeight - TASKBAR);
 
 function defaultLayout() {
   const { cols, rows } = grid();
   const right = cols - 1;
   return settle(
-    { lixeira: { c: 0, r: 0 }, vscode: { c: right, r: 0 }, linkedin: { c: right, r: 1 }, github: { c: right, r: 2 }, cv: { c: right, r: 3 } },
+    {
+      lixeira: { c: 0, r: 0 },
+      vscode: { c: right, r: 0 },
+      linkedin: { c: right, r: 1 },
+      github: { c: right, r: 2 },
+      "cv-pt": { c: right, r: 3 },
+      "cv-en": { c: right, r: 4 },
+    },
     ICON_IDS,
     cols,
     rows,
@@ -236,9 +243,20 @@ export default function Desktop({ live }: { live: Record<Locale, Live> }) {
     );
   };
 
+  const cvIcon = (lang: "pt" | "en") => {
+    const cv = live.pt.cvs.find((c) => c.lang === lang);
+    const touch = () => matchMedia("(pointer: coarse)").matches;
+    return {
+      id: `cv-${lang}`,
+      label: `${L("Meu Currículo", "My Resume")} (${lang.toUpperCase()})`,
+      img: <PdfDoc size={46} />,
+      run: () => (cv && touch() ? window.open(cv.href, "_blank") : open(cv ? `cv/${cv.name}` : "curriculo.md")),
+    };
+  };
   const ICONS = [
     { id: "vscode", label: "Visual Studio Code", img: <VSCodeLogo size={44} />, run: () => open() },
-    { id: "cv", label: L("Meu Currículo", "My Resume"), img: <PdfDoc size={46} />, run: () => open("curriculo.md") },
+    cvIcon("pt"),
+    cvIcon("en"),
     { id: "github", label: L("Meu GitHub", "My GitHub"), img: <GitHubMark size={42} color="#fff" />, run: () => window.open(GITHUB, "_blank") },
     { id: "linkedin", label: L("Meu LinkedIn", "My LinkedIn"), img: <LinkedInMark size={42} />, run: () => window.open(LINKEDIN, "_blank") },
     { id: "lixeira", label: L("Lixeira", "Recycle Bin"), img: <RecycleBin size={48} />, run: undefined },
