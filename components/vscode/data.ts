@@ -412,13 +412,13 @@ As ferramentas do meu dia a dia, separadas por área. Na aba **Extensões**, aqu
 
 **TypeScript** é a que eu mais uso, no front e no back. **Python** ficou para automação e dados, e **PHP** para e-commerce, WordPress e sistema legado.
 
-\`TypeScript\` \`JavaScript\` \`Python\` \`PHP\` \`SQL\`
+\`TypeScript\` \`JavaScript\` \`Python\` \`PHP\` \`SQL\` \`C\` \`C++\` \`XML\`
 
 ## :browser: Front-end
 
 **Next.js** e **React** no dia a dia, **Angular** em projeto corporativo e **React Native** quando o produto precisa de app. Para estilo, quase sempre Tailwind.
 
-\`React\` \`Next.js\` \`React Native\` \`Angular\` \`Redux\` \`Vite\` \`Tailwind CSS\` \`Bootstrap\` \`HTML5\` \`CSS3\` \`Sass\`
+\`React\` \`Next.js\` \`React Native\` \`Angular\` \`Redux\` \`Vite\` \`Tailwind CSS\` \`Bootstrap\` \`HTML5\` \`CSS3\` \`Sass\` \`Axios\`
 
 ## :server-process: Back-end
 
@@ -430,25 +430,25 @@ Minha base é **NestJS** com Prisma ou TypeORM, fila com Redis e BullMQ, valida�
 
 Como comecei na Cibersegurança, autenticação, permissão e cuidado com dado sensível entram no desenho desde o começo, não no fim.
 
-\`JWT\` \`OAuth2\` \`RBAC\` \`Multitenancy\` \`bcrypt\`
+\`JWT\` \`OAuth2\` \`RBAC\` \`Multitenancy\` \`bcrypt\` \`Cibersegurança\`
 
 ## :database: Bancos de dados
 
 **PostgreSQL** é o meu padrão, **MySQL** aparece bastante em legado e **MongoDB** quando o modelo pede documento.
 
-\`PostgreSQL\` \`MySQL\` \`SQL Server\` \`MongoDB\` \`SQLite\` \`Supabase\` \`Firebase\`
+\`PostgreSQL\` \`MySQL\` \`SQL Server\` \`MongoDB\` \`SQLite\` \`Supabase\` \`Firebase\` \`NoSQL\` \`Oracle\` \`phpMyAdmin\`
 
 ## :cloud: DevOps e Cloud
 
 Mantenho minha própria infraestrutura, com VPS, **Docker**, **Nginx** com SSL, backup automatizado e CI/CD com GitHub Actions. Na nuvem, Amazon S3 e Azure.
 
-\`Docker\` \`Docker Compose\` \`VPS\` \`Nginx\` \`Linux\` \`Bash\` \`GitHub Actions\` \`AWS\` \`Azure\` \`Vercel\` \`PM2\`
+\`Docker\` \`Docker Compose\` \`VPS\` \`Nginx\` \`Linux\` \`Bash\` \`GitHub Actions\` \`AWS\` \`Azure\` \`Vercel\` \`PM2\` \`CI/CD\` \`Amazon S3\` \`Google Cloud\` \`Azure DevOps\`
 
 ## :robot: Automação e IA
 
 **n8n** para orquestrar sistemas, scraping para coletar dado público e LLMs como o **Gemini** para análise de texto e sentimento.
 
-\`n8n\` \`Playwright\` \`Puppeteer\` \`Selenium\` \`BeautifulSoup\` \`Apify\` \`Google Gemini\` \`LLMs\`
+\`n8n\` \`Playwright\` \`Puppeteer\` \`Selenium\` \`BeautifulSoup\` \`Apify\` \`Google Gemini\` \`LLMs\` \`IA generativa\` \`PLN\`
 
 ## :plug: Integrações
 
@@ -466,7 +466,7 @@ Para transformar dado em relatório e decisão, uso **Power BI**, **Pandas** e n
 
 Git em tudo, Figma para desenhar antes de codar, Postman para testar API e Clean Architecture como base de organização.
 
-\`Git\` \`GitHub\` \`Figma\` \`Postman\` \`WordPress\` \`XAMPP\` \`Arduino\` \`IoT\` \`Clean Architecture\` \`TDD\` \`MVC\` \`Scrum\` \`Kanban\` \`UI/UX responsivo\`
+\`Git\` \`GitHub\` \`Figma\` \`Postman\` \`WordPress\` \`XAMPP\` \`Arduino\` \`IoT\` \`Clean Architecture\` \`TDD\` \`MVC\` \`Scrum\` \`Kanban\` \`UI/UX responsivo\` \`Estrutura de dados\` \`Algoritmos\` \`Design de software\` \`Redes\` \`Gestão de projetos\` \`Liderança\`
 `,
   },
   {
@@ -792,7 +792,7 @@ export const SKILL_LOGOS: Record<string, string> = {
   "Amazon S3": "aws", Azure: "azure", "Microsoft Azure": "azure", "Azure Databricks": "azure", Vercel: "vercel", Git: "git",
   GitHub: "github", "Git e GitHub": "git", Figma: "figma", Postman: "postman", WordPress: "wordpress", WooCommerce: "wordpress",
   Selenium: "selenium", "Linux e Bash": "linux", "Redis e BullMQ": "redis", "HTML5, CSS3 e Sass": "html",
-  "Docker Compose": "docker", "Git and GitHub": "git", "Linux and Bash": "linux", "Redis and BullMQ": "redis", "HTML5, CSS3 and Sass": "html",
+  "Docker Compose": "docker", "Git and GitHub": "git", C: "c", "C++": "cpp", "Google Cloud": "gcp", Arduino: "arduino", "Linux and Bash": "linux", "Redis and BullMQ": "redis", "HTML5, CSS3 and Sass": "html",
 };
 
 export type Ext = {

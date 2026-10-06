@@ -374,13 +374,13 @@ The tools I use every day, grouped by area. In the **Extensions** tab, right her
 
 **TypeScript** is the one I use the most, on the front and the back. **Python** is for automation and data, and **PHP** for e-commerce, WordPress and legacy systems.
 
-\`TypeScript\` \`JavaScript\` \`Python\` \`PHP\` \`SQL\`
+\`TypeScript\` \`JavaScript\` \`Python\` \`PHP\` \`SQL\` \`C\` \`C++\` \`XML\`
 
 ## :browser: Front-end
 
 **Next.js** and **React** every day, **Angular** on corporate projects and **React Native** when the product needs an app. For styling, almost always Tailwind.
 
-\`React\` \`Next.js\` \`React Native\` \`Angular\` \`Redux\` \`Vite\` \`Tailwind CSS\` \`Bootstrap\` \`HTML5\` \`CSS3\` \`Sass\`
+\`React\` \`Next.js\` \`React Native\` \`Angular\` \`Redux\` \`Vite\` \`Tailwind CSS\` \`Bootstrap\` \`HTML5\` \`CSS3\` \`Sass\` \`Axios\`
 
 ## :server-process: Back-end
 
@@ -392,25 +392,25 @@ My base is **NestJS** with Prisma or TypeORM, queues with Redis and BullMQ, vali
 
 Since I started in Cybersecurity, authentication, permissions and care with sensitive data are part of the design from the start, not the end.
 
-\`JWT\` \`OAuth2\` \`RBAC\` \`Multitenancy\` \`bcrypt\`
+\`JWT\` \`OAuth2\` \`RBAC\` \`Multitenancy\` \`bcrypt\` \`Cybersecurity\`
 
 ## :database: Databases
 
 **PostgreSQL** is my default, **MySQL** shows up a lot in legacy systems and **MongoDB** when the model calls for documents.
 
-\`PostgreSQL\` \`MySQL\` \`SQL Server\` \`MongoDB\` \`SQLite\` \`Supabase\` \`Firebase\`
+\`PostgreSQL\` \`MySQL\` \`SQL Server\` \`MongoDB\` \`SQLite\` \`Supabase\` \`Firebase\` \`NoSQL\` \`Oracle\` \`phpMyAdmin\`
 
 ## :cloud: DevOps and Cloud
 
 I run my own infrastructure, with VPS, **Docker**, **Nginx** with SSL, automated backups and CI/CD with GitHub Actions. In the cloud, Amazon S3 and Azure.
 
-\`Docker\` \`Docker Compose\` \`VPS\` \`Nginx\` \`Linux\` \`Bash\` \`GitHub Actions\` \`AWS\` \`Azure\` \`Vercel\` \`PM2\`
+\`Docker\` \`Docker Compose\` \`VPS\` \`Nginx\` \`Linux\` \`Bash\` \`GitHub Actions\` \`AWS\` \`Azure\` \`Vercel\` \`PM2\` \`CI/CD\` \`Amazon S3\` \`Google Cloud\` \`Azure DevOps\`
 
 ## :robot: Automation and AI
 
 **n8n** to orchestrate systems, scraping to collect public data and LLMs like **Gemini** for text and sentiment analysis.
 
-\`n8n\` \`Playwright\` \`Puppeteer\` \`Selenium\` \`BeautifulSoup\` \`Apify\` \`Google Gemini\` \`LLMs\`
+\`n8n\` \`Playwright\` \`Puppeteer\` \`Selenium\` \`BeautifulSoup\` \`Apify\` \`Google Gemini\` \`LLMs\` \`Generative AI\` \`NLP\`
 
 ## :plug: Integrations
 
@@ -428,7 +428,7 @@ To turn data into reports and decisions, I use **Power BI**, **Pandas** and Jupy
 
 Git on everything, Figma to design before coding, Postman to test APIs and Clean Architecture as the base for organizing code.
 
-\`Git\` \`GitHub\` \`Figma\` \`Postman\` \`WordPress\` \`XAMPP\` \`Arduino\` \`IoT\` \`Clean Architecture\` \`TDD\` \`MVC\` \`Scrum\` \`Kanban\` \`Responsive UI/UX\`
+\`Git\` \`GitHub\` \`Figma\` \`Postman\` \`WordPress\` \`XAMPP\` \`Arduino\` \`IoT\` \`Clean Architecture\` \`TDD\` \`MVC\` \`Scrum\` \`Kanban\` \`Responsive UI/UX\` \`Data structures\` \`Algorithms\` \`Software design\` \`Networking\` \`Project management\` \`Leadership\`
 `,
 
   "docs/formacao.md": `# :mortar-board: Education
