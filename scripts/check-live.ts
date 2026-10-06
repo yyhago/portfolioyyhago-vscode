@@ -41,13 +41,34 @@ assert.ok(get("docs/projetos.md").includes("Em destaque no GitHub") && get("docs
 assert.ok(get("docs/atividade.md").includes("**467 contribuições**") && get("docs/atividade.md").includes("[[contribuicoes]]"));
 assert.ok(get("docs/sobre-mim.md").includes("**2 repositórios públicos**"));
 assert.ok(sobre.includes("em breve") && get("docs/sobre-mim.md").includes("[Currículo em PDF](curriculo.md)"), "link do CV muda quando o PDF existe");
-assert.ok(get("docs/curriculo.md").includes("/cv/cv-en.pdf") && get("docs/curriculo.md").includes("English"));
+assert.ok(get("docs/curriculo.md").includes("/cv/cv-en.pdf") && get("docs/curriculo.md").includes("**Inglês**"));
 assert.equal(new Set(on.map((f) => f.path)).size, on.length, "sem arquivos duplicados");
 
 assert.ok(get("docs/projetos.md").includes("![Site da CUBE Inteligência, cliente da plataforma](/projetos/clientecube.jpg)"));
 assert.ok(get("docs/projetos.md").includes("![CUBE, telas da plataforma](/projetos/cube-1.png)"), "print do projeto não pega a legenda do site do cliente");
 assert.equal(get("docs/projetos.md").split("/projetos/mundopet-").length - 1, 2);
 assert.ok(!on.some((f) => f.content.includes("{{")), "nenhum token sobrando");
+
+const { EN_DOCS, extensionsFor } = await import("../components/vscode/data-en.ts");
+const { files: ptBase, extensions } = await import("../components/vscode/data.ts");
+const en = buildFiles(gh, cvs, ["cube-1.png"], "en");
+const enGet = (p: string) => en.find((f) => f.path === p)!;
+assert.deepStrictEqual(en.map((f) => f.path), on.map((f) => f.path), "mesmos arquivos nos dois idiomas");
+for (const f of ptBase.filter((x) => x.path.startsWith("docs/") || x.path === "README.md")) assert.ok(EN_DOCS[f.path], `tradução de ${f.path}`);
+assert.equal(enGet("docs/sobre-mim.md").alias, "docs/about-me.md");
+assert.equal(enGet("docs/curriculo.md").alias, "docs/resume.md");
+assert.ok(enGet("docs/curriculo.md").content.includes("# :file-pdf: Resume"));
+assert.ok(enGet("docs/sobre-mim.md").content.includes("[Resume in PDF](resume.md)"));
+assert.ok(enGet("docs/projetos.md").content.includes("![CUBE, platform screens](/projetos/cube-1.png)"));
+assert.ok(enGet("docs/projetos.md").content.includes("Featured on GitHub"));
+assert.ok(enGet("docs/atividade.md").content.includes("**467 contributions**"));
+assert.ok(!en.some((f) => f.content.includes("{{")), "nenhum token sobrando em inglês");
+assert.ok(!on.some((f) => f.path.startsWith("docs/") && f.alias), "português sem apelido");
+for (const e of extensionsFor("en")) assert.ok(!extensions.find((x) => x.id === e.id)!.about.includes(e.about) || e.about === "", `extensão ${e.id} traduzida`);
+const links = [...en.flatMap((f) => [...f.content.matchAll(/\]\(([a-z-]+\.md)(#[a-z]+)?\)/g)].map((m) => m[1]))];
+for (const l of links) assert.ok(en.some((f) => (f.alias ?? f.path).endsWith(`/${l}`) || f.path === l), `link interno ${l} existe em inglês`);
+const ptLinks = [...on.flatMap((f) => [...f.content.matchAll(/\]\(([a-z-]+\.md)(#[a-z]+)?\)/g)].map((m) => m[1]))];
+for (const l of ptLinks) assert.ok(on.some((f) => f.path.endsWith(`/${l}`) || f.path === l), `link interno ${l} existe em português`);
 
 const html = `<h2>
   467

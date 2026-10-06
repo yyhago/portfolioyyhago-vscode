@@ -1,7 +1,10 @@
-import type { ReactNode } from "react";
-import { SKILL_LOGOS, type Ext } from "./data";
+import { type ReactNode, useEffect, useState } from "react";
+import { pick, type Locale } from "../i18n";
+import { matches, SKILL_LOGOS, type Ext } from "./data";
+import { PUBLICADOS } from "./depoimentos";
 import { fmtDate, type Day } from "./live";
-import { useLive } from "./live-context";
+import { useLive, useLocale } from "./live-context";
+import QuoteForm from "./QuoteForm";
 
 type Block =
   | { t: "h"; level: number; text: string }
@@ -63,7 +66,7 @@ export function Icon({ name }: { name: string }) {
   return <i className={`codicon codicon-${name}`} />;
 }
 
-type Ctx = { open: (path: string) => void; isFile: (path: string) => boolean };
+type Ctx = { open: (path: string) => void; isFile: (path: string) => boolean; L: (pt: string, en: string) => string };
 
 function inline(s: string, ctx: Ctx, key = "k"): ReactNode[] {
   const out: ReactNode[] = [];
@@ -78,14 +81,15 @@ function inline(s: string, ctx: Ctx, key = "k"): ReactNode[] {
     else if (m[3] !== undefined) out.push(<Chip key={k} text={m[3]} />);
     else if (m[4] !== undefined) {
       const href = m[5];
-      const internal = ctx.isFile(href);
+      const file = href.split("#")[0];
+      const internal = href.startsWith("#") || ctx.isFile(file);
       out.push(
         <a
           key={k}
           href={internal ? undefined : href}
           target={internal ? undefined : "_blank"}
           rel="noreferrer"
-          title={internal ? `Abrir ${href}` : href}
+          title={internal ? (file ? `${ctx.L("Abrir", "Open")} ${file}` : undefined) : href}
           onClick={internal ? () => ctx.open(href) : undefined}
         >
           {inline(m[4], ctx, k)}
@@ -124,9 +128,13 @@ const onlyChips = (s: string) => /^(`[^`]+`\s*)+$/.test(s.trim());
 
 export default function Markdown({ src, open }: { src: string; open: (path: string) => void }) {
   const { files, gh } = useLive();
-  const ctx = { open, isFile: (p: string) => files.some((f) => f.path === p || f.path.endsWith(`/${p}`)) };
+  const { locale } = useLocale();
+  const L = pick(locale);
+  const ctx: Ctx = { open, isFile: (p: string) => !!p && files.some((f) => matches(f, p)), L };
+  const [zoom, setZoom] = useState<number | null>(null);
   const blocks = parse(src);
   const nodes: ReactNode[] = [];
+  const shots: { src: string; alt: string }[] = [];
   for (let i = 0; i < blocks.length; i++) {
     const b = blocks[i];
     const next = blocks[i + 1];
@@ -150,8 +158,10 @@ export default function Markdown({ src, open }: { src: string; open: (path: stri
         </H>,
       );
     } else if (b.t === "p" && b.text === "[[contribuicoes]]") {
-      if (gh?.contributions) nodes.push(<Contributions key={i} days={gh.contributions.days} />);
-    } else if (b.t === "p") nodes.push(<p key={i} className={onlyChips(b.text) ? "md-chips" : undefined}>{inline(b.text, ctx)}</p>);
+      if (gh?.contributions) nodes.push(<Contributions key={i} days={gh.contributions.days} locale={locale} />);
+    } else if (b.t === "p" && b.text === "[[orcamento]]") nodes.push(<QuoteForm key={i} />);
+    else if (b.t === "p" && b.text === "[[depoimentos]]") nodes.push(<Testimonials key={i} locale={locale} />);
+    else if (b.t === "p") nodes.push(<p key={i} className={onlyChips(b.text) ? "md-chips" : undefined}>{inline(b.text, ctx)}</p>);
     else if (b.t === "ul" || b.t === "ol") {
       const L = b.t;
       nodes.push(
@@ -166,28 +176,92 @@ export default function Markdown({ src, open }: { src: string; open: (path: stri
       const group = [b];
       while (blocks[i + 1]?.t === "img") group.push(blocks[++i] as typeof b);
       nodes.push(
-        <div key={i} className="md-gallery">
-          {group.map((g) => (
-            <a key={g.src} href={g.src} target="_blank" rel="noreferrer" title="Abrir imagem em tamanho real">
-              <img src={g.src} alt={g.alt} loading="lazy" />
-              <span>{g.alt}</span>
-            </a>
-          ))}
+        <div key={i} className={`md-gallery n${Math.min(group.length, 3)}`}>
+          {group.map((g) => {
+            const at = shots.push(g) - 1;
+            return (
+              <button key={g.src} className="md-shot" onClick={() => setZoom(at)} title={L("Ver maior", "View larger")}>
+                <span className="md-shot-img">
+                  <img src={g.src} alt={g.alt} loading="lazy" />
+                </span>
+                <span className="md-shot-cap">
+                  <i className="codicon codicon-zoom-in" />
+                  {g.alt}
+                </span>
+              </button>
+            );
+          })}
         </div>,
       );
     }
   }
   return (
-    <div className="md">
-      <div className="md-inner">{nodes}</div>
+    <>
+      <div className="md">
+        <div className="md-inner">{nodes}</div>
+      </div>
+      {zoom !== null && shots[zoom] && <Lightbox shots={shots} index={zoom} onChange={setZoom} L={L} />}
+    </>
+  );
+}
+
+function Testimonials({ locale }: { locale: Locale }) {
+  return (
+    <div className="md-quotes">
+      {PUBLICADOS.map((d) => (
+        <figure key={d.nome + d.empresa} className="md-quote">
+          <i className="codicon codicon-quote" />
+          <blockquote>{locale === "en" && d.textoEn ? d.textoEn : d.texto}</blockquote>
+          <figcaption>
+            <b>{d.nome}</b>
+            <span>{[locale === "en" && d.cargoEn ? d.cargoEn : d.cargo, d.empresa].filter(Boolean).join(", ")}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  );
+}
+
+function Lightbox({ shots, index, onChange, L }: { shots: { src: string; alt: string }[]; index: number; onChange: (i: number | null) => void; L: Ctx["L"] }) {
+  const go = (d: number) => onChange((index + d + shots.length) % shots.length);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onChange(null);
+      else if (e.key === "ArrowRight") onChange((index + 1) % shots.length);
+      else if (e.key === "ArrowLeft") onChange((index - 1 + shots.length) % shots.length);
+      else return;
+      e.preventDefault();
+      e.stopPropagation();
+    };
+    addEventListener("keydown", onKey, true);
+    return () => removeEventListener("keydown", onKey, true);
+  }, [index, shots.length, onChange]);
+  const shot = shots[index];
+  return (
+    <div className="md-lightbox" onClick={() => onChange(null)}>
+      <button className="lb-btn lb-close codicon codicon-close" title={L("Fechar (Esc)", "Close (Esc)")} onClick={() => onChange(null)} />
+      {shots.length > 1 && <button className="lb-btn codicon codicon-chevron-left" title={L("Anterior", "Previous")} onClick={(e) => (e.stopPropagation(), go(-1))} />}
+      <figure onClick={(e) => e.stopPropagation()}>
+        <img src={shot.src} alt={shot.alt} />
+        <figcaption>
+          {shot.alt}
+          {shots.length > 1 && <span className="lb-count">{index + 1} {L("de", "of")} {shots.length}</span>}
+        </figcaption>
+      </figure>
+      {shots.length > 1 && <button className="lb-btn codicon codicon-chevron-right" title={L("Próxima", "Next")} onClick={(e) => (e.stopPropagation(), go(1))} />}
     </div>
   );
 }
 
 const LEVELS = ["#2d333b", "#0e4429", "#006d32", "#26a641", "#39d353"];
-const MONTHS = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+const MONTHS: Record<Locale, string[]> = {
+  pt: ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"],
+  en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+};
 
-function Contributions({ days }: { days: Day[] }) {
+function Contributions({ days, locale }: { days: Day[]; locale: Locale }) {
+  const L = pick(locale);
+  const MONTH = MONTHS[locale];
   const offset = new Date(`${days[0].date}T12:00:00Z`).getUTCDay();
   const cells: (Day | null)[] = [...Array(offset).fill(null), ...days];
   const weeks = Math.ceil(cells.length / 7);
@@ -195,7 +269,7 @@ function Contributions({ days }: { days: Day[] }) {
   for (let w = 0; w < weeks; w++) {
     const first = cells.slice(w * 7, w * 7 + 7).find(Boolean);
     const m = first ? Number(first.date.slice(5, 7)) - 1 : -1;
-    if (m >= 0 && labels.at(-1)?.name !== MONTHS[m] && (w > 0 || offset < 4) && w < weeks - 2) labels.push({ col: w, name: MONTHS[m] });
+    if (m >= 0 && labels.at(-1)?.name !== MONTH[m] && (w > 0 || offset < 4) && w < weeks - 2) labels.push({ col: w, name: MONTH[m] });
   }
   return (
     <div className="contrib">
@@ -211,7 +285,7 @@ function Contributions({ days }: { days: Day[] }) {
           <div className="contrib-grid">
             {cells.map((d, i) =>
               d ? (
-                <i key={i} style={{ background: LEVELS[d.level] }} title={`${d.count} ${d.count === 1 ? "contribuição" : "contribuições"} em ${fmtDate(`${d.date}T12:00:00Z`)}`} />
+                <i key={i} style={{ background: LEVELS[d.level] }} title={`${d.count} ${d.count === 1 ? L("contribuição", "contribution") : L("contribuições", "contributions")} ${L("em", "on")} ${fmtDate(`${d.date}T12:00:00Z`, locale)}`} />
               ) : (
                 <i key={i} style={{ visibility: "hidden" }} />
               ),
@@ -220,11 +294,11 @@ function Contributions({ days }: { days: Day[] }) {
         </div>
       </div>
       <div className="contrib-legend">
-        Menos
+        {L("Menos", "Less")}
         {LEVELS.map((c) => (
           <i key={c} style={{ background: c }} />
         ))}
-        Mais
+        {L("Mais", "More")}
       </div>
     </div>
   );

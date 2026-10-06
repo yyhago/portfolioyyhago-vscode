@@ -1,9 +1,10 @@
 import { type MouseEvent as ReactMouseEvent, useEffect, useMemo, useRef, useState } from "react";
 import { FileIcon, VSCodeLogo } from "../icons";
-import { extensions, GITHUB, langOf, ROOT, type Ext, type VFile } from "./data";
+import { baseName, GITHUB, langOf, ROOT, shown, type Ext, type VFile } from "./data";
+import { extensionsFor } from "./data-en";
 import { highlight } from "./highlight";
 import Markdown, { ExtIcon } from "./Markdown";
-import { useLive } from "./live-context";
+import { useL, useLive, useLocale } from "./live-context";
 import type { Api, Cursor } from "./VSCode";
 
 const LH = 19;
@@ -22,6 +23,8 @@ type Props = {
   api: Api;
 };
 
+type Pick = (pt: string, en: string) => string;
+
 export const Keys = ({ k }: { k: string }) => (
   <span className="keys">
     {k.split("+").map((part, i) => (
@@ -30,19 +33,23 @@ export const Keys = ({ k }: { k: string }) => (
   </span>
 );
 
-const tabInfo = (id: string, files: VFile[]) => {
-  if (id === "welcome") return { label: "Bem-vindo", icon: null };
-  const ext = extensions.find((e) => `ext:${e.id}` === id);
-  if (ext) return { label: `Extensão: ${ext.name}`, icon: <i className="codicon codicon-extensions" style={{ color: "#75beff" }} /> };
-  return { label: id.split("/").pop()!, icon: <FileIcon name={id} />, git: files.find((f) => f.path === id)?.git };
+const winPath = (p: string) => `~\\${ROOT}\\${p.replaceAll("/", "\\")}`;
+
+const tabInfo = (id: string, files: VFile[], exts: Ext[], L: Pick) => {
+  if (id === "welcome") return { label: L("Bem-vindo", "Welcome"), icon: null };
+  const ext = exts.find((e) => `ext:${e.id}` === id);
+  if (ext) return { label: `${L("Extensão", "Extension")}: ${ext.name}`, icon: <i className="codicon codicon-extensions" style={{ color: "#75beff" }} /> };
+  return { label: baseName(shown(files, id)), icon: <FileIcon name={id} />, git: files.find((f) => f.path === id)?.git };
 };
 
 export default function Editor({ tabs, active, preview, booting, cursor, setCursor, reveal, raw, toggleRaw, api }: Props) {
   const { files } = useLive();
+  const L = useL();
+  const exts = extensionsFor(useLocale().locale);
   if (booting) return null;
   if (!active) return <Watermark />;
   const file = files.find((f) => f.path === active);
-  const ext = extensions.find((e) => `ext:${e.id}` === active);
+  const ext = exts.find((e) => `ext:${e.id}` === active);
   const isMd = !!file && langOf(file.path) === "md";
   const rendered = isMd && !raw.has(file.path);
 
@@ -51,18 +58,18 @@ export default function Editor({ tabs, active, preview, booting, cursor, setCurs
       <div className="tabs">
         <div className="tabs-scroll">
           {tabs.map((t) => {
-            const info = tabInfo(t, files);
+            const info = tabInfo(t, files, exts, L);
             return (
               <div
                 key={t}
-                title={t === "welcome" ? "Bem-vindo" : `~\\${ROOT}\\${t.replaceAll("/", "\\")}`}
+                title={t === "welcome" || t.startsWith("ext:") ? info.label : winPath(shown(files, t))}
                 className={`tab ${t === active ? "active" : ""} ${t === preview ? "preview" : ""}`}
                 onMouseDown={(e) => (e.button === 1 ? (e.preventDefault(), api.close(t)) : api.activate(t))}
                 onDoubleClick={() => api.open(t, true)}
               >
                 {info.icon}
                 <span className={`tab-label ${info.git ? `git-${info.git}` : ""}`}>{info.label}</span>
-                <button className="tab-close codicon codicon-close" title="Fechar (Ctrl+F4)" onMouseDown={(e) => e.stopPropagation()} onClick={() => api.close(t)} />
+                <button className="tab-close codicon codicon-close" title={L("Fechar (Ctrl+F4)", "Close (Ctrl+F4)")} onMouseDown={(e) => e.stopPropagation()} onClick={() => api.close(t)} />
               </div>
             );
           })}
@@ -71,16 +78,16 @@ export default function Editor({ tabs, active, preview, booting, cursor, setCurs
           {isMd && (
             <button
               className={`tb codicon codicon-${rendered ? "go-to-file" : "open-preview"}`}
-              title={rendered ? "Abrir Código-Fonte" : "Abrir Visualização (Ctrl+Shift+V)"}
+              title={rendered ? L("Abrir Código-Fonte", "Open Source") : L("Abrir Visualização (Ctrl+Shift+V)", "Open Preview (Ctrl+Shift+V)")}
               onClick={() => toggleRaw(file.path)}
             />
           )}
-          <button className="tb codicon codicon-ellipsis" title="Mais Ações..." onClick={() => api.quick(">Exibir")} />
+          <button className="tb codicon codicon-ellipsis" title={L("Mais Ações...", "More Actions...")} onClick={() => api.quick(`>${L("Exibir", "View")}`)} />
         </div>
       </div>
       {file && !rendered && (
         <div className="crumbs">
-          {file.path.split("/").map((seg, i, all) => (
+          {shown(files, file.path).split("/").map((seg, i, all) => (
             <span key={i} className="crumb">
               {i === all.length - 1 && <FileIcon name={seg} />}
               {seg}
@@ -114,6 +121,7 @@ function foldEnd(lines: string[], i: number) {
 }
 
 function Code({ file, cursor, setCursor, reveal }: { file: VFile; cursor: Cursor; setCursor: (c: Cursor) => void; reveal: Props["reveal"] }) {
+  const L = useL();
   const raw = useMemo(() => file.content.replace(/\n$/, "").split("\n"), [file]);
   const toks = useMemo(() => highlight(raw.join("\n"), langOf(file.path)), [raw, file.path]);
   const [folded, setFolded] = useState<Set<number>>(new Set());
@@ -190,7 +198,7 @@ function Code({ file, cursor, setCursor, reveal }: { file: VFile; cursor: Cursor
                       key={k}
                       style={{ color: t.c, fontWeight: t.b ? "bold" : undefined }}
                       className={t.url ? "link" : undefined}
-                      title={t.url ? "Seguir o link (ctrl + clique)" : undefined}
+                      title={t.url ? L("Seguir o link (ctrl + clique)", "Follow link (ctrl + click)") : undefined}
                       onClick={t.url ? (e) => (e.ctrlKey || e.metaKey) && window.open(t.url, "_blank") : undefined}
                     >
                       {t.t}
@@ -230,6 +238,7 @@ function Code({ file, cursor, setCursor, reveal }: { file: VFile; cursor: Cursor
 
 function Welcome({ api }: { api: Api }) {
   const { files } = useLive();
+  const L = useL();
   const link = (icon: string, label: string, run: () => void) => (
     <button className="wl-link" onClick={run}>
       <i className={`codicon codicon-${icon}`} />
@@ -241,47 +250,48 @@ function Welcome({ api }: { api: Api }) {
       <div className="wl-grid">
         <div>
           <h1>Visual Studio Code</h1>
-          <p className="wl-sub">Edição evoluída</p>
-          <h2>Iniciar</h2>
-          {link("new-file", "Novo Arquivo...", () => api.notify("Aqui é só leitura, mas pode fuçar à vontade."))}
-          {link("go-to-file", "Abrir o Arquivo...", () => api.quick(""))}
-          {link("folder-opened", "Abrir a Pasta...", () => api.show("explorer"))}
-          {link("source-control", "Abrir o repositório...", () => window.open(`${GITHUB}/portfolioyyhago-vscode`, "_blank"))}
-          <h2>Recente</h2>
+          <p className="wl-sub">{L("Edição evoluída", "Editing evolved")}</p>
+          <h2>{L("Iniciar", "Start")}</h2>
+          {link("new-file", L("Novo Arquivo...", "New File..."), api.readOnly)}
+          {link("go-to-file", L("Abrir o Arquivo...", "Open File..."), () => api.quick(""))}
+          {link("folder-opened", L("Abrir a Pasta...", "Open Folder..."), () => api.show("explorer"))}
+          {link("source-control", L("Abrir o repositório...", "Clone Git Repository..."), () => window.open(`${GITHUB}/portfolioyyhago-vscode`, "_blank"))}
+          <h2>{L("Recente", "Recent")}</h2>
           {files.filter((f) => f.path.startsWith("docs/")).slice(0, 5).map((f) => (
             <div key={f.path} className="wl-recent">
-              <button onClick={() => api.open(f.path)}>{f.path.split("/").pop()}</button>
+              <button onClick={() => api.open(f.path)}>{baseName(f.alias ?? f.path)}</button>
               <span>~\{ROOT}\{f.path.includes("/") ? f.path.slice(0, f.path.lastIndexOf("/")) : ""}</span>
             </div>
           ))}
         </div>
         <div>
-          <h2>Passo a passo</h2>
+          <h2>{L("Passo a passo", "Walkthroughs")}</h2>
           <button className="wl-card featured" onClick={() => api.open("sobre-mim.md")}>
             <i className="codicon codicon-star-full wl-badge" />
             <span>
-              <b>Conheça o Yhago Felipe</b>
-              <span className="wl-desc">Descubra quem eu sou, o que eu construo e como falar comigo</span>
+              <b>{L("Conheça o Yhago Felipe", "Meet Yhago Felipe")}</b>
+              <span className="wl-desc">{L("Descubra quem eu sou, o que eu construo e como falar comigo", "Find out who I am, what I build and how to reach me")}</span>
             </span>
           </button>
           <button className="wl-card" onClick={() => api.show("extensions")}>
             <i className="codicon codicon-extensions" />
-            <b>Ver minha stack</b>
+            <b>{L("Ver minha stack", "See my stack")}</b>
           </button>
           <button className="wl-card" onClick={() => api.terminal()}>
             <i className="codicon codicon-lightbulb" />
-            <b>Abrir o terminal interativo</b>
+            <b>{L("Abrir o terminal interativo", "Open the interactive terminal")}</b>
           </button>
         </div>
       </div>
       <label className="wl-foot">
-        <input type="checkbox" defaultChecked /> Mostrar a página inicial na inicialização
+        <input type="checkbox" defaultChecked /> {L("Mostrar a página inicial na inicialização", "Show welcome page on startup")}
       </label>
     </div>
   );
 }
 
 function ExtPage({ ext, api }: { ext: Ext; api: Api }) {
+  const L = useL();
   return (
     <div className="extpage">
       <div className="ep-head">
@@ -297,21 +307,25 @@ function ExtPage({ ext, api }: { ext: Ext; api: Api }) {
           </div>
           <p>{ext.desc}</p>
           <div className="ep-btns">
-            <button className="btn" onClick={() => api.notify(`Desabilitar ${ext.name}? Uso demais para isso.`)}>Desabilitar</button>
-            <button className="btn" onClick={() => api.notify(`Desinstalar ${ext.name}? Uso demais para isso.`)}>Desinstalar</button>
+            <button className="btn" onClick={() => api.notify(L(`Desabilitar ${ext.name}? Uso demais para isso.`, `Disable ${ext.name}? I use it way too much for that.`))}>
+              {L("Desabilitar", "Disable")}
+            </button>
+            <button className="btn" onClick={() => api.notify(L(`Desinstalar ${ext.name}? Uso demais para isso.`, `Uninstall ${ext.name}? I use it way too much for that.`))}>
+              {L("Desinstalar", "Uninstall")}
+            </button>
             <label>
-              <input type="checkbox" defaultChecked /> Atualização Automática
+              <input type="checkbox" defaultChecked /> {L("Atualização Automática", "Auto Update")}
             </label>
           </div>
         </div>
       </div>
       <div className="ep-tabs">
-        <span className="on">DETALHES</span>
-        <span>RECURSOS</span>
-        <span>LOG DE MUDANÇAS</span>
+        <span className="on">{L("DETALHES", "DETAILS")}</span>
+        <span>{L("RECURSOS", "FEATURES")}</span>
+        <span>{L("LOG DE MUDANÇAS", "CHANGELOG")}</span>
       </div>
       <div className="ep-body">
-        <h2>{ext.name} no meu dia a dia</h2>
+        <h2>{L(`${ext.name} no meu dia a dia`, `${ext.name} in my day to day`)}</h2>
         <p>{ext.about}</p>
       </div>
     </div>
@@ -319,19 +333,20 @@ function ExtPage({ ext, api }: { ext: Ext; api: Api }) {
 }
 
 function Watermark() {
+  const L = useL();
   return (
     <div className="watermark">
       <div className="wm-logo">
         <VSCodeLogo size={260} />
       </div>
       <dl>
-        <dt>Mostrar Todos os Comandos</dt>
+        <dt>{L("Mostrar Todos os Comandos", "Show All Commands")}</dt>
         <dd><Keys k="Ctrl+Shift+P" /></dd>
-        <dt>Ir para o Arquivo</dt>
+        <dt>{L("Ir para o Arquivo", "Go to File")}</dt>
         <dd><Keys k="Ctrl+P" /></dd>
-        <dt>Localizar nos Arquivos</dt>
+        <dt>{L("Localizar nos Arquivos", "Find in Files")}</dt>
         <dd><Keys k="Ctrl+Shift+F" /></dd>
-        <dt>Alternar Terminal</dt>
+        <dt>{L("Alternar Terminal", "Toggle Terminal")}</dt>
         <dd><Keys k="Ctrl+J" /></dd>
       </dl>
     </div>

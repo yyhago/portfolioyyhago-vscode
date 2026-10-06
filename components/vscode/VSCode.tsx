@@ -3,13 +3,15 @@
 import { type PointerEvent, type ReactNode, useEffect, useRef, useState } from "react";
 import { FileIcon, VSCodeLogo } from "../icons";
 import { onDrag } from "../drag";
-import { EMAIL, GITHUB, INSTAGRAM, LANG_NAME, langOf, LINKEDIN, ROOT } from "./data";
+import { baseName, EMAIL, GITHUB, INSTAGRAM, LANG_NAME, langOf, LINKEDIN, matches, ROOT, shown } from "./data";
 import { Icon } from "./Markdown";
 import type { Live } from "./live";
-import { LiveCtx, useLive } from "./live-context";
+import { LiveCtx, useLive, useLocale } from "./live-context";
+import { pick } from "../i18n";
 import Editor, { Keys } from "./Editor";
 import Sidebar from "./Sidebar";
 import Terminal from "./Terminal";
+import Tour from "./Tour";
 
 export type View = "explorer" | "search" | "scm" | "debug" | "extensions";
 export type Cursor = { ln: number; col: number };
@@ -21,6 +23,8 @@ export type Api = {
   terminal: (cmd?: string) => void;
   notify: (msg: string) => void;
   quick: (prefix: string) => void;
+  tour: () => void;
+  readOnly: () => void;
 };
 
 type Props = {
@@ -39,14 +43,6 @@ type Item = [label: string, key?: string, run?: () => void] | "-";
 type Command = { label: string; desc?: string; key?: string; icon?: ReactNode; run: () => void };
 
 let seq = 0;
-const READ_ONLY = "Aqui é só leitura, mas pode fuçar à vontade.";
-const ACTIVITY: [View, string, string][] = [
-  ["explorer", "files", "Explorador (Ctrl+Shift+E)"],
-  ["search", "search", "Pesquisar (Ctrl+Shift+F)"],
-  ["scm", "source-control", "Controle do Código-Fonte (Ctrl+Shift+G)"],
-  ["debug", "debug-alt", "Executar e Depurar (Ctrl+Shift+D)"],
-  ["extensions", "extensions", "Extensões (Ctrl+Shift+X)"],
-];
 const LINKS: [string, string, string][] = [
   ["github", "GitHub", GITHUB],
   ["linkedin", "LinkedIn", LINKEDIN],
@@ -54,9 +50,18 @@ const LINKS: [string, string, string][] = [
   ["mail", EMAIL, `mailto:${EMAIL}`],
 ];
 const START_TAB = "docs/sobre-mim.md";
+const TOUR_SEEN = "portfolio-guia-visto";
+
+function scrollToAnchor(id: string, tries = 12) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  else if (tries > 0) setTimeout(() => scrollToAnchor(id, tries - 1), 120);
+}
 
 export default function VSCode(p: Props) {
   const files = p.live.files;
+  const { locale, setLocale } = useLocale();
+  const L = pick(locale);
   const [booting, setBooting] = useState(true);
   const [view, setView] = useState<View>("explorer");
   const [sideOpen, setSideOpen] = useState(() => innerWidth > 700);
@@ -75,6 +80,7 @@ export default function VSCode(p: Props) {
   const [menu, setMenu] = useState<string | null>(null);
   const [toasts, setToasts] = useState<{ id: number; msg: string }[]>([]);
   const [hist, setHist] = useState<{ list: string[]; i: number }>({ list: [], i: -1 });
+  const [tourOn, setTourOn] = useState(false);
   const handled = useRef(0);
 
   useEffect(() => {
@@ -101,8 +107,10 @@ export default function VSCode(p: Props) {
     setToasts((t) => [...t.slice(-2), { id, msg }]);
     setTimeout(() => setToasts((t) => t.filter((x) => x.id !== id)), 6000);
   };
+  const readOnly = () => notify(L("Aqui é só leitura, mas pode fuçar à vontade.", "This is read only, but feel free to look around."));
+  const toggleLocale = () => setLocale(locale === "en" ? "pt" : "en");
   const resolve = (id: string) =>
-    id === "welcome" || id.startsWith("ext:") || files.some((f) => f.path === id) ? id : (files.find((f) => f.path.endsWith(`/${id}`))?.path ?? id);
+    id === "welcome" || id.startsWith("ext:") || files.some((f) => f.path === id) ? id : (files.find((f) => matches(f, id))?.path ?? id);
   const go = (id: string) => {
     setActive(id);
     setHist((h) => (h.list[h.i] === id ? h : { list: [...h.list.slice(0, h.i + 1), id], i: h.i + 1 }));
@@ -114,9 +122,19 @@ export default function VSCode(p: Props) {
     setActive(id);
     if (!tabs.includes(id)) setTabs([...tabs, id]);
   };
-  const open = (raw0: string, pin = true, line?: number) => {
+  const open = (target: string, pin = true, line?: number) => {
+    const [raw0, anchor] = target.split("#");
+    if (!raw0 && anchor) return scrollToAnchor(anchor);
     const id = resolve(raw0);
     go(id);
+    if (anchor) {
+      setRaw((r) => {
+        const next = new Set(r);
+        next.delete(id);
+        return next;
+      });
+      scrollToAnchor(anchor);
+    }
     if (innerWidth <= 700) setSideOpen(false);
     if (line && id.endsWith(".md")) setRaw((r) => new Set(r).add(id));
     if (line) {
@@ -144,7 +162,24 @@ export default function VSCode(p: Props) {
       else next.add(id);
       return next;
     });
-  const api: Api = { open, activate: go, close, show, terminal, notify, quick: setQuick };
+  const endTour = () => {
+    setTourOn(false);
+    try {
+      localStorage.setItem(TOUR_SEEN, "1");
+    } catch {}
+  };
+  const api: Api = { open, activate: go, close, show, terminal, notify, quick: setQuick, tour: () => setTourOn(true), readOnly };
+
+  useEffect(() => {
+    if (booting) return;
+    let seen = false;
+    try {
+      seen = !!localStorage.getItem(TOUR_SEEN);
+    } catch {}
+    if (seen) return;
+    const t = setTimeout(() => setTourOn(true), 800);
+    return () => clearTimeout(t);
+  }, [booting]);
 
   useEffect(() => {
     if (booting || !p.request || handled.current === p.request.n) return;
@@ -152,24 +187,26 @@ export default function VSCode(p: Props) {
     open(p.request.path);
   });
 
+  const VIEW = L("Exibir", "View");
   const MENUS: [string, Item[]][] = [
-    ["Arquivo", [["Novo Arquivo de Texto", "Ctrl+N"], ["Nova Janela", "Ctrl+Shift+N"], "-", ["Abrir Arquivo...", "Ctrl+P", () => setQuick("")], ["Abrir Recente"], "-", ["Salvar", "Ctrl+S"], ["Salvar Como...", "Ctrl+Shift+S"], "-", ["Fechar Editor", "Ctrl+F4", () => active && close(active)], ["Fechar Janela", "Alt+F4", p.onClose], "-", ["Sair", "", p.onClose]]],
-    ["Editar", [["Desfazer", "Ctrl+Z"], ["Refazer", "Ctrl+Y"], "-", ["Recortar", "Ctrl+X"], ["Copiar", "Ctrl+C"], ["Colar", "Ctrl+V"], "-", ["Localizar nos Arquivos", "Ctrl+Shift+F", () => show("search")]]],
-    ["Seleção", [["Selecionar Tudo", "Ctrl+A"], ["Expandir Seleção", "Shift+Alt+RightArrow"], "-", ["Copiar Linha Acima", "Shift+Alt+UpArrow"], ["Copiar Linha Abaixo", "Shift+Alt+DownArrow"]]],
-    ["Exibir", [["Paleta de Comandos...", "Ctrl+Shift+P", () => setQuick(">")], "-", ["Explorador", "Ctrl+Shift+E", () => show("explorer")], ["Pesquisar", "Ctrl+Shift+F", () => show("search")], ["Controle do Código-Fonte", "Ctrl+Shift+G", () => show("scm")], ["Executar", "Ctrl+Shift+D", () => show("debug")], ["Extensões", "Ctrl+Shift+X", () => show("extensions")], "-", ["Terminal", "Ctrl+J", () => setPanel((v) => !v)], ["Barra Lateral Primária", "Ctrl+B", () => setSideOpen((v) => !v)]]],
-    ["Ir", [["Voltar", "Alt+LeftArrow"], ["Avançar", "Alt+RightArrow"], "-", ["Ir para Arquivo...", "Ctrl+P", () => setQuick("")]]],
-    ["Executar", [["Iniciar Depuração", "F5", () => terminal("npm run dev")], ["Executar Sem Depuração", "Ctrl+F5", () => terminal("npm run dev")]]],
-    ["Terminal", [["Novo Terminal", "", () => terminal()], ["Executar Tarefa...", "", () => terminal("npm run build")]]],
-    ["Ajuda", [["Bem-vindo", "", () => open("welcome")], ["Mostrar Todos os Comandos", "Ctrl+Shift+P", () => setQuick(">")], "-", ["Meu GitHub", "", () => window.open(GITHUB, "_blank")], "-", ["Como Navegar", "", () => open("README.md")], ["Sobre Mim", "", () => open("sobre-mim.md")]]],
+    [L("Arquivo", "File"), [[L("Novo Arquivo de Texto", "New Text File"), "Ctrl+N"], [L("Nova Janela", "New Window"), "Ctrl+Shift+N"], "-", [L("Abrir Arquivo...", "Open File..."), "Ctrl+P", () => setQuick("")], [L("Abrir Recente", "Open Recent")], "-", [L("Salvar", "Save"), "Ctrl+S"], [L("Salvar Como...", "Save As..."), "Ctrl+Shift+S"], "-", [L("Fechar Editor", "Close Editor"), "Ctrl+F4", () => active && close(active)], [L("Fechar Janela", "Close Window"), "Alt+F4", p.onClose], "-", [L("Sair", "Exit"), "", p.onClose]]],
+    [L("Editar", "Edit"), [[L("Desfazer", "Undo"), "Ctrl+Z"], [L("Refazer", "Redo"), "Ctrl+Y"], "-", [L("Recortar", "Cut"), "Ctrl+X"], [L("Copiar", "Copy"), "Ctrl+C"], [L("Colar", "Paste"), "Ctrl+V"], "-", [L("Localizar nos Arquivos", "Find in Files"), "Ctrl+Shift+F", () => show("search")]]],
+    [L("Seleção", "Selection"), [[L("Selecionar Tudo", "Select All"), "Ctrl+A"], [L("Expandir Seleção", "Expand Selection"), "Shift+Alt+RightArrow"], "-", [L("Copiar Linha Acima", "Copy Line Up"), "Shift+Alt+UpArrow"], [L("Copiar Linha Abaixo", "Copy Line Down"), "Shift+Alt+DownArrow"]]],
+    [VIEW, [[L("Paleta de Comandos...", "Command Palette..."), "Ctrl+Shift+P", () => setQuick(">")], "-", [L("Explorador", "Explorer"), "Ctrl+Shift+E", () => show("explorer")], [L("Pesquisar", "Search"), "Ctrl+Shift+F", () => show("search")], [L("Controle do Código-Fonte", "Source Control"), "Ctrl+Shift+G", () => show("scm")], [L("Executar", "Run"), "Ctrl+Shift+D", () => show("debug")], [L("Extensões", "Extensions"), "Ctrl+Shift+X", () => show("extensions")], "-", ["Terminal", "Ctrl+J", () => setPanel((v) => !v)], [L("Barra Lateral Primária", "Primary Side Bar"), "Ctrl+B", () => setSideOpen((v) => !v)], "-", [L("Idioma de Exibição, English", "Display Language, Português"), "", toggleLocale]]],
+    [L("Ir", "Go"), [[L("Voltar", "Back"), "Alt+LeftArrow"], [L("Avançar", "Forward"), "Alt+RightArrow"], "-", [L("Ir para Arquivo...", "Go to File..."), "Ctrl+P", () => setQuick("")]]],
+    [L("Executar", "Run"), [[L("Iniciar Depuração", "Start Debugging"), "F5", () => terminal("npm run dev")], [L("Executar Sem Depuração", "Run Without Debugging"), "Ctrl+F5", () => terminal("npm run dev")]]],
+    ["Terminal", [[L("Novo Terminal", "New Terminal"), "", () => terminal()], [L("Executar Tarefa...", "Run Task..."), "", () => terminal("npm run build")]]],
+    [L("Ajuda", "Help"), [[L("Guia de Navegação", "Navigation Guide"), "", () => setTourOn(true)], [L("Bem-vindo", "Welcome"), "", () => open("welcome")], [L("Mostrar Todos os Comandos", "Show All Commands"), "Ctrl+Shift+P", () => setQuick(">")], "-", [L("Pedir Orçamento", "Get a Quote"), "", () => open("servicos.md#orcamento")], [L("Meu GitHub", "My GitHub"), "", () => window.open(GITHUB, "_blank")], "-", [L("Como Navegar", "How to Navigate"), "", () => open("README.md")], [L("Sobre Mim", "About Me"), "", () => open("sobre-mim.md")]]],
   ];
 
   const commands: Command[] = [
+    { label: L("Preferências: Configurar Idioma de Exibição", "Preferences: Configure Display Language"), desc: L("English", "Português"), run: toggleLocale },
     ...MENUS.flatMap(([m, items]) =>
       items.flatMap((i) => (i !== "-" && i[2] ? [{ label: `${m}: ${i[0].replace("...", "")}`, key: i[1], run: i[2] }] : [])),
     ),
-    { label: "Exibir: Fechar Todos os Editores", run: () => (setTabs([]), setActive(null), setPreview(null)) },
-    { label: "Desenvolvedor: Recarregar Janela", key: "Ctrl+R", run: p.onReload },
-    { label: "Git: Clonar", run: () => window.open(`${GITHUB}/portfolioyyhago-vscode`, "_blank") },
+    { label: L("Exibir: Fechar Todos os Editores", "View: Close All Editors"), run: () => (setTabs([]), setActive(null), setPreview(null)) },
+    { label: L("Desenvolvedor: Recarregar Janela", "Developer: Reload Window"), key: "Ctrl+R", run: p.onReload },
+    { label: L("Git: Clonar", "Git: Clone"), run: () => window.open(`${GITHUB}/portfolioyyhago-vscode`, "_blank") },
   ];
 
   useEffect(() => {
@@ -197,6 +234,13 @@ export default function VSCode(p: Props) {
 
   const file = files.find((f) => f.path === active);
   const cursor = (active && cursors[active]) || { ln: 1, col: 1 };
+  const ACTIVITY: [View, string, string][] = [
+    ["explorer", "files", L("Explorador (Ctrl+Shift+E)", "Explorer (Ctrl+Shift+E)")],
+    ["search", "search", L("Pesquisar (Ctrl+Shift+F)", "Search (Ctrl+Shift+F)")],
+    ["scm", "source-control", L("Controle do Código-Fonte (Ctrl+Shift+G)", "Source Control (Ctrl+Shift+G)")],
+    ["debug", "debug-alt", L("Executar e Depurar (Ctrl+Shift+D)", "Run and Debug (Ctrl+Shift+D)")],
+    ["extensions", "extensions", L("Extensões (Ctrl+Shift+X)", "Extensions (Ctrl+Shift+X)")],
+  ];
 
   return (
     <LiveCtx.Provider value={p.live}>
@@ -212,7 +256,7 @@ export default function VSCode(p: Props) {
         <div className="vsc-logo">
           <VSCodeLogo size={16} />
         </div>
-        <button className="vsc-burger tb codicon codicon-menu" data-nodrag title="Menu do Aplicativo" onClick={() => setQuick(">")} />
+        <button className="vsc-burger tb codicon codicon-menu" data-nodrag title={L("Menu do Aplicativo", "Application Menu")} onClick={() => setQuick(">")} />
         <div className="vsc-menubar" data-nodrag>
           {MENUS.map(([name, items]) => (
             <div
@@ -233,7 +277,7 @@ export default function VSCode(p: Props) {
                         className="menu-item"
                         onClick={() => {
                           setMenu(null);
-                          (it[2] ?? (() => notify(READ_ONLY)))();
+                          (it[2] ?? readOnly)();
                         }}
                       >
                         <span>{it[0]}</span>
@@ -247,22 +291,22 @@ export default function VSCode(p: Props) {
           ))}
         </div>
         <div className="vsc-cc" data-nodrag>
-          <button className="tb codicon codicon-arrow-left" title="Voltar (Alt+LeftArrow)" disabled={hist.i <= 0} onClick={() => step(-1)} />
-          <button className="tb codicon codicon-arrow-right" title="Avançar (Alt+RightArrow)" disabled={hist.i >= hist.list.length - 1} onClick={() => step(1)} />
-          <button className="cc-box" onClick={() => setQuick("")} title="Pesquisar arquivos pelo nome (Ctrl+P)">
+          <button className="tb codicon codicon-arrow-left" title={L("Voltar (Alt+LeftArrow)", "Go Back (Alt+LeftArrow)")} disabled={hist.i <= 0} onClick={() => step(-1)} />
+          <button className="tb codicon codicon-arrow-right" title={L("Avançar (Alt+RightArrow)", "Go Forward (Alt+RightArrow)")} disabled={hist.i >= hist.list.length - 1} onClick={() => step(1)} />
+          <button className="cc-box" onClick={() => setQuick("")} title={L("Pesquisar arquivos pelo nome (Ctrl+P)", "Search files by name (Ctrl+P)")}>
             <i className="codicon codicon-search" />
             <span>{ROOT}</span>
           </button>
         </div>
         <div className="vsc-title-actions" data-nodrag>
-          <button className={`tb codicon codicon-layout-sidebar-left${sideOpen ? "" : "-off"}`} title="Alternar Barra Lateral Primária (Ctrl+B)" onClick={() => setSideOpen((v) => !v)} />
-          <button className={`tb codicon codicon-layout-panel${panel ? "" : "-off"}`} title="Alternar Painel (Ctrl+J)" onClick={() => setPanel((v) => !v)} />
-          <button className="tb codicon codicon-layout" title="Personalizar Layout..." onClick={() => setQuick(">Exibir")} />
+          <button className={`tb codicon codicon-layout-sidebar-left${sideOpen ? "" : "-off"}`} title={L("Alternar Barra Lateral Primária (Ctrl+B)", "Toggle Primary Side Bar (Ctrl+B)")} onClick={() => setSideOpen((v) => !v)} />
+          <button className={`tb codicon codicon-layout-panel${panel ? "" : "-off"}`} title={L("Alternar Painel (Ctrl+J)", "Toggle Panel (Ctrl+J)")} onClick={() => setPanel((v) => !v)} />
+          <button className="tb codicon codicon-layout" title={L("Personalizar Layout...", "Customize Layout...")} onClick={() => setQuick(`>${VIEW}`)} />
         </div>
         <div className="vsc-winctl" data-nodrag>
-          <button className="codicon codicon-chrome-minimize" title="Minimizar" onClick={p.onMinimize} />
-          <button className={`codicon codicon-chrome-${p.maximized ? "restore" : "maximize"}`} title={p.maximized ? "Restaurar" : "Maximizar"} onClick={p.onMaximize} />
-          <button className="codicon codicon-chrome-close close" title="Fechar" onClick={p.onClose} />
+          <button className="codicon codicon-chrome-minimize" title={L("Minimizar", "Minimize")} onClick={p.onMinimize} />
+          <button className={`codicon codicon-chrome-${p.maximized ? "restore" : "maximize"}`} title={p.maximized ? L("Restaurar", "Restore") : L("Maximizar", "Maximize")} onClick={p.onMaximize} />
+          <button className="codicon codicon-chrome-close close" title={L("Fechar", "Close")} onClick={p.onClose} />
         </div>
       </div>
 
@@ -279,15 +323,17 @@ export default function VSCode(p: Props) {
             </button>
           ))}
           <div className="act-sep" />
-          {LINKS.map(([icon, title, href]) => (
-            <a key={icon} className="act act-link" title={title} href={href} target="_blank" rel="noreferrer">
-              <Icon name={icon} />
-            </a>
-          ))}
+          <div className="act-links">
+            {LINKS.map(([icon, title, href]) => (
+              <a key={icon} className="act act-link" title={title} href={href} target="_blank" rel="noreferrer">
+                <Icon name={icon} />
+              </a>
+            ))}
+          </div>
           <div style={{ flex: 1 }} />
-          <button className={`act codicon codicon-terminal ${panel ? "on-soft" : ""}`} title="Alternar Terminal (Ctrl+J)" onClick={() => setPanel((v) => !v)} />
-          <button className="act codicon codicon-account" title="Contas" onClick={() => open("sobre-mim.md")} />
-          <button className="act codicon codicon-settings-gear" title="Gerenciar" onClick={() => setQuick(">")} />
+          <button className={`act codicon codicon-terminal ${panel ? "on-soft" : ""}`} title={L("Alternar Terminal (Ctrl+J)", "Toggle Terminal (Ctrl+J)")} onClick={() => setPanel((v) => !v)} />
+          <button className="act codicon codicon-account" title={L("Contas", "Accounts")} onClick={() => open("sobre-mim.md")} />
+          <button className="act codicon codicon-settings-gear" title={L("Gerenciar", "Manage")} onClick={() => setQuick(">")} />
         </div>
 
         {sideOpen && (
@@ -344,23 +390,26 @@ export default function VSCode(p: Props) {
       </div>
 
       <div className="vsc-status">
-        <button className="sb remote" title="Abrir o repositório remoto no GitHub" onClick={() => window.open(GITHUB, "_blank")}>
+        <button className="sb remote" title={L("Abrir o repositório remoto no GitHub", "Open the remote repository on GitHub")} onClick={() => window.open(GITHUB, "_blank")}>
           <i className="codicon codicon-remote" />
         </button>
-        <button className="sb" title="main* (Controle do Código-Fonte)" onClick={() => show("scm")}>
+        <button className="sb" title={L("main* (Controle do Código-Fonte)", "main* (Source Control)")} onClick={() => show("scm")}>
           <i className="codicon codicon-git-branch" /> main*
         </button>
-        <button className="sb" title="Sincronizar Alterações" onClick={() => terminal("git status")}>
+        <button className="sb" title={L("Sincronizar Alterações", "Synchronize Changes")} onClick={() => terminal("git status")}>
           <i className="codicon codicon-sync" />
         </button>
-        <button className="sb" title="Nenhum Problema" onClick={() => (setPanel(true), setPanelTab("PROBLEMAS"))}>
+        <button className="sb" title={L("Nenhum Problema", "No Problems")} onClick={() => (setPanel(true), setPanelTab("PROBLEMS"))}>
           <i className="codicon codicon-error" /> 0 <i className="codicon codicon-warning" /> 0
+        </button>
+        <button className="sb sb-guide" title={L("Guia de navegação", "Navigation guide")} onClick={() => setTourOn(true)}>
+          <i className="codicon codicon-question" /> {L("Guia", "Guide")}
         </button>
         <span style={{ flex: 1 }} />
         {file && !(file.path.endsWith(".md") && !raw.has(file.path)) && (
           <>
             <span className="sb sb-info">Ln {cursor.ln}, Col {cursor.col}</span>
-            <span className="sb sb-info sb-extra">Espaços: 2</span>
+            <span className="sb sb-info sb-extra">{L("Espaços", "Spaces")}: 2</span>
             <span className="sb sb-info sb-extra">UTF-8</span>
             <span className="sb sb-info sb-extra">LF</span>
             <span className="sb sb-info">
@@ -368,10 +417,20 @@ export default function VSCode(p: Props) {
             </span>
           </>
         )}
-        <button className="sb" title="Notificações" onClick={() => notify("Nenhuma notificação nova. Valeu pela visita!")}>
+        <button className="sb sb-lang" title={L("Idioma de exibição, clique para ler em inglês", "Display language, click to read in Portuguese")} onClick={toggleLocale}>
+          <i className="codicon codicon-globe" /> {locale === "en" ? "EN" : "PT"}
+        </button>
+        <button className="sb" title={L("Notificações", "Notifications")} onClick={() => notify(L("Nenhuma notificação nova. Valeu pela visita!", "No new notifications. Thanks for stopping by!"))}>
           <i className="codicon codicon-bell" />
         </button>
       </div>
+      {tourOn && (
+        <Tour
+          onPrepare={(p) => (p === "explorer" ? show("explorer") : setPanel(true))}
+          onClose={endTour}
+          onFinish={() => (endTour(), open("projetos.md"))}
+        />
+      )}
     </div>
     </LiveCtx.Provider>
   );
@@ -392,18 +451,22 @@ function fuzzy(q: string, s: string): number[] | null {
 
 function QuickOpen({ init, commands, api, onClose }: { init: string; commands: Command[]; api: Api; onClose: () => void }) {
   const { files } = useLive();
+  const L = pick(useLocale().locale);
   const [q, setQ] = useState(init);
   const [sel, setSel] = useState(0);
   const isCmd = q.startsWith(">");
   const query = isCmd ? q.slice(1).trim() : q.trim();
   const source: Command[] = isCmd
     ? commands
-    : files.map((f) => ({
-        label: f.path.split("/").pop()!,
-        desc: f.path.includes("/") ? f.path.slice(0, f.path.lastIndexOf("/")) : "",
-        icon: <FileIcon name={f.path} />,
-        run: () => api.open(f.path),
-      }));
+    : files.map((f) => {
+        const name = shown(files, f.path);
+        return {
+          label: baseName(name),
+          desc: name.includes("/") ? name.slice(0, name.lastIndexOf("/")) : "",
+          icon: <FileIcon name={f.path} />,
+          run: () => api.open(f.path),
+        };
+      });
   const spread = (m: number[]) => (m.length ? m[m.length - 1] - m[0] : 0);
   const items = source
     .flatMap((c) => {
@@ -424,7 +487,7 @@ function QuickOpen({ init, commands, api, onClose }: { init: string; commands: C
           autoFocus
           value={q}
           spellCheck={false}
-          placeholder={isCmd ? "" : "Pesquisar arquivos pelo nome (acrescente > para mostrar e executar comandos)"}
+          placeholder={isCmd ? "" : L("Pesquisar arquivos pelo nome (acrescente > para mostrar e executar comandos)", "Search files by name (append > to show and run commands)")}
           onChange={(e) => (setQ(e.target.value), setSel(0))}
           onKeyDown={(e) => {
             if (e.key === "Escape") onClose();
@@ -436,7 +499,7 @@ function QuickOpen({ init, commands, api, onClose }: { init: string; commands: C
           }}
         />
         <div className="qi-list">
-          {!isCmd && !query && <div className="qi-label">arquivos do workspace</div>}
+          {!isCmd && !query && <div className="qi-label">{L("arquivos do workspace", "workspace files")}</div>}
           {items.map((c, i) => (
             <div key={c.label + i} className={`qi-item ${i === sel ? "sel" : ""}`} onMouseMove={() => setSel(i)} onClick={() => run(c)}>
               {c.icon}
@@ -447,7 +510,7 @@ function QuickOpen({ init, commands, api, onClose }: { init: string; commands: C
               {c.key && <Keys k={c.key} />}
             </div>
           ))}
-          {!items.length && <div className="qi-empty">{isCmd ? "Nenhum comando correspondente" : "Nenhum resultado correspondente"}</div>}
+          {!items.length && <div className="qi-empty">{isCmd ? L("Nenhum comando correspondente", "No matching commands") : L("Nenhum resultado correspondente", "No matching results")}</div>}
         </div>
       </div>
     </>

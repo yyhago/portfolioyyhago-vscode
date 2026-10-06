@@ -1,42 +1,44 @@
 import { type ReactNode, useMemo, useState } from "react";
 import { FileIcon, FolderIcon } from "../icons";
-import { extensions, ROOT, type VFile } from "./data";
-import { useLive } from "./live-context";
+import { baseName, ROOT, shown, type Ext, type VFile } from "./data";
+import { extensionsFor } from "./data-en";
+import { useL, useLive, useLocale } from "./live-context";
 import { ExtIcon, headingId } from "./Markdown";
 import type { Api, View } from "./VSCode";
 
-const TITLES: Record<View, string> = {
-  explorer: "Explorador",
-  search: "Pesquisar",
-  scm: "Controle do Código-Fonte",
-  debug: "Executar e Depurar",
-  extensions: "Extensões",
-};
-const READ_ONLY = "Aqui é só leitura, mas pode fuçar à vontade.";
-const base = (p: string) => p.split("/").pop()!;
 const dir = (p: string) => (p.includes("/") ? p.slice(0, p.lastIndexOf("/")) : "");
 
 type Props = { view: View; width: number; active: string | null; booting: boolean; api: Api };
 
 export default function Sidebar({ view, width, active, booting, api }: Props) {
+  const L = useL();
+  const TITLES: Record<View, string> = {
+    explorer: L("Explorador", "Explorer"),
+    search: L("Pesquisar", "Search"),
+    scm: L("Controle do Código-Fonte", "Source Control"),
+    debug: L("Executar e Depurar", "Run and Debug"),
+    extensions: L("Extensões", "Extensions"),
+  };
   return (
     <aside className="vsc-side" style={{ width }}>
       {booting && <div className="progress" />}
       <div className="side-head">
         <span>{TITLES[view]}</span>
-        <button className="tb codicon codicon-ellipsis" title="Mais Ações..." onClick={() => api.quick(">")} />
+        <button className="tb codicon codicon-ellipsis" title={L("Mais Ações...", "More Actions...")} onClick={() => api.quick(">")} />
       </div>
       {!booting && view === "explorer" && <Explorer active={active} api={api} />}
       {view === "search" && <Search api={api} />}
       {view === "scm" && <Scm api={api} />}
       {view === "debug" && (
         <div className="side-pad">
-          <button className="btn wide" onClick={() => api.terminal("npm run dev")}>Executar e Depurar</button>
+          <button className="btn wide" onClick={() => api.terminal("npm run dev")}>{TITLES.debug}</button>
           <p>
-            Para personalizar Executar e Depurar, <a onClick={() => api.notify(READ_ONLY)}>crie um arquivo launch.json</a>.
+            {L("Para personalizar Executar e Depurar, ", "To customize Run and Debug, ")}
+            <a onClick={api.readOnly}>{L("crie um arquivo launch.json", "create a launch.json file")}</a>.
           </p>
           <p>
-            Mostrar <a onClick={() => api.terminal("npm run dev")}>todas as configurações de depuração automática</a>.
+            {L("Mostrar ", "Show ")}
+            <a onClick={() => api.terminal("npm run dev")}>{L("todas as configurações de depuração automática", "all automatic debug configurations")}</a>.
           </p>
         </div>
       )}
@@ -51,9 +53,10 @@ function buildTree(files: VFile[]): Node[] {
   const root: Node = { name: "", path: "", dir: true, children: [] };
   for (const f of files) {
     let cur = root;
+    const label = (f.alias ?? f.path).split("/");
     f.path.split("/").forEach((part, i, all) => {
-      let n = cur.children.find((c) => c.name === part);
-      if (!n) cur.children.push((n = { name: part, path: all.slice(0, i + 1).join("/"), dir: i < all.length - 1, children: [] }));
+      let n = cur.children.find((c) => c.path === all.slice(0, i + 1).join("/"));
+      if (!n) cur.children.push((n = { name: label[i] ?? part, path: all.slice(0, i + 1).join("/"), dir: i < all.length - 1, children: [] }));
       if (!n.git) n.git = f.git;
       cur = n;
     });
@@ -79,6 +82,7 @@ function symbols(f?: VFile) {
 
 function Explorer({ active, api }: { active: string | null; api: Api }) {
   const { files } = useLive();
+  const L = useL();
   const [outlineOpen, setOutlineOpen] = useState(false);
   const outline = useMemo(() => symbols(files.find((f) => f.path === active)), [files, active]);
   const tree = useMemo(() => buildTree(files), [files]);
@@ -91,9 +95,10 @@ function Explorer({ active, api }: { active: string | null; api: Api }) {
     return (
       <div key={n.path}>
         <div
+          data-path={n.path}
           className={`row ${active === n.path ? "active" : ""} ${sel === n.path ? "sel" : ""}`}
           style={{ paddingLeft: 8 + depth * 8 }}
-          title={`~\\${ROOT}\\${n.path.replaceAll("/", "\\")}`}
+          title={`~\\${ROOT}\\${shown(files, n.path).replaceAll("/", "\\")}`}
           onClick={() => {
             setSel(n.path);
             if (!n.dir) return api.open(n.path, false);
@@ -123,20 +128,20 @@ function Explorer({ active, api }: { active: string | null; api: Api }) {
         <i className={`codicon codicon-chevron-${rootOpen ? "down" : "right"}`} />
         <span>{ROOT.replace(/(^|-)\w/g, (s) => s.toUpperCase())}</span>
         <div className="sec-actions" onClick={(e) => e.stopPropagation()}>
-          <button className="tb codicon codicon-new-file" title="Novo Arquivo..." onClick={() => api.notify(READ_ONLY)} />
-          <button className="tb codicon codicon-new-folder" title="Nova Pasta..." onClick={() => api.notify(READ_ONLY)} />
-          <button className="tb codicon codicon-refresh" title="Atualizar Explorador" onClick={() => setOpenDirs(new Set(["docs"]))} />
-          <button className="tb codicon codicon-collapse-all" title="Recolher Pastas no Explorador" onClick={() => setOpenDirs(new Set())} />
+          <button className="tb codicon codicon-new-file" title={L("Novo Arquivo...", "New File...")} onClick={api.readOnly} />
+          <button className="tb codicon codicon-new-folder" title={L("Nova Pasta...", "New Folder...")} onClick={api.readOnly} />
+          <button className="tb codicon codicon-refresh" title={L("Atualizar Explorador", "Refresh Explorer")} onClick={() => setOpenDirs(new Set(["docs"]))} />
+          <button className="tb codicon codicon-collapse-all" title={L("Recolher Pastas no Explorador", "Collapse Folders in Explorer")} onClick={() => setOpenDirs(new Set())} />
         </div>
       </div>
       {rootOpen && <div className="tree">{tree.map((n) => row(n, 0))}</div>}
       <div className="sec-bottom">
         <div className="sec-head" onClick={() => setOutlineOpen((v) => !v)}>
-          <i className={`codicon codicon-chevron-${outlineOpen ? "down" : "right"}`} /> <span>Estrutura Do Código</span>
+          <i className={`codicon codicon-chevron-${outlineOpen ? "down" : "right"}`} /> <span>{L("Estrutura Do Código", "Outline")}</span>
         </div>
         {outlineOpen && (
           <div className="outline">
-            {!outline.length && <div className="outline-empty">O editor ativo não tem símbolos.</div>}
+            {!outline.length && <div className="outline-empty">{L("O editor ativo não tem símbolos.", "The active editor has no symbols.")}</div>}
             {outline.map((s) => (
               <div
                 key={s.line}
@@ -155,7 +160,7 @@ function Explorer({ active, api }: { active: string | null; api: Api }) {
           </div>
         )}
         <div className="sec-head" onClick={() => api.terminal("git log")}>
-          <i className="codicon codicon-chevron-right" /> <span>Linha Do Tempo</span>
+          <i className="codicon codicon-chevron-right" /> <span>{L("Linha Do Tempo", "Timeline")}</span>
         </div>
       </div>
     </div>
@@ -164,6 +169,7 @@ function Explorer({ active, api }: { active: string | null; api: Api }) {
 
 function Search({ api }: { api: Api }) {
   const { files } = useLive();
+  const L = useL();
   const [q, setQ] = useState("");
   const [opts, setOpts] = useState({ cs: false, word: false, re: false });
   const toggle = (k: keyof typeof opts) => setOpts((o) => ({ ...o, [k]: !o[k] }));
@@ -189,32 +195,33 @@ function Search({ api }: { api: Api }) {
       .filter((r) => r.hits.length);
   }, [matcher, files]);
   const total = results.reduce((a, r) => a + r.hits.length, 0);
+  const plural = (n: number, pt: string, en: string) => `${n} ${L(pt, en)}${n > 1 ? "s" : ""}`;
 
   return (
     <div className="search">
       <div className="search-box">
-        <input autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder="Pesquisar" spellCheck={false} />
-        <button className={`tog codicon codicon-case-sensitive ${opts.cs ? "on" : ""}`} title="Diferenciar Maiúsculas de Minúsculas" onClick={() => toggle("cs")} />
-        <button className={`tog codicon codicon-whole-word ${opts.word ? "on" : ""}`} title="Coincidir Palavra Inteira" onClick={() => toggle("word")} />
-        <button className={`tog codicon codicon-regex ${opts.re ? "on" : ""}`} title="Usar Expressão Regular" onClick={() => toggle("re")} />
+        <input autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder={L("Pesquisar", "Search")} spellCheck={false} />
+        <button className={`tog codicon codicon-case-sensitive ${opts.cs ? "on" : ""}`} title={L("Diferenciar Maiúsculas de Minúsculas", "Match Case")} onClick={() => toggle("cs")} />
+        <button className={`tog codicon codicon-whole-word ${opts.word ? "on" : ""}`} title={L("Coincidir Palavra Inteira", "Match Whole Word")} onClick={() => toggle("word")} />
+        <button className={`tog codicon codicon-regex ${opts.re ? "on" : ""}`} title={L("Usar Expressão Regular", "Use Regular Expression")} onClick={() => toggle("re")} />
       </div>
       {q && (
         <div className="search-summary">
           {matcher === undefined
-            ? "Expressão regular inválida."
+            ? L("Expressão regular inválida.", "Invalid regular expression.")
             : total
-              ? `${total} resultado${total > 1 ? "s" : ""} em ${results.length} arquivo${results.length > 1 ? "s" : ""}`
-              : "Nenhum resultado encontrado."}
+              ? `${plural(total, "resultado", "result")} ${L("em", "in")} ${plural(results.length, "arquivo", "file")}`
+              : L("Nenhum resultado encontrado.", "No results found.")}
         </div>
       )}
-      {!q && <div className="search-summary dim">Experimente pesquisar “NestJS”, “ERP” ou “Docker”.</div>}
+      {!q && <div className="search-summary dim">{L("Experimente pesquisar “NestJS”, “ERP” ou “Docker”.", "Try searching for “NestJS”, “ERP” or “Docker”.")}</div>}
       <div className="search-results">
         {results.map(({ f, hits }) => (
           <div key={f.path}>
             <div className="row" style={{ paddingLeft: 4 }}>
               <i className="twistie codicon codicon-chevron-down" />
               <FileIcon name={f.path} />
-              <span className="row-label">{base(f.path)}</span>
+              <span className="row-label">{baseName(f.alias ?? f.path)}</span>
               <span className="row-dim">{dir(f.path)}</span>
               <span className="count">{hits.length}</span>
             </div>
@@ -240,23 +247,25 @@ function Search({ api }: { api: Api }) {
 
 function Scm({ api }: { api: Api }) {
   const { files } = useLive();
+  const L = useL();
   const changed = files.filter((f) => f.git);
+  const joke = () => api.notify(L("Aqui só eu faço commit, haha.", "Only I get to commit here, haha."));
   return (
     <div className="scm">
       <div className="side-pad">
         <textarea
           rows={1}
           className="scm-input"
-          placeholder="Mensagem (Ctrl+Enter)"
+          placeholder={L("Mensagem (Ctrl+Enter)", "Message (Ctrl+Enter)")}
           spellCheck={false}
-          onKeyDown={(e) => e.key === "Enter" && (e.ctrlKey || e.metaKey) && (e.preventDefault(), api.notify("Aqui só eu faço commit, haha."))}
+          onKeyDown={(e) => e.key === "Enter" && (e.ctrlKey || e.metaKey) && (e.preventDefault(), joke())}
         />
-        <button className="btn wide" onClick={() => api.notify("Aqui só eu faço commit, haha.")}>
-          <i className="codicon codicon-check" /> Confirmar
+        <button className="btn wide" onClick={joke}>
+          <i className="codicon codicon-check" /> {L("Confirmar", "Commit")}
         </button>
       </div>
       <div className="sec-head">
-        <i className="codicon codicon-chevron-down" /> <span>Alterações</span>
+        <i className="codicon codicon-chevron-down" /> <span>{L("Alterações", "Changes")}</span>
         <span className="count" style={{ marginLeft: "auto", marginRight: 12 }}>
           {changed.length}
         </span>
@@ -264,7 +273,7 @@ function Scm({ api }: { api: Api }) {
       {changed.map((f) => (
         <div key={f.path} className="row" style={{ paddingLeft: 22 }} onClick={() => api.open(f.path)}>
           <FileIcon name={f.path} />
-          <span className={`row-label git-${f.git}`}>{base(f.path)}</span>
+          <span className={`row-label git-${f.git}`}>{baseName(f.alias ?? f.path)}</span>
           <span className="row-dim">{dir(f.path)}</span>
           <span className={`git-letter git-${f.git}`}>{f.git}</span>
         </div>
@@ -274,9 +283,11 @@ function Scm({ api }: { api: Api }) {
 }
 
 function Extensions({ api }: { api: Api }) {
+  const L = useL();
+  const all = extensionsFor(useLocale().locale);
   const [q, setQ] = useState("");
   const [closed, setClosed] = useState<Set<string>>(new Set());
-  const list = extensions.filter((e) => `${e.name} ${e.desc} ${e.cat}`.toLowerCase().includes(q.toLowerCase()));
+  const list = all.filter((e) => `${e.name} ${e.desc} ${e.cat}`.toLowerCase().includes(q.toLowerCase()));
   const cats = [...new Set(list.map((e) => e.cat))];
   const toggle = (cat: string) => {
     const next = new Set(closed);
@@ -287,7 +298,7 @@ function Extensions({ api }: { api: Api }) {
   return (
     <div className="exts">
       <div className="side-pad" style={{ paddingTop: 0 }}>
-        <input className="input" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Pesquisar Extensões no Marketplace" spellCheck={false} />
+        <input className="input" value={q} onChange={(e) => setQ(e.target.value)} placeholder={L("Pesquisar Extensões no Marketplace", "Search Extensions in Marketplace")} spellCheck={false} />
       </div>
       {cats.map((cat) => {
         const items = list.filter((e) => e.cat === cat);
@@ -304,24 +315,24 @@ function Extensions({ api }: { api: Api }) {
           </div>
         );
       })}
-      {!list.length && <div className="search-summary">Nenhuma extensão encontrada.</div>}
+      {!list.length && <div className="search-summary">{L("Nenhuma extensão encontrada.", "No extensions found.")}</div>}
     </div>
   );
 }
 
-function ExtItem({ e, api }: { e: (typeof extensions)[number]; api: Api }) {
+function ExtItem({ e, api }: { e: Ext; api: Api }) {
   return (
-        <div className="ext-item" onClick={() => api.open(`ext:${e.id}`)}>
-          <ExtIcon ext={e} />
-          <div className="ext-body">
-            <div className="ext-name">{e.name}</div>
-            <div className="ext-desc">{e.desc}</div>
-            <div className="ext-pub">
-              <i className="codicon codicon-verified-filled" />
-              <span>{e.publisher}</span>
-              <i className="codicon codicon-gear ext-gear" />
-            </div>
-          </div>
+    <div className="ext-item" onClick={() => api.open(`ext:${e.id}`)}>
+      <ExtIcon ext={e} />
+      <div className="ext-body">
+        <div className="ext-name">{e.name}</div>
+        <div className="ext-desc">{e.desc}</div>
+        <div className="ext-pub">
+          <i className="codicon codicon-verified-filled" />
+          <span>{e.publisher}</span>
+          <i className="codicon codicon-gear ext-gear" />
         </div>
+      </div>
+    </div>
   );
 }

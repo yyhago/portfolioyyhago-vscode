@@ -4,8 +4,10 @@ import { type PointerEvent, useEffect, useLayoutEffect, useRef, useState } from 
 import { GitHubMark, LinkedInMark, PdfDoc, RecycleBin, VSCodeLogo, WinFlag, XPFolder } from "./icons";
 import { onDrag } from "./drag";
 import { type Cell, ICON_H, ICON_W, makeGrid, settle } from "./grid";
+import { dateLocale, detectLocale, LOCALE_KEY, pick, type Locale } from "./i18n";
 import { GITHUB, LINKEDIN } from "./vscode/data";
 import type { Live } from "./vscode/live";
+import { LocaleCtx } from "./vscode/live-context";
 import VSCode from "./vscode/VSCode";
 
 type Win = "closed" | "open" | "min";
@@ -37,7 +39,9 @@ function zoom(el: HTMLElement, target: Element | null, out: boolean) {
   return el.animate(out ? [full, small] : [small, full], { duration: out ? 220 : 280, easing: "cubic-bezier(.2,.8,.2,1)" }).finished;
 }
 
-export default function Desktop({ live }: { live: Live }) {
+export default function Desktop({ live }: { live: Record<Locale, Live> }) {
+  const [locale, setLocaleState] = useState<Locale>("pt");
+  const [langMenu, setLangMenu] = useState(false);
   const [selected, setSelected] = useState<string[]>([]);
   const [win, setWin] = useState<Win>("closed");
   const [max, setMax] = useState(false);
@@ -46,24 +50,42 @@ export default function Desktop({ live }: { live: Live }) {
   const [focused, setFocused] = useState(true);
   const [startOpen, setStartOpen] = useState(false);
   const [balloon, setBalloon] = useState(false);
+  const [opened, setOpened] = useState(false);
   const [off, setOff] = useState<null | "desligando" | "seguro">(null);
   const [band, setBand] = useState<{ x: number; y: number; w: number; h: number } | null>(null);
   const [request, setRequest] = useState<{ path: string; n: number } | null>(null);
   const [boot, setBoot] = useState(0);
-  const [clock, setClock] = useState("");
+  const [now, setNow] = useState<Date | null>(null);
   const [cells, setCells] = useState<Record<string, Cell> | null>(null);
   const [iconDrag, setIconDrag] = useState<{ ids: string[]; dx: number; dy: number } | null>(null);
   const winRef = useRef<HTMLDivElement>(null);
   const iconRef = useRef<HTMLButtonElement>(null);
   const taskRef = useRef<HTMLButtonElement>(null);
   const prev = useRef<Win>("closed");
+  const L = pick(locale);
+
+  const setLocale = (l: Locale) => {
+    setLocaleState(l);
+    setLangMenu(false);
+    try {
+      localStorage.setItem(LOCALE_KEY, l);
+    } catch {}
+  };
 
   useEffect(() => {
-    const frame = requestAnimationFrame(() => setCells(defaultLayout()));
+    const frame = requestAnimationFrame(() => {
+      setCells(defaultLayout());
+      const found = detectLocale();
+      if (found) setLocaleState(found);
+    });
     const onResize = () => setCells(defaultLayout());
     addEventListener("resize", onResize);
     return () => (cancelAnimationFrame(frame), removeEventListener("resize", onResize));
   }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = locale === "en" ? "en" : "pt-BR";
+  }, [locale]);
 
   useEffect(() => {
     if (off !== "desligando") return;
@@ -75,12 +97,12 @@ export default function Desktop({ live }: { live: Live }) {
   }, [off]);
 
   useEffect(() => {
-    const tick = () => setClock(new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }));
-    tick();
+    const tick = () => setNow(new Date());
+    const first = requestAnimationFrame(tick);
     const t = setInterval(tick, 10_000);
     const show = setTimeout(() => setBalloon(true), 1500);
     const hide = setTimeout(() => setBalloon(false), 16_000);
-    return () => [t, show, hide].forEach(clearTimeout);
+    return () => (cancelAnimationFrame(first), [t, show, hide].forEach(clearTimeout));
   }, []);
 
   useLayoutEffect(() => {
@@ -92,6 +114,7 @@ export default function Desktop({ live }: { live: Live }) {
   }, [win]);
 
   const open = (path?: string) => {
+    setOpened(true);
     setStartOpen(false);
     setBalloon(false);
     if (path) setRequest((r) => ({ path, n: (r?.n ?? 0) + 1 }));
@@ -159,6 +182,7 @@ export default function Desktop({ live }: { live: Live }) {
     setSelected([]);
     setFocused(false);
     setStartOpen(false);
+    setLangMenu(false);
     const x0 = e.clientX, y0 = e.clientY;
     const icons = [...document.querySelectorAll<HTMLElement>("[data-icon]")].map((el) => ({ id: el.dataset.icon!, r: el.getBoundingClientRect() }));
     onDrag(e, (dx, dy) => {
@@ -214,13 +238,28 @@ export default function Desktop({ live }: { live: Live }) {
 
   const ICONS = [
     { id: "vscode", label: "Visual Studio Code", img: <VSCodeLogo size={44} />, run: () => open() },
-    { id: "cv", label: "Meu Currículo", img: <PdfDoc size={46} />, run: () => open("curriculo.md") },
-    { id: "github", label: "Meu GitHub", img: <GitHubMark size={42} color="#fff" />, run: () => window.open(GITHUB, "_blank") },
-    { id: "linkedin", label: "Meu LinkedIn", img: <LinkedInMark size={42} />, run: () => window.open(LINKEDIN, "_blank") },
-    { id: "lixeira", label: "Lixeira", img: <RecycleBin size={48} />, run: undefined },
+    { id: "cv", label: L("Meu Currículo", "My Resume"), img: <PdfDoc size={46} />, run: () => open("curriculo.md") },
+    { id: "github", label: L("Meu GitHub", "My GitHub"), img: <GitHubMark size={42} color="#fff" />, run: () => window.open(GITHUB, "_blank") },
+    { id: "linkedin", label: L("Meu LinkedIn", "My LinkedIn"), img: <LinkedInMark size={42} />, run: () => window.open(LINKEDIN, "_blank") },
+    { id: "lixeira", label: L("Lixeira", "Recycle Bin"), img: <RecycleBin size={48} />, run: undefined },
+  ];
+
+  const START: [path: string, label: string, bold?: boolean][] = [
+    ["sobre-mim.md", L("Sobre mim", "About me"), true],
+    ["projetos.md", L("Meus projetos", "My projects"), true],
+    ["servicos.md", L("Serviços", "Services"), true],
+    ["servicos.md#orcamento", L("Pedir orçamento", "Get a quote"), true],
+    ["experiencia.md", L("Experiência", "Experience"), true],
+    ["contato.md", L("Contato", "Contact"), true],
+    ["-", ""],
+    ["habilidades.md", L("Habilidades", "Skills")],
+    ["curriculo.md", L("Meu currículo", "My resume"), true],
+    ["certificados.md", L("Certificações", "Certificates")],
+    ["repositorios.md", L("Repositórios", "Repositories")],
   ];
 
   return (
+    <LocaleCtx.Provider value={{ locale, setLocale }}>
     <div className={`xp ${busy ? "busy" : ""}`} onContextMenu={(e) => e.preventDefault()}>
       <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden>
         <filter id="xp-sel">
@@ -244,7 +283,7 @@ export default function Desktop({ live }: { live: Live }) {
                 key={id}
                 ref={id === "vscode" ? iconRef : undefined}
                 data-icon={id}
-                className={`xp-icon ${selected.includes(id) ? "sel" : ""} ${moving ? "moving" : ""}`}
+                className={`xp-icon ${selected.includes(id) ? "sel" : ""} ${moving ? "moving" : ""} ${id === "vscode" && !opened ? "hint" : ""}`}
                 style={{ left: x, top: y }}
                 onPointerDown={(e) => iconDown(e, id)}
                 onDoubleClick={() => !gesture.dragged && run?.()}
@@ -268,11 +307,11 @@ export default function Desktop({ live }: { live: Live }) {
           className={`xp-win ${max ? "max" : ""}`}
           style={max ? { left: 0, top: 0, width: "100%", height: `calc(100% - ${TASKBAR}px)` } : { left: rect.x, top: rect.y, width: rect.w, height: rect.h }}
           hidden={win === "min"}
-          onPointerDownCapture={() => (setFocused(true), setStartOpen(false))}
+          onPointerDownCapture={() => (setFocused(true), setStartOpen(false), setLangMenu(false))}
         >
           <VSCode
             key={boot}
-            live={live}
+            live={live[locale]}
             focused={focused && win === "open"}
             maximized={max}
             request={request}
@@ -298,26 +337,26 @@ export default function Desktop({ live }: { live: Live }) {
                 <VSCodeLogo size={32} />
                 <span>
                   <b>Visual Studio Code</b>
-                  <small>Meu portfólio</small>
+                  <small>{L("Meu portfólio", "My portfolio")}</small>
                 </span>
               </button>
               <a className="xp-sm-item big" href={GITHUB} target="_blank" rel="noreferrer" onClick={() => setStartOpen(false)}>
                 <GitHubMark size={32} color="#222" />
                 <span>
                   <b>GitHub</b>
-                  <small>Meus repositórios</small>
+                  <small>{L("Meus repositórios", "My repositories")}</small>
                 </span>
               </a>
               <a className="xp-sm-item big" href={LINKEDIN} target="_blank" rel="noreferrer" onClick={() => setStartOpen(false)}>
                 <LinkedInMark size={32} />
                 <span>
                   <b>LinkedIn</b>
-                  <small>Vamos conectar</small>
+                  <small>{L("Vamos conectar", "Let's connect")}</small>
                 </span>
               </a>
               <div className="xp-sm-sep" />
               <div className="xp-sm-all">
-                Todos os programas <span className="xp-arrow">
+                {L("Todos os programas", "All Programs")} <span className="xp-arrow">
                   <svg width="8" height="8" viewBox="0 0 8 8" aria-hidden>
                     <path d="M1 0l7 4-7 4Z" fill="#fff" />
                   </svg>
@@ -325,39 +364,23 @@ export default function Desktop({ live }: { live: Live }) {
               </div>
             </div>
             <div className="xp-sm-right">
-              <button className="xp-sm-item" onClick={() => open("sobre-mim.md")}>
-                <XPFolder /> <b>Sobre mim</b>
-              </button>
-              <button className="xp-sm-item" onClick={() => open("projetos.md")}>
-                <XPFolder /> <b>Meus projetos</b>
-              </button>
-              <button className="xp-sm-item" onClick={() => open("experiencia.md")}>
-                <XPFolder /> <b>Experiência</b>
-              </button>
-              <button className="xp-sm-item" onClick={() => open("contato.md")}>
-                <XPFolder /> <b>Contato</b>
-              </button>
-              <div className="xp-sm-sep" />
-              <button className="xp-sm-item" onClick={() => open("habilidades.md")}>
-                <XPFolder /> Habilidades
-              </button>
-              <button className="xp-sm-item" onClick={() => open("curriculo.md")}>
-                <XPFolder /> <b>Meu currículo</b>
-              </button>
-              <button className="xp-sm-item" onClick={() => open("certificados.md")}>
-                <XPFolder /> Certificações
-              </button>
-              <button className="xp-sm-item" onClick={() => open("repositorios.md")}>
-                <XPFolder /> Repositórios
-              </button>
+              {START.map(([path, label, bold], i) =>
+                path === "-" ? (
+                  <div key={i} className="xp-sm-sep" />
+                ) : (
+                  <button key={i} className="xp-sm-item" onClick={() => open(path)}>
+                    <XPFolder /> {bold ? <b>{label}</b> : label}
+                  </button>
+                ),
+              )}
             </div>
           </div>
           <div className="xp-sm-foot">
             <button onClick={() => location.reload()}>
-              <span className="xp-pw key">⟲</span> Fazer logoff
+              <span className="xp-pw key">⟲</span> {L("Fazer logoff", "Log Off")}
             </button>
             <button onClick={() => (setStartOpen(false), setOff("desligando"))}>
-              <span className="xp-pw">⏻</span> Desligar
+              <span className="xp-pw">⏻</span> {L("Desligar", "Turn Off Computer")}
             </button>
           </div>
         </div>
@@ -365,22 +388,42 @@ export default function Desktop({ live }: { live: Live }) {
 
       {balloon && (
         <div className="xp-balloon" role="status">
-          <button className="xp-balloon-x" onClick={() => setBalloon(false)} aria-label="Fechar">
+          <button className="xp-balloon-x" onClick={() => setBalloon(false)} aria-label={L("Fechar", "Close")}>
             ×
           </button>
           <b>
-            <span className="xp-info">i</span> E aí, tudo certo?
+            <span className="xp-info">i</span> {L("E aí, tudo certo?", "Hey there!")}
           </b>
-          <p>
-            Esse é meu portfólio. Dá dois cliques no <b>Visual Studio Code</b> aqui do lado para ver o que eu faço. No celular, é só tocar.
-          </p>
+          {locale === "en" ? (
+            <p>
+              This is my portfolio. Double click <b>Visual Studio Code</b> right here to see what I do, some of the many clients I work with and my resume. On a phone, just tap.
+            </p>
+          ) : (
+            <p>
+              Esse é meu portfólio. Dá dois cliques no <b>Visual Studio Code</b> aqui do lado para ver o que eu faço, alguns dos muitos clientes que atendo e meu currículo. No celular, é só tocar.
+            </p>
+          )}
+          <button className="xp-balloon-lang" onClick={() => setLocale(locale === "en" ? "pt" : "en")}>
+            {locale === "en" ? "Ver em português" : "Read it in English"}
+          </button>
+        </div>
+      )}
+
+      {langMenu && (
+        <div className="xp-lang-menu" role="menu">
+          {(["pt", "en"] as const).map((l) => (
+            <button key={l} role="menuitemradio" aria-checked={locale === l} className={locale === l ? "on" : ""} onClick={() => setLocale(l)}>
+              <span className="xp-lang-code">{l.toUpperCase()}</span>
+              {l === "pt" ? "Português (Brasil)" : "English"}
+            </button>
+          ))}
         </div>
       )}
 
       <div className="xp-taskbar">
-        <button className={`xp-start ${startOpen ? "on" : ""}`} onClick={() => setStartOpen((o) => !o)}>
+        <button className={`xp-start ${startOpen ? "on" : ""}`} onClick={() => (setStartOpen((o) => !o), setLangMenu(false))}>
           <WinFlag size={22} />
-          <span>iniciar</span>
+          <span>{L("iniciar", "start")}</span>
         </button>
         <div className="xp-tasks">
           {win !== "closed" && (
@@ -390,13 +433,21 @@ export default function Desktop({ live }: { live: Live }) {
             </button>
           )}
         </div>
+        <button
+          className={`xp-lang ${langMenu ? "on" : ""}`}
+          title={L("Idioma, clique para trocar", "Language, click to change")}
+          aria-label={L("Trocar idioma", "Change language")}
+          onClick={() => (setLangMenu((v) => !v), setStartOpen(false), setBalloon(false))}
+        >
+          {locale.toUpperCase()}
+        </button>
         <div className="xp-tray">
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden>
             <path d="M2 6h3l4-3v10l-4-3H2Z" fill="#fff" />
             <path d="M11 5.5a3.5 3.5 0 0 1 0 5M12.5 3.5a6 6 0 0 1 0 9" stroke="#fff" fill="none" strokeWidth="1.2" />
           </svg>
-          <span title={new Date().toLocaleDateString("pt-BR", { dateStyle: "full" })} suppressHydrationWarning>
-            {clock}
+          <span title={now?.toLocaleDateString(dateLocale(locale), { dateStyle: "full" })}>
+            {now?.toLocaleTimeString(dateLocale(locale), { hour: "2-digit", minute: "2-digit" })}
           </span>
         </div>
       </div>
@@ -404,15 +455,16 @@ export default function Desktop({ live }: { live: Live }) {
       {off === "desligando" && (
         <div className="xp-off">
           <WinFlag size={64} />
-          <p>Desligando...</p>
+          <p>{L("Desligando...", "Shutting down...")}</p>
         </div>
       )}
       {off === "seguro" && (
-        <div className="xp-safe" onClick={() => setOff(null)} title="Clique para ligar de novo">
-          <p>É seguro desligar o computador.</p>
-          <small>Pode fechar esta aba. Ou clique para ligar de novo.</small>
+        <div className="xp-safe" onClick={() => setOff(null)} title={L("Clique para ligar de novo", "Click to turn it back on")}>
+          <p>{L("É seguro desligar o computador.", "It's now safe to turn off your computer.")}</p>
+          <small>{L("Pode fechar esta aba. Ou clique para ligar de novo.", "You can close this tab. Or click to turn it back on.")}</small>
         </div>
       )}
     </div>
+    </LocaleCtx.Provider>
   );
 }

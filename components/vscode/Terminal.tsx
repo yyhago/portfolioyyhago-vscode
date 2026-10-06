@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { EMAIL, GITHUB, INSTAGRAM, LINKEDIN, ROOT, TERMINAL, type VFile } from "./data";
+import { dateLocale, pick, type Locale } from "../i18n";
+import { baseName, EMAIL, GITHUB, INSTAGRAM, LINKEDIN, matches, ROOT, type VFile } from "./data";
+import { terminalFor } from "./data-en";
 import { fmtDate, type GitHubData } from "./live";
-import { useLive } from "./live-context";
+import { useLive, useLocale } from "./live-context";
 import type { Api } from "./VSCode";
 
 type Line = { t: string; c?: string } | { cmd: string } | { neofetch: true };
@@ -15,45 +17,79 @@ type Props = {
 };
 
 const RED = "#f14c4c", GREEN = "#23d18b", YELLOW = "#e5e510", DIM = "#8b8b8b", BLUE = "#3b8eea";
-const TABS = ["PROBLEMAS", "SAÍDA", "CONSOLE DE DEPURAÇÃO", "TERMINAL", "PORTAS"];
-const EMPTY: Record<string, string> = {
-  PROBLEMAS: "Nenhum problema foi detectado no workspace.",
-  SAÍDA: "",
-  "CONSOLE DE DEPURAÇÃO": "Nenhuma sessão de depuração rodando. No terminal, npm run dev sobe a API.",
-  PORTAS: "Nenhuma porta encaminhada.",
-};
-const HELP: [string, string][] = [
-  ["sobre", "quem sou eu"],
-  ["experiencia", "onde já trabalhei"],
-  ["projetos", "o que eu construí"],
-  ["habilidades", "tecnologias que uso"],
-  ["formacao", "estudos e idiomas"],
-  ["certificados", "meus 23 certificados"],
-  ["repos", "repositórios públicos, ao vivo do GitHub"],
-  ["cv", "abre meu currículo em PDF"],
-  ["contato", "onde me encontrar"],
-  ["neofetch", "resumo com foto"],
-  ["linkedin", "abre meu LinkedIn"],
-  ["github", "abre meu GitHub"],
-  ["instagram", "abre meu Instagram"],
-  ["email", "escreve um e-mail para mim"],
-  ["open <arquivo>", "abre um arquivo no editor"],
-  ["cat <arquivo>", "mostra o conteúdo de um arquivo"],
-  ["ls", "lista os arquivos"],
-  ["git log", "histórico do projeto"],
-  ["npm run dev", "roda o projeto"],
-  ["clear", "limpa o terminal"],
-  ["exit", "fecha o terminal"],
+const TABS: [id: string, pt: string, en: string][] = [
+  ["PROBLEMS", "PROBLEMAS", "PROBLEMS"],
+  ["OUTPUT", "SAÍDA", "OUTPUT"],
+  ["DEBUG", "CONSOLE DE DEPURAÇÃO", "DEBUG CONSOLE"],
+  ["TERMINAL", "TERMINAL", "TERMINAL"],
+  ["PORTS", "PORTAS", "PORTS"],
 ];
-const ALIASES: Record<string, string> = { stack: "habilidades", certificacoes: "certificados", formação: "formacao", experiência: "experiencia" };
+const EMPTY: Record<string, [string, string]> = {
+  PROBLEMS: ["Nenhum problema foi detectado no workspace.", "No problems have been detected in the workspace."],
+  OUTPUT: ["", ""],
+  DEBUG: ["Nenhuma sessão de depuração rodando. No terminal, npm run dev sobe a API.", "No debug session running. In the terminal, npm run dev starts the API."],
+  PORTS: ["Nenhuma porta encaminhada.", "No forwarded ports."],
+};
+const HELP: [pt: string, en: string, ptDesc: string, enDesc: string][] = [
+  ["sobre", "about", "quem sou eu", "who I am"],
+  ["experiencia", "experience", "onde já trabalhei", "where I've worked"],
+  ["projetos", "projects", "o que eu construí", "what I've built"],
+  ["servicos", "services", "como posso ajudar sua empresa", "how I can help your company"],
+  ["orcamento", "quote", "abre o formulário de orçamento", "opens the quote form"],
+  ["habilidades", "skills", "tecnologias que uso", "the tech I use"],
+  ["formacao", "education", "estudos e idiomas", "studies and languages"],
+  ["certificados", "certificates", "meus 23 certificados", "my 23 certificates"],
+  ["repos", "repos", "repositórios públicos, ao vivo do GitHub", "public repositories, live from GitHub"],
+  ["cv", "cv", "abre meu currículo em PDF", "opens my resume in PDF"],
+  ["contato", "contact", "onde me encontrar", "where to find me"],
+  ["guia", "guide", "mostra o guia de navegação", "shows the navigation guide"],
+  ["idioma", "lang", "troca para inglês", "switches to Portuguese"],
+  ["neofetch", "neofetch", "resumo com foto", "summary with a photo"],
+  ["linkedin", "linkedin", "abre meu LinkedIn", "opens my LinkedIn"],
+  ["github", "github", "abre meu GitHub", "opens my GitHub"],
+  ["instagram", "instagram", "abre meu Instagram", "opens my Instagram"],
+  ["email", "email", "escreve um e-mail para mim", "writes me an email"],
+  ["open <arquivo>", "open <file>", "abre um arquivo no editor", "opens a file in the editor"],
+  ["cat <arquivo>", "cat <file>", "mostra o conteúdo de um arquivo", "prints a file"],
+  ["ls", "ls", "lista os arquivos", "lists the files"],
+  ["git log", "git log", "histórico do projeto", "project history"],
+  ["npm run dev", "npm run dev", "roda o projeto", "runs the project"],
+  ["clear", "clear", "limpa o terminal", "clears the terminal"],
+  ["exit", "exit", "fecha o terminal", "closes the terminal"],
+];
+const ALIASES: Record<string, string> = {
+  about: "sobre",
+  experience: "experiencia",
+  experiência: "experiencia",
+  projects: "projetos",
+  services: "servicos",
+  serviços: "servicos",
+  quote: "orcamento",
+  orçamento: "orcamento",
+  skills: "habilidades",
+  stack: "habilidades",
+  education: "formacao",
+  formação: "formacao",
+  certificates: "certificados",
+  certificacoes: "certificados",
+  contact: "contato",
+  resume: "cv",
+  curriculo: "cv",
+  currículo: "cv",
+  guide: "guia",
+  tour: "guia",
+  lang: "idioma",
+  language: "idioma",
+};
 const LINKS: Record<string, string> = { linkedin: LINKEDIN, github: GITHUB, instagram: INSTAGRAM, email: `mailto:${EMAIL}` };
-const NAMES = [...HELP.map(([c]) => c.split(" ")[0]), "help", "whoami", "date", "echo", "code", "cls"];
+const NAMES = (locale: Locale) => [...HELP.map((h) => h[locale === "en" ? 1 : 0].split(" ")[0]), "help", "whoami", "date", "echo", "code", "cls"];
 
 const text = (s: string, c?: string): Line[] => s.split("\n").map((t) => ({ t, c }));
 const findFile = (files: VFile[], arg: string) => {
-  const a = arg.replaceAll("\\", "/").replace(/^\.\//, "").toLowerCase();
-  return a ? files.find((f) => f.path.toLowerCase() === a || f.path.split("/").pop()!.toLowerCase() === a) : undefined;
+  const a = arg.replaceAll("\\", "/").replace(/^\.\//, "");
+  return a ? files.find((f) => matches(f, a)) : undefined;
 };
+const label = (f: VFile) => f.alias ?? f.path;
 
 const linkify = (t: string) =>
   t.split(/(https?:\/\/\S+)/).map((part, i) =>
@@ -75,47 +111,52 @@ const Prompt = () => (
   </span>
 );
 
-const FETCH: [string, string][] = [
-  ["Nome", "Yhago Felipe Rocha Teles"],
-  ["Cargo", "Desenvolvedor Full Stack"],
-  ["Local", "Hortolândia, São Paulo, Brasil"],
-  ["Stack", "TypeScript, NestJS, Next.js, Python, PHP"],
-  ["Estudo", "Engenharia de Software"],
-  ["Status", "aberto a novas oportunidades"],
-  ["Contato", EMAIL],
-];
 const COLORS = ["#000", "#cd3131", "#0dbc79", "#e5e510", "#2472c8", "#bc3fbc", "#11a8cd", "#e5e5e5"];
 
-const Neofetch = ({ gh }: { gh: GitHubData | null }) => (
-  <div className="neofetch">
-    <img src="/yhago.jpg" alt="Foto de Yhago Felipe" />
-    <div>
-      <div className="nf-title">
-        <span className="p-user">yhago</span>
-        <span className="p-dim">@</span>
-        <span className="p-host">portfolio</span>
-      </div>
-      {FETCH.map(([k, v]) => (
-        <div key={k}>
-          <span className="nf-key">{k}:</span> {v}
+const Neofetch = ({ gh, locale }: { gh: GitHubData | null; locale: Locale }) => {
+  const L = pick(locale);
+  const fetch: [string, string][] = [
+    [L("Nome", "Name"), "Yhago Felipe Rocha Teles"],
+    [L("Cargo", "Role"), L("Desenvolvedor Full Stack", "Full Stack Developer")],
+    [L("Local", "Location"), L("Hortolândia, São Paulo, Brasil", "Hortolândia, São Paulo, Brazil")],
+    ["Stack", "TypeScript, NestJS, Next.js, Python, PHP"],
+    [L("Estudo", "Studies"), L("Engenharia de Software", "Software Engineering")],
+    [L("Contato", "Contact"), EMAIL],
+  ];
+  return (
+    <div className="neofetch">
+      <img src="/yhago.jpg" alt={L("Foto de Yhago Felipe", "Photo of Yhago Felipe")} />
+      <div>
+        <div className="nf-title">
+          <span className="p-user">yhago</span>
+          <span className="p-dim">@</span>
+          <span className="p-host">portfolio</span>
         </div>
-      ))}
-      {gh && (
-        <div>
-          <span className="nf-key">GitHub:</span> {gh.publicRepos} repositórios{gh.contributions ? `, ${gh.contributions.total} contribuições no último ano` : ""}
-        </div>
-      )}
-      <div className="nf-colors">
-        {COLORS.map((c) => (
-          <i key={c} style={{ background: c }} />
+        {fetch.map(([k, v]) => (
+          <div key={k}>
+            <span className="nf-key">{k}</span> {v}
+          </div>
         ))}
+        {gh && (
+          <div>
+            <span className="nf-key">GitHub</span> {gh.publicRepos} {L("repositórios", "repositories")}
+            {gh.contributions ? `, ${gh.contributions.total} ${L("contribuições no último ano", "contributions in the last year")}` : ""}
+          </div>
+        )}
+        <div className="nf-colors">
+          {COLORS.map((c) => (
+            <i key={c} style={{ background: c }} />
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default function Terminal({ tab, setTab, request, api, onClose, onToggleMax }: Props) {
   const { files, gh, cvs } = useLive();
+  const { locale, setLocale } = useLocale();
+  const L = pick(locale);
   const [lines, setLines] = useState<Line[]>(() => [{ neofetch: true }]);
   const [input, setInput] = useState("");
   const [hist, setHist] = useState<string[]>([]);
@@ -136,54 +177,73 @@ export default function Terminal({ tab, setTab, request, api, onClose, onToggleM
     const [first = "", ...args] = raw.trim().split(/\s+/);
     const name = ALIASES[first.toLowerCase()] ?? first.toLowerCase();
     const arg = args.join(" ");
+    const TERMINAL = terminalFor(locale);
     let out: Line[] = [];
     if (name === "repos" && gh) {
       out = [
-        { t: `${gh.publicRepos} repositórios públicos em ${GITHUB}, do mais recente para o mais antigo:`, c: YELLOW },
-        ...gh.repos.map((r) => ({ t: `  ${r.name.padEnd(34)}${(r.language || "").padEnd(12)}${fmtDate(r.pushedAt)}` })),
+        { t: L(`${gh.publicRepos} repositórios públicos em ${GITHUB}, do mais recente para o mais antigo.`, `${gh.publicRepos} public repositories at ${GITHUB}, from newest to oldest.`), c: YELLOW },
+        ...gh.repos.map((r) => ({ t: `  ${r.name.padEnd(34)}${(r.language || "").padEnd(12)}${fmtDate(r.pushedAt, locale)}` })),
         { t: "" },
-        { t: "Mais detalhes: open repositorios.md", c: DIM },
+        { t: L("Para ver mais, digite open repositorios.md", "To see more, type open repositories.md"), c: DIM },
         { t: "" },
       ];
-    } else if (name === "cv" || name === "curriculo") {
-      if (!cvs.length) out = text("O currículo em PDF chega em breve. Veja: open experiencia.md", DIM);
+    } else if (name === "cv") {
+      if (!cvs.length) out = text(L("O currículo em PDF chega em breve. Enquanto isso, digite open experiencia.md", "The PDF resume is coming soon. In the meantime, type open experience.md"), DIM);
       else {
-        const cv = cvs.find((c) => c.lang === (arg.toLowerCase().startsWith("en") ? "en" : "pt")) ?? cvs[0];
+        const cv = cvs.find((c) => c.lang === (arg ? (arg.toLowerCase().startsWith("en") ? "en" : "pt") : locale)) ?? cvs[0];
         window.open(cv.href, "_blank");
         out = [
-          ...text(`Abrindo ${cv.name}...`, DIM),
-          ...cvs.map((c) => ({ t: `  ${c.lang === "pt" ? "Português" : "English  "}  ${location.origin}${c.href}` })),
-          ...text("Use cv en para abrir a versão em inglês.", DIM),
+          ...text(`${L("Abrindo", "Opening")} ${cv.name}...`, DIM),
+          ...cvs.map((c) => ({ t: `  ${c.lang === "pt" ? L("Português", "Portuguese") : L("Inglês   ", "English   ")}  ${location.origin}${c.href}` })),
+          ...text(L("Use cv en para abrir a versão em inglês.", "Use cv pt to open the Portuguese version."), DIM),
           { t: "" },
         ];
       }
     } else if (TERMINAL[name]) out = [...text(TERMINAL[name]), { t: "" }];
     else if (LINKS[name]) {
       window.open(LINKS[name], "_blank");
-      out = text(`Abrindo ${LINKS[name].replace("mailto:", "")}...`, DIM);
+      out = text(`${L("Abrindo", "Opening")} ${LINKS[name].replace("mailto:", "")}...`, DIM);
     } else
       switch (name) {
         case "":
           break;
         case "help":
-          out = [{ t: "Comandos disponíveis:", c: YELLOW }, ...HELP.map(([c, d]) => ({ t: `  ${c.padEnd(17)}${d}` })), { t: "" }];
+          out = [
+            { t: L("Comandos disponíveis", "Available commands"), c: YELLOW },
+            ...HELP.map((h) => ({ t: `  ${(locale === "en" ? h[1] : h[0]).padEnd(17)}${locale === "en" ? h[3] : h[2]}` })),
+            { t: "" },
+          ];
           break;
+        case "guia":
+          api.tour();
+          out = text(L("Abrindo o guia de navegação...", "Opening the navigation guide..."), DIM);
+          break;
+        case "orcamento":
+          api.open("servicos.md#orcamento");
+          out = text(L("Abrindo o formulário de orçamento...", "Opening the quote form..."), DIM);
+          break;
+        case "idioma": {
+          const to: Locale = arg ? (arg.toLowerCase().startsWith("en") ? "en" : "pt") : locale === "en" ? "pt" : "en";
+          setLocale(to);
+          out = text(to === "en" ? "Switching to English..." : "Mudando para português...", DIM);
+          break;
+        }
         case "neofetch":
           out = [{ neofetch: true }, { t: "" }];
           break;
         case "ls":
         case "dir":
-          out = [...text(files.map((f) => f.path).join("   "), BLUE), { t: "" }];
+          out = [...text(files.map(label).join("   "), BLUE), { t: "" }];
           break;
         case "cat":
         case "type":
         case "open":
         case "code": {
           const f = findFile(files, arg);
-          if (!f) out = text(`${name}: ${arg || "?"}: arquivo não encontrado. Tente "ls".`, RED);
+          if (!f) out = text(L(`Não encontrei o arquivo ${arg || "informado"}. Digite ls para ver a lista.`, `Couldn't find the file ${arg || "you asked for"}. Type ls to see the list.`), RED);
           else if (name === "open" || name === "code") {
             api.open(f.path);
-            out = text(`Abrindo ${f.path} no editor...`, DIM);
+            out = text(`${L("Abrindo", "Opening")} ${label(f)} ${L("no editor...", "in the editor...")}`, DIM);
           } else out = text(f.content);
           break;
         }
@@ -191,7 +251,7 @@ export default function Terminal({ tab, setTab, request, api, onClose, onToggleM
           out = text("yhago");
           break;
         case "date":
-          out = text(new Date().toLocaleString("pt-BR"));
+          out = text(new Date().toLocaleString(dateLocale(locale)));
           break;
         case "echo":
           out = text(arg);
@@ -200,31 +260,36 @@ export default function Terminal({ tab, setTab, request, api, onClose, onToggleM
           out =
             arg === "status"
               ? [
-                  ...text("No ramo main\nAlterações não preparadas para commit:"),
-                  ...text(files.filter((f) => f.git === "M").map((f) => `        modificado:   ${f.path}`).join("\n"), RED),
-                  ...text("\nArquivos não monitorados:"),
-                  ...text(files.filter((f) => f.git === "U").map((f) => `        ${f.path}`).join("\n"), RED),
+                  ...text(L("No ramo main\nAlterações não preparadas para commit", "On branch main\nChanges not staged for commit")),
+                  ...text(files.filter((f) => f.git === "M").map((f) => `        ${L("modificado", "modified")}   ${label(f)}`).join("\n"), RED),
+                  ...text(L("\nArquivos não monitorados", "\nUntracked files")),
+                  ...text(files.filter((f) => f.git === "U").map((f) => `        ${label(f)}`).join("\n"), RED),
                   { t: "" },
                 ]
               : [
                   { t: "commit b5d414a (HEAD, main, origin/main)", c: YELLOW },
-                  ...text("Autor: Yhago Felipe <yhago.felipe.teles@gmail.com>\nData:  hoje\n\n    feat: um VS Code dentro de um Windows XP dentro do navegador\n"),
+                  ...text(
+                    L(
+                      "Autor   Yhago Felipe <yhago.felipe.teles@gmail.com>\nData    hoje\n\n    Um VS Code dentro de um Windows XP dentro do navegador\n",
+                      "Author  Yhago Felipe <yhago.felipe.teles@gmail.com>\nDate    today\n\n    A VS Code inside a Windows XP inside the browser\n",
+                    ),
+                  ),
                 ];
           break;
         case "npm":
           out =
             arg === "run build"
-              ? [...text(`\n> portfolio-yhago@1.0.0 build\n> tsc\n`), { t: " ✓ Compilado sem erros", c: GREEN }, { t: "" }]
+              ? [...text(`\n> portfolio-yhago@1.0.0 build\n> tsc\n`), { t: L(" ✓ Compilado sem erros", " ✓ Compiled with no errors"), c: GREEN }, { t: "" }]
               : [
                   ...text(`\n> portfolio-yhago@1.0.0 dev\n> tsx watch src/main.ts\n`),
-                  { t: "Portfólio rodando na porta 3000", c: GREEN },
+                  { t: L("Portfólio rodando na porta 3000", "Portfolio running on port 3000"), c: GREEN },
                   { t: "     GET /api/sobre          200", c: DIM },
                   { t: "     GET /api/repositorios   200", c: DIM },
                   { t: "" },
                 ];
           break;
         case "sudo":
-          out = text("Boa tentativa.");
+          out = text(L("Boa tentativa.", "Nice try."));
           break;
         case "clear":
         case "cls":
@@ -234,7 +299,7 @@ export default function Terminal({ tab, setTab, request, api, onClose, onToggleM
           onClose();
           return;
         default:
-          out = [...text(`bash: ${first}: comando não encontrado. Digite "help" para ver os comandos.`, RED), { t: "" }];
+          out = [...text(L(`Comando não encontrado, ${first}. Digite help para ver os comandos.`, `Command not found, ${first}. Type help to see the commands.`), RED), { t: "" }];
       }
     setLines((l) => [...l, { cmd: raw }, ...out]);
   }
@@ -248,9 +313,9 @@ export default function Terminal({ tab, setTab, request, api, onClose, onToggleM
   return (
     <div className="panel">
       <div className="panel-head">
-        {TABS.map((t) => (
-          <button key={t} className={`ptab ${t === tab ? "on" : ""}`} onClick={() => setTab(t)}>
-            {t}
+        {TABS.map(([id, pt, en]) => (
+          <button key={id} className={`ptab ${id === tab ? "on" : ""}`} onClick={() => setTab(id)}>
+            {L(pt, en)}
           </button>
         ))}
         <div className="panel-actions">
@@ -259,19 +324,19 @@ export default function Terminal({ tab, setTab, request, api, onClose, onToggleM
               <span className="term-name">
                 <i className="codicon codicon-terminal-bash" /> bash
               </span>
-              <button className="tb codicon codicon-add" title="Novo Terminal" onClick={() => setLines([{ neofetch: true }, { t: "" }])} />
-              <button className="tb codicon codicon-trash" title="Encerrar Terminal" onClick={onClose} />
+              <button className="tb codicon codicon-add" title={L("Novo Terminal", "New Terminal")} onClick={() => setLines([{ neofetch: true }, { t: "" }])} />
+              <button className="tb codicon codicon-trash" title={L("Encerrar Terminal", "Kill Terminal")} onClick={onClose} />
             </>
           )}
-          <button className="tb codicon codicon-chevron-up" title="Maximizar Tamanho do Painel" onClick={onToggleMax} />
-          <button className="tb codicon codicon-close" title="Ocultar Painel" onClick={onClose} />
+          <button className="tb codicon codicon-chevron-up" title={L("Maximizar Tamanho do Painel", "Maximize Panel Size")} onClick={onToggleMax} />
+          <button className="tb codicon codicon-close" title={L("Ocultar Painel", "Hide Panel")} onClick={onClose} />
         </div>
       </div>
       {tab === "TERMINAL" ? (
         <div className="term" ref={bodyRef} onMouseUp={() => !getSelection()?.toString() && inputRef.current?.focus()}>
           {lines.map((l, i) =>
             "neofetch" in l ? (
-              <Neofetch key={i} gh={gh} />
+              <Neofetch key={i} gh={gh} locale={locale} />
             ) : "cmd" in l ? (
               <div key={i}>
                 <Prompt />
@@ -279,7 +344,7 @@ export default function Terminal({ tab, setTab, request, api, onClose, onToggleM
               </div>
             ) : (
               <div key={i} style={{ color: l.c }}>
-                {l.t ? linkify(l.t) : " "}
+                {l.t ? linkify(l.t) : " "}
               </div>
             ),
           )}
@@ -291,7 +356,7 @@ export default function Terminal({ tab, setTab, request, api, onClose, onToggleM
               spellCheck={false}
               autoComplete="off"
               aria-label="Terminal"
-              placeholder="Digite um comando (help para ver todos)"
+              placeholder={L("Digite um comando (help para ver todos)", "Type a command (help to see them all)")}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
@@ -307,7 +372,7 @@ export default function Terminal({ tab, setTab, request, api, onClose, onToggleM
                 } else if (e.key === "Tab") {
                   e.preventDefault();
                   const [cmd, ...rest] = input.split(" ");
-                  const pool = rest.length ? files.map((f) => f.path) : NAMES;
+                  const pool = rest.length ? files.map((f) => baseName(label(f))) : NAMES(locale);
                   const word = rest.length ? rest.join(" ") : cmd;
                   const hit = pool.find((x) => x.toLowerCase().startsWith(word.toLowerCase()));
                   if (hit) setInput(rest.length ? `${cmd} ${hit}` : hit);
@@ -320,7 +385,7 @@ export default function Terminal({ tab, setTab, request, api, onClose, onToggleM
           </div>
         </div>
       ) : (
-        <div className="panel-msg">{EMPTY[tab]}</div>
+        <div className="panel-msg">{L(...EMPTY[tab])}</div>
       )}
     </div>
   );
