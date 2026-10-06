@@ -424,7 +424,7 @@ As ferramentas do meu dia a dia, separadas por área. Na aba **Extensões**, aqu
 
 Minha base é **NestJS** com Prisma ou TypeORM, fila com Redis e BullMQ, validação com Zod e documentação no Swagger. Em Python, uso **FastAPI** e **Flask**.
 
-\`Node.js\` \`NestJS\` \`Express\` \`FastAPI\` \`Flask\` \`Prisma\` \`TypeORM\` \`Redis\` \`BullMQ\` \`Swagger\` \`Zod\`
+\`Node.js\` \`NestJS\` \`Express\` \`FastAPI\` \`Flask\` \`Prisma\` \`TypeORM\` \`SQLAlchemy\` \`APIs REST\` \`Redis\` \`BullMQ\` \`Swagger\` \`Zod\`
 
 ## :shield: Segurança
 
@@ -442,7 +442,7 @@ Como comecei na Cibersegurança, autenticação, permissão e cuidado com dado s
 
 Mantenho minha própria infraestrutura, com VPS, **Docker**, **Nginx** com SSL, backup automatizado e CI/CD com GitHub Actions. Na nuvem, Amazon S3 e Azure.
 
-\`Docker\` \`Nginx\` \`Linux\` \`Bash\` \`GitHub Actions\` \`AWS\` \`Azure\` \`Vercel\` \`PM2\`
+\`Docker\` \`Docker Compose\` \`VPS\` \`Nginx\` \`Linux\` \`Bash\` \`GitHub Actions\` \`AWS\` \`Azure\` \`Vercel\` \`PM2\`
 
 ## :robot: Automação e IA
 
@@ -466,7 +466,7 @@ Para transformar dado em relatório e decisão, uso **Power BI**, **Pandas** e n
 
 Git em tudo, Figma para desenhar antes de codar, Postman para testar API e Clean Architecture como base de organização.
 
-\`Git\` \`GitHub\` \`Figma\` \`Postman\` \`WordPress\` \`Clean Architecture\` \`TDD\` \`MVC\` \`Scrum\` \`Kanban\`
+\`Git\` \`GitHub\` \`Figma\` \`Postman\` \`WordPress\` \`XAMPP\` \`Arduino\` \`IoT\` \`Clean Architecture\` \`TDD\` \`MVC\` \`Scrum\` \`Kanban\` \`UI/UX responsivo\`
 `,
   },
   {
@@ -792,7 +792,7 @@ export const SKILL_LOGOS: Record<string, string> = {
   "Amazon S3": "aws", Azure: "azure", "Microsoft Azure": "azure", "Azure Databricks": "azure", Vercel: "vercel", Git: "git",
   GitHub: "github", "Git e GitHub": "git", Figma: "figma", Postman: "postman", WordPress: "wordpress", WooCommerce: "wordpress",
   Selenium: "selenium", "Linux e Bash": "linux", "Redis e BullMQ": "redis", "HTML5, CSS3 e Sass": "html",
-  "Git and GitHub": "git", "Linux and Bash": "linux", "Redis and BullMQ": "redis", "HTML5, CSS3 and Sass": "html",
+  "Docker Compose": "docker", "Git and GitHub": "git", "Linux and Bash": "linux", "Redis and BullMQ": "redis", "HTML5, CSS3 and Sass": "html",
 };
 
 export type Ext = {

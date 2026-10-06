@@ -386,7 +386,7 @@ The tools I use every day, grouped by area. In the **Extensions** tab, right her
 
 My base is **NestJS** with Prisma or TypeORM, queues with Redis and BullMQ, validation with Zod and docs in Swagger. In Python, I use **FastAPI** and **Flask**.
 
-\`Node.js\` \`NestJS\` \`Express\` \`FastAPI\` \`Flask\` \`Prisma\` \`TypeORM\` \`Redis\` \`BullMQ\` \`Swagger\` \`Zod\`
+\`Node.js\` \`NestJS\` \`Express\` \`FastAPI\` \`Flask\` \`Prisma\` \`TypeORM\` \`SQLAlchemy\` \`REST APIs\` \`Redis\` \`BullMQ\` \`Swagger\` \`Zod\`
 
 ## :shield: Security
 
@@ -404,7 +404,7 @@ Since I started in Cybersecurity, authentication, permissions and care with sens
 
 I run my own infrastructure, with VPS, **Docker**, **Nginx** with SSL, automated backups and CI/CD with GitHub Actions. In the cloud, Amazon S3 and Azure.
 
-\`Docker\` \`Nginx\` \`Linux\` \`Bash\` \`GitHub Actions\` \`AWS\` \`Azure\` \`Vercel\` \`PM2\`
+\`Docker\` \`Docker Compose\` \`VPS\` \`Nginx\` \`Linux\` \`Bash\` \`GitHub Actions\` \`AWS\` \`Azure\` \`Vercel\` \`PM2\`
 
 ## :robot: Automation and AI
 
@@ -428,7 +428,7 @@ To turn data into reports and decisions, I use **Power BI**, **Pandas** and Jupy
 
 Git on everything, Figma to design before coding, Postman to test APIs and Clean Architecture as the base for organizing code.
 
-\`Git\` \`GitHub\` \`Figma\` \`Postman\` \`WordPress\` \`Clean Architecture\` \`TDD\` \`MVC\` \`Scrum\` \`Kanban\`
+\`Git\` \`GitHub\` \`Figma\` \`Postman\` \`WordPress\` \`XAMPP\` \`Arduino\` \`IoT\` \`Clean Architecture\` \`TDD\` \`MVC\` \`Scrum\` \`Kanban\` \`Responsive UI/UX\`
 `,
 
   "docs/formacao.md": `# :mortar-board: Education
