@@ -35,7 +35,7 @@ export async function sendQuote(_: QuoteState, form: FormData): Promise<QuoteSta
   const ip = h.get("x-forwarded-for")?.split(",")[0].trim() || h.get("x-real-ip") || "local";
   if (limited(ip)) return { status: "limited" };
 
-  const key = process.env.RESEND_API_KEY;
+  const key = process.env.RESEND_API_KEY?.replace(/[﻿\s"']/g, "");
   if (!key) return { status: "unconfigured" };
 
   const details = [

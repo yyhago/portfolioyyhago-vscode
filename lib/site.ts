@@ -1,6 +1,14 @@
-const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+const clean = (v?: string) => v?.replace(/[﻿\s"']/g, "").replace(/\/$/, "") || undefined;
+const valid = (v?: string) => {
+  try {
+    return v ? new URL(v).origin : undefined;
+  } catch {
+    return undefined;
+  }
+};
+const vercel = clean(process.env.VERCEL_PROJECT_PRODUCTION_URL);
 
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? (vercel ? `https://${vercel}` : "http://localhost:3000")).replace(/\/$/, "");
+export const SITE_URL = valid(clean(process.env.NEXT_PUBLIC_SITE_URL)) ?? valid(vercel && `https://${vercel}`) ?? "http://localhost:3000";
 
 export const SITE_NAME = "Yhago Felipe";
 export const SITE_TITLE = "Yhago Felipe, Desenvolvedor Full Stack";
