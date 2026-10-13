@@ -60,7 +60,7 @@ Me chamo Yhago Felipe, sou desenvolvedor Full Stack e o back-end é onde eu me s
 
 Minha história com programação começou de verdade na **ETEC Hortolândia**, onde fiz o técnico junto com o ensino médio e desenvolvi o **MundoPet**, um marketplace pet, como TCC. Em 2025 entrei no time de **Cibersegurança do Grupo EMS** como jovem aprendiz e criei automações em **Python** que cortaram **40%** do tempo de operações manuais da equipe. Ali nasceu uma ideia que eu levo para todo projeto, a de *automatizar antes de escalar*.
 
-Depois vieram as consultorias. Na **DBS System** modernizei sistemas de uma operação industrial e refiz as integrações com o ERP Datasul (TOTVS). Na **CroSoften** atendi mais de **20 projetos** ao mesmo tempo, sempre com APIs em **Node.js e NestJS**, Clean Architecture e requisito levantado direto com o cliente, em agronegócio, saúde, gestão financeira e logística.
+Depois vieram as consultorias. Na **DBS System** desenvolvi telas e funções integradas ao ERP Datasul (TOTVS) para clientes da indústria. Na **CroSoften** atendi **23 projetos** ao mesmo tempo, sempre com APIs em **Node.js e NestJS**, Clean Architecture e requisito levantado direto com o cliente, em agronegócio, saúde, gestão financeira e logística.
 
 Hoje arquiteto e mantenho uma plataforma que sustenta uma empresa de ponta a ponta, do pedido no e-commerce ao despacho com nota fiscal, em **Next.js, NestJS e TypeScript**, e que substituiu um legado em WordPress sem parar a operação. Também cuido das integrações com ERP, das automações no **n8n** e da infraestrutura em VPS, Docker e Nginx.
 
@@ -128,17 +128,17 @@ Comecei como jovem aprendiz em 2025 e, de lá para cá, passei por consultoria, 
 **Desenvolvedor de Software Full Stack**, CLT
 *mar. de 2026 até hoje, Campinas, SP, presencial*
 
-Cuido da arquitetura e da evolução técnica de todo o ecossistema de TI da empresa, com foco em performance, escalabilidade e automação de processos.
+Quando entrei, a loja virtual e a gestão rodavam em WordPress, ligadas ao ERPFLEX. Como engenheiro de software, desenhei do zero a arquitetura do sistema novo, com loja virtual, painel administrativo, portal comercial e site institucional, cobrindo todo o caminho da compra até a emissão da nota fiscal integrada ao ERP. No meio disso, migramos do ERPFLEX para o OMIE sem parar as vendas de uma loja que vende muito. Hoje mantenho a plataforma que construí e automatizo os processos que ainda eram feitos na mão.
 
-* Arquitetei e construí do zero a plataforma que sustenta a operação de ponta a ponta, do pedido no e-commerce até a baixa no estoque, juntando loja virtual, painel administrativo, portal comercial e site institucional em um sistema só.
-* Conduzi a saída do legado em **WordPress** para uma stack própria em **Next.js, NestJS e TypeScript**, definindo padrão de código, estrutura de API e a estratégia de migração sem parar a operação.
-* Back-end em **PHP e MySQL** no e-commerce legado durante a transição, com módulos e integrações sob medida.
-* Automações no **n8n** orquestrando ERP, CRM (RD Station) e sistemas internos.
-* Migrei a integração do ERP legado (**ERPFLEX**) para o atual (**OMIE**), mantendo estoque, pedidos e clientes consistentes.
-* Arquivos no **Amazon S3** com presigned URLs e infraestrutura própria (**VPS, Docker, Nginx e SSL**) com backup automatizado.
-* Integração com gateways de pagamento, APIs REST e logística (Frenet).
+* Arquitetura e desenvolvimento da plataforma inteira em **Next.js, NestJS e TypeScript**, juntando loja, painel, portal comercial e site institucional em um sistema só.
+* Fluxo completo do pedido até a **nota fiscal**, integrado ao ERP e à baixa no estoque.
+* Saída do **WordPress** legado para a stack própria e migração do **ERPFLEX** para o **OMIE**, mantendo estoque, pedidos e clientes consistentes, tudo sem parar a operação.
+* Manutenção do e-commerce legado em **PHP e MySQL** enquanto a transição acontecia.
+* Automações no **n8n** ligando ERP, CRM (RD Station) e sistemas internos, tirando trabalho manual de marketing e operações.
+* Infraestrutura própria, com servidores **VPS**, **Docker**, **Nginx** como proxy reverso, **SSL**, domínios, **Cloudflare** e backup automático do banco de dados.
+* Arquivos no **Amazon S3** com presigned URLs e integração com gateways de pagamento e logística (Frenet).
 
-\`Next.js\` \`NestJS\` \`TypeScript\` \`Node.js\` \`PHP\` \`MySQL\` \`n8n\` \`Amazon S3\` \`Docker\` \`Nginx\`
+\`Next.js\` \`NestJS\` \`TypeScript\` \`Node.js\` \`PHP\` \`MySQL\` \`n8n\` \`OMIE\` \`Amazon S3\` \`Docker\` \`Nginx\` \`Cloudflare\`
 
 Alguns dos sistemas que estão no ar.
 
@@ -155,18 +155,17 @@ Alguns dos sistemas que estão no ar.
 **Desenvolvedor de Software Back-end**, PJ
 *jan. de 2026 a ago. de 2026, São Paulo, SP, remoto*
 
-Desenvolvimento e manutenção de APIs RESTful em ambiente corporativo, atendendo **mais de 20 projetos** de clientes diferentes ao mesmo tempo.
+Entrei por contrato PJ para desenvolver o back-end de aplicações em Angular e iOS. Foram **23 projetos** de clientes diferentes, quase sempre ao mesmo tempo, de agronegócio a saúde, finanças, varejo e logística, o que me acostumou a lidar com regra de negócio complexa e requisito levantado direto com o cliente.
 
-* APIs com **Node.js, NestJS e TypeScript**, aplicando **Clean Architecture** para manter projetos de longo prazo fáceis de evoluir.
-* Regras de negócio complexas, autenticação, autorização e integração com várias APIs externas.
-* Documentação completa no **Swagger**, consumida ao mesmo tempo por apps iOS e front-ends em Angular.
-* Levantamento de requisitos direto com o cliente, traduzindo necessidade de negócio em arquitetura.
+* APIs REST em **Node.js, NestJS e TypeScript**, organizadas com **Clean Architecture**, com regras de negócio, autenticação, controle de permissões e integrações externas.
+* Modelagem do banco de dados em **MySQL** nos projetos que peguei.
+* Documentação completa no **Swagger**, consumida ao mesmo tempo pelos times de iOS e de Angular.
+* Em alguns projetos também construí as interfaces, a partir dos protótipos que o time de design entregava no **Figma**.
 * Várias demandas em paralelo, com entrega contínua, em Scrum e Kanban.
-* Projetos de agronegócio (Vitrine do Campo), saúde (Cardio Shop), gestão financeira (SAFE/ERICA) e logística (Ships Manager), entre outros.
 
-\`Node.js\` \`NestJS\` \`TypeScript\` \`Clean Architecture\` \`Swagger\` \`Angular\`
+\`Node.js\` \`NestJS\` \`TypeScript\` \`MySQL\` \`Clean Architecture\` \`Swagger\` \`Angular\` \`Figma\`
 
-Alguns dos projetos em que trabalhei.
+Os 23 projetos em que trabalhei.
 
 * [:link-external: 2Clicks](https://2clicks.app/), para encontrar o que você precisa na cidade em poucos cliques
 * [:link-external: Minha Revenda](https://minharevenda.com.br/), gestão para revendedores de cosméticos
@@ -174,7 +173,7 @@ Alguns dos projetos em que trabalhei.
 * [:link-external: LeSalvi](https://lesalvi.com/)
 * [:link-external: Vermont](https://vermont.com.br/), contact center omnichannel
 * [:link-external: Vitrine do Campo](https://vitrinedocampo.com.br/), consultoria agronômica e crédito rural
-* Também Academia Alma, AJ Crypto, Alvino, Cardio Shop, City, Conexes, Corremaq, Erasmo, Fluitz, Pendragon, Copeme, Regia Maria, SAFE/ERICA, Sapyem, Ships Manager, Tito e Wincoin.
+* E também Academia Alma, AJ Crypto, Alvino, Cardio Shop, City, Conexes, Corremaq, Erasmo, Fluitz, Pendragon, Copeme, Regia Maria, SAFE/ERICA, Sapyem, Ships Manager, Tito e Wincoin.
 
 {{prints:2clicks|2Clicks}}
 {{prints:minharevenda|Minha Revenda}}
@@ -187,15 +186,13 @@ Alguns dos projetos em que trabalhei.
 **Desenvolvedor de Software Full Stack**, PJ
 *set. de 2025 a dez. de 2025, Campinas, SP, remoto*
 
-Modernização de sistemas legados em ambiente industrial, trocando fluxo manual por integração automatizada via API.
+Contrato de 4 meses em uma consultoria que atende indústrias. Foi meu primeiro contato com um ERP de grande porte, trabalhando da tela à regra de negócio.
 
-* Refiz as integrações com o ERP **Datasul (TOTVS)**, trocando a troca manual de dados por consumo direto de API e diminuindo o risco de inconsistência.
-* APIs RESTful em **PHP e Node.js**, com **MySQL e PostgreSQL**.
-* Reconstrução das telas legadas com **Next.js e TypeScript**, sem parar a produção.
-* Levantamento de requisitos com a equipe de negócio para achar os gargalos e propor a nova arquitetura.
-* Projeto de escopo fechado entregue em 4 meses, com autonomia total sobre as decisões técnicas.
+* Desenvolvimento de telas e de funções de lógica de negócio integradas ao **TOTVS Datasul**.
+* Acompanhei de perto o desenvolvimento em **Progress**, a linguagem do Datasul usada nas consultas e nas regras do ERP.
+* Projeto de escopo fechado, entregue dentro dos 4 meses de contrato.
 
-\`PHP\` \`Node.js\` \`Next.js\` \`TypeScript\` \`MySQL\` \`PostgreSQL\`
+\`Next.js\` \`TypeScript\` \`Datasul/TOTVS\` \`Progress\`
 
 Alguns dos clientes para quem desenvolvi.
 
@@ -210,14 +207,14 @@ Alguns dos clientes para quem desenvolvi.
 **Jovem Aprendiz em TI, Cibersegurança**, CLT
 *jan. de 2025 a set. de 2025, Hortolândia, SP, presencial*
 
-Minha primeira experiência em empresa, no time de Cibersegurança, focado em automação de processos internos e proteção de dados.
+Meu primeiro emprego, numa indústria farmacêutica. Entrei no time de Cibersegurança, mas como meu objetivo era desenvolvimento, fui direcionado para automação de processos. Foi ali que nasceu a ideia que levo para todo projeto, a de *automatizar antes de escalar*.
 
-* Aplicações internas em **Python** (Streamlit, FastAPI e Flask) para as demandas da área de segurança.
-* Automações que reduziram em **40%** o tempo de operações manuais da equipe. Foi meu primeiro contato real com a ideia de automatizar antes de escalar.
+* Automações em **Python** que se conectavam a planilhas do **Excel**, extraíam os dados e geravam relatórios prontos para as equipes, cortando **40%** do tempo dessas tarefas.
+* Aplicações internas em Python, com **Streamlit, FastAPI e Flask**, para as demandas da área de segurança.
 * Pipelines de **CI/CD** para rodar e monitorar as automações.
 * Integração com Supabase, Firebase, PostgreSQL e MySQL para juntar o fluxo de dados entre sistemas.
 
-\`Python\` \`Streamlit\` \`FastAPI\` \`Flask\` \`Supabase\` \`Firebase\` \`PostgreSQL\` \`MySQL\`
+\`Python\` \`Excel\` \`Streamlit\` \`FastAPI\` \`Flask\` \`Supabase\` \`Firebase\` \`PostgreSQL\` \`MySQL\`
 `,
   },
   {

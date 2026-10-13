@@ -54,9 +54,9 @@ export const DEPOIMENTOS: Depoimento[] = [
     cargoEn: "",
     empresa: "NG Metalúrgica",
     texto:
-      "As integrações com o Datasul eram feitas na mão e geravam retrabalho toda semana. Depois da modernização os dados passaram a ir direto pela API e as telas novas ficaram muito mais fáceis para quem usa no dia a dia, tudo sem parar a produção.",
+      "O Yhago entrou no projeto e logo estava entregando telas e funções integradas ao Datasul. As telas novas ficaram muito mais fáceis para quem usa no dia a dia, e tudo foi feito sem parar a produção.",
     textoEn:
-      "Our Datasul integrations were done by hand and caused rework every week. After the modernization the data started flowing straight through the API and the new screens became much easier for the people who use them every day, all without stopping production.",
+      "Yhago joined the project and was soon delivering screens and functions integrated with Datasul. The new screens became much easier for the people who use them every day, and everything was done without stopping production.",
   },
 ];
 

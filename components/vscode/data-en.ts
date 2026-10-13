@@ -32,7 +32,7 @@ I'm Yhago Felipe, a Full Stack developer, and the back-end is where I feel at ho
 
 My story with programming really started at **ETEC Hortolândia**, where I took the technical course alongside high school and built **MundoPet**, a pet marketplace, as my final project. In 2025 I joined the **Cybersecurity team at Grupo EMS** as an apprentice and built **Python** automations that cut the team's manual work by **40%**. That's where an idea I bring to every project was born, *automate before you scale*.
 
-Then came consulting. At **DBS System** I modernized systems for an industrial operation and rebuilt the integrations with the Datasul ERP (TOTVS). At **CroSoften** I worked on more than **20 projects** at the same time, always with APIs in **Node.js and NestJS**, Clean Architecture and requirements gathered straight from the client, across agribusiness, healthcare, financial management and logistics.
+Then came consulting. At **DBS System** I built screens and functions integrated with the Datasul ERP (TOTVS) for industrial clients. At **CroSoften** I worked on **23 projects** at the same time, always with APIs in **Node.js and NestJS**, Clean Architecture and requirements gathered straight from the client, across agribusiness, healthcare, financial management and logistics.
 
 Today I architect and maintain a platform that runs a company end to end, from the e-commerce order to shipping with the invoice, built with **Next.js, NestJS and TypeScript**, and it replaced a legacy WordPress setup without stopping the operation. I also take care of the ERP integrations, the **n8n** automations and the infrastructure on VPS, Docker and Nginx.
 
@@ -98,17 +98,17 @@ I started as an apprentice in 2025 and since then I've worked in consulting, at 
 **Full Stack Software Developer**, full time
 *Mar 2026 to present, Campinas, SP, on site*
 
-I'm responsible for the architecture and technical evolution of the company's whole IT ecosystem, with a focus on performance, scalability and process automation.
+When I joined, the online store and the management side ran on WordPress, connected to ERPFLEX. As the software engineer, I designed the architecture of the new system from scratch, with the online store, admin dashboard, sales portal and company website, covering the whole path from the purchase to the invoice integrated with the ERP. Along the way, we migrated from ERPFLEX to OMIE without stopping the sales of a store that sells a lot. Today I maintain the platform I built and automate the processes that were still done by hand.
 
-* Designed and built from scratch the platform that runs the operation end to end, from the e-commerce order to the stock update, bringing the online store, admin dashboard, sales portal and company website together in a single system.
-* Led the move away from legacy **WordPress** to a custom stack in **Next.js, NestJS and TypeScript**, defining code standards, API structure and a migration strategy that never stopped the operation.
-* **PHP and MySQL** back-end on the legacy e-commerce during the transition, with custom modules and integrations.
-* **n8n** automations orchestrating the ERP, CRM (RD Station) and internal systems.
-* Migrated the integration from the legacy ERP (**ERPFLEX**) to the current one (**OMIE**), keeping stock, orders and customers consistent.
-* Files on **Amazon S3** with presigned URLs and our own infrastructure (**VPS, Docker, Nginx and SSL**) with automated backups.
-* Integrations with payment gateways, REST APIs and shipping (Frenet).
+* Architecture and development of the entire platform in **Next.js, NestJS and TypeScript**, bringing the store, dashboard, sales portal and company website together in a single system.
+* Complete flow from the order to the **invoice**, integrated with the ERP and the stock update.
+* Move from legacy **WordPress** to a custom stack and migration from **ERPFLEX** to **OMIE**, keeping stock, orders and customers consistent, all without stopping the operation.
+* Maintenance of the legacy **PHP and MySQL** e-commerce while the transition happened.
+* **n8n** automations connecting the ERP, CRM (RD Station) and internal systems, taking manual work off marketing and operations.
+* Our own infrastructure, with **VPS** servers, **Docker**, **Nginx** as a reverse proxy, **SSL**, domains, **Cloudflare** and automated database backups.
+* Files on **Amazon S3** with presigned URLs and integrations with payment gateways and shipping (Frenet).
 
-\`Next.js\` \`NestJS\` \`TypeScript\` \`Node.js\` \`PHP\` \`MySQL\` \`n8n\` \`Amazon S3\` \`Docker\` \`Nginx\`
+\`Next.js\` \`NestJS\` \`TypeScript\` \`Node.js\` \`PHP\` \`MySQL\` \`n8n\` \`OMIE\` \`Amazon S3\` \`Docker\` \`Nginx\` \`Cloudflare\`
 
 Some of the systems that are live.
 
@@ -125,18 +125,17 @@ Some of the systems that are live.
 **Back-end Software Developer**, contractor
 *Jan 2026 to Aug 2026, São Paulo, SP, remote*
 
-Building and maintaining RESTful APIs in a corporate environment, serving **more than 20 projects** for different clients at the same time.
+I joined as a contractor to build the back-end of Angular and iOS applications. It was **23 projects** for different clients, almost always at the same time, from agribusiness to healthcare, finance, retail and logistics, which got me used to complex business rules and requirements gathered straight from the client.
 
-* APIs with **Node.js, NestJS and TypeScript**, applying **Clean Architecture** to keep long term projects easy to evolve.
-* Complex business rules, authentication, authorization and integration with several external APIs.
-* Complete **Swagger** documentation, consumed at the same time by iOS apps and Angular front-ends.
-* Requirements gathered straight from the client, turning business needs into architecture.
+* REST APIs in **Node.js, NestJS and TypeScript**, organized with **Clean Architecture**, with business rules, authentication, access control and external integrations.
+* Database modeling in **MySQL** on the projects I worked on.
+* Complete **Swagger** documentation, consumed at the same time by the iOS and Angular teams.
+* On some projects I also built the interfaces, from the prototypes the design team delivered in **Figma**.
 * Several demands in parallel, with continuous delivery, using Scrum and Kanban.
-* Projects in agribusiness (Vitrine do Campo), healthcare (Cardio Shop), financial management (SAFE/ERICA) and logistics (Ships Manager), among others.
 
-\`Node.js\` \`NestJS\` \`TypeScript\` \`Clean Architecture\` \`Swagger\` \`Angular\`
+\`Node.js\` \`NestJS\` \`TypeScript\` \`MySQL\` \`Clean Architecture\` \`Swagger\` \`Angular\` \`Figma\`
 
-Some of the projects I worked on.
+The 23 projects I worked on.
 
 * [:link-external: 2Clicks](https://2clicks.app/), to find what you need in your city in a few clicks
 * [:link-external: Minha Revenda](https://minharevenda.com.br/), management for cosmetics resellers
@@ -144,7 +143,7 @@ Some of the projects I worked on.
 * [:link-external: LeSalvi](https://lesalvi.com/)
 * [:link-external: Vermont](https://vermont.com.br/), omnichannel contact center
 * [:link-external: Vitrine do Campo](https://vitrinedocampo.com.br/), agronomic consulting and rural credit
-* Also Academia Alma, AJ Crypto, Alvino, Cardio Shop, City, Conexes, Corremaq, Erasmo, Fluitz, Pendragon, Copeme, Regia Maria, SAFE/ERICA, Sapyem, Ships Manager, Tito and Wincoin.
+* And also Academia Alma, AJ Crypto, Alvino, Cardio Shop, City, Conexes, Corremaq, Erasmo, Fluitz, Pendragon, Copeme, Regia Maria, SAFE/ERICA, Sapyem, Ships Manager, Tito and Wincoin.
 
 {{prints:2clicks|2Clicks}}
 {{prints:minharevenda|Minha Revenda}}
@@ -157,15 +156,13 @@ Some of the projects I worked on.
 **Full Stack Software Developer**, contractor
 *Sep 2025 to Dec 2025, Campinas, SP, remote*
 
-Modernizing legacy systems in an industrial environment, replacing manual flows with automated API integrations.
+A 4 month contract at a consulting firm that serves industrial companies. It was my first contact with a large ERP, working from the screen to the business rule.
 
-* Rebuilt the integrations with the **Datasul (TOTVS)** ERP, replacing manual data exchange with direct API calls and reducing the risk of inconsistencies.
-* RESTful APIs in **PHP and Node.js**, with **MySQL and PostgreSQL**.
-* Rebuilt the legacy screens with **Next.js and TypeScript**, without stopping production.
-* Gathered requirements with the business team to find the bottlenecks and propose the new architecture.
-* Fixed scope project delivered in 4 months, with full autonomy over the technical decisions.
+* Built screens and business logic functions integrated with **TOTVS Datasul**.
+* Followed closely the development in **Progress**, the Datasul language used for the ERP's queries and rules.
+* Fixed scope project, delivered within the 4 month contract.
 
-\`PHP\` \`Node.js\` \`Next.js\` \`TypeScript\` \`MySQL\` \`PostgreSQL\`
+\`Next.js\` \`TypeScript\` \`Datasul/TOTVS\` \`Progress\`
 
 Some of the clients I built for.
 
@@ -180,14 +177,14 @@ Some of the clients I built for.
 **IT Apprentice, Cybersecurity**, full time
 *Jan 2025 to Sep 2025, Hortolândia, SP, on site*
 
-My first job at a company, on the Cybersecurity team, focused on automating internal processes and protecting data.
+My first job, at a pharmaceutical company. I joined the Cybersecurity team, but since my goal was development, I was moved to process automation. That's where the idea I bring to every project was born, *automate before you scale*.
 
-* Internal applications in **Python** (Streamlit, FastAPI and Flask) for the security team's needs.
-* Automations that cut the team's manual work time by **40%**. It was my first real contact with the idea of automating before scaling.
+* **Python** automations that connected to **Excel** spreadsheets, extracted the data and generated ready to use reports for the teams, cutting the time of those tasks by **40%**.
+* Internal applications in Python, with **Streamlit, FastAPI and Flask**, for the security team's needs.
 * **CI/CD** pipelines to run and monitor the automations.
 * Integration with Supabase, Firebase, PostgreSQL and MySQL to connect the data flow between systems.
 
-\`Python\` \`Streamlit\` \`FastAPI\` \`Flask\` \`Supabase\` \`Firebase\` \`PostgreSQL\` \`MySQL\`
+\`Python\` \`Excel\` \`Streamlit\` \`FastAPI\` \`Flask\` \`Supabase\` \`Firebase\` \`PostgreSQL\` \`MySQL\`
 `,
 
   "docs/projetos.md": `# :project: Projects
