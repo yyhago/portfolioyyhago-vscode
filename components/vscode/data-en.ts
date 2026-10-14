@@ -201,7 +201,7 @@ A new project I'm building right now, CoJurOS, focused on legal communication. I
 
 *Full Stack, client JCFireWall, May 2026 to Jun 2026*
 
-\`NestJS\` \`TypeScript\` \`Next.js\` \`PostgreSQL\` \`Docker\` \`Nginx\`
+\`NestJS\` \`TypeScript\` \`Next.js\` \`PostgreSQL\` \`REST APIs\` \`Multitenancy\` \`RBAC\` \`Docker\` \`Nginx\` \`VPS\`
 
 **The client's problem.** JCFireWall served several corporate clients and tracked the workplace safety compliance of all of them in spreadsheets, with no reliable separation between companies, no history of who changed what and no visibility into deadlines. They needed a platform where each client only sees its own data, with an audit trail for inspections and a base ready to grow with their client list.
 
@@ -224,7 +224,7 @@ The system is internal and sits behind a login. [:link-external: JCFireWall webs
 
 *Full Stack, client CUBE Inteligência, Jul 2025 to Nov 2025*
 
-\`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`Node.js\` \`Express\` \`Prisma\` \`PostgreSQL\` \`Gemini AI\` \`PM2\`
+\`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`Node.js\` \`Express\` \`Prisma\` \`PostgreSQL\` \`REST APIs\` \`JWT\` \`RBAC\` \`Apify\` \`Gemini AI\` \`Nginx\` \`VPS\` \`PM2\`
 
 **The client's problem.** CUBE needed to follow in real time what was being published about political topics and figures, measure the tone of those mentions and show everything in dashboards that could handle peak traffic during elections, with different permissions for the internal team and for clients.
 
@@ -248,7 +248,7 @@ The platform is private, by contract. [:link-external: CUBE website](https://cub
 
 *Front-end, client Raquel Ribeiro Advocacia, Sep 2025 to Oct 2025*
 
-\`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`Vercel\`
+\`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`HTML5\` \`Vercel\`
 
 **The client's problem.** The law firm wanted to show up on Google for people looking for a labor lawyer in the region, with a page that loads fast on mobile and turns visits into real contacts through WhatsApp and the form.
 
@@ -268,7 +268,7 @@ The platform is private, by contract. [:link-external: CUBE website](https://cub
 
 *Full Stack, consulting, client SGI Treinamentos e Assessoria, Aug 2025 to Sep 2025*
 
-\`PHP\` \`WordPress\` \`MySQL\` \`Sass\`
+\`PHP\` \`WordPress\` \`MySQL\` \`Sass\` \`Git\`
 
 **The client's problem.** SGI needed a company website live on a short deadline, that the team could update without depending on a developer, with a reliable contact form and room to grow as they launched new services.
 
@@ -289,7 +289,7 @@ The platform is private, by contract. [:link-external: CUBE website](https://cub
 
 *Course project, team of four, Jun 2025*
 
-\`Python\` \`NLP\` \`Streamlit\` \`Git\`
+\`Python\` \`NLP\` \`Streamlit\` \`Git\` \`GitHub\`
 
 A course project we built as a team of four developers to raise awareness about digital security.
 

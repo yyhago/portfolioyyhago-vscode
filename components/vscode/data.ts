@@ -234,7 +234,7 @@ Projeto novo que estou desenvolvendo agora, o CoJurOS, voltado para comunicaçã
 
 *Full Stack, cliente JCFireWall, mai. de 2026 a jun. de 2026*
 
-\`NestJS\` \`TypeScript\` \`Next.js\` \`PostgreSQL\` \`Docker\` \`Nginx\`
+\`NestJS\` \`TypeScript\` \`Next.js\` \`PostgreSQL\` \`APIs REST\` \`Multitenancy\` \`RBAC\` \`Docker\` \`Nginx\` \`VPS\`
 
 **Dor do cliente.** A JCFireWall atendia vários clientes corporativos e controlava a conformidade de SST de todos eles em planilha, sem separação confiável entre empresas, sem histórico de quem alterou o quê e sem visibilidade de vencimentos. Precisava de uma plataforma em que cada cliente enxergasse só os próprios dados, com trilha de auditoria para a fiscalização e base pronta para crescer junto com a carteira.
 
@@ -257,7 +257,7 @@ O sistema é interno e fica atrás de login. [:link-external: Site da JCFireWall
 
 *Full Stack, cliente CUBE Inteligência, jul. de 2025 a nov. de 2025*
 
-\`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`Node.js\` \`Express\` \`Prisma\` \`PostgreSQL\` \`Gemini AI\` \`PM2\`
+\`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`Node.js\` \`Express\` \`Prisma\` \`PostgreSQL\` \`APIs REST\` \`JWT\` \`RBAC\` \`Apify\` \`Gemini AI\` \`Nginx\` \`VPS\` \`PM2\`
 
 **Dor do cliente.** A CUBE precisava acompanhar em tempo real o que saía sobre temas e figuras políticas, medir o tom dessas menções e mostrar tudo em painéis que aguentassem pico de acesso em período eleitoral, com permissões diferentes para a equipe interna e para os clientes.
 
@@ -281,7 +281,7 @@ A plataforma é privada, por contrato. [:link-external: Site da CUBE](https://cu
 
 *Front-end, cliente Raquel Ribeiro Advocacia, set. de 2025 a out. de 2025*
 
-\`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`Vercel\`
+\`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`HTML5\` \`Vercel\`
 
 **Dor do cliente.** O escritório queria aparecer no Google para quem procura advogado trabalhista na região, com uma página rápida no celular que virasse contato de verdade pelo WhatsApp e pelo formulário.
 
@@ -301,7 +301,7 @@ A plataforma é privada, por contrato. [:link-external: Site da CUBE](https://cu
 
 *Full Stack, consultoria, cliente SGI Treinamentos e Assessoria, ago. de 2025 a set. de 2025*
 
-\`PHP\` \`WordPress\` \`MySQL\` \`Sass\`
+\`PHP\` \`WordPress\` \`MySQL\` \`Sass\` \`Git\`
 
 **Dor do cliente.** A SGI precisava de um site institucional no ar em pouco tempo, que a equipe conseguisse atualizar sem depender de desenvolvedor, com formulário de contato confiável e espaço para crescer quando lançasse novos serviços.
 
@@ -322,7 +322,7 @@ A plataforma é privada, por contrato. [:link-external: Site da CUBE](https://cu
 
 *Trabalho de curso, em equipe, jun. de 2025*
 
-\`Python\` \`PLN\` \`Streamlit\` \`Git\`
+\`Python\` \`PLN\` \`Streamlit\` \`Git\` \`GitHub\`
 
 Trabalho de curso que fizemos em quatro desenvolvedores para ajudar na conscientização sobre segurança digital.
 
@@ -819,6 +819,7 @@ export const SKILL_LOGOS: Record<string, string> = {
   GitHub: "github", "Git e GitHub": "git", Figma: "figma", Postman: "postman", WordPress: "wordpress", 
   Selenium: "selenium", "Linux e Bash": "linux", "Redis e BullMQ": "redis", "HTML5, CSS3 e Sass": "html",
   SQL: "sql", "APIs REST": "rest", "REST APIs": "rest", Swagger: "swagger", JWT: "jwt", OAuth2: "oauth2", RBAC: "rbac", "JWT, OAuth2 e RBAC": "jwt", "JWT, OAuth2 and RBAC": "jwt", "SQL Server": "sqlserver", NoSQL: "nosql", Oracle: "oracle", phpMyAdmin: "phpmyadmin", VPS: "vps", "CI/CD": "cicd", n8n: "n8n", Playwright: "playwright", Puppeteer: "puppeteer", BeautifulSoup: "beautifulsoup", Apify: "apify", LLMs: "llms", "Google Gemini": "gemini", Bling: "erp", OMIE: "erp", ERPFLEX: "erp", "Datasul/TOTVS": "erp", ERPs: "erp", "RD Station": "rdstation", Frenet: "frenet", "BB Developer": "bb", PayPal: "paypal", "Mercado Livre": "mercadolivre", WooCommerce: "woocommerce", "Power BI": "powerbi", "Azure Databricks": "databricks", XAMPP: "xampp", IoT: "iot", "Arduino e IoT": "arduino", "Arduino and IoT": "arduino", "UI/UX responsivo": "uiux", "Responsive UI/UX": "uiux", "Estrutura de dados": "datastructures", "Data structures": "datastructures", "Design de software": "softwaredesign", "Software design": "softwaredesign", Redes: "network", Networking: "network", Scrum: "scrum", Kanban: "kanban",
+  "Gemini AI": "gemini", PM2: "pm2", Streamlit: "streamlit", PLN: "nlp", NLP: "nlp", Multitenancy: "multitenancy", "Arquitetura de software": "architecture", "Software architecture": "architecture", "Engenharia de requisitos": "requirements", "Requirements engineering": "requirements", "Padrões de projeto": "patterns", "Design patterns": "patterns", "Modelagem de dados": "sql", "Data modeling": "sql", POO: "oop", OOP: "oop", "Programação funcional": "functional", "Functional programming": "functional", "Gestão de projetos": "projectmgmt", "Project management": "projectmgmt", UML: "uml", "Inglês": "languages", English: "languages", "Comunicação oral": "communication", Speaking: "speaking", Listening: "listening", "Leitura e escrita": "reading", "Reading and writing": "reading", "Liderança": "leadership", Leadership: "leadership",
   "Docker Compose": "docker", "Git and GitHub": "git", C: "c", "C++": "cpp", "Google Cloud": "gcp", Arduino: "arduino", "Linux and Bash": "linux", "Redis and BullMQ": "redis", "HTML5, CSS3 and Sass": "html",
 };
 
