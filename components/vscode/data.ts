@@ -434,41 +434,61 @@ As ferramentas do meu dia a dia, separadas por área. Na aba **Extensões**, aqu
 
 **TypeScript** é a que eu mais uso, no front e no back. **Python** ficou para automação e dados, e **PHP** para e-commerce, WordPress e sistema legado.
 
+\`TypeScript\` \`JavaScript\` \`Python\` \`PHP\` \`SQL\`
+
 ## :browser: Front-end
 
 **Next.js** e **React** no dia a dia, **Angular** em projeto corporativo e **React Native** quando o produto precisa de app. Para estilo, quase sempre Tailwind.
+
+\`React\` \`Next.js\` \`React Native\` \`Angular\` \`Tailwind CSS\` \`Bootstrap\`
 
 ## :server-process: Back-end
 
 Minha base é **NestJS** com Prisma ou TypeORM, fila com Redis e BullMQ, validação com Zod e documentação no Swagger. Em Python, uso **FastAPI** e **Flask**.
 
+\`Node.js\` \`NestJS\` \`FastAPI\` \`Flask\` \`Prisma\` \`APIs REST\` \`Redis\` \`BullMQ\` \`Swagger\`
+
 ## :shield: Segurança
 
 Como comecei na Cibersegurança, autenticação, permissão e cuidado com dado sensível entram no desenho desde o começo, não no fim.
+
+\`JWT\` \`OAuth2\` \`RBAC\`
 
 ## :database: Bancos de dados
 
 **PostgreSQL** é o meu padrão, **MySQL** aparece bastante em legado e **MongoDB** quando o modelo pede documento.
 
+\`PostgreSQL\` \`MySQL\` \`SQL Server\` \`MongoDB\` \`SQLite\` \`Supabase\` \`Firebase\` \`NoSQL\` \`Oracle\` \`phpMyAdmin\`
+
 ## :cloud: DevOps e Cloud
 
 Mantenho minha própria infraestrutura, com VPS, **Docker**, **Nginx** com SSL, backup automatizado e CI/CD com GitHub Actions. Na nuvem, Amazon S3 e Azure.
+
+\`Linux\` \`Bash\` \`VPS\` \`Docker\` \`Docker Compose\` \`Nginx\` \`CI/CD\` \`AWS\` \`Azure\` \`Google Cloud\`
 
 ## :robot: Automação e IA
 
 **n8n** para orquestrar sistemas, scraping para coletar dado público e LLMs como o **Gemini** para análise de texto e sentimento.
 
+\`n8n\` \`Playwright\` \`Puppeteer\` \`Selenium\` \`BeautifulSoup\` \`Apify\` \`LLMs\` \`Google Gemini\`
+
 ## :plug: Integrações
 
 Os sistemas que fazem a operação de uma empresa girar, como ERP, CRM, pagamento e logística.
+
+\`Bling\` \`OMIE\` \`ERPFLEX\` \`Datasul/TOTVS\` \`RD Station\` \`WooCommerce\` \`Frenet\` \`BB Developer\` \`PayPal\` \`Mercado Livre\`
 
 ## :graph: Dados e BI
 
 Para transformar dado em relatório e decisão, uso **Power BI**, **Pandas** e notebooks no Jupyter.
 
+\`Power BI\` \`Azure Databricks\`
+
 ## :wrench: Ferramentas e práticas
 
 Git em tudo, Figma para desenhar antes de codar, Postman para testar API e Clean Architecture como base de organização.
+
+\`Git\` \`GitHub\` \`Figma\` \`Postman\` \`XAMPP\` \`Arduino\` \`IoT\` \`UI/UX responsivo\` \`Estrutura de dados\` \`Design de software\` \`Redes\` \`Scrum\` \`Kanban\`
 `,
   },
   {
@@ -837,30 +857,19 @@ export const extensions: Ext[] = [
   ext("Front-end", "Next.js", "Vercel", "N", "#000", "#fff", "O framework React para a web.", "Base da plataforma que construí na Freecook e das telas que modernizei na DBS. Esse portfólio também é Next.js."),
   ext("Front-end", "React Native", "Meta", "RN", "#20232a", "#61dafb", "Apps nativos com React.", "Apps para iOS e Android consumindo as mesmas APIs da web."),
   ext("Front-end", "Angular", "Google", "A", "#dd0031", "#fff", "Framework web do Google.", "Front-ends corporativos que consumiam as APIs que eu documentava no Swagger na CroSoften."),
-  ext("Front-end", "Redux", "Redux Team", "Rx", "#764abc", "#fff", "Gerenciamento de estado.", "Usei no MundoPet, meu TCC."),
-  ext("Front-end", "Vite", "VoidZero", "Vi", "#646cff", "#ffd62e", "Build rápido para o front-end.", "No CUBE e na landing page da advocacia."),
   ext("Front-end", "Tailwind CSS", "Tailwind Labs", "Tw", "#0b1120", "#38bdf8", "CSS utilitário.", "É o que eu uso na maioria dos projetos para estilizar rápido."),
   ext("Front-end", "Bootstrap", "Bootstrap Team", "B", "#7952b3", "#fff", "Componentes responsivos prontos.", "Usei no MundoPet."),
-  ext("Front-end", "HTML5, CSS3 e Sass", "W3C", "H5", "#e34f26", "#fff", "Marcação e estilo.", "HTML semântico pensando em SEO e acessibilidade, e Sass nos temas de WordPress."),
-  ext("Front-end", "Axios", "Axios", "Ax", "#5a29e4", "#fff", "Cliente HTTP para JavaScript.", "Consumo das APIs nos front-ends."),
 
   ext("Back-end", "Node.js", "OpenJS Foundation", "node", "#2b3a2b", "#8cc84b", "JavaScript no servidor.", "Onde eu passo a maior parte do tempo, entre API, fila, job agendado e integração."),
   ext("Back-end", "NestJS", "NestJS", "Ns", "#1a1a1a", "#ea2845", "Framework para back-end escalável.", "É o que mais uso no back-end. Na CroSoften foram mais de 20 projetos com Nest e Clean Architecture."),
-  ext("Back-end", "Express", "OpenJS Foundation", "ex", "#353535", "#fff", "Framework web minimalista.", "Back-end do CUBE e do MundoPet."),
   ext("Back-end", "FastAPI", "Sebastián Ramírez", "FA", "#009688", "#fff", "APIs rápidas em Python.", "APIs internas na EMS e a BookAPI que está no meu GitHub."),
   ext("Back-end", "Flask", "Pallets", "Fl", "#000", "#fff", "Microframework em Python.", "Aplicações internas na EMS."),
   ext("Back-end", "Prisma", "Prisma Data", "Pr", "#0c344b", "#fff", "ORM com tipagem de ponta a ponta.", "Migrations versionadas no CUBE."),
-  ext("Back-end", "TypeORM", "TypeORM", "TO", "#fe0803", "#fff", "ORM para TypeScript.", "Persistência nas APIs em NestJS."),
+  ext("Back-end", "APIs REST", "REST", "API", "#0a5c91", "#fff", "Padrão de APIs sobre HTTP.", "Endpoints versionados e documentados no Swagger."),
   ext("Back-end", "Redis e BullMQ", "Redis Ltd.", "Rd", "#dc382d", "#fff", "Cache e filas.", "Fila para tirar tarefa pesada de dentro da requisição."),
   ext("Back-end", "Swagger", "SmartBear", "Sw", "#173647", "#85ea2d", "Documentação de APIs.", "Minhas APIs saem documentadas. Na CroSoften o time de iOS e o de Angular consumiam tudo pelo Swagger."),
-  ext("Back-end", "JWT, OAuth2 e RBAC", "IETF", "JWT", "#000", "#d63aff", "Autenticação e permissões.", "Refresh token com rotação e permissão por rota e por perfil."),
-  ext("Back-end", "SQLAlchemy", "SQLAlchemy", "SA", "#d71f00", "#fff", "ORM para Python.", "Acesso a dados nas APIs em Python."),
-  ext("Back-end", "APIs REST", "REST", "API", "#0a5c91", "#fff", "Padrão de APIs sobre HTTP.", "Endpoints versionados e documentados no Swagger."),
-  ext("Back-end", "Zod", "Colin McDonnell", "Zd", "#3068b7", "#fff", "Validação de dados com tipos.", "Validação dos dados na entrada das APIs."),
 
-  ext("Segurança", "Multitenancy", "Arquitetura", "MT", "#1a1a1a", "#4fc3f7", "Vários clientes em um mesmo sistema.", "Isolamento de dados entre empresas na mesma plataforma."),
-  ext("Segurança", "bcrypt", "Niels Provos", "bc", "#1a1a1a", "#ffca28", "Hash seguro de senhas.", "Senhas nunca ficam em texto puro."),
-  ext("Segurança", "Cibersegurança", "Segurança", "CS", "#7f0000", "#fff", "Proteção de sistemas e dados.", "Comecei na área, no Grupo EMS, e levo esse cuidado para o desenho dos sistemas."),
+  ext("Segurança", "JWT, OAuth2 e RBAC", "IETF", "JWT", "#000", "#d63aff", "Autenticação e permissões.", "Refresh token com rotação e permissão por rota e por perfil."),
 
   ext("Bancos de dados", "PostgreSQL", "PostgreSQL Global Development Group", "Pg", "#336791", "#fff", "Banco relacional open source.", "Meu banco padrão hoje."),
   ext("Bancos de dados", "MySQL", "Oracle", "My", "#00758f", "#f29111", "Banco relacional popular na web.", "E-commerce legado e APIs em PHP e Node."),
@@ -873,63 +882,47 @@ export const extensions: Ext[] = [
   ext("Bancos de dados", "Oracle", "Oracle", "Or", "#c74634", "#fff", "Banco relacional corporativo.", "Ambientes corporativos."),
   ext("Bancos de dados", "phpMyAdmin", "phpMyAdmin", "pA", "#f89c0e", "#000", "Administração de MySQL pelo navegador.", "Apoio em projetos PHP e WordPress."),
 
-  ext("DevOps e Cloud", "Docker", "Docker Inc.", "Dk", "#1d63ed", "#fff", "Containers.", "Tudo que eu subo em VPS roda em Docker."),
-  ext("DevOps e Cloud", "Nginx", "F5", "Nx", "#009639", "#fff", "Servidor web e proxy reverso.", "Na frente das APIs em produção, com SSL."),
   ext("DevOps e Cloud", "Linux e Bash", "Linux Foundation", "$_", "#333", "#fcc624", "O sistema dos servidores.", "Administro minhas VPS e as rotinas de backup."),
-  ext("DevOps e Cloud", "GitHub Actions", "GitHub", "GA", "#2088ff", "#fff", "CI/CD no GitHub.", "Pipeline de build, teste e deploy."),
+  ext("DevOps e Cloud", "VPS", "Servidor", "VPS", "#333", "#fff", "Servidor virtual privado.", "Mantenho minha própria infraestrutura."),
+  ext("DevOps e Cloud", "Docker", "Docker Inc.", "Dk", "#1d63ed", "#fff", "Containers.", "Tudo que eu subo em VPS roda em Docker."),
+  ext("DevOps e Cloud", "Docker Compose", "Docker Inc.", "DC", "#1d63ed", "#fff", "Vários containers em um arquivo.", "Sobe API, banco e fila juntos."),
+  ext("DevOps e Cloud", "Nginx", "F5", "Nx", "#009639", "#fff", "Servidor web e proxy reverso.", "Na frente das APIs em produção, com SSL."),
+  ext("DevOps e Cloud", "CI/CD", "Prática", "CI", "#2088ff", "#fff", "Integração e entrega contínuas.", "Build, teste e deploy automatizados."),
   ext("DevOps e Cloud", "AWS", "Amazon Web Services", "aws", "#232f3e", "#ff9900", "Nuvem da Amazon.", "Amazon S3 com presigned URLs na Freecook."),
   ext("DevOps e Cloud", "Microsoft Azure", "Microsoft", "Az", "#0078d4", "#fff", "Nuvem da Microsoft.", "Tenho as certificações AZ-900, AI-900 e SC-900."),
-  ext("DevOps e Cloud", "Vercel", "Vercel", "Vc", "#000", "#fff", "Deploy de front-end.", "Deploy com preview a cada pull request."),
-  ext("DevOps e Cloud", "Docker Compose", "Docker Inc.", "DC", "#1d63ed", "#fff", "Vários containers em um arquivo.", "Sobe API, banco e fila juntos."),
-  ext("DevOps e Cloud", "VPS", "Servidor", "VPS", "#333", "#fff", "Servidor virtual privado.", "Mantenho minha própria infraestrutura."),
-  ext("DevOps e Cloud", "PM2", "Keymetrics", "PM2", "#2b037a", "#fff", "Gerenciador de processos Node.js.", "Mantém as aplicações Node no ar em produção."),
-  ext("DevOps e Cloud", "CI/CD", "Prática", "CI", "#2088ff", "#fff", "Integração e entrega contínuas.", "Build, teste e deploy automatizados."),
-  ext("DevOps e Cloud", "Amazon S3", "Amazon Web Services", "S3", "#232f3e", "#e05243", "Armazenamento de arquivos na nuvem.", "URLs pré-assinadas na Freecook."),
   ext("DevOps e Cloud", "Google Cloud", "Google", "GC", "#4285f4", "#fff", "Nuvem do Google.", "Serviços de nuvem do Google."),
-  ext("DevOps e Cloud", "Azure DevOps", "Microsoft", "AD", "#0078d4", "#fff", "Repositórios, boards e pipelines.", "Gestão de trabalho e pipelines em ambiente corporativo."),
 
   ext("Automação e IA", "n8n", "n8n GmbH", "n8n", "#ea4b71", "#fff", "Automação de workflows.", "Na Freecook ligo ERP, CRM e sistemas internos com n8n."),
   ext("Automação e IA", "Playwright", "Microsoft", "Pw", "#2d4552", "#45ba4b", "Automação de navegador.", "Web scraping e automação de portais."),
   ext("Automação e IA", "Puppeteer", "Google", "Pp", "#40b5a4", "#fff", "Chrome controlado por código.", "Coleta de dados em portais."),
   ext("Automação e IA", "Selenium", "Software Freedom Conservancy", "Se", "#43b02a", "#fff", "Automação de navegador.", "Automação de tarefa repetitiva em sistema web."),
-  ext("Automação e IA", "Google Gemini", "Google", "Gm", "#1a73e8", "#fff", "IA generativa do Google.", "Análise de sentimento no CUBE e alguns projetos meus no GitHub."),
   ext("Automação e IA", "BeautifulSoup", "Leonard Richardson", "BS", "#3776ab", "#ffd43b", "Leitura de HTML em Python.", "Web scraping de dados públicos."),
   ext("Automação e IA", "Apify", "Apify", "Ap", "#0a2540", "#97d700", "Plataforma de scraping e automação.", "Coleta de dados da web."),
   ext("Automação e IA", "LLMs", "Conceito", "LLM", "#412991", "#fff", "Modelos de linguagem.", "Análise de texto e sentimento."),
-  ext("Automação e IA", "IA generativa", "Conceito", "IA", "#1a73e8", "#fff", "Geração de texto e conteúdo com IA.", "Aplicada em projetos próprios."),
-  ext("Automação e IA", "PLN", "Conceito", "PLN", "#1a73e8", "#fff", "Processamento de linguagem natural.", "Análise de texto e sentimento."),
+  ext("Automação e IA", "Google Gemini", "Google", "Gm", "#1a73e8", "#fff", "IA generativa do Google.", "Análise de sentimento no CUBE e alguns projetos meus no GitHub."),
 
   ext("Integrações", "ERPs", "Bling, OMIE, ERPFLEX e TOTVS", "ERP", "#0a5c91", "#fff", "Sistemas de gestão.", "Já integrei Bling, OMIE, ERPFLEX e Datasul/TOTVS, inclusive migrando do ERPFLEX para o OMIE."),
   ext("Integrações", "RD Station", "RD Station", "RD", "#19c4b4", "#fff", "CRM e marketing.", "Fluxos automáticos entre CRM e ERP com n8n."),
   ext("Integrações", "WooCommerce", "Automattic", "Wc", "#7f54b3", "#fff", "E-commerce no WordPress.", "Manutenção do e-commerce legado durante a migração."),
   ext("Integrações", "Frenet", "Frenet", "Fr", "#ff6b00", "#fff", "Cotação de frete.", "Integração de logística em e-commerce."),
+  ext("Integrações", "BB Developer", "Banco do Brasil", "BB", "#fcfc30", "#003882", "APIs do Banco do Brasil.", "Integração com serviços bancários."),
+  ext("Integrações", "PayPal", "PayPal", "PP", "#003087", "#fff", "Pagamentos online.", "Integração de pagamento em e-commerce."),
+  ext("Integrações", "Mercado Livre", "Mercado Livre", "ML", "#ffe600", "#2d3277", "Marketplace e API de vendas.", "Integração com o marketplace."),
 
   ext("Dados e BI", "Power BI", "Microsoft", "BI", "#f2c811", "#000", "BI da Microsoft.", "Relatórios e indicadores."),
-  ext("Dados e BI", "Streamlit", "Snowflake", "St", "#ff4b4b", "#fff", "Apps de dados em Python.", "Aplicações internas na EMS e os projetos de IA no meu GitHub."),
-  ext("Dados e BI", "Pandas", "NumFOCUS", "Pd", "#150458", "#e70488", "Análise de dados em Python.", "Tratamento e análise de dados."),
-  ext("Dados e BI", "Jupyter", "Project Jupyter", "Jp", "#f37626", "#fff", "Notebooks interativos.", "Exploração de dados."),
   ext("Dados e BI", "Azure Databricks", "Microsoft", "Db", "#ff3621", "#fff", "Plataforma de dados na nuvem.", "Processamento de dados no Azure."),
 
   ext("Ferramentas", "Git e GitHub", "GitHub", "Git", "#f05033", "#fff", "Controle de versão.", "Commit pequeno e mensagem que explica o porquê."),
   ext("Ferramentas", "Figma", "Figma", "Fg", "#1e1e1e", "#a259ff", "Design de interfaces.", "Fiz formação de UX e UI pelo SENAI e pela DIO."),
   ext("Ferramentas", "Postman", "Postman", "Pm", "#ff6c37", "#fff", "Teste de APIs.", "Coleção para cada API que eu construo."),
-  ext("Ferramentas", "WordPress", "WordPress Foundation", "WP", "#21759b", "#fff", "CMS.", "Tema próprio em PHP, como o da SGI, e migração para stack própria, como na Freecook."),
   ext("Ferramentas", "XAMPP", "Apache Friends", "Xp", "#fb7a24", "#fff", "Ambiente local PHP e MySQL.", "Desenvolvimento local em PHP."),
-  ext("Ferramentas", "Arduino", "Arduino", "Ar", "#00979d", "#fff", "Prototipagem com microcontroladores.", "Projetos com eletrônica."),
-  ext("Ferramentas", "IoT", "Conceito", "IoT", "#00979d", "#fff", "Internet das coisas.", "Dispositivos conectados."),
-
-  ext("Práticas", "Clean Architecture", "Robert C. Martin", "CA", "#1a1a1a", "#4fc3f7", "Camadas independentes de framework.", "Na CroSoften foram mais de 20 projetos com NestJS e Clean Architecture."),
-  ext("Práticas", "TDD", "Kent Beck", "TDD", "#1a1a1a", "#4caf50", "Desenvolvimento guiado por testes.", "Teste primeiro, código depois."),
-  ext("Práticas", "MVC", "Padrão", "MVC", "#1a1a1a", "#ffca28", "Model, View e Controller.", "Organização em camadas."),
-  ext("Práticas", "Scrum", "Scrum.org", "Sc", "#009fda", "#fff", "Metodologia ágil.", "Sprints e entregas incrementais."),
-  ext("Práticas", "Kanban", "Prática", "Kb", "#0079bf", "#fff", "Fluxo visual de tarefas.", "Acompanhamento do trabalho em quadro."),
-  ext("Práticas", "UI/UX responsivo", "Design", "UX", "#1e1e1e", "#a259ff", "Interfaces que se adaptam à tela.", "Telas pensadas para celular e desktop."),
-  ext("Práticas", "Estrutura de dados", "Computação", "ED", "#333", "#fff", "Organização eficiente de dados.", "Base para escolher a solução certa."),
-  ext("Práticas", "Algoritmos", "Computação", "Alg", "#333", "#fff", "Lógica para resolver problemas.", "Base de qualquer software."),
-  ext("Práticas", "Design de software", "Engenharia", "DS", "#333", "#fff", "Arquitetura e padrões de projeto.", "Estudo na faculdade de Engenharia de Software."),
-  ext("Práticas", "Redes", "Computação", "Net", "#333", "#fff", "Comunicação entre sistemas.", "Base para infraestrutura e APIs."),
-  ext("Práticas", "Gestão de projetos", "Gestão", "GP", "#333", "#fff", "Planejamento e acompanhamento.", "Organização de prazos e entregas."),
-  ext("Práticas", "Liderança", "Gestão", "Ld", "#333", "#fff", "Condução de pessoas e times.", "Alinhamento e apoio ao time."),
+  ext("Ferramentas", "Arduino e IoT", "Arduino", "Ar", "#00979d", "#fff", "Eletrônica e dispositivos conectados.", "Projetos com microcontroladores e IoT."),
+  ext("Ferramentas", "UI/UX responsivo", "Design", "UX", "#1e1e1e", "#a259ff", "Interfaces que se adaptam à tela.", "Telas pensadas para celular e desktop."),
+  ext("Ferramentas", "Estrutura de dados", "Computação", "ED", "#333", "#fff", "Organização eficiente de dados.", "Base para escolher a solução certa."),
+  ext("Ferramentas", "Design de software", "Engenharia", "DS", "#333", "#fff", "Arquitetura e padrões de projeto.", "Estudo na faculdade de Engenharia de Software."),
+  ext("Ferramentas", "Redes", "Computação", "Net", "#333", "#fff", "Comunicação entre sistemas.", "Base para infraestrutura e APIs."),
+  ext("Ferramentas", "Scrum", "Scrum.org", "Sc", "#009fda", "#fff", "Metodologia ágil.", "Sprints e entregas incrementais."),
+  ext("Ferramentas", "Kanban", "Prática", "Kb", "#0079bf", "#fff", "Fluxo visual de tarefas.", "Acompanhamento do trabalho em quadro."),
 ];
 
 export const TERMINAL: Record<string, string> = {

@@ -396,41 +396,61 @@ The tools I use every day, grouped by area. In the **Extensions** tab, right her
 
 **TypeScript** is the one I use the most, on the front and the back. **Python** is for automation and data, and **PHP** for e-commerce, WordPress and legacy systems.
 
+\`TypeScript\` \`JavaScript\` \`Python\` \`PHP\` \`SQL\`
+
 ## :browser: Front-end
 
 **Next.js** and **React** every day, **Angular** on corporate projects and **React Native** when the product needs an app. For styling, almost always Tailwind.
+
+\`React\` \`Next.js\` \`React Native\` \`Angular\` \`Tailwind CSS\` \`Bootstrap\`
 
 ## :server-process: Back-end
 
 My base is **NestJS** with Prisma or TypeORM, queues with Redis and BullMQ, validation with Zod and docs in Swagger. In Python, I use **FastAPI** and **Flask**.
 
+\`Node.js\` \`NestJS\` \`FastAPI\` \`Flask\` \`Prisma\` \`REST APIs\` \`Redis\` \`BullMQ\` \`Swagger\`
+
 ## :shield: Security
 
 Since I started in Cybersecurity, authentication, permissions and care with sensitive data are part of the design from the start, not the end.
+
+\`JWT\` \`OAuth2\` \`RBAC\`
 
 ## :database: Databases
 
 **PostgreSQL** is my default, **MySQL** shows up a lot in legacy systems and **MongoDB** when the model calls for documents.
 
+\`PostgreSQL\` \`MySQL\` \`SQL Server\` \`MongoDB\` \`SQLite\` \`Supabase\` \`Firebase\` \`NoSQL\` \`Oracle\` \`phpMyAdmin\`
+
 ## :cloud: DevOps and Cloud
 
 I run my own infrastructure, with VPS, **Docker**, **Nginx** with SSL, automated backups and CI/CD with GitHub Actions. In the cloud, Amazon S3 and Azure.
+
+\`Linux\` \`Bash\` \`VPS\` \`Docker\` \`Docker Compose\` \`Nginx\` \`CI/CD\` \`AWS\` \`Azure\` \`Google Cloud\`
 
 ## :robot: Automation and AI
 
 **n8n** to orchestrate systems, scraping to collect public data and LLMs like **Gemini** for text and sentiment analysis.
 
+\`n8n\` \`Playwright\` \`Puppeteer\` \`Selenium\` \`BeautifulSoup\` \`Apify\` \`LLMs\` \`Google Gemini\`
+
 ## :plug: Integrations
 
 The systems that keep a company's operation running, like ERP, CRM, payments and shipping.
+
+\`Bling\` \`OMIE\` \`ERPFLEX\` \`Datasul/TOTVS\` \`RD Station\` \`WooCommerce\` \`Frenet\` \`BB Developer\` \`PayPal\` \`Mercado Livre\`
 
 ## :graph: Data and BI
 
 To turn data into reports and decisions, I use **Power BI**, **Pandas** and Jupyter notebooks.
 
+\`Power BI\` \`Azure Databricks\`
+
 ## :wrench: Tools and practices
 
 Git on everything, Figma to design before coding, Postman to test APIs and Clean Architecture as the base for organizing code.
+
+\`Git\` \`GitHub\` \`Figma\` \`Postman\` \`XAMPP\` \`Arduino\` \`IoT\` \`Responsive UI/UX\` \`Data structures\` \`Software design\` \`Networking\` \`Scrum\` \`Kanban\`
 `,
 
   "docs/formacao.md": `# :mortar-board: Education
@@ -606,7 +626,6 @@ const CATS: Record<string, string> = {
   "Dados e BI": "Data and BI",
   Segurança: "Security",
   Ferramentas: "Tools",
-  Práticas: "Practices",
 };
 
 const EXT_EN: Record<string, { desc: string; about: string; name?: string; publisher?: string }> = {
@@ -619,18 +638,13 @@ const EXT_EN: Record<string, { desc: string; about: string; name?: string; publi
   nextjs: { desc: "The React framework for the web.", about: "The base of the platform I built at Freecook and of the screens I modernized at DBS. This portfolio is Next.js too." },
   reactnative: { desc: "Native apps with React.", about: "iOS and Android apps consuming the same APIs as the web." },
   angular: { desc: "Google's web framework.", about: "Corporate front-ends that consumed the APIs I documented in Swagger at CroSoften." },
-  redux: { desc: "State management.", about: "I used it on MundoPet, my final project." },
-  vite: { desc: "Fast builds for the front-end.", about: "At CUBE and on the law firm landing page." },
   tailwindcss: { desc: "Utility first CSS.", about: "It's what I use on most projects to style things quickly." },
   bootstrap: { desc: "Ready made responsive components.", about: "I used it on MundoPet." },
-  html5css3esass: { name: "HTML5, CSS3 and Sass", desc: "Markup and styling.", about: "Semantic HTML with SEO and accessibility in mind, and Sass on WordPress themes." },
   nodejs: { desc: "JavaScript on the server.", about: "Where I spend most of my time, between APIs, queues, scheduled jobs and integrations." },
   nestjs: { desc: "A framework for scalable back-ends.", about: "It's what I use the most on the back-end. At CroSoften it was more than 20 projects with Nest and Clean Architecture." },
-  express: { desc: "Minimalist web framework.", about: "The back-end of CUBE and MundoPet." },
   fastapi: { desc: "Fast APIs in Python.", about: "Internal APIs at EMS and the BookAPI on my GitHub." },
   flask: { desc: "Python microframework.", about: "Internal applications at EMS." },
   prisma: { desc: "ORM with end to end types.", about: "Versioned migrations at CUBE." },
-  typeorm: { desc: "ORM for TypeScript.", about: "Persistence on the NestJS APIs." },
   redisebullmq: { name: "Redis and BullMQ", desc: "Cache and queues.", about: "Queues to take heavy work out of the request." },
   swagger: { desc: "API documentation.", about: "My APIs ship documented. At CroSoften the iOS and Angular teams consumed everything through Swagger." },
   jwtoauth2erbac: { name: "JWT, OAuth2 and RBAC", desc: "Authentication and permissions.", about: "Refresh token rotation and permissions per route and per role." },
@@ -644,10 +658,8 @@ const EXT_EN: Record<string, { desc: string; about: string; name?: string; publi
   docker: { desc: "Containers.", about: "Everything I deploy on a VPS runs on Docker." },
   nginx: { desc: "Web server and reverse proxy.", about: "In front of the production APIs, with SSL." },
   linuxebash: { name: "Linux and Bash", desc: "The servers' operating system.", about: "I manage my own VPS and the backup routines." },
-  githubactions: { desc: "CI/CD on GitHub.", about: "Build, test and deploy pipelines." },
   aws: { desc: "Amazon's cloud.", about: "Amazon S3 with presigned URLs at Freecook." },
   microsoftazure: { desc: "Microsoft's cloud.", about: "I hold the AZ-900, AI-900 and SC-900 certifications." },
-  vercel: { desc: "Front-end deploys.", about: "Deploys with a preview for every pull request." },
   n8n: { desc: "Workflow automation.", about: "At Freecook I connect the ERP, CRM and internal systems with n8n." },
   playwright: { desc: "Browser automation.", about: "Web scraping and portal automation." },
   puppeteer: { desc: "Chrome controlled by code.", about: "Data collection from portals." },
@@ -657,52 +669,33 @@ const EXT_EN: Record<string, { desc: string; about: string; name?: string; publi
   rdstation: { desc: "CRM and marketing.", about: "Automatic flows between CRM and ERP with n8n." },
   woocommerce: { desc: "E-commerce on WordPress.", about: "Maintaining the legacy e-commerce during the migration." },
   powerbi: { desc: "Microsoft's BI.", about: "Reports and KPIs." },
-  streamlit: { desc: "Data apps in Python.", about: "Internal applications at EMS and the AI projects on my GitHub." },
   gitegithub: { name: "Git and GitHub", desc: "Version control.", about: "Small commits and messages that explain why." },
   figma: { desc: "Interface design.", about: "I took UX and UI courses at SENAI and DIO." },
   postman: { desc: "API testing.", about: "A collection for every API I build." },
-  wordpress: { desc: "CMS.", about: "Custom PHP themes, like SGI's, and migrations to a custom stack, like at Freecook." },
-  axios: { desc: "HTTP client for JavaScript.", about: "Consuming APIs from the front-ends." },
-  sqlalchemy: { desc: "ORM for Python.", about: "Data access on the Python APIs." },
   apisrest: { desc: "The standard for APIs over HTTP.", about: "Versioned endpoints documented in Swagger." },
-  zod: { desc: "Type-safe data validation.", about: "Validating data at the door of the APIs." },
-  multitenancy: { desc: "Many customers on one system.", about: "Data isolation between companies on the same platform." },
-  bcrypt: { desc: "Secure password hashing.", about: "Passwords are never stored in plain text." },
-  cibersegurana: { name: "Cybersecurity", desc: "Protecting systems and data.", about: "I started in the field, at Grupo EMS, and carry that care into system design." },
   nosql: { desc: "Non-relational databases.", about: "I use them when the model calls for documents or key-value." },
   oracle: { desc: "Enterprise relational database.", about: "Corporate environments." },
   phpmyadmin: { desc: "MySQL administration in the browser.", about: "Support on PHP and WordPress projects." },
   dockercompose: { desc: "Multiple containers in one file.", about: "Brings up the API, database and queue together." },
   vps: { desc: "Virtual private server.", about: "I run my own infrastructure." },
-  pm2: { desc: "Node.js process manager.", about: "Keeps Node apps running in production." },
   cicd: { desc: "Continuous integration and delivery.", about: "Automated build, test and deploy." },
-  amazons3: { desc: "Cloud file storage.", about: "Presigned URLs at Freecook." },
   googlecloud: { desc: "Google's cloud.", about: "Google cloud services." },
-  azuredevops: { desc: "Repos, boards and pipelines.", about: "Work management and pipelines in a corporate environment." },
   beautifulsoup: { desc: "HTML parsing in Python.", about: "Web scraping of public data." },
   apify: { desc: "Scraping and automation platform.", about: "Collecting data from the web." },
   llms: { desc: "Large language models.", about: "Text and sentiment analysis." },
-  iagenerativa: { name: "Generative AI", desc: "Text and content generation with AI.", about: "Applied on my own projects." },
-  pln: { name: "NLP", desc: "Natural language processing.", about: "Text and sentiment analysis." },
   frenet: { desc: "Shipping quotes.", about: "Logistics integration for e-commerce." },
-  pandas: { desc: "Data analysis in Python.", about: "Cleaning and analyzing data." },
-  jupyter: { desc: "Interactive notebooks.", about: "Data exploration." },
   azuredatabricks: { desc: "Cloud data platform.", about: "Data processing on Azure." },
   xampp: { desc: "Local PHP and MySQL environment.", about: "Local PHP development." },
-  arduino: { desc: "Prototyping with microcontrollers.", about: "Electronics projects." },
-  iot: { desc: "Internet of Things.", about: "Connected devices." },
-  cleanarchitecture: { desc: "Framework-independent layers.", about: "At CroSoften it was more than 20 projects with NestJS and Clean Architecture." },
-  tdd: { desc: "Test-driven development.", about: "Tests first, code after." },
-  mvc: { desc: "Model, View and Controller.", about: "Layered organization." },
   scrum: { desc: "Agile methodology.", about: "Sprints and incremental delivery." },
   kanban: { desc: "Visual task flow.", about: "Tracking work on a board." },
   uiuxresponsivo: { name: "Responsive UI/UX", desc: "Interfaces that adapt to the screen.", about: "Screens designed for mobile and desktop." },
   estruturadedados: { name: "Data structures", desc: "Efficient data organization.", about: "The base for choosing the right solution." },
-  algoritmos: { name: "Algorithms", desc: "Logic to solve problems.", about: "The foundation of any software." },
   designdesoftware: { name: "Software design", desc: "Architecture and design patterns.", about: "Studied in the Software Engineering degree." },
   redes: { name: "Networking", desc: "Communication between systems.", about: "The base for infrastructure and APIs." },
-  gestodeprojetos: { name: "Project management", desc: "Planning and tracking.", about: "Organizing deadlines and deliveries." },
-  liderana: { name: "Leadership", desc: "Leading people and teams.", about: "Aligning and supporting the team." },
+  bbdeveloper: { desc: "Banco do Brasil APIs.", about: "Integration with banking services." },
+  paypal: { desc: "Online payments.", about: "Payment integration on e-commerce." },
+  mercadolivre: { desc: "Marketplace and sales API.", about: "Integration with the marketplace." },
+  arduinoeiot: { name: "Arduino and IoT", desc: "Electronics and connected devices.", about: "Projects with microcontrollers and IoT." },
 };
 
 const EXT_LIST: Record<Locale, Ext[]> = {
