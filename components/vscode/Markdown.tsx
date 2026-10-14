@@ -197,7 +197,7 @@ export default function Markdown({ src, open }: { src: string; open: (path: stri
   }
   return (
     <>
-      <div className="md">
+      <div className={src.startsWith("# :tools: ") ? "md md-skills" : "md"}>
         <div className="md-inner">{nodes}</div>
       </div>
       {zoom !== null && shots[zoom] && <Lightbox shots={shots} index={zoom} onChange={setZoom} L={L} />}

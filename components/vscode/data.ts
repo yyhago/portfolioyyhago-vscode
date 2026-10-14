@@ -60,7 +60,7 @@ Me chamo Yhago Felipe, sou engenheiro de software full stack e o back-end é ond
 
 Minha história com programação começou de verdade na **ETEC Hortolândia**, onde fiz o técnico junto com o ensino médio e desenvolvi o **MundoPet**, um marketplace pet, como TCC. Em 2025 entrei no time de **Cibersegurança do Grupo EMS** como jovem aprendiz e criei automações em **Python** que cortaram **40%** do tempo de operações manuais da equipe. Ali nasceu uma ideia que eu levo para todo projeto, a de *automatizar antes de escalar*.
 
-Depois vieram as consultorias. Na **DBS System** desenvolvi telas e funções integradas ao ERP Datasul (TOTVS) para clientes da indústria. Na **CroSoften** atendi **23 projetos** ao mesmo tempo, sempre com APIs em **Node.js e NestJS**, Clean Architecture e requisito levantado direto com o cliente, em agronegócio, saúde, gestão financeira e logística.
+Depois vieram as consultorias. Na **DBS System** desenvolvi telas em **Next.js e TypeScript** e funções integradas ao ERP Datasul (TOTVS) para clientes da indústria. Na **CroSoften** atendi **23 projetos** ao mesmo tempo, sempre com APIs em **Node.js e NestJS**, Clean Architecture e requisito levantado direto com o cliente, em agronegócio, saúde, gestão financeira e logística.
 
 Sei cuidar da arquitetura de todo o ecossistema de TI de uma empresa, como fiz na **Freecook Brasil**. Desenhei do zero a plataforma que roda a operação inteira, da compra na loja virtual até a emissão da nota fiscal, em **Next.js, NestJS e TypeScript**, e ela substituiu um legado em WordPress sem parar as vendas. No caminho migramos o ERP do ERPFLEX para o OMIE. Também cuido das automações no **n8n** e da infraestrutura, do servidor ao deploy.
 
@@ -162,7 +162,7 @@ Entrei por contrato PJ para desenvolver o back-end de aplicações em Angular e 
 * APIs REST em **Node.js, NestJS e TypeScript**, organizadas com **Clean Architecture**, com regras de negócio, autenticação, controle de permissões e integrações externas.
 * Modelagem do banco de dados em **MySQL** nos projetos que peguei.
 * Documentação completa no **Swagger**, consumida ao mesmo tempo pelos times de iOS e de Angular.
-* Em alguns projetos também construí as interfaces, a partir dos protótipos que o time de design entregava no **Figma**.
+* Em alguns projetos também construí as interfaces em **Angular**, a partir dos protótipos que o time de design entregava no **Figma**.
 * Contato direto com os clientes para levantar requisitos e definir o escopo técnico, traduzindo necessidade de negócio em arquitetura.
 * Várias demandas em paralelo, com entrega contínua e foco em qualidade de código, em Scrum e Kanban.
 
@@ -189,7 +189,7 @@ Os 23 projetos em que trabalhei.
 
 Contrato de 4 meses em uma consultoria que atende indústrias. Foi meu primeiro contato com um ERP de grande porte, trabalhando da tela à regra de negócio.
 
-* Desenvolvimento de telas e de funções de lógica de negócio integradas ao **TOTVS Datasul**.
+* Desenvolvimento de telas em **Next.js e TypeScript** e de funções de lógica de negócio integradas ao **TOTVS Datasul**.
 * Acompanhei de perto o desenvolvimento em **Progress**, a linguagem do Datasul usada nas consultas e nas regras do ERP.
 * Projeto de escopo fechado, entregue dentro dos 4 meses de contrato.
 
@@ -232,7 +232,7 @@ Projeto novo que estou desenvolvendo agora, o CoJurOS, voltado para comunicaçã
 
 ## SafetyKeeper, gestão de SST
 
-*Full Stack, cliente JCFireWall, mai. de 2026 a jun. de 2026*
+*Full Stack, cliente JCFireWall*
 
 \`NestJS\` \`TypeScript\` \`Next.js\` \`PostgreSQL\` \`APIs REST\` \`Multitenancy\` \`RBAC\` \`Docker\` \`Nginx\` \`VPS\`
 
@@ -255,7 +255,7 @@ O sistema é interno e fica atrás de login. [:link-external: Site da JCFireWall
 
 ## CUBE, análise política
 
-*Full Stack, cliente CUBE Inteligência, jul. de 2025 a nov. de 2025*
+*Full Stack, cliente CUBE Inteligência*
 
 \`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`Node.js\` \`Express\` \`Prisma\` \`PostgreSQL\` \`APIs REST\` \`JWT\` \`RBAC\` \`Apify\` \`Gemini AI\` \`Nginx\` \`VPS\` \`PM2\`
 
@@ -279,7 +279,7 @@ A plataforma é privada, por contrato. [:link-external: Site da CUBE](https://cu
 
 ## Landing page, Raquel Ribeiro Advocacia
 
-*Front-end, cliente Raquel Ribeiro Advocacia, set. de 2025 a out. de 2025*
+*Front-end, cliente Raquel Ribeiro Advocacia*
 
 \`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`HTML5\` \`Vercel\`
 
@@ -299,7 +299,7 @@ A plataforma é privada, por contrato. [:link-external: Site da CUBE](https://cu
 
 ## Site da SGI Treinamentos e Assessoria
 
-*Full Stack, consultoria, cliente SGI Treinamentos e Assessoria, ago. de 2025 a set. de 2025*
+*Full Stack, consultoria, cliente SGI Treinamentos e Assessoria*
 
 \`PHP\` \`WordPress\` \`MySQL\` \`Sass\` \`Git\`
 
@@ -320,7 +320,7 @@ A plataforma é privada, por contrato. [:link-external: Site da CUBE](https://cu
 
 ## Cyberbot, assistente de cibersegurança
 
-*Trabalho de curso, em equipe, jun. de 2025*
+*Trabalho de curso, em equipe*
 
 \`Python\` \`PLN\` \`Streamlit\` \`Git\` \`GitHub\`
 
@@ -337,7 +337,7 @@ Trabalho de curso que fizemos em quatro desenvolvedores para ajudar na conscient
 
 ## MundoPet, meu TCC
 
-*Full Stack, projeto acadêmico, ETEC Hortolândia, jan. de 2024 a dez. de 2024*
+*Full Stack, projeto acadêmico, ETEC Hortolândia*
 
 \`Node.js\` \`Express\` \`MongoDB\` \`React\` \`Redux\` \`Bootstrap\` \`PayPal\` \`AWS\`
 
@@ -424,61 +424,41 @@ As ferramentas do meu dia a dia, separadas por área. Na aba **Extensões**, aqu
 
 ## :code: Linguagens
 
-**TypeScript** é a que eu mais uso, no front e no back. **Python** ficou para automação e dados, e **PHP** para e-commerce, WordPress e sistema legado.
-
 \`TypeScript\` \`JavaScript\` \`Python\` \`PHP\` \`SQL\`
 
 ## :browser: Front-end
-
-**Next.js** e **React** no dia a dia, **Angular** em projeto corporativo e **React Native** quando o produto precisa de app. Para estilo, quase sempre Tailwind.
 
 \`React\` \`Next.js\` \`React Native\` \`Angular\` \`Tailwind CSS\` \`Bootstrap\`
 
 ## :server-process: Back-end
 
-Minha base é **NestJS** com Prisma, fila com Redis e BullMQ e documentação no Swagger. Em Python, uso **FastAPI** e **Flask**.
-
 \`Node.js\` \`NestJS\` \`FastAPI\` \`Flask\` \`Prisma\` \`APIs REST\` \`Redis\` \`BullMQ\` \`Swagger\`
 
 ## :shield: Segurança
-
-Como comecei na Cibersegurança, autenticação, permissão e cuidado com dado sensível entram no desenho desde o começo, não no fim.
 
 \`JWT\` \`OAuth2\` \`RBAC\`
 
 ## :database: Bancos de dados
 
-**PostgreSQL** é o meu padrão, **MySQL** aparece bastante em legado e **MongoDB** quando o modelo pede documento.
-
 \`PostgreSQL\` \`MySQL\` \`SQL Server\` \`MongoDB\` \`SQLite\` \`Supabase\` \`Firebase\` \`NoSQL\` \`Oracle\` \`phpMyAdmin\`
 
 ## :cloud: DevOps e Cloud
-
-Mantenho minha própria infraestrutura, com VPS, **Docker**, **Nginx** com SSL, backup automatizado e CI/CD. Na nuvem, AWS, Azure e Google Cloud.
 
 \`Linux\` \`Bash\` \`VPS\` \`Docker\` \`Docker Compose\` \`Nginx\` \`CI/CD\` \`AWS\` \`Azure\` \`Google Cloud\`
 
 ## :robot: Automação e IA
 
-**n8n** para orquestrar sistemas, scraping para coletar dado público e LLMs como o **Gemini** para análise de texto e sentimento.
-
 \`n8n\` \`Playwright\` \`Puppeteer\` \`Selenium\` \`BeautifulSoup\` \`Apify\` \`LLMs\` \`Google Gemini\`
 
 ## :plug: Integrações
-
-Os sistemas que fazem a operação de uma empresa girar, como ERP, CRM, pagamento, marketplace e logística.
 
 \`Bling\` \`OMIE\` \`ERPFLEX\` \`Datasul/TOTVS\` \`RD Station\` \`WooCommerce\` \`Frenet\` \`BB Developer\` \`PayPal\` \`Mercado Livre\`
 
 ## :graph: Dados e BI
 
-Para transformar dado em relatório e decisão, uso **Power BI** e **Azure Databricks**.
-
 \`Power BI\` \`Azure Databricks\`
 
 ## :wrench: Ferramentas e práticas
-
-Git em tudo, Figma para desenhar antes de codar, Postman para testar API, Scrum e Kanban para organizar o trabalho.
 
 \`Git\` \`GitHub\` \`Figma\` \`Postman\` \`XAMPP\` \`Arduino\` \`IoT\` \`UI/UX responsivo\` \`Estrutura de dados\` \`Design de software\` \`Redes\` \`Scrum\` \`Kanban\`
 `,
@@ -499,6 +479,14 @@ Muito do que vi no curso eu apliquei na prática no CUBE, uma plataforma full st
 
 \`Arquitetura de software\` \`Engenharia de requisitos\` \`Padrões de projeto\` \`Scrum\` \`Kanban\` \`SQL\`
 
+## Inglês, Programa Cidadão Pró-Mundo
+
+*Universidade Presbiteriana Mackenzie, Campinas, SP, jul. de 2025 a dez. de 2029, em andamento*
+
+Passei num concurso seletivo da **Microsoft com o SENAI Sumaré** que deu bolsa para só **20 alunos** da região. Estou fazendo inglês no Mackenzie, do A2 até a fluência, com foco em conversação, escuta ativa, leitura e escrita, usando ferramentas digitais num ambiente multicultural para situações reais do dia a dia.
+
+\`Inglês\` \`Comunicação oral\` \`Listening\` \`Leitura e escrita\` \`Liderança\`
+
 ## Técnico em Desenvolvimento de Sistemas
 
 *SENAI Dr. Celso Charuri, Sumaré, SP, jan. de 2025 a set. de 2025, concluído*
@@ -514,16 +502,6 @@ Técnico com foco em engenharia de software aplicada, que fiz pela EMS como part
 Foi onde eu comecei de verdade. Estudei pensamento computacional, modelagem de dados, arquitetura de sistemas e orientação a objetos, e trabalhei com desenvolvimento web full stack, com aplicações responsivas, APIs RESTful e SPAs, além de metodologias ágeis e UML. Também tive meu primeiro contato com C, C++ e Arduino.
 
 Meu TCC foi o **MundoPet**, um marketplace pet completo com Node.js, Express, React, Redux e MongoDB. Os detalhes estão em [projetos.md](projetos.md).
-
-\`Node.js\` \`React\` \`MongoDB\` \`UML\` \`C\` \`C++\` \`Arduino\`
-
-## Inglês, Programa Cidadão Pró-Mundo
-
-*Universidade Presbiteriana Mackenzie, Campinas, SP, jul. de 2025 a dez. de 2029, em andamento*
-
-Passei num concurso seletivo da **Microsoft com o SENAI Sumaré** que deu bolsa para só **20 alunos** da região. Estou fazendo inglês no Mackenzie, do A2 até a fluência, com foco em conversação, escuta ativa, leitura e escrita, usando ferramentas digitais num ambiente multicultural para situações reais do dia a dia.
-
-\`Inglês\` \`Comunicação oral\` \`Listening\` \`Leitura e escrita\` \`Liderança\`
 
 ## :globe: Idiomas
 

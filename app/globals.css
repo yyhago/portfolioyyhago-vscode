@@ -1966,6 +1966,20 @@ body {
   background: rgba(55, 148, 255, 0.15);
   border-color: rgba(55, 148, 255, 0.5);
 }
+.md-skills .md-chips {
+  gap: 12px;
+  margin: 14px 0 22px;
+}
+.md-skills .md-chips code {
+  padding: 8px 18px 8px 14px;
+  font-size: 16px;
+}
+.md-skills .chip-logo {
+  width: 26px;
+  height: 26px;
+  margin-right: 9px;
+  vertical-align: -7px;
+}
 .md blockquote {
   margin: 0 0 16px;
   padding: 8px 16px;
