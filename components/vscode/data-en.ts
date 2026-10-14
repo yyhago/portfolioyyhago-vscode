@@ -34,7 +34,7 @@ My story with programming really started at **ETEC Hortolândia**, where I took 
 
 Then came consulting. At **DBS System** I built screens and functions integrated with the Datasul ERP (TOTVS) for industrial clients. At **CroSoften** I worked on **23 projects** at the same time, always with APIs in **Node.js and NestJS**, Clean Architecture and requirements gathered straight from the client, across agribusiness, healthcare, financial management and logistics.
 
-Today, at **Freecook Brasil**, I'm responsible for the architecture of the company's whole IT ecosystem. I designed from scratch the platform that runs the entire operation, from the purchase on the online store to the invoice, in **Next.js, NestJS and TypeScript**, and it replaced a legacy WordPress setup without stopping sales. Along the way we migrated the ERP from ERPFLEX to OMIE. I also take care of the **n8n** automations and the infrastructure, from the server to the deploy.
+I know how to take care of the architecture of a company's whole IT ecosystem, as I did at **Freecook Brasil**. I designed from scratch the platform that runs the entire operation, from the purchase on the online store to the invoice, in **Next.js, NestJS and TypeScript**, and it replaced a legacy WordPress setup without stopping sales. Along the way we migrated the ERP from ERPFLEX to OMIE. I also take care of the **n8n** automations and the infrastructure, from the server to the deploy.
 
 I like being close to the people who use what I build. I work from gathering requirements with the client all the way to the final delivery, with systems published on the web and consumed by mobile apps, in teams running Scrum, Kanban or just dailies and weeklies.
 
@@ -93,7 +93,7 @@ If you want to talk about architecture, automation or a project, reach me on [Li
 
   "docs/experiencia.md": `# :briefcase: Experience
 
-I started as an apprentice in 2025 and since then I've worked in consulting, at a software house serving dozens of clients at the same time, and today I take care of all the technology of a company. Here's what I did at each place, with some of the systems that are live. {{cv-frase}}
+I started as an apprentice in 2025 and since then I've worked in consulting, at a software house serving dozens of clients at the same time, and I know how to take care of all the technology of a company. Here's what I did at each place, with some of the systems that are live. {{cv-frase}}
 
 ## Freecook Brasil
 

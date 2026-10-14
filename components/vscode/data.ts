@@ -62,7 +62,7 @@ Minha história com programação começou de verdade na **ETEC Hortolândia**, 
 
 Depois vieram as consultorias. Na **DBS System** desenvolvi telas e funções integradas ao ERP Datasul (TOTVS) para clientes da indústria. Na **CroSoften** atendi **23 projetos** ao mesmo tempo, sempre com APIs em **Node.js e NestJS**, Clean Architecture e requisito levantado direto com o cliente, em agronegócio, saúde, gestão financeira e logística.
 
-Hoje, na **Freecook Brasil**, cuido da arquitetura de todo o ecossistema de TI da empresa. Desenhei do zero a plataforma que roda a operação inteira, da compra na loja virtual até a emissão da nota fiscal, em **Next.js, NestJS e TypeScript**, e ela substituiu um legado em WordPress sem parar as vendas. No caminho migramos o ERP do ERPFLEX para o OMIE. Também cuido das automações no **n8n** e da infraestrutura, do servidor ao deploy.
+Sei cuidar da arquitetura de todo o ecossistema de TI de uma empresa, como fiz na **Freecook Brasil**. Desenhei do zero a plataforma que roda a operação inteira, da compra na loja virtual até a emissão da nota fiscal, em **Next.js, NestJS e TypeScript**, e ela substituiu um legado em WordPress sem parar as vendas. No caminho migramos o ERP do ERPFLEX para o OMIE. Também cuido das automações no **n8n** e da infraestrutura, do servidor ao deploy.
 
 Gosto de estar perto de quem usa o que eu construo. Atuo do levantamento de requisitos com o cliente até a entrega final, com sistemas publicados na web e consumidos por apps mobile, em times com Scrum, Kanban ou só dailies e weeklies.
 
@@ -123,7 +123,7 @@ Se quiser trocar uma ideia sobre arquitetura, automação ou algum projeto, me c
     path: "docs/experiencia.md",
     content: `# :briefcase: Experiência
 
-Comecei como jovem aprendiz em 2025 e, de lá para cá, passei por consultoria, por uma software house atendendo dezenas de clientes ao mesmo tempo e hoje cuido de toda a tecnologia de uma empresa. Aqui está o que eu fiz em cada lugar, com alguns dos sistemas que estão no ar. {{cv-frase}}
+Comecei como jovem aprendiz em 2025 e, de lá para cá, passei por consultoria, por uma software house atendendo dezenas de clientes ao mesmo tempo e sei cuidar de toda a tecnologia de uma empresa. Aqui está o que eu fiz em cada lugar, com alguns dos sistemas que estão no ar. {{cv-frase}}
 
 ## Freecook Brasil
 
