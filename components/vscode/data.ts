@@ -444,7 +444,7 @@ As ferramentas do meu dia a dia, separadas por área. Na aba **Extensões**, aqu
 
 ## :server-process: Back-end
 
-Minha base é **NestJS** com Prisma ou TypeORM, fila com Redis e BullMQ, validação com Zod e documentação no Swagger. Em Python, uso **FastAPI** e **Flask**.
+Minha base é **NestJS** com Prisma, fila com Redis e BullMQ e documentação no Swagger. Em Python, uso **FastAPI** e **Flask**.
 
 \`Node.js\` \`NestJS\` \`FastAPI\` \`Flask\` \`Prisma\` \`APIs REST\` \`Redis\` \`BullMQ\` \`Swagger\`
 
@@ -462,7 +462,7 @@ Como comecei na Cibersegurança, autenticação, permissão e cuidado com dado s
 
 ## :cloud: DevOps e Cloud
 
-Mantenho minha própria infraestrutura, com VPS, **Docker**, **Nginx** com SSL, backup automatizado e CI/CD com GitHub Actions. Na nuvem, Amazon S3 e Azure.
+Mantenho minha própria infraestrutura, com VPS, **Docker**, **Nginx** com SSL, backup automatizado e CI/CD. Na nuvem, AWS, Azure e Google Cloud.
 
 \`Linux\` \`Bash\` \`VPS\` \`Docker\` \`Docker Compose\` \`Nginx\` \`CI/CD\` \`AWS\` \`Azure\` \`Google Cloud\`
 
@@ -474,19 +474,19 @@ Mantenho minha própria infraestrutura, com VPS, **Docker**, **Nginx** com SSL, 
 
 ## :plug: Integrações
 
-Os sistemas que fazem a operação de uma empresa girar, como ERP, CRM, pagamento e logística.
+Os sistemas que fazem a operação de uma empresa girar, como ERP, CRM, pagamento, marketplace e logística.
 
 \`Bling\` \`OMIE\` \`ERPFLEX\` \`Datasul/TOTVS\` \`RD Station\` \`WooCommerce\` \`Frenet\` \`BB Developer\` \`PayPal\` \`Mercado Livre\`
 
 ## :graph: Dados e BI
 
-Para transformar dado em relatório e decisão, uso **Power BI**, **Pandas** e notebooks no Jupyter.
+Para transformar dado em relatório e decisão, uso **Power BI** e **Azure Databricks**.
 
 \`Power BI\` \`Azure Databricks\`
 
 ## :wrench: Ferramentas e práticas
 
-Git em tudo, Figma para desenhar antes de codar, Postman para testar API e Clean Architecture como base de organização.
+Git em tudo, Figma para desenhar antes de codar, Postman para testar API, Scrum e Kanban para organizar o trabalho.
 
 \`Git\` \`GitHub\` \`Figma\` \`Postman\` \`XAMPP\` \`Arduino\` \`IoT\` \`UI/UX responsivo\` \`Estrutura de dados\` \`Design de software\` \`Redes\` \`Scrum\` \`Kanban\`
 `,
