@@ -5,7 +5,7 @@ export const EN_DOCS: Record<string, string> = {
   "docs/sobre-mim.md": `![Yhago Felipe](/yhago.jpg)
 
 * :account: Yhago Felipe Rocha Teles
-* :terminal-bash: Full Stack Developer, back-end focused
+* :terminal-bash: Full Stack Software Engineer, back-end focused
 * :location: Hortolândia, São Paulo, Brazil
 * :mortar-board: Software Engineering, Estácio
 * :globe: Native Portuguese, intermediate English
@@ -28,13 +28,15 @@ The **Guide** button on the blue bar at the bottom shows you where everything is
 
 ## :person: About me
 
-I'm Yhago Felipe, a Full Stack developer, and the back-end is where I feel at home. I have two technical degrees in Systems Development, from **SENAI** and **ETEC**, and I'm finishing my bachelor's in **Software Engineering** at Estácio.
+I'm Yhago Felipe, a full stack software engineer, and the back-end is where I feel at home. My job is to take manual processes and systems that don't talk to each other and turn them into software the company can use and grow with. I have two technical degrees in Systems Development, from **SENAI** and **ETEC**, and I'm doing my bachelor's in **Software Engineering** at Estácio.
 
 My story with programming really started at **ETEC Hortolândia**, where I took the technical course alongside high school and built **MundoPet**, a pet marketplace, as my final project. In 2025 I joined the **Cybersecurity team at Grupo EMS** as an apprentice and built **Python** automations that cut the team's manual work by **40%**. That's where an idea I bring to every project was born, *automate before you scale*.
 
 Then came consulting. At **DBS System** I built screens and functions integrated with the Datasul ERP (TOTVS) for industrial clients. At **CroSoften** I worked on **23 projects** at the same time, always with APIs in **Node.js and NestJS**, Clean Architecture and requirements gathered straight from the client, across agribusiness, healthcare, financial management and logistics.
 
-Today I architect and maintain a platform that runs a company end to end, from the e-commerce order to shipping with the invoice, built with **Next.js, NestJS and TypeScript**, and it replaced a legacy WordPress setup without stopping the operation. I also take care of the ERP integrations, the **n8n** automations and the infrastructure on VPS, Docker and Nginx.
+Today, at **Freecook Brasil**, I'm responsible for the architecture of the company's whole IT ecosystem. I designed from scratch the platform that runs the entire operation, from the purchase on the online store to the invoice, in **Next.js, NestJS and TypeScript**, and it replaced a legacy WordPress setup without stopping sales. Along the way we migrated the ERP from ERPFLEX to OMIE. I also take care of the **n8n** automations and the infrastructure, from the server to the deploy.
+
+I like being close to the people who use what I build. I work from gathering requirements with the client all the way to the final delivery, with systems published on the web and consumed by mobile apps, in teams running Scrum, Kanban or just dailies and weeklies.
 
 On the side, I work with many clients on a project basis, across all kinds of industries, from businesses that are just starting out to big companies like **CUBE Inteligência**, **JCFireWall**, with SafetyKeeper, and **CoJurOS**, which is coming soon. Those are just a few names, the list is much longer and keeps growing. If you want to know how I can help your company, take a look at [services.md](services.md).
 
@@ -98,11 +100,13 @@ I started as an apprentice in 2025 and since then I've worked in consulting, at 
 **Full Stack Software Developer**, full time
 *Mar 2026 to present, Campinas, SP, on site*
 
+I'm responsible for the architecture and technical evolution of the company's whole IT ecosystem, with a focus on performance, scalability and process automation.
+
 When I joined, the online store and the management side ran on WordPress, connected to ERPFLEX. As the software engineer, I designed the architecture of the new system from scratch, with the online store, admin dashboard, sales portal and company website, covering the whole path from the purchase to the invoice integrated with the ERP. Along the way, we migrated from ERPFLEX to OMIE without stopping the sales of a store that sells a lot. Today I maintain the platform I built and automate the processes that were still done by hand.
 
 * Architecture and development of the entire platform in **Next.js, NestJS and TypeScript**, bringing the store, dashboard, sales portal and company website together in a single system.
 * Complete flow from the order to the **invoice**, integrated with the ERP and the stock update.
-* Move from legacy **WordPress** to a custom stack and migration from **ERPFLEX** to **OMIE**, keeping stock, orders and customers consistent, all without stopping the operation.
+* Move from legacy **WordPress** to a custom stack, defining code standards, API structure and the migration strategy, and migration from **ERPFLEX** to **OMIE**, keeping stock, orders and customers consistent, all without stopping the operation.
 * Maintenance of the legacy **PHP and MySQL** e-commerce while the transition happened.
 * **n8n** automations connecting the ERP, CRM (RD Station) and internal systems, taking manual work off marketing and operations.
 * Our own infrastructure, with **VPS** servers, **Docker**, **Nginx** as a reverse proxy, **SSL**, domains, **Cloudflare** and automated database backups.
@@ -131,7 +135,8 @@ I joined as a contractor to build the back-end of Angular and iOS applications. 
 * Database modeling in **MySQL** on the projects I worked on.
 * Complete **Swagger** documentation, consumed at the same time by the iOS and Angular teams.
 * On some projects I also built the interfaces, from the prototypes the design team delivered in **Figma**.
-* Several demands in parallel, with continuous delivery, using Scrum and Kanban.
+* Direct contact with clients to gather requirements and define the technical scope, turning business needs into architecture.
+* Several demands in parallel, with continuous delivery and a focus on code quality, using Scrum and Kanban.
 
 \`Node.js\` \`NestJS\` \`TypeScript\` \`MySQL\` \`Clean Architecture\` \`Swagger\` \`Angular\` \`Figma\`
 
@@ -183,6 +188,7 @@ My first job, at a pharmaceutical company. I joined the Cybersecurity team, but 
 * Internal applications in Python, with **Streamlit, FastAPI and Flask**, for the security team's needs.
 * **CI/CD** pipelines to run and monitor the automations.
 * Integration with Supabase, Firebase, PostgreSQL and MySQL to connect the data flow between systems.
+* Support on information security practices, focused on handling sensitive data properly.
 
 \`Python\` \`Excel\` \`Streamlit\` \`FastAPI\` \`Flask\` \`Supabase\` \`Firebase\` \`PostgreSQL\` \`MySQL\`
 `,
@@ -205,15 +211,17 @@ A new project I'm building right now, CoJurOS, focused on legal communication. I
 
 \`NestJS\` \`TypeScript\` \`Next.js\` \`PostgreSQL\` \`Docker\` \`Nginx\`
 
-**The client's problem.** JCFireWall served several corporate clients and tracked the workplace safety compliance of all of them in spreadsheets, with no reliable separation between companies, no history of who changed what and no visibility into deadlines.
+**The client's problem.** JCFireWall served several corporate clients and tracked the workplace safety compliance of all of them in spreadsheets, with no reliable separation between companies, no history of who changed what and no visibility into deadlines. They needed a platform where each client only sees its own data, with an audit trail for inspections and a base ready to grow with their client list.
 
 **Solution.**
 
-* Modular back-end in **NestJS**, splitting clients, users, compliance and documents into independent, testable modules.
+* Modular back-end in **NestJS**, splitting clients, users, compliance and safety documents into independent, testable modules.
+* Documented REST API, with versioning and standardized responses, so the front-end consumes it without surprises.
 * **Multitenancy** with data isolation per company and **RBAC** per role, so each client only sees what belongs to them.
-* **PostgreSQL** with indexes designed for the compliance queries and the audit trail.
-* **Next.js** front-end for documents, deadlines and compliance status, with different screens for each role.
-* Deployed on a VPS with Docker, Nginx, SSL and automated backups.
+* **PostgreSQL** with relational modeling and indexes designed for the compliance queries and the audit history, without losing performance.
+* Data validation and centralized error handling, avoiding inconsistencies in critical safety information.
+* **Next.js** front-end for documents, deadlines and compliance status per client, with different screens for each role.
+* Deployed on a VPS with Docker, Nginx, SSL and automated backups, ready to take on new clients without touching the architecture.
 
 The system is internal and sits behind a login. [:link-external: JCFireWall website](https://jcfirewall.com.br)
 
@@ -224,18 +232,20 @@ The system is internal and sits behind a login. [:link-external: JCFireWall webs
 
 *Full Stack, client CUBE Inteligência, Jul 2025 to Nov 2025*
 
-\`React\` \`TypeScript\` \`Vite\` \`Node.js\` \`Express\` \`Prisma\` \`PostgreSQL\` \`Gemini AI\`
+\`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`Node.js\` \`Express\` \`Prisma\` \`PostgreSQL\` \`Gemini AI\` \`PM2\`
 
 **The client's problem.** CUBE needed to follow in real time what was being published about political topics and figures, measure the tone of those mentions and show everything in dashboards that could handle peak traffic during elections, with different permissions for the internal team and for clients.
 
-**Solution.**
+**Solution.** I kept a clean split between the front-end, a SPA, and the back-end, a stateless REST API, with isolated environments per layer and versioned deploys for quick rollback.
 
-* Front-end in **React 18 with Vite** and back-end in **Node.js and Express**, separated, with versioned deploys for quick rollback.
-* **React Query** for caching and revalidation, and real time dashboards with Chart.js and Recharts.
+* Front-end in **React 18 with TypeScript and Vite**, with code splitting, Tailwind and custom components, no heavy UI library.
+* **React Query** for caching, automatic revalidation and async state, and real time dashboards with Chart.js and Recharts.
+* Back-end in **Node.js and Express**, layered into controllers, services and repositories.
 * **Prisma** with PostgreSQL, versioned migrations and strategic indexes.
-* **JWT** authentication with refresh token rotation and **RBAC** per route.
-* Public data collection with **Apify** and sentiment analysis with the **Google Gemini** API.
-* RSS aggregator with node-cron and deploy on a VPS with Nginx and **PM2** in cluster mode.
+* **JWT** authentication with refresh token rotation, bcrypt for passwords and **RBAC** with per route middleware.
+* Public data collection with **Apify** and sentiment analysis with the **Google Gemini** API, with prompts tuned to the political context.
+* RSS aggregator with node-cron to keep everything updated in the background, and validation with Zod.
+* Deployed on a dedicated VPS, with Nginx and firewall managed through HestiaCP and Node in cluster mode with **PM2**, using every core on the server.
 
 The platform is private, by contract. [:link-external: CUBE website](https://cubeinteligencia.com.br)
 
@@ -248,14 +258,15 @@ The platform is private, by contract. [:link-external: CUBE website](https://cub
 
 \`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`Vercel\`
 
-**The client's problem.** The law firm wanted to show up on Google for people looking for a labor lawyer in the region, with a page that loads fast on mobile and turns visits into contacts through WhatsApp and the form.
+**The client's problem.** The law firm wanted to show up on Google for people looking for a labor lawyer in the region, with a page that loads fast on mobile and turns visits into real contacts through WhatsApp and the form.
 
-**Solution.**
+**Solution.** I turned that into performance, SEO and accessibility requirements.
 
 * React 18, TypeScript and Vite, with Tailwind and a mobile first layout tested on real devices.
-* Technical SEO with React Helmet, semantic HTML and schema.org structured data.
-* Lazy loading and WebP images, reaching **Lighthouse above 95** in every category and **LCP under 2.5 s**.
-* **WCAG 2.1 level A** accessibility and deploy on Vercel with a preview for every pull request.
+* Technical SEO with React Helmet, semantic HTML and schema.org structured data for law firms.
+* Lazy loaded components and WebP images with fallback, reaching **Lighthouse above 95** in every category and **LCP under 2.5 s**.
+* **WCAG 2.1 level A** accessibility, with proper contrast, keyboard navigation, ARIA labels and visible focus.
+* Deploy on Vercel with a preview for every pull request.
 
 [:link-external: See the landing page live](https://raquel-ribeiro-advocacia-psi.vercel.app/)
 
@@ -267,14 +278,16 @@ The platform is private, by contract. [:link-external: CUBE website](https://cub
 
 \`PHP\` \`WordPress\` \`MySQL\` \`Sass\`
 
-**The client's problem.** SGI needed a website live quickly, that the team could update on their own, with a reliable contact form.
+**The client's problem.** SGI needed a company website live on a short deadline, that the team could update without depending on a developer, with a reliable contact form and room to grow as they launched new services.
 
 **Solution.**
 
-* WordPress with a custom theme in **PHP 8**, organized in an MVC inspired structure.
+* WordPress with a custom theme in **PHP 8**, taking advantage of the team already knowing the admin while keeping full control of the code.
+* Theme organized with an MVC inspired separation of concerns, so maintenance stays simple.
+* SCSS with Grid and Flexbox for the responsive layout and components.
 * AJAX forms with nonce and sanitization, preventing CSRF and XSS.
-* Custom database tables for structured data, keeping queries fast.
-* Automated deploy via Git on Hostinger, with rollback.
+* Custom database tables for structured data, keeping wp_postmeta clean and queries fast.
+* Automated deploy via Git on Hostinger, with versioning and rollback.
 
 [:link-external: sgitreinamentosassessoria.com](https://sgitreinamentosassessoria.com/)
 
@@ -284,23 +297,131 @@ The platform is private, by contract. [:link-external: CUBE website](https://cub
 
 *Course project, team of four, Jun 2025*
 
-\`Python\` \`Streamlit\` \`Git\`
+\`Python\` \`NLP\` \`Streamlit\` \`Git\`
 
-A course project we built as a team of four developers to raise awareness about digital security, with a chatbot for questions, a password generator and checker and a phishing simulator. Built in Python with natural language processing and a Streamlit interface.
+A course project we built as a team of four developers to raise awareness about digital security.
+
+* Three modules, a chatbot for digital security questions and good practices, a strong password generator and checker and an educational phishing simulator.
+* Built in Python with natural language processing, in a modular architecture ready to plug in security APIs later.
+* Streamlit interface, designed so non technical users find everything fast.
+* Versioned on Git and GitHub, with agile task management.
+
+[:github: See the code on GitHub](https://github.com/rafafrd/Cyberbot)
 
 {{prints:cyberbot|Cyberbot, prototype screens}}
 
 ## MundoPet, my final project
 
-*Full Stack, academic project, ETEC Hortolândia, 2024*
+*Full Stack, academic project, ETEC Hortolândia, Jan 2024 to Dec 2024*
 
-\`Node.js\` \`Express\` \`React\` \`Redux\` \`MongoDB\` \`Bootstrap\`
+\`Node.js\` \`Express\` \`MongoDB\` \`React\` \`Redux\` \`Bootstrap\` \`PayPal\` \`AWS\`
 
-A marketplace for the pet market, with a back-end in Node.js and Express, MongoDB and a front-end in React with Redux. It shows the nearest pet shops on a map and has a cart, sign up and payment.
+The final project of my Systems Development technical degree, a complete marketplace for the pet market that brings several pet shops together on one platform.
+
+* Back-end in **Node.js and Express**, with MongoDB and Mongoose, and the database hosted on AWS.
+* Front-end in **React with Redux** for state and Formik for forms.
+* Nearest pet shops on a map, cart, sign up and payment through **PayPal**.
+* Shared business model, where part of each sale goes to the platform.
 
 [:github: See the code on GitHub](https://github.com/yyhago/pet-marketplace-etec)
 
 {{prints:mundopet|MundoPet}}
+
+## :beaker: Personal projects and studies
+
+Outside of client work, I like to try new ideas, practice architecture and play with AI. It's all open on my [GitHub](https://github.com/yyhago).
+
+### Gemini Chatbot
+
+A generative AI chatbot that talks in real time, using the Gemini API, with support for the Flash and Pro models.
+
+\`Python\` \`Streamlit\` \`Google Gemini\`
+
+[:github: See the code](https://github.com/yyhago/gemini-ai-chatbot)
+
+{{prints:geminichatbot|Gemini Chatbot}}
+
+### YouTube video summarizer
+
+Grabs the transcript of a YouTube video, in Portuguese or English, and generates a straight to the point summary with Gemini.
+
+\`Python\` \`Streamlit\` \`Google Gemini\`
+
+[:github: See the code](https://github.com/yyhago/gemini-ai-transcriber)
+
+{{prints:geminiresumo|YouTube video summarizer}}
+
+### Audio translator
+
+Takes an MP3 or WAV file, transcribes the audio and translates it to other languages with Gemini, with a built in player right on the screen.
+
+\`Python\` \`Streamlit\` \`SpeechRecognition\` \`Google Gemini\`
+
+[:github: See the code](https://github.com/yyhago/gemini-ai-audio)
+
+{{prints:geminiaudio|Audio translator}}
+
+### AI image generator
+
+Creates digital art from a text description, using the Stability AI model.
+
+\`Python\` \`Streamlit\` \`Stability AI\`
+
+[:github: See the code](https://github.com/yyhago/stability-ai-image)
+
+{{prints:stabilityimagem|AI image generator}}
+
+### Projects and tasks API
+
+A technical challenge, a REST API with CRUD for projects and tasks, a layered architecture of controllers, services and repositories, Sequelize with MySQL and an integration with the GitHub API.
+
+\`Node.js\` \`Express\` \`Sequelize\` \`MySQL\`
+
+[:github: See the code](https://github.com/yyhago/teste-tecnico-nodejs)
+
+{{prints:testetecnico|Projects and tasks API, layered architecture}}
+
+### BookAPI and WebBook
+
+A library REST API in FastAPI, with Pydantic validation and automatic Swagger docs, plus a Flask interface with Bootstrap that consumes that API.
+
+\`Python\` \`FastAPI\` \`Pydantic\` \`Flask\` \`Bootstrap\`
+
+[:github: See the API](https://github.com/yyhago/book-api-fastapi) and [:github: see the interface](https://github.com/yyhago/webbook-flask)
+
+### FinApi
+
+A back-end that simulates a digital bank, with accounts, deposits, withdrawals, statements by period and balance, plus rules like unique tax ID and no withdrawal without funds.
+
+\`Node.js\` \`JavaScript\` \`REST API\`
+
+[:github: See the code](https://github.com/yyhago/finapi-nodejs)
+
+### Login system
+
+A Python login with MVC architecture, SQLAlchemy and PostgreSQL, with unique emails and encrypted passwords.
+
+\`Python\` \`SQLAlchemy\` \`PostgreSQL\` \`MVC\`
+
+[:github: See the code](https://github.com/yyhago/auth-system)
+
+### Grocery manager
+
+A pure Python system with MVC architecture to manage categories, products, stock, suppliers, customers, employees and sales reports.
+
+\`Python\` \`MVC\`
+
+[:github: See the code](https://github.com/yyhago/grocery-manager)
+
+### GitHub Favorites and JavaScript challenges
+
+A SPA that searches profiles on the GitHub API and saves favorites in the browser, plus the Rocketseat intensive course challenges, like a BMI calculator and a guessing game. I also have a repository just for Python challenges on object orientation, MVC and algorithms.
+
+\`JavaScript\` \`HTML5\` \`CSS3\` \`Python\`
+
+[:github: GitHub Favorites](https://github.com/yyhago/github-favorites-javascript), [:github: JavaScript challenges](https://github.com/yyhago/rocketseat-intensivao-javascript) and [:github: Python challenges](https://github.com/yyhago/python-oop-mvc-challenges)
+
+{{prints:githubfavorites|GitHub Favorites}}
 `,
 
   "docs/servicos.md": `# :rocket: Services
@@ -434,27 +555,39 @@ I've been studying nonstop since 2022, with a technical course alongside high sc
 
 ## Bachelor's in Software Engineering
 
-*Centro Universitário Estácio de Sá, remote, 2025 to 2028*
+*Centro Universitário Estácio de Sá, remote, Jan 2025 to Dec 2028, in progress*
 
-Software architecture, design patterns, requirements engineering and agile methods, with an emphasis on security, performance and usability. A lot of what I learned in the course I applied at CUBE, a platform with a scalable architecture, RBAC and real time natural language processing.
+A program focused on building robust and scalable systems. I'm going deeper into software architecture, design patterns, requirements engineering and agile methods like Scrum and Kanban, covering analysis, modeling, implementation and maintenance of systems, with an emphasis on security, performance and usability.
+
+A lot of what I learned in the course I applied in practice at CUBE, a full stack political analysis platform with a scalable architecture, RBAC and real time natural language processing.
+
+\`Software architecture\` \`Requirements engineering\` \`Design patterns\` \`Scrum\` \`Kanban\` \`SQL\`
 
 ## Technical Degree in Systems Development
 
-*SENAI Dr. Celso Charuri, Sumaré, SP, Jan to Sep 2025*
+*SENAI Dr. Celso Charuri, Sumaré, SP, Jan 2025 to Sep 2025, completed*
 
-Systems analysis, data modeling, logic, architecture, object oriented and functional programming, agile methods and DevOps practices with CI/CD. I took it through EMS, as part of the apprenticeship program.
+A technical degree focused on applied software engineering, which I took through EMS as part of the apprenticeship program. I built skills in systems analysis, data modeling, advanced computational logic, systems architecture and object oriented and functional programming, with agile methods, DevOps practices with CI/CD and hands on projects designed to scale.
+
+\`Data modeling\` \`OOP\` \`Functional programming\` \`CI/CD\` \`Project management\`
 
 ## Technical Degree in Systems Development with High School
 
-*ETEC Hortolândia, 2022 to 2024*
+*ETEC Hortolândia, Jan 2022 to Dec 2024, completed*
 
-This is where I really started, studying computational thinking, data modeling, object orientation, web development with RESTful APIs and SPAs, UML and agile methods. My final project was **MundoPet**, a pet marketplace with Node.js, Express, React, Redux and MongoDB.
+This is where I really started. I studied computational thinking, data modeling, systems architecture and object orientation, and worked with full stack web development, with responsive applications, RESTful APIs and SPAs, plus agile methods and UML. It was also my first contact with C, C++ and Arduino.
+
+My final project was **MundoPet**, a complete pet marketplace with Node.js, Express, React, Redux and MongoDB. The details are in [projects.md](projects.md).
+
+\`Node.js\` \`React\` \`MongoDB\` \`UML\` \`C\` \`C++\` \`Arduino\`
 
 ## English, Cidadão Pró-Mundo Program
 
-*Universidade Presbiteriana Mackenzie, Campinas, SP, 2025 to 2029*
+*Universidade Presbiteriana Mackenzie, Campinas, SP, Jul 2025 to Dec 2029, in progress*
 
-I passed a selection process by **Microsoft and SENAI Sumaré** that gave scholarships to only **20 students** in the region. I'm studying English at Mackenzie from A2 to fluency, focused on speaking, listening, reading and writing for real situations.
+I passed a selection process by **Microsoft and SENAI Sumaré** that gave scholarships to only **20 students** in the region. I'm studying English at Mackenzie, from A2 to fluency, focused on speaking, active listening, reading and writing, using digital tools in a multicultural environment for real everyday situations.
+
+\`English\` \`Speaking\` \`Listening\` \`Reading and writing\` \`Leadership\`
 
 ## :globe: Languages
 
@@ -536,7 +669,7 @@ Fill this in and the message goes straight to my inbox, no email app needed.
   "package.json": `{
   "name": "portfolio-yhago",
   "version": "1.0.0",
-  "description": "Portfolio of Yhago Felipe, Full Stack developer",
+  "description": "Portfolio of Yhago Felipe, Full Stack Software Engineer",
   "author": "Yhago Felipe <yhago.felipe.teles@gmail.com>",
   "main": "dist/main.js",
   "scripts": {
@@ -653,7 +786,7 @@ const EXT_LIST: Record<Locale, Ext[]> = {
 export const extensionsFor = (locale: Locale) => EXT_LIST[locale];
 
 const TERMINAL_EN: Record<string, string> = {
-  sobre: `Yhago Felipe Rocha Teles, Full Stack developer
+  sobre: `Yhago Felipe Rocha Teles, Full Stack Software Engineer
 Hortolândia, São Paulo, Brazil
 
 I turn manual work and scattered systems into a custom,
@@ -672,6 +805,7 @@ Law firm       landing page with Lighthouse above 95
 SGI            WordPress website with a custom theme
 Cyberbot       cybersecurity assistant (Python)
 MundoPet       pet marketplace, my final project
+Personal       AI with Gemini, APIs in FastAPI and Node.js, MVC systems
 
 To see more, type open projects.md`,
   servicos: `Custom systems, integrations and APIs, AI dashboards,

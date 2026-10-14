@@ -117,7 +117,7 @@ const Neofetch = ({ gh, locale }: { gh: GitHubData | null; locale: Locale }) => 
   const L = pick(locale);
   const fetch: [string, string][] = [
     [L("Nome", "Name"), "Yhago Felipe Rocha Teles"],
-    [L("Cargo", "Role"), L("Desenvolvedor Full Stack", "Full Stack Developer")],
+    [L("Cargo", "Role"), L("Engenheiro de Software Full Stack", "Full Stack Software Engineer")],
     [L("Local", "Location"), L("Hortolândia, São Paulo, Brasil", "Hortolândia, São Paulo, Brazil")],
     ["Stack", "TypeScript, NestJS, Next.js, Python, PHP"],
     [L("Estudo", "Studies"), L("Engenharia de Software", "Software Engineering")],
