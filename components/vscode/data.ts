@@ -434,61 +434,41 @@ As ferramentas do meu dia a dia, separadas por área. Na aba **Extensões**, aqu
 
 **TypeScript** é a que eu mais uso, no front e no back. **Python** ficou para automação e dados, e **PHP** para e-commerce, WordPress e sistema legado.
 
-\`TypeScript\` \`JavaScript\` \`Python\` \`PHP\` \`SQL\` \`C\` \`C++\` \`XML\`
-
 ## :browser: Front-end
 
 **Next.js** e **React** no dia a dia, **Angular** em projeto corporativo e **React Native** quando o produto precisa de app. Para estilo, quase sempre Tailwind.
-
-\`React\` \`Next.js\` \`React Native\` \`Angular\` \`Redux\` \`Vite\` \`Tailwind CSS\` \`Bootstrap\` \`HTML5\` \`CSS3\` \`Sass\` \`Axios\`
 
 ## :server-process: Back-end
 
 Minha base é **NestJS** com Prisma ou TypeORM, fila com Redis e BullMQ, validação com Zod e documentação no Swagger. Em Python, uso **FastAPI** e **Flask**.
 
-\`Node.js\` \`NestJS\` \`Express\` \`FastAPI\` \`Flask\` \`Prisma\` \`TypeORM\` \`SQLAlchemy\` \`APIs REST\` \`Redis\` \`BullMQ\` \`Swagger\` \`Zod\`
-
 ## :shield: Segurança
 
 Como comecei na Cibersegurança, autenticação, permissão e cuidado com dado sensível entram no desenho desde o começo, não no fim.
-
-\`JWT\` \`OAuth2\` \`RBAC\` \`Multitenancy\` \`bcrypt\` \`Cibersegurança\`
 
 ## :database: Bancos de dados
 
 **PostgreSQL** é o meu padrão, **MySQL** aparece bastante em legado e **MongoDB** quando o modelo pede documento.
 
-\`PostgreSQL\` \`MySQL\` \`SQL Server\` \`MongoDB\` \`SQLite\` \`Supabase\` \`Firebase\` \`NoSQL\` \`Oracle\` \`phpMyAdmin\`
-
 ## :cloud: DevOps e Cloud
 
 Mantenho minha própria infraestrutura, com VPS, **Docker**, **Nginx** com SSL, backup automatizado e CI/CD com GitHub Actions. Na nuvem, Amazon S3 e Azure.
-
-\`Docker\` \`Docker Compose\` \`VPS\` \`Nginx\` \`Linux\` \`Bash\` \`GitHub Actions\` \`AWS\` \`Azure\` \`Vercel\` \`PM2\` \`CI/CD\` \`Amazon S3\` \`Google Cloud\` \`Azure DevOps\`
 
 ## :robot: Automação e IA
 
 **n8n** para orquestrar sistemas, scraping para coletar dado público e LLMs como o **Gemini** para análise de texto e sentimento.
 
-\`n8n\` \`Playwright\` \`Puppeteer\` \`Selenium\` \`BeautifulSoup\` \`Apify\` \`Google Gemini\` \`LLMs\` \`IA generativa\` \`PLN\`
-
 ## :plug: Integrações
 
 Os sistemas que fazem a operação de uma empresa girar, como ERP, CRM, pagamento e logística.
-
-\`Bling\` \`OMIE\` \`ERPFLEX\` \`Datasul/TOTVS\` \`RD Station\` \`WooCommerce\` \`Frenet\`
 
 ## :graph: Dados e BI
 
 Para transformar dado em relatório e decisão, uso **Power BI**, **Pandas** e notebooks no Jupyter.
 
-\`Power BI\` \`Pandas\` \`Jupyter\` \`Streamlit\` \`Azure Databricks\`
-
 ## :wrench: Ferramentas e práticas
 
 Git em tudo, Figma para desenhar antes de codar, Postman para testar API e Clean Architecture como base de organização.
-
-\`Git\` \`GitHub\` \`Figma\` \`Postman\` \`WordPress\` \`XAMPP\` \`Arduino\` \`IoT\` \`Clean Architecture\` \`TDD\` \`MVC\` \`Scrum\` \`Kanban\` \`UI/UX responsivo\` \`Estrutura de dados\` \`Algoritmos\` \`Design de software\` \`Redes\` \`Gestão de projetos\` \`Liderança\`
 `,
   },
   {
