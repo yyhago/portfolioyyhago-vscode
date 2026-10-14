@@ -195,7 +195,7 @@ My first job, at a pharmaceutical company. I joined the Cybersecurity team, but 
 
   "docs/projetos.md": `# :project: Projects
 
-Here's a selection of the projects I've delivered, from political intelligence to workplace safety, law and legal communication, each with the problem that needed solving and how I solved it. It's just a part of it, I work with many other clients who don't show up here. Client projects live in private repositories, by contract, so when I can't show the code I show the screens. Click any image to see it larger.
+Here's a selection of the projects I've delivered, from political intelligence to workplace safety, law and legal communication, each with the problem that needed solving and how I solved it. It's just a part of it, I work with many other clients who don't show up here. Client projects live in private repositories, by contract, so when I can't show the code I show the screens. Click any image to see it larger. My personal and study projects are in [repositories.md](repositories.md), straight from GitHub.
 
 ## CoJurOS, legal communication
 
@@ -326,102 +326,6 @@ The final project of my Systems Development technical degree, a complete marketp
 [:github: See the code on GitHub](https://github.com/yyhago/pet-marketplace-etec)
 
 {{prints:mundopet|MundoPet}}
-
-## :beaker: Personal projects and studies
-
-Outside of client work, I like to try new ideas, practice architecture and play with AI. It's all open on my [GitHub](https://github.com/yyhago).
-
-### Gemini Chatbot
-
-A generative AI chatbot that talks in real time, using the Gemini API, with support for the Flash and Pro models.
-
-\`Python\` \`Streamlit\` \`Google Gemini\`
-
-[:github: See the code](https://github.com/yyhago/gemini-ai-chatbot)
-
-{{prints:geminichatbot|Gemini Chatbot}}
-
-### YouTube video summarizer
-
-Grabs the transcript of a YouTube video, in Portuguese or English, and generates a straight to the point summary with Gemini.
-
-\`Python\` \`Streamlit\` \`Google Gemini\`
-
-[:github: See the code](https://github.com/yyhago/gemini-ai-transcriber)
-
-{{prints:geminiresumo|YouTube video summarizer}}
-
-### Audio translator
-
-Takes an MP3 or WAV file, transcribes the audio and translates it to other languages with Gemini, with a built in player right on the screen.
-
-\`Python\` \`Streamlit\` \`SpeechRecognition\` \`Google Gemini\`
-
-[:github: See the code](https://github.com/yyhago/gemini-ai-audio)
-
-{{prints:geminiaudio|Audio translator}}
-
-### AI image generator
-
-Creates digital art from a text description, using the Stability AI model.
-
-\`Python\` \`Streamlit\` \`Stability AI\`
-
-[:github: See the code](https://github.com/yyhago/stability-ai-image)
-
-{{prints:stabilityimagem|AI image generator}}
-
-### Projects and tasks API
-
-A technical challenge, a REST API with CRUD for projects and tasks, a layered architecture of controllers, services and repositories, Sequelize with MySQL and an integration with the GitHub API.
-
-\`Node.js\` \`Express\` \`Sequelize\` \`MySQL\`
-
-[:github: See the code](https://github.com/yyhago/teste-tecnico-nodejs)
-
-{{prints:testetecnico|Projects and tasks API, layered architecture}}
-
-### BookAPI and WebBook
-
-A library REST API in FastAPI, with Pydantic validation and automatic Swagger docs, plus a Flask interface with Bootstrap that consumes that API.
-
-\`Python\` \`FastAPI\` \`Pydantic\` \`Flask\` \`Bootstrap\`
-
-[:github: See the API](https://github.com/yyhago/book-api-fastapi) and [:github: see the interface](https://github.com/yyhago/webbook-flask)
-
-### FinApi
-
-A back-end that simulates a digital bank, with accounts, deposits, withdrawals, statements by period and balance, plus rules like unique tax ID and no withdrawal without funds.
-
-\`Node.js\` \`JavaScript\` \`REST API\`
-
-[:github: See the code](https://github.com/yyhago/finapi-nodejs)
-
-### Login system
-
-A Python login with MVC architecture, SQLAlchemy and PostgreSQL, with unique emails and encrypted passwords.
-
-\`Python\` \`SQLAlchemy\` \`PostgreSQL\` \`MVC\`
-
-[:github: See the code](https://github.com/yyhago/auth-system)
-
-### Grocery manager
-
-A pure Python system with MVC architecture to manage categories, products, stock, suppliers, customers, employees and sales reports.
-
-\`Python\` \`MVC\`
-
-[:github: See the code](https://github.com/yyhago/grocery-manager)
-
-### GitHub Favorites and JavaScript challenges
-
-A SPA that searches profiles on the GitHub API and saves favorites in the browser, plus the Rocketseat intensive course challenges, like a BMI calculator and a guessing game. I also have a repository just for Python challenges on object orientation, MVC and algorithms.
-
-\`JavaScript\` \`HTML5\` \`CSS3\` \`Python\`
-
-[:github: GitHub Favorites](https://github.com/yyhago/github-favorites-javascript), [:github: JavaScript challenges](https://github.com/yyhago/rocketseat-intensivao-javascript) and [:github: Python challenges](https://github.com/yyhago/python-oop-mvc-challenges)
-
-{{prints:githubfavorites|GitHub Favorites}}
 `,
 
   "docs/servicos.md": `# :rocket: Services
@@ -805,7 +709,6 @@ Law firm       landing page with Lighthouse above 95
 SGI            WordPress website with a custom theme
 Cyberbot       cybersecurity assistant (Python)
 MundoPet       pet marketplace, my final project
-Personal       AI with Gemini, APIs in FastAPI and Node.js, MVC systems
 
 To see more, type open projects.md`,
   servicos: `Custom systems, integrations and APIs, AI dashboards,

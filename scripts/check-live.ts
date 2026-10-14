@@ -66,6 +66,7 @@ assert.ok(enGet("docs/projetos.md").content.includes("![CUBE, platform screens](
 assert.ok(enGet("docs/projetos.md").content.includes("Featured on GitHub"));
 assert.ok(enGet("docs/atividade.md").content.includes("**467 contributions**"));
 assert.ok(!en.some((f) => f.content.includes("{{")), "nenhum token sobrando em inglês");
+assert.ok(get("docs/servicos.md").includes("[[depoimentos]]") && enGet("docs/servicos.md").content.includes("What clients say"), "depoimentos aparecem");
 assert.ok(!on.some((f) => f.path.startsWith("docs/") && f.alias), "português sem apelido");
 for (const e of extensionsFor("en")) assert.ok(!extensions.find((x) => x.id === e.id)!.about.includes(e.about) || e.about === "", `extensão ${e.id} traduzida`);
 const links = [...en.flatMap((f) => [...f.content.matchAll(/\]\(([a-z-]+\.md)(#[a-z]+)?\)/g)].map((m) => m[1]))];

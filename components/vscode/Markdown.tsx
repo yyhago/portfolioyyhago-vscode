@@ -213,7 +213,7 @@ function Testimonials({ locale }: { locale: Locale }) {
           <i className="codicon codicon-quote" />
           <blockquote>{locale === "en" && d.textoEn ? d.textoEn : d.texto}</blockquote>
           <figcaption>
-            <b>{d.nome}</b>
+            <b>{locale === "en" && d.nomeEn ? d.nomeEn : d.nome}</b>
             <span>{[locale === "en" && d.cargoEn ? d.cargoEn : d.cargo, d.empresa].filter(Boolean).join(", ")}</span>
           </figcaption>
         </figure>
