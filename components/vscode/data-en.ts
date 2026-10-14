@@ -741,9 +741,9 @@ To ask for a quote, type quote`,
 To see more, type open repositories.md`,
   habilidades: `languages    TypeScript, JavaScript, Python, PHP, SQL
 front-end    React, Next.js, React Native, Angular, Tailwind CSS
-back-end     Node.js, NestJS, Express, FastAPI, Flask, Prisma, Redis
+back-end     Node.js, NestJS, FastAPI, Flask, Prisma, Redis
 databases    PostgreSQL, MySQL, SQL Server, MongoDB, Supabase
-devops       Docker, Nginx, Linux, GitHub Actions, AWS, Azure
+devops       Docker, Nginx, Linux, CI/CD, AWS, Azure
 automation   n8n, Playwright, Puppeteer, Selenium, LLMs
 
 To see more, type open skills.md`,

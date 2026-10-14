@@ -960,9 +960,9 @@ Para pedir um orçamento, digite orcamento`,
 Para ver mais, digite open repositorios.md`,
   habilidades: `linguagens   TypeScript, JavaScript, Python, PHP, SQL
 front-end    React, Next.js, React Native, Angular, Tailwind CSS
-back-end     Node.js, NestJS, Express, FastAPI, Flask, Prisma, Redis
+back-end     Node.js, NestJS, FastAPI, Flask, Prisma, Redis
 bancos       PostgreSQL, MySQL, SQL Server, MongoDB, Supabase
-devops       Docker, Nginx, Linux, GitHub Actions, AWS, Azure
+devops       Docker, Nginx, Linux, CI/CD, AWS, Azure
 automação    n8n, Playwright, Puppeteer, Selenium, LLMs
 
 Para ver mais, digite open habilidades.md`,
