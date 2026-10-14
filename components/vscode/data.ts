@@ -142,8 +142,6 @@ Quando entrei, a loja virtual e a gestão rodavam em WordPress, ligadas ao ERPFL
 * Infraestrutura própria, com servidores **VPS**, **Docker**, **Nginx** como proxy reverso, **SSL**, domínios, **Cloudflare** e backup automático do banco de dados.
 * Arquivos no **Amazon S3** com presigned URLs e integração com gateways de pagamento e logística (Frenet).
 
-\`Next.js\` \`NestJS\` \`TypeScript\` \`Node.js\` \`PHP\` \`MySQL\` \`n8n\` \`OMIE\` \`Amazon S3\` \`Docker\` \`Nginx\` \`Cloudflare\`
-
 Alguns dos sistemas que estão no ar.
 
 * [:link-external: Loja oficial](https://lojaoficial.freecook.com.br/)
@@ -167,8 +165,6 @@ Entrei por contrato PJ para desenvolver o back-end de aplicações em Angular e 
 * Em alguns projetos também construí as interfaces, a partir dos protótipos que o time de design entregava no **Figma**.
 * Contato direto com os clientes para levantar requisitos e definir o escopo técnico, traduzindo necessidade de negócio em arquitetura.
 * Várias demandas em paralelo, com entrega contínua e foco em qualidade de código, em Scrum e Kanban.
-
-\`Node.js\` \`NestJS\` \`TypeScript\` \`MySQL\` \`Clean Architecture\` \`Swagger\` \`Angular\` \`Figma\`
 
 Os 23 projetos em que trabalhei.
 
@@ -197,8 +193,6 @@ Contrato de 4 meses em uma consultoria que atende indústrias. Foi meu primeiro 
 * Acompanhei de perto o desenvolvimento em **Progress**, a linguagem do Datasul usada nas consultas e nas regras do ERP.
 * Projeto de escopo fechado, entregue dentro dos 4 meses de contrato.
 
-\`Next.js\` \`TypeScript\` \`Datasul/TOTVS\` \`Progress\`
-
 Alguns dos clientes para quem desenvolvi.
 
 * [:link-external: NG Metalúrgica](https://www.ngmetalurgica.com.br/)
@@ -219,8 +213,6 @@ Meu primeiro emprego, numa indústria farmacêutica. Entrei no time de Cibersegu
 * Pipelines de **CI/CD** para rodar e monitorar as automações.
 * Integração com Supabase, Firebase, PostgreSQL e MySQL para juntar o fluxo de dados entre sistemas.
 * Apoio nas práticas de segurança da informação, com foco no tratamento correto de dados sensíveis.
-
-\`Python\` \`Excel\` \`Streamlit\` \`FastAPI\` \`Flask\` \`Supabase\` \`Firebase\` \`PostgreSQL\` \`MySQL\`
 `,
   },
   {
@@ -823,9 +815,10 @@ export const SKILL_LOGOS: Record<string, string> = {
   Vite: "vite", "Node.js": "nodejs", NestJS: "nestjs", Express: "express", FastAPI: "fastapi", Flask: "flask", Prisma: "prisma",
   Redis: "redis", BullMQ: "redis", PostgreSQL: "postgres", MySQL: "mysql", MongoDB: "mongodb", SQLite: "sqlite", Supabase: "supabase",
   Firebase: "firebase", Docker: "docker", Nginx: "nginx", Linux: "linux", Bash: "bash", "GitHub Actions": "githubactions", AWS: "aws",
-  "Amazon S3": "aws", Azure: "azure", "Microsoft Azure": "azure", "Azure Databricks": "azure", Vercel: "vercel", Git: "git",
-  GitHub: "github", "Git e GitHub": "git", Figma: "figma", Postman: "postman", WordPress: "wordpress", WooCommerce: "wordpress",
+  "Amazon S3": "aws", Azure: "azure", "Microsoft Azure": "azure",  Vercel: "vercel", Git: "git",
+  GitHub: "github", "Git e GitHub": "git", Figma: "figma", Postman: "postman", WordPress: "wordpress", 
   Selenium: "selenium", "Linux e Bash": "linux", "Redis e BullMQ": "redis", "HTML5, CSS3 e Sass": "html",
+  SQL: "sql", "APIs REST": "rest", "REST APIs": "rest", Swagger: "swagger", JWT: "jwt", OAuth2: "oauth2", RBAC: "rbac", "JWT, OAuth2 e RBAC": "jwt", "JWT, OAuth2 and RBAC": "jwt", "SQL Server": "sqlserver", NoSQL: "nosql", Oracle: "oracle", phpMyAdmin: "phpmyadmin", VPS: "vps", "CI/CD": "cicd", n8n: "n8n", Playwright: "playwright", Puppeteer: "puppeteer", BeautifulSoup: "beautifulsoup", Apify: "apify", LLMs: "llms", "Google Gemini": "gemini", Bling: "erp", OMIE: "erp", ERPFLEX: "erp", "Datasul/TOTVS": "erp", ERPs: "erp", "RD Station": "rdstation", Frenet: "frenet", "BB Developer": "bb", PayPal: "paypal", "Mercado Livre": "mercadolivre", WooCommerce: "woocommerce", "Power BI": "powerbi", "Azure Databricks": "databricks", XAMPP: "xampp", IoT: "iot", "Arduino e IoT": "arduino", "Arduino and IoT": "arduino", "UI/UX responsivo": "uiux", "Responsive UI/UX": "uiux", "Estrutura de dados": "datastructures", "Data structures": "datastructures", "Design de software": "softwaredesign", "Software design": "softwaredesign", Redes: "network", Networking: "network", Scrum: "scrum", Kanban: "kanban",
   "Docker Compose": "docker", "Git and GitHub": "git", C: "c", "C++": "cpp", "Google Cloud": "gcp", Arduino: "arduino", "Linux and Bash": "linux", "Redis and BullMQ": "redis", "HTML5, CSS3 and Sass": "html",
 };
 

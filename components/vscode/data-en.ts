@@ -112,8 +112,6 @@ When I joined, the online store and the management side ran on WordPress, connec
 * Our own infrastructure, with **VPS** servers, **Docker**, **Nginx** as a reverse proxy, **SSL**, domains, **Cloudflare** and automated database backups.
 * Files on **Amazon S3** with presigned URLs and integrations with payment gateways and shipping (Frenet).
 
-\`Next.js\` \`NestJS\` \`TypeScript\` \`Node.js\` \`PHP\` \`MySQL\` \`n8n\` \`OMIE\` \`Amazon S3\` \`Docker\` \`Nginx\` \`Cloudflare\`
-
 Some of the systems that are live.
 
 * [:link-external: Official store](https://lojaoficial.freecook.com.br/)
@@ -137,8 +135,6 @@ I joined as a contractor to build the back-end of Angular and iOS applications. 
 * On some projects I also built the interfaces, from the prototypes the design team delivered in **Figma**.
 * Direct contact with clients to gather requirements and define the technical scope, turning business needs into architecture.
 * Several demands in parallel, with continuous delivery and a focus on code quality, using Scrum and Kanban.
-
-\`Node.js\` \`NestJS\` \`TypeScript\` \`MySQL\` \`Clean Architecture\` \`Swagger\` \`Angular\` \`Figma\`
 
 The 23 projects I worked on.
 
@@ -167,8 +163,6 @@ A 4 month contract at a consulting firm that serves industrial companies. It was
 * Followed closely the development in **Progress**, the Datasul language used for the ERP's queries and rules.
 * Fixed scope project, delivered within the 4 month contract.
 
-\`Next.js\` \`TypeScript\` \`Datasul/TOTVS\` \`Progress\`
-
 Some of the clients I built for.
 
 * [:link-external: NG Metalúrgica](https://www.ngmetalurgica.com.br/)
@@ -189,8 +183,6 @@ My first job, at a pharmaceutical company. I joined the Cybersecurity team, but 
 * **CI/CD** pipelines to run and monitor the automations.
 * Integration with Supabase, Firebase, PostgreSQL and MySQL to connect the data flow between systems.
 * Support on information security practices, focused on handling sensitive data properly.
-
-\`Python\` \`Excel\` \`Streamlit\` \`FastAPI\` \`Flask\` \`Supabase\` \`Firebase\` \`PostgreSQL\` \`MySQL\`
 `,
 
   "docs/projetos.md": `# :project: Projects
