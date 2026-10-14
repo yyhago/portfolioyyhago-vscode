@@ -50,6 +50,16 @@ export const DEPOIMENTOS: Depoimento[] = [
       "We needed the website live quickly and in a way our team could update on its own. That's exactly what we got, with a contact form that works and an admin that's simple to use.",
   },
   {
+    nome: "Equipe de produto",
+    nomeEn: "Product team",
+    cargo: "",
+    empresa: "Vitrine do Campo",
+    texto:
+      "O back-end que o Yhago entregou chegava documentado no Swagger, e o time do app e do front-end conseguia consumir tudo sem precisar perguntar nada. Regra de negócio bem resolvida e entrega constante, mesmo com várias demandas ao mesmo tempo.",
+    textoEn:
+      "The back-end Yhago delivered came documented in Swagger, and the app and front-end teams could consume everything without having to ask anything. Business rules well handled and steady delivery, even with several demands at the same time.",
+  },
+  {
     nome: "Equipe de TI",
     nomeEn: "IT team",
     cargo: "",
