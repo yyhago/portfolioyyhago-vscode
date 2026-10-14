@@ -483,15 +483,11 @@ Muito do que vi no curso eu apliquei na prática no CUBE, uma plataforma full st
 
 Passei num concurso seletivo da **Microsoft com o SENAI Sumaré** que deu bolsa para só **20 alunos** da região. Estou fazendo inglês no Mackenzie, do A2 até a fluência, com foco em conversação, escuta ativa, leitura e escrita, usando ferramentas digitais num ambiente multicultural para situações reais do dia a dia.
 
-\`Inglês\` \`Comunicação oral\` \`Listening\` \`Leitura e escrita\` \`Liderança\`
-
 ## Técnico em Desenvolvimento de Sistemas
 
 *SENAI Dr. Celso Charuri, Sumaré, SP, jan. de 2025 a set. de 2025, concluído*
 
 Técnico com foco em engenharia de software aplicada, que fiz pela EMS como parte do programa de aprendiz. Desenvolvi análise de sistemas, modelagem de dados, lógica computacional avançada, arquitetura de sistemas e programação orientada a objetos e funcional, com metodologias ágeis, práticas de DevOps com CI/CD e projetos práticos pensados para escalar.
-
-\`Modelagem de dados\` \`POO\` \`Programação funcional\` \`CI/CD\` \`Gestão de projetos\`
 
 ## Técnico em Desenvolvimento de Sistemas com Ensino Médio
 

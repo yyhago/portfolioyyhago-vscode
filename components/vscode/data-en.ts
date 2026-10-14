@@ -443,15 +443,11 @@ A lot of what I learned in the course I applied in practice at CUBE, a full stac
 
 I passed a selection process by **Microsoft and SENAI Sumaré** that gave scholarships to only **20 students** in the region. I'm studying English at Mackenzie, from A2 to fluency, focused on speaking, active listening, reading and writing, using digital tools in a multicultural environment for real everyday situations.
 
-\`English\` \`Speaking\` \`Listening\` \`Reading and writing\` \`Leadership\`
-
 ## Technical Degree in Systems Development
 
 *SENAI Dr. Celso Charuri, Sumaré, SP, Jan 2025 to Sep 2025, completed*
 
 A technical degree focused on applied software engineering, which I took through EMS as part of the apprenticeship program. I built skills in systems analysis, data modeling, advanced computational logic, systems architecture and object oriented and functional programming, with agile methods, DevOps practices with CI/CD and hands on projects designed to scale.
-
-\`Data modeling\` \`OOP\` \`Functional programming\` \`CI/CD\` \`Project management\`
 
 ## Technical Degree in Systems Development with High School
 
