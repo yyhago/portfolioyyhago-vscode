@@ -2211,18 +2211,12 @@ body {
 .xp-icon-img {
   position: relative;
 }
-.xp-icon.hint .xp-icon-img::after {
-  content: "";
-  position: absolute;
-  inset: -6px;
-  border-radius: 12px;
-  border: 2px solid rgba(255, 255, 255, 0.85);
-  animation: hint-pulse 1.8s ease-out infinite;
-  pointer-events: none;
+.xp-icon.hint .xp-icon-img {
+  animation: hint-glow 2.6s ease-in-out infinite;
 }
-@keyframes hint-pulse {
-  0% { transform: scale(0.9); opacity: 0.9; }
-  100% { transform: scale(1.35); opacity: 0; }
+@keyframes hint-glow {
+  0%, 100% { filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.35)); }
+  50% { filter: drop-shadow(0 0 9px rgba(55, 148, 255, 0.95)) drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.35)); }
 }
 
 .tour {

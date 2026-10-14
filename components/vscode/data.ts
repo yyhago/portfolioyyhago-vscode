@@ -90,7 +90,7 @@ Tiro tarefa repetitiva das mãos das pessoas com **n8n**, **Python** e web scrap
 
 ### :history: Modernização de legado
 
-Troco sistema antigo por stack própria sem parar a operação. Estudo o legado, levanto os gargalos com quem usa todo dia e migro por partes, com o sistema antigo rodando até o novo assumir.
+Troco sistema antigo por stack própria, em **Next.js, NestJS e TypeScript**, sem parar a operação. Estudo o legado, levanto os gargalos com quem usa todo dia e migro por partes, com o sistema antigo rodando até o novo assumir.
 
 ### :cloud: Infraestrutura
 
@@ -135,7 +135,7 @@ Sou responsável pela arquitetura e pela evolução técnica de todo o ecossiste
 Quando entrei, a loja virtual e a gestão rodavam em WordPress, ligadas ao ERPFLEX. Como engenheiro de software, desenhei do zero a arquitetura do sistema novo, com loja virtual, painel administrativo, portal comercial e site institucional, cobrindo todo o caminho da compra até a emissão da nota fiscal integrada ao ERP. No meio disso, migramos do ERPFLEX para o OMIE sem parar as vendas de uma loja que vende muito. Hoje mantenho a plataforma que construí e automatizo os processos que ainda eram feitos na mão.
 
 * Arquitetura e desenvolvimento da plataforma inteira em **Next.js, NestJS e TypeScript**, juntando loja, painel, portal comercial e site institucional em um sistema só.
-* Fluxo completo do pedido até a **nota fiscal**, integrado ao ERP e à baixa no estoque.
+* Fluxo completo do pedido até a **nota fiscal** em **NestJS**, integrado ao **OMIE** e à baixa no estoque.
 * Saída do **WordPress** legado para a stack própria, definindo padrão de código, estrutura de API e estratégia de migração, e migração do **ERPFLEX** para o **OMIE**, mantendo estoque, pedidos e clientes consistentes, tudo sem parar a operação.
 * Manutenção do e-commerce legado em **PHP e MySQL** enquanto a transição acontecia.
 * Automações no **n8n** ligando ERP, CRM (RD Station) e sistemas internos, tirando trabalho manual de marketing e operações.
@@ -234,17 +234,17 @@ Projeto novo que estou desenvolvendo agora, o CoJurOS, voltado para comunicaçã
 
 *Full Stack, cliente JCFireWall*
 
-\`NestJS\` \`TypeScript\` \`Next.js\` \`PostgreSQL\` \`APIs REST\` \`Multitenancy\` \`RBAC\` \`Docker\` \`Nginx\` \`VPS\`
+\`NestJS\` \`TypeScript\` \`Node.js\` \`Next.js\` \`PostgreSQL\` \`APIs REST\` \`Swagger\` \`Multitenancy\` \`RBAC\` \`Docker\` \`Nginx\` \`VPS\`
 
 **Dor do cliente.** A JCFireWall atendia vários clientes corporativos e controlava a conformidade de SST de todos eles em planilha, sem separação confiável entre empresas, sem histórico de quem alterou o quê e sem visibilidade de vencimentos. Precisava de uma plataforma em que cada cliente enxergasse só os próprios dados, com trilha de auditoria para a fiscalização e base pronta para crescer junto com a carteira.
 
 **Solução.**
 
-* Back-end modular em **NestJS**, separando clientes, usuários, conformidade e documentação de segurança em módulos independentes e testáveis.
-* API REST documentada, com versionamento e respostas padronizadas, para o front-end consumir sem surpresa.
+* Back-end modular em **NestJS e TypeScript**, rodando em **Node.js**, separando clientes, usuários, conformidade e documentação de segurança em módulos independentes e testáveis.
+* API REST documentada no **Swagger**, com versionamento e respostas padronizadas, para o front-end consumir sem surpresa.
 * **Multitenancy** com isolamento de dados por empresa e **RBAC** por perfil, então cada cliente só enxerga o que é dele.
 * **PostgreSQL** com modelagem relacional e índices pensados para as consultas de conformidade e para o histórico de auditoria, sem perder performance.
-* Validação de dados e tratamento de erros centralizado, evitando inconsistência em informação crítica de segurança do trabalho.
+* Validação de dados e tratamento de erros centralizado no **NestJS**, evitando inconsistência em informação crítica de segurança do trabalho.
 * Front-end em **Next.js** para documentos, vencimentos e status de conformidade por cliente, com telas diferentes para cada perfil.
 * Deploy em VPS com Docker, Nginx, SSL e backup automatizado, pronto para receber novos clientes sem mexer na arquitetura.
 
@@ -289,7 +289,7 @@ A plataforma é privada, por contrato. [:link-external: Site da CUBE](https://cu
 
 * React 18, TypeScript e Vite, com Tailwind e layout mobile first testado em aparelho de verdade.
 * SEO técnico com React Helmet, HTML semântico e dados estruturados schema.org para advocacia.
-* Lazy loading de componentes e imagens WebP com fallback, chegando a **Lighthouse acima de 95** em todas as categorias e **LCP abaixo de 2,5 s**.
+* Lazy loading de componentes **React** e imagens WebP com fallback, chegando a **Lighthouse acima de 95** em todas as categorias e **LCP abaixo de 2,5 s**.
 * Acessibilidade **WCAG 2.1 nível A**, com contraste adequado, navegação por teclado, ARIA labels e foco visível.
 * Deploy na Vercel com preview a cada pull request.
 
@@ -308,10 +308,10 @@ A plataforma é privada, por contrato. [:link-external: Site da CUBE](https://cu
 **Solução.**
 
 * WordPress com tema próprio em **PHP 8**, aproveitando que a equipe já conhecia o painel e mantendo controle total do código.
-* Tema organizado com separação de responsabilidades inspirada em MVC, para a manutenção ficar simples.
+* Tema em **PHP** organizado com separação de responsabilidades inspirada em MVC, para a manutenção ficar simples.
 * SCSS com Grid e Flexbox para o layout responsivo e os componentes.
-* Formulários via AJAX com nonce e sanitização, prevenindo CSRF e XSS.
-* Tabelas próprias no banco para os dados estruturados, sem lotar a wp_postmeta e mantendo as consultas rápidas.
+* Formulários via AJAX, em **JavaScript e PHP**, com nonce e sanitização, prevenindo CSRF e XSS.
+* Tabelas próprias no **MySQL** para os dados estruturados, sem lotar a wp_postmeta e mantendo as consultas rápidas.
 * Deploy automatizado via Git na Hostinger, com versionamento e rollback.
 
 [:link-external: sgitreinamentosassessoria.com](https://sgitreinamentosassessoria.com/)
@@ -369,8 +369,8 @@ A lista de clientes é bem maior do que cabe aqui, e boa parte dos projetos tem 
 * **CUBE Inteligência**, inteligência política, com uma plataforma de monitoramento e análise de sentimento com IA
 * **JCFireWall**, segurança do trabalho, com o SafetyKeeper, sistema de gestão de SST para vários clientes corporativos
 * **CoJurOS**, comunicação jurídica, um projeto novo que está vindo aí
-* **NG Metalúrgica** e **Pronutrition**, indústria e nutrição, com integrações e sistemas modernizados
-* **Raquel Ribeiro Advocacia** e **SGI Treinamentos**, advocacia e segurança do trabalho, com sites rápidos e fáceis de manter
+* **NG Metalúrgica** e **Pronutrition**, indústria e nutrição, com integrações ao TOTVS Datasul e telas em Next.js
+* **Raquel Ribeiro Advocacia** e **SGI Treinamentos**, advocacia e segurança do trabalho, com sites rápidos e fáceis de manter, em React e WordPress
 * **Vitrine do Campo**, **2Clicks**, **Minha Revenda**, **Cupom Clube** e mais de 20 projetos de agronegócio, saúde, finanças, varejo e logística
 * E muitos outros clientes, de comércio, serviços, indústria e startups, que atendo por projeto ou com manutenção contínua
 
@@ -380,7 +380,7 @@ A lista de clientes é bem maior do que cabe aqui, e boa parte dos projetos tem 
 
 ### :layers: Sistemas sob medida
 
-Painel administrativo, sistema de gestão, portal para clientes ou parceiros, com login, permissão por perfil e dados separados por empresa. Foi o que fiz no SafetyKeeper, que tirou a gestão de SST da planilha.
+Painel administrativo, sistema de gestão, portal para clientes ou parceiros, com login, permissão por perfil e dados separados por empresa. Foi o que fiz no SafetyKeeper, em **NestJS, Next.js e PostgreSQL**, que tirou a gestão de SST da planilha.
 
 ### :plug: Integrações e APIs
 
@@ -388,15 +388,15 @@ Seu ERP, seu e-commerce, seu CRM e sua logística conversando sozinhos, sem ning
 
 ### :graph: Dados, dashboards e IA
 
-Painéis que mostram o que importa em tempo real, coleta de dados públicos e análise de texto com IA. Foi a base da plataforma da CUBE, feita para aguentar pico de acesso em período eleitoral.
+Painéis que mostram o que importa em tempo real, coleta de dados públicos e análise de texto com IA. Foi a base da plataforma da CUBE, feita em **React, Node.js e PostgreSQL**, com **Google Gemini** na análise de texto, para aguentar pico de acesso em período eleitoral.
 
 ### :browser: Sites e landing pages
 
-Site institucional ou página de captação rápida no celular, bem posicionada no Google e fácil de atualizar. A landing page da Raquel Ribeiro chegou a Lighthouse acima de 95 em todas as categorias.
+Site institucional ou página de captação rápida no celular, bem posicionada no Google e fácil de atualizar. A landing page da Raquel Ribeiro, feita em **React, TypeScript e Vite**, chegou a Lighthouse acima de 95 em todas as categorias.
 
 ### :history: E-commerce e saída de sistema legado
 
-Troco o sistema antigo por uma plataforma própria sem parar a operação, migrando por partes. Já fiz isso com uma operação inteira, do pedido no e-commerce até a nota fiscal.
+Troco o sistema antigo por uma plataforma própria sem parar a operação, migrando por partes. Já fiz isso com uma operação inteira, do pedido no e-commerce até a nota fiscal, em **Next.js, NestJS e TypeScript**.
 
 ### :robot: Automação de processos
 
@@ -476,8 +476,6 @@ Estudo desde 2022 sem parar, com um técnico junto com o ensino médio, outro t�
 Curso focado em construir sistemas robustos e escaláveis. Estou me aprofundando em arquitetura de software, padrões de projeto, engenharia de requisitos e metodologias ágeis como Scrum e Kanban, passando por análise, modelagem, implementação e manutenção de sistemas, com ênfase em segurança, performance e usabilidade.
 
 Muito do que vi no curso eu apliquei na prática no CUBE, uma plataforma full stack de análise política com arquitetura escalável, RBAC e processamento de linguagem natural em tempo real.
-
-\`Arquitetura de software\` \`Engenharia de requisitos\` \`Padrões de projeto\` \`Scrum\` \`Kanban\` \`SQL\`
 
 ## Inglês, Programa Cidadão Pró-Mundo
 
@@ -911,12 +909,13 @@ DBS System Consultoria   Full Stack       set. de 2025 a dez. de 2025
 Grupo EMS                Aprendiz em TI   jan. de 2025 a set. de 2025
 
 Para ver mais, digite open experiencia.md`,
-  projetos: `SafetyKeeper   gestão de SST multitenant (NestJS, Next.js)
-CUBE           análise política com IA (React, Node.js, Gemini)
-Advocacia      landing page com Lighthouse acima de 95
-SGI            site em WordPress com tema próprio
-Cyberbot       assistente de cibersegurança (Python)
-MundoPet       marketplace pet, meu TCC
+  projetos: `CoJurOS        comunicação jurídica, em desenvolvimento
+SafetyKeeper   gestão de SST multitenant (NestJS, Next.js, PostgreSQL)
+CUBE           análise política com IA (React, Node.js, PostgreSQL, Gemini)
+Advocacia      landing page com Lighthouse acima de 95 (React, Vite)
+SGI            site em WordPress com tema próprio (PHP, MySQL)
+Cyberbot       assistente de cibersegurança (Python, Streamlit)
+MundoPet       marketplace pet, meu TCC (Node.js, React, MongoDB)
 
 Para ver mais, digite open projetos.md`,
   servicos: `Sistemas sob medida, integrações e APIs, dashboards com IA,
@@ -931,17 +930,29 @@ Para pedir um orçamento, digite orcamento`,
 
 Para ver mais, digite open repositorios.md`,
   habilidades: `linguagens   TypeScript, JavaScript, Python, PHP, SQL
-front-end    React, Next.js, React Native, Angular, Tailwind CSS
-back-end     Node.js, NestJS, FastAPI, Flask, Prisma, Redis
-bancos       PostgreSQL, MySQL, SQL Server, MongoDB, Supabase
-devops       Docker, Nginx, Linux, CI/CD, AWS, Azure
-automação    n8n, Playwright, Puppeteer, Selenium, LLMs
+front-end    React, Next.js, React Native, Angular, Tailwind CSS,
+             Bootstrap
+back-end     Node.js, NestJS, FastAPI, Flask, Prisma, APIs REST, Redis,
+             BullMQ, Swagger
+segurança    JWT, OAuth2, RBAC
+bancos       PostgreSQL, MySQL, SQL Server, MongoDB, SQLite, Supabase,
+             Firebase, NoSQL, Oracle, phpMyAdmin
+devops       Linux, Bash, VPS, Docker, Docker Compose, Nginx, CI/CD, AWS,
+             Azure, Google Cloud
+automação    n8n, Playwright, Puppeteer, Selenium, BeautifulSoup, Apify,
+             LLMs, Google Gemini
+integrações  Bling, OMIE, ERPFLEX, Datasul/TOTVS, RD Station, WooCommerce,
+             Frenet, BB Developer, PayPal, Mercado Livre
+dados e BI   Power BI, Azure Databricks
+ferramentas  Git, GitHub, Figma, Postman, XAMPP, Arduino, IoT,
+             UI/UX responsivo, Estrutura de dados, Design de software,
+             Redes, Scrum, Kanban
 
 Para ver mais, digite open habilidades.md`,
   formacao: `Engenharia de Software        Estácio     2025 a 2028
+Inglês, Programa CPM          Mackenzie   2025 a 2029
 Técnico em Desenv. Sistemas   SENAI       2025
 Técnico em Desenv. Sistemas   ETEC        2022 a 2024
-Inglês, Programa CPM          Mackenzie   2025 a 2029
 
 Para ver mais, digite open formacao.md`,
   certificados: `23 certificados, incluindo Microsoft AZ-900, AI-900 e SC-900.

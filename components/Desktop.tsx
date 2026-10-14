@@ -19,15 +19,15 @@ const grid = () => makeGrid(innerWidth, innerHeight - TASKBAR);
 
 function defaultLayout() {
   const { cols, rows } = grid();
-  const right = cols - 1;
+  const start = Math.max(1, Math.round((cols - 5) / 2));
   return settle(
     {
       lixeira: { c: 0, r: 0 },
-      vscode: { c: right, r: 0 },
-      linkedin: { c: right, r: 1 },
-      github: { c: right, r: 2 },
-      "cv-pt": { c: right, r: 3 },
-      "cv-en": { c: right, r: 4 },
+      vscode: { c: start, r: 0 },
+      linkedin: { c: start + 1, r: 0 },
+      github: { c: start + 2, r: 0 },
+      "cv-pt": { c: start + 3, r: 0 },
+      "cv-en": { c: start + 4, r: 0 },
     },
     ICON_IDS,
     cols,
