@@ -36,7 +36,7 @@ export const files: VFile[] = [
 * :terminal-bash: Engenheiro de Software Full Stack, com foco em back-end
 * :location: Hortolândia, São Paulo, Brasil
 * :mortar-board: Engenharia de Software, Estácio
-* :globe: Português nativo, inglês intermediário
+* :globe: Português nativo, inglês avançado
 * :briefcase: Atendendo muitos clientes, de vários nichos
 * :file-pdf: {{cv-link}}
 
@@ -56,19 +56,17 @@ Na barra azul lá embaixo tem o botão **Guia**, que mostra onde está cada cois
 
 ## :person: Sobre mim
 
-Me chamo Yhago Felipe, sou engenheiro de software full stack e o back-end é onde eu me sinto em casa. Meu trabalho é pegar processo manual e sistema que não conversa com outro e transformar isso em software que a empresa consegue usar e fazer crescer. Tenho dois técnicos em Desenvolvimento de Sistemas, pelo **SENAI** e pela **ETEC**, e estou fazendo o bacharelado em **Engenharia de Software** na Estácio.
+Sou Engenheiro de Software, full stack, com a maior parte da minha experiência no back-end. Meu trabalho é pegar processos manuais e sistemas que não conversam entre si e transformar tudo isso em software que a empresa ou o cliente consiga utilizar e fazer crescer.
 
-Minha história com programação começou de verdade na **ETEC Hortolândia**, onde fiz o técnico junto com o ensino médio e desenvolvi o **MundoPet**, um marketplace pet, como TCC. Em 2025 entrei no time de **Cibersegurança do Grupo EMS** como jovem aprendiz e criei automações em **Python** que cortaram **40%** do tempo de operações manuais da equipe. Ali nasceu uma ideia que eu levo para todo projeto, a de *automatizar antes de escalar*.
+Comecei minha carreira no time de Cibersegurança de uma indústria farmacêutica, criando automações em **Python** que reduziram em **40%** o tempo gasto em operações manuais. Foi ali que surgiu uma regra que sigo até hoje: antes de escalar um processo, automatize o que ainda é manual.
 
-Depois vieram as consultorias. Na **DBS System** desenvolvi telas em **Next.js e TypeScript** e funções integradas ao ERP Datasul (TOTVS) para clientes da indústria. Na **CroSoften** atendi **23 projetos** ao mesmo tempo, sempre com APIs em **Node.js e NestJS**, Clean Architecture e requisito levantado direto com o cliente, em agronegócio, saúde, gestão financeira e logística.
+Desde então, desenvolvi o back-end de **mais de 23 projetos**, com APIs REST bem estruturadas, regras de negócio desenhadas de ponta a ponta, autenticação e controle de acesso por perfil. Já desenvolvi do zero sistemas que gerenciam toda a operação de uma empresa, desde a compra no e-commerce até a emissão da nota fiscal no ERP, além de conduzir migrações de ERP e banco de dados sem interromper a operação.
 
-Sei cuidar da arquitetura de todo o ecossistema de TI de uma empresa, como fiz na **Freecook Brasil**. Desenhei do zero a plataforma que roda a operação inteira, da compra na loja virtual até a emissão da nota fiscal, em **Next.js, NestJS e TypeScript**, e ela substituiu um legado em WordPress sem parar as vendas. No caminho migramos o ERP do ERPFLEX para o OMIE. Também cuido das automações no **n8n** e da infraestrutura, do servidor ao deploy.
+Tenho experiência com integrações de ERPs como **OMIE, ERPFLEX, Datasul/TOTVS e Bling**, automações com **n8n** e cuido da minha própria infraestrutura: servidores VPS Linux com **Docker**, **Nginx** como proxy reverso, SSL, Cloudflare, armazenamento em AWS S3, backups automatizados e pipelines de CI/CD.
 
-Gosto de estar perto de quem usa o que eu construo. Atuo do levantamento de requisitos com o cliente até a entrega final, com sistemas publicados na web e consumidos por apps mobile, em times com Scrum, Kanban ou só dailies e weeklies.
+Gosto de compartilhar o que sei e, mais ainda, de estar perto de pessoas que gostam de compartilhar conhecimento e explicar como fazem as coisas. Trabalho desde o levantamento de requisitos, junto à empresa ou ao cliente, até a entrega final, com sistemas publicados na web e também com possibilidade de acesso mobile. A maioria dos projetos foi desenvolvida utilizando Scrum, Kanban ou rotinas de dailies e weeklies para alinhamento.
 
-Em paralelo, atendo muitos clientes por projeto, nos mais variados nichos, de negócios que estão começando a empresas grandes como a **CUBE Inteligência**, a **JCFireWall**, com o SafetyKeeper, e o **CoJurOS**, que vem aí. Esses são só alguns nomes, a carteira é bem maior e não para de crescer. Se quiser saber como eu posso ajudar a sua empresa, dá uma olhada em [servicos.md](servicos.md).
-
-Fora do código, estudo inglês no **Mackenzie** como bolsista do programa Cidadão Pró-Mundo, uma parceria da Microsoft com o SENAI que selecionou só 20 alunos da região, e tenho as certificações **Microsoft Azure AZ-900, AI-900 e SC-900**.
+Minha formação inclui Bacharelado em Engenharia de Software e dois cursos técnicos em Desenvolvimento de Sistemas, pelo SENAI e pela ETEC. Sou bolsista integral em um programa de inglês do Mackenzie, no qual fui aprovado por meio de uma parceria com a Microsoft e o SENAI. Também possuo diversas certificações nas áreas de desenvolvimento, Data Science, Cloud, DevOps, bancos de dados, BI, UI/UX, IA e Microsoft Azure.
 
 ## :tools: O que eu faço
 
@@ -104,8 +102,6 @@ Coloco e mantenho tudo no ar, com VPS, **Docker** e **Nginx**, SSL, backup autom
 * **23 certificados**, incluindo Microsoft Azure AZ-900, AI-900 e SC-900
 * {{github}}
 
-{{depoimentos}}
-
 ## :checklist: Como eu trabalho
 
 * Gosto de entender o problema antes de abrir o editor. Levanto requisito direto com quem vai usar o sistema e só depois desenho a arquitetura.
@@ -130,17 +126,15 @@ Comecei como jovem aprendiz em 2025 e, de lá para cá, passei por consultoria, 
 **Desenvolvedor de Software Full Stack**, CLT
 *mar. de 2026 até hoje, Campinas, SP, presencial*
 
-Sou responsável pela arquitetura e pela evolução técnica de todo o ecossistema de TI da empresa, com foco em performance, escalabilidade e automação de processos.
+Responsável pela arquitetura e evolução técnica de todo o ecossistema de TI da empresa, com foco em performance, escalabilidade e automação de processos.
 
-Quando entrei, a loja virtual e a gestão rodavam em WordPress, ligadas ao ERPFLEX. Como engenheiro de software, desenhei do zero a arquitetura do sistema novo, com loja virtual, painel administrativo, portal comercial e site institucional, cobrindo todo o caminho da compra até a emissão da nota fiscal integrada ao ERP. No meio disso, migramos do ERPFLEX para o OMIE sem parar as vendas de uma loja que vende muito. Hoje mantenho a plataforma que construí e automatizo os processos que ainda eram feitos na mão.
-
-* Arquitetura e desenvolvimento da plataforma inteira em **Next.js, NestJS e TypeScript**, juntando loja, painel, portal comercial e site institucional em um sistema só.
-* Fluxo completo do pedido até a **nota fiscal** em **NestJS**, integrado ao **OMIE** e à baixa no estoque.
-* Saída do **WordPress** legado para a stack própria, definindo padrão de código, estrutura de API e estratégia de migração, e migração do **ERPFLEX** para o **OMIE**, mantendo estoque, pedidos e clientes consistentes, tudo sem parar a operação.
-* Manutenção do e-commerce legado em **PHP e MySQL** enquanto a transição acontecia.
-* Automações no **n8n** ligando ERP, CRM (RD Station) e sistemas internos, tirando trabalho manual de marketing e operações.
-* Infraestrutura própria, com servidores **VPS**, **Docker**, **Nginx** como proxy reverso, **SSL**, domínios, **Cloudflare** e backup automático do banco de dados.
-* Arquivos no **Amazon S3** com presigned URLs e integração com gateways de pagamento e logística (Frenet).
+* Arquitetei e construí do zero a plataforma digital que sustenta a operação de ponta a ponta, do pedido no e-commerce até a baixa no estoque, com loja virtual, painel administrativo, portal comercial e site institucional em um sistema único.
+* Conduzi a saída do legado em **WordPress** para uma stack proprietária em **Next.js, NestJS e TypeScript**, definindo padrões de código, estrutura de API e estratégia de migração sem interromper a operação.
+* Desenvolvimento back-end em **PHP/MySQL** para o e-commerce legado durante a transição, com módulos e integrações sob medida.
+* Arquitetura de automações via **n8n**, orquestrando fluxos entre ERP, CRM e sistemas internos.
+* Migração de integração de ERP legado (**ERPFLEX**) para ERP atual (**OMIE**), garantindo consistência de estoque, pedidos e clientes.
+* Armazenamento de arquivos via **Amazon S3** com presigned URLs e gestão de infraestrutura própria (**VPS, Docker, Nginx, SSL**) com backups automatizados.
+* Integração com gateways de pagamento, APIs REST e sistemas de logística (**Frenet**).
 
 Alguns dos sistemas que estão no ar.
 
@@ -157,14 +151,15 @@ Alguns dos sistemas que estão no ar.
 **Desenvolvedor de Software Back-end**, PJ
 *jan. de 2026 a ago. de 2026, São Paulo, SP, remoto*
 
-Entrei por contrato PJ para desenvolver o back-end de aplicações em Angular e iOS. Foram **23 projetos** de clientes diferentes, quase sempre ao mesmo tempo, de agronegócio a saúde, finanças, varejo e logística, o que me acostumou a lidar com regra de negócio complexa e requisito levantado direto com o cliente.
+PJ, meio período. Desenvolvimento e manutenção de APIs RESTful escaláveis em ambiente corporativo, atendendo mais de 20 projetos de clientes diferentes simultaneamente.
 
-* APIs REST em **Node.js, NestJS e TypeScript**, organizadas com **Clean Architecture**, com regras de negócio, autenticação, controle de permissões e integrações externas.
-* Modelagem do banco de dados em **MySQL** nos projetos que peguei.
-* Documentação completa no **Swagger**, consumida ao mesmo tempo pelos times de iOS e de Angular.
-* Em alguns projetos também construí as interfaces em **Angular**, a partir dos protótipos que o time de design entregava no **Figma**.
-* Contato direto com os clientes para levantar requisitos e definir o escopo técnico, traduzindo necessidade de negócio em arquitetura.
-* Várias demandas em paralelo, com entrega contínua e foco em qualidade de código, em Scrum e Kanban.
+* Arquitetura e desenvolvimento de APIs com **Node.js, NestJS e TypeScript**, aplicando **Clean Architecture** para garantir manutenibilidade e escalabilidade em projetos de longo prazo.
+* Implementação de regras de negócio complexas, autenticação/autorização e integração com múltiplas APIs externas.
+* Documentação técnica completa via **Swagger**, viabilizando consumo simultâneo por aplicações mobile (iOS) e front-end (**Angular**).
+* Atuação direta com clientes no levantamento de requisitos e definição de escopo técnico, traduzindo necessidades de negócio em arquitetura de sistema.
+* Gerenciamento de múltiplas demandas concorrentes com foco em entregas contínuas e qualidade de código, dentro de metodologias ágeis (Scrum/Kanban).
+
+Projetos entregues em domínios variados: agronegócio (Vitrine do Campo), saúde (Cardio Shop), gestão financeira (SAFE/ERICA), logística (Ships Manager), entre outros.
 
 Os 23 projetos em que trabalhei.
 
@@ -187,11 +182,13 @@ Os 23 projetos em que trabalhei.
 **Desenvolvedor de Software Full Stack**, PJ
 *set. de 2025 a dez. de 2025, Campinas, SP, remoto*
 
-Contrato de 4 meses em uma consultoria que atende indústrias. Foi meu primeiro contato com um ERP de grande porte, trabalhando da tela à regra de negócio.
+Modernização de aplicações corporativas legadas para ambiente industrial, com foco em integração de sistemas e substituição de fluxos manuais por APIs automatizadas.
 
-* Desenvolvimento de telas em **Next.js e TypeScript** e de funções de lógica de negócio integradas ao **TOTVS Datasul**.
-* Acompanhei de perto o desenvolvimento em **Progress**, a linguagem do Datasul usada nas consultas e nas regras do ERP.
-* Projeto de escopo fechado, entregue dentro dos 4 meses de contrato.
+* Reconstrução de integrações com o ERP **Datasul (TOTVS)**, substituindo trocas manuais de dados por consumo direto de API, reduzindo risco de inconsistência entre sistemas.
+* Desenvolvimento de APIs RESTful em **PHP e Node.js**, com persistência em **MySQL e PostgreSQL**, para suportar as novas integrações.
+* Reconstrução de interfaces legadas com **Next.js e TypeScript**, modernizando a experiência sem interromper a operação em produção.
+* Levantamento técnico de requisitos junto à equipe de negócio, identificando gargalos na aplicação legada e propondo arquitetura de substituição.
+* Entrega de projeto de escopo fechado em 4 meses, com autonomia total sobre decisões técnicas e cronograma.
 
 Alguns dos clientes para quem desenvolvi.
 
@@ -206,13 +203,13 @@ Alguns dos clientes para quem desenvolvi.
 **Jovem Aprendiz em TI, Cibersegurança**, CLT
 *jan. de 2025 a set. de 2025, Hortolândia, SP, presencial*
 
-Meu primeiro emprego, numa indústria farmacêutica. Entrei no time de Cibersegurança, mas como meu objetivo era desenvolvimento, fui direcionado para automação de processos. Foi ali que nasceu a ideia que levo para todo projeto, a de *automatizar antes de escalar*.
+Primeira experiência corporativa, atuando no time de Cibersegurança com foco em automação de processos internos e proteção de dados.
 
-* Automações em **Python** que se conectavam a planilhas do **Excel**, extraíam os dados e geravam relatórios prontos para as equipes, cortando **40%** do tempo dessas tarefas.
-* Aplicações internas em Python, com **Streamlit, FastAPI e Flask**, para as demandas da área de segurança.
-* Pipelines de **CI/CD** para rodar e monitorar as automações.
-* Integração com Supabase, Firebase, PostgreSQL e MySQL para juntar o fluxo de dados entre sistemas.
-* Apoio nas práticas de segurança da informação, com foco no tratamento correto de dados sensíveis.
+* Desenvolvimento de aplicações internas em **Python** (**Streamlit, FastAPI, Flask**) para suportar demandas específicas da área de segurança.
+* Criação de automações que reduziram em **40%** o tempo de operações manuais da equipe, meu primeiro contato real com a ideia de *automatizar antes de escalar*, que carrego até hoje.
+* Estruturação de pipelines simples (**CI/CD**) para execução e monitoramento contínuo das automações.
+* Integração com múltiplos bancos de dados (**Supabase, Firebase, PostgreSQL, MySQL**) para consolidar fluxo de dados entre sistemas.
+* Apoio em práticas de segurança da informação, com foco em tratamento adequado de dados sensíveis.
 `,
   },
   {
@@ -374,8 +371,6 @@ A lista de clientes é bem maior do que cabe aqui, e boa parte dos projetos tem 
 * **Vitrine do Campo**, **2Clicks**, **Minha Revenda**, **Cupom Clube** e mais de 20 projetos de agronegócio, saúde, finanças, varejo e logística
 * E muitos outros clientes, de comércio, serviços, indústria e startups, que atendo por projeto ou com manutenção contínua
 
-{{depoimentos}}
-
 ## :tools: O que eu posso fazer por você
 
 ### :layers: Sistemas sob medida
@@ -420,47 +415,9 @@ Me conta o que você precisa aqui embaixo. A mensagem chega direto no meu e-mail
     path: "docs/habilidades.md",
     content: `# :tools: Habilidades
 
-As ferramentas do meu dia a dia, separadas por área. Na aba **Extensões**, aqui do lado, cada tecnologia tem uma página contando onde e como eu usei.
+Esta página está em obras. As habilidades estão na academia, malhando para voltar mais fortes, e só entram aqui quando eu dominar de verdade. Se o café ajudar, volto logo com tudo organizado.
 
-## :code: Linguagens
-
-\`TypeScript\` \`JavaScript\` \`Python\` \`PHP\` \`SQL\`
-
-## :browser: Front-end
-
-\`React\` \`Next.js\` \`React Native\` \`Angular\` \`Tailwind CSS\` \`Bootstrap\`
-
-## :server-process: Back-end
-
-\`Node.js\` \`NestJS\` \`FastAPI\` \`Flask\` \`Prisma\` \`APIs REST\` \`Redis\` \`BullMQ\` \`Swagger\`
-
-## :shield: Segurança
-
-\`JWT\` \`OAuth2\` \`RBAC\`
-
-## :database: Bancos de dados
-
-\`PostgreSQL\` \`MySQL\` \`SQL Server\` \`MongoDB\` \`SQLite\` \`Supabase\` \`Firebase\` \`NoSQL\` \`Oracle\` \`phpMyAdmin\`
-
-## :cloud: DevOps e Cloud
-
-\`Linux\` \`Bash\` \`VPS\` \`Docker\` \`Docker Compose\` \`Nginx\` \`CI/CD\` \`AWS\` \`Azure\` \`Google Cloud\`
-
-## :robot: Automação e IA
-
-\`n8n\` \`Playwright\` \`Puppeteer\` \`Selenium\` \`BeautifulSoup\` \`Apify\` \`LLMs\` \`Google Gemini\`
-
-## :plug: Integrações
-
-\`Bling\` \`OMIE\` \`ERPFLEX\` \`Datasul/TOTVS\` \`RD Station\` \`WooCommerce\` \`Frenet\` \`BB Developer\` \`PayPal\` \`Mercado Livre\`
-
-## :graph: Dados e BI
-
-\`Power BI\` \`Azure Databricks\`
-
-## :wrench: Ferramentas e práticas
-
-\`Git\` \`GitHub\` \`Figma\` \`Postman\` \`XAMPP\` \`Arduino\` \`IoT\` \`UI/UX responsivo\` \`Estrutura de dados\` \`Design de software\` \`Redes\` \`Scrum\` \`Kanban\`
+Quer ver tudo o que eu já trabalhei? É só abrir a aba [Extensões](extensoes), aqui do lado. Cada tecnologia tem uma página contando onde e como eu usei.
 `,
   },
   {
@@ -500,7 +457,7 @@ Meu TCC foi o **MundoPet**, um marketplace pet completo com Node.js, Express, Re
 ## :globe: Idiomas
 
 * **Português**, nativo
-* **Inglês**, intermediário, estudando para chegar na fluência
+* **Inglês**, nível avançado
 `,
   },
   {
@@ -782,17 +739,38 @@ Oi, eu sou o Yhago! Aqui você conhece o que eu faço, os projetos que entreguei
 ];
 
 export const SKILL_LOGOS: Record<string, string> = {
-  TypeScript: "ts", JavaScript: "js", Python: "py", PHP: "php", React: "react", "React Native": "react", "Next.js": "nextjs",
-  Angular: "angular", Redux: "redux", "Tailwind CSS": "tailwind", Bootstrap: "bootstrap", HTML5: "html", CSS3: "css", Sass: "sass",
-  Vite: "vite", "Node.js": "nodejs", NestJS: "nestjs", Express: "express", FastAPI: "fastapi", Flask: "flask", Prisma: "prisma",
-  Redis: "redis", BullMQ: "redis", PostgreSQL: "postgres", MySQL: "mysql", MongoDB: "mongodb", SQLite: "sqlite", Supabase: "supabase",
-  Firebase: "firebase", Docker: "docker", Nginx: "nginx", Linux: "linux", Bash: "bash", "GitHub Actions": "githubactions", AWS: "aws",
-  "Amazon S3": "aws", Azure: "azure", "Microsoft Azure": "azure",  Vercel: "vercel", Git: "git",
-  GitHub: "github", "Git e GitHub": "git", Figma: "figma", Postman: "postman", WordPress: "wordpress", 
-  Selenium: "selenium", "Linux e Bash": "linux", "Redis e BullMQ": "redis", "HTML5, CSS3 e Sass": "html",
-  SQL: "sql", "APIs REST": "rest", "REST APIs": "rest", Swagger: "swagger", JWT: "jwt", OAuth2: "oauth2", RBAC: "rbac", "JWT, OAuth2 e RBAC": "jwt", "JWT, OAuth2 and RBAC": "jwt", "SQL Server": "sqlserver", NoSQL: "nosql", Oracle: "oracle", phpMyAdmin: "phpmyadmin", VPS: "vps", "CI/CD": "cicd", n8n: "n8n", Playwright: "playwright", Puppeteer: "puppeteer", BeautifulSoup: "beautifulsoup", Apify: "apify", LLMs: "llms", "Google Gemini": "gemini", Bling: "erp", OMIE: "erp", ERPFLEX: "erp", "Datasul/TOTVS": "erp", ERPs: "erp", "RD Station": "rdstation", Frenet: "frenet", "BB Developer": "bb", PayPal: "paypal", "Mercado Livre": "mercadolivre", WooCommerce: "woocommerce", "Power BI": "powerbi", "Azure Databricks": "databricks", XAMPP: "xampp", IoT: "iot", "Arduino e IoT": "arduino", "Arduino and IoT": "arduino", "UI/UX responsivo": "uiux", "Responsive UI/UX": "uiux", "Estrutura de dados": "datastructures", "Data structures": "datastructures", "Design de software": "softwaredesign", "Software design": "softwaredesign", Redes: "network", Networking: "network", Scrum: "scrum", Kanban: "kanban",
-  "Gemini AI": "gemini", PM2: "pm2", Streamlit: "streamlit", PLN: "nlp", NLP: "nlp", Multitenancy: "multitenancy", "Arquitetura de software": "architecture", "Software architecture": "architecture", "Engenharia de requisitos": "requirements", "Requirements engineering": "requirements", "Padrões de projeto": "patterns", "Design patterns": "patterns", "Modelagem de dados": "sql", "Data modeling": "sql", POO: "oop", OOP: "oop", "Programação funcional": "functional", "Functional programming": "functional", "Gestão de projetos": "projectmgmt", "Project management": "projectmgmt", UML: "uml", "Inglês": "languages", English: "languages", "Comunicação oral": "communication", Speaking: "speaking", Listening: "listening", "Leitura e escrita": "reading", "Reading and writing": "reading", "Liderança": "leadership", Leadership: "leadership",
-  "Docker Compose": "docker", "Git and GitHub": "git", C: "c", "C++": "cpp", "Google Cloud": "gcp", Arduino: "arduino", "Linux and Bash": "linux", "Redis and BullMQ": "redis", "HTML5, CSS3 and Sass": "html",
+  TypeScript: "ts", JavaScript: "js", Python: "py", PHP: "php", React: "react", "React Native": "react", "Next.js": "nextjs", Angular: "angular",
+  Redux: "redux", "Tailwind CSS": "tailwind", Bootstrap: "bootstrap", HTML5: "html", CSS3: "css", Sass: "sass", Vite: "vite", "Node.js": "nodejs",
+  NestJS: "nestjs", Express: "express", FastAPI: "fastapi", Flask: "flask", Prisma: "prisma", Redis: "redis", BullMQ: "redis",
+  PostgreSQL: "postgres", MySQL: "mysql", MongoDB: "mongodb", SQLite: "sqlite", Supabase: "supabase", Firebase: "firebase", Docker: "docker",
+  Nginx: "nginx", Linux: "linux", Bash: "bash", "GitHub Actions": "githubactions", AWS: "aws", "Amazon S3": "aws", Azure: "azure",
+  "Microsoft Azure": "azure", Vercel: "vercel", Git: "git", GitHub: "github", "Git e GitHub": "git", Figma: "figma", Postman: "postman",
+  WordPress: "wordpress", Selenium: "selenium", "Linux e Bash": "linux", "Redis e BullMQ": "redis", "HTML5, CSS3 e Sass": "html", SQL: "sql",
+  "APIs REST": "rest", "REST APIs": "rest", Swagger: "swagger", JWT: "jwt", OAuth2: "oauth2", RBAC: "rbac", "JWT, OAuth2 e RBAC": "jwt",
+  "JWT, OAuth2 and RBAC": "jwt", "SQL Server": "sqlserver", NoSQL: "nosql", Oracle: "oracle", phpMyAdmin: "phpmyadmin", VPS: "vps", "CI/CD": "cicd",
+  n8n: "n8n", Playwright: "playwright", Puppeteer: "puppeteer", BeautifulSoup: "beautifulsoup", Apify: "apify", LLMs: "llms",
+  "Google Gemini": "gemini", Bling: "erp", OMIE: "erp", ERPFLEX: "erp", "Datasul/TOTVS": "erp", ERPs: "erp", "RD Station": "rdstation",
+  Frenet: "frenet", "BB Developer": "bb", PayPal: "paypal", "Mercado Livre": "mercadolivre", WooCommerce: "woocommerce", "Power BI": "powerbi",
+  "Azure Databricks": "databricks", XAMPP: "xampp", IoT: "iot", "Arduino e IoT": "arduino", "Arduino and IoT": "arduino", "UI/UX responsivo": "uiux",
+  "Responsive UI/UX": "uiux", "Estrutura de dados": "datastructures", "Data structures": "datastructures", "Design de software": "softwaredesign",
+  "Software design": "softwaredesign", Redes: "network", Networking: "network", Scrum: "scrum", Kanban: "kanban", "Gemini AI": "gemini", PM2: "pm2",
+  Streamlit: "streamlit", PLN: "nlp", NLP: "nlp", Multitenancy: "multitenancy", "Arquitetura de software": "architecture",
+  "Software architecture": "architecture", "Engenharia de requisitos": "requirements", "Requirements engineering": "requirements",
+  "Padrões de projeto": "patterns", "Design patterns": "patterns", "Modelagem de dados": "sql", "Data modeling": "sql", POO: "oop", OOP: "oop",
+  "Programação funcional": "functional", "Functional programming": "functional", "Gestão de projetos": "projectmgmt",
+  "Project management": "projectmgmt", UML: "uml", "Inglês": "languages", English: "languages", "Comunicação oral": "communication",
+  Speaking: "speaking", Listening: "listening", "Leitura e escrita": "reading", "Reading and writing": "reading", "Liderança": "leadership",
+  Leadership: "leadership", "Integração de sistemas": "erp", "System integration": "erp", CSS: "css", XML: "xml", "C++": "cpp", C: "c",
+  "Express.js": "express", Axios: "axios", "Banco de dados": "sql", "Cibersegurança": "cyber", Infraestrutura: "vps", DevOps: "cicd",
+  "Azure DevOps": "azure", "Computação em nuvem": "cloud", "Segurança de nuvem": "cloudsec", "Aplicativos em nuvem": "cloudapps",
+  "Arquitetura de rede": "network", "Administração de redes": "netadmin", "Inteligência artificial": "ai", Jupyter: "jupyter",
+  "Manipulação de dados": "datamanip", Arduino: "arduino", "Internet das Coisas": "iot", "Arquitetura MVC": "mvc", Algoritmos: "algorithms",
+  "Raciocínio lógico": "logic", "Design de experiência do usuário (UX)": "uiux", UI: "ui", "Engenharia de Software": "swe",
+  "Desenvolvedor de Software": "dev", "Desenvolvimento full stack": "fullstack", "Desenvolvimento de back-end": "backend",
+  "Desenvolvimento de front-end": "frontend", "Desenvolvimento web": "web", "Programação (computação)": "programming",
+  "Linguagens de programação": "langs", "Sistemas operacionais": "os", "Comunicação oral em inglês": "speaking",
+  "Compreensão auditiva (Listening)": "listening", "Escrita e leitura em inglês": "reading", "Docker Compose": "docker", "Git and GitHub": "git",
+  "Google Cloud": "gcp", "Linux and Bash": "linux", "Redis and BullMQ": "redis", "HTML5, CSS3 and Sass": "html",
 };
 
 export type Ext = {
@@ -808,7 +786,7 @@ export type Ext = {
 };
 
 const ext = (cat: string, name: string, publisher: string, label: string, bg: string, fg: string, desc: string, about: string): Ext => ({
-  id: name.toLowerCase().replace(/[^a-z0-9]+/g, ""),
+  id: name.toLowerCase().replace(/\+/g, "p").replace(/[^a-z0-9]+/g, ""),
   cat, name, publisher, label, bg, fg, desc, about,
 });
 
@@ -818,45 +796,75 @@ export const extensions: Ext[] = [
   ext("Linguagens", "Python", "Python Software Foundation", "Py", "#3776ab", "#ffd43b", "Automação, dados e APIs.", "Meu primeiro trabalho foi com Python, nas automações da Cibersegurança do Grupo EMS que cortaram 40% do trabalho manual."),
   ext("Linguagens", "PHP", "The PHP Group", "php", "#777bb4", "#fff", "A linguagem que move boa parte da web.", "Uso bastante em e-commerce legado, tema de WordPress e integração com ERP."),
   ext("Linguagens", "SQL", "ISO/IEC", "SQL", "#4479a1", "#fff", "A linguagem dos bancos relacionais.", "Modelagem, índice e consulta pensados para performance e auditoria."),
-
-  ext("Front-end", "React", "Meta", "Re", "#20232a", "#61dafb", "Interfaces com componentes.", "Dashboards e painéis administrativos, como os do CUBE."),
-  ext("Front-end", "Next.js", "Vercel", "N", "#000", "#fff", "O framework React para a web.", "Base da plataforma que construí na Freecook e das telas que modernizei na DBS. Esse portfólio também é Next.js."),
-  ext("Front-end", "React Native", "Meta", "RN", "#20232a", "#61dafb", "Apps nativos com React.", "Apps para iOS e Android consumindo as mesmas APIs da web."),
-  ext("Front-end", "Angular", "Google", "A", "#dd0031", "#fff", "Framework web do Google.", "Front-ends corporativos que consumiam as APIs que eu documentava no Swagger na CroSoften."),
-  ext("Front-end", "Tailwind CSS", "Tailwind Labs", "Tw", "#0b1120", "#38bdf8", "CSS utilitário.", "É o que eu uso na maioria dos projetos para estilizar rápido."),
-  ext("Front-end", "Bootstrap", "Bootstrap Team", "B", "#7952b3", "#fff", "Componentes responsivos prontos.", "Usei no MundoPet."),
+  ext("Linguagens", "HTML5", "W3C", "H5", "#e34f26", "#fff", "Marcação da web.", "HTML semântico, pensando em SEO e acessibilidade. Aprendi na ETEC."),
+  ext("Linguagens", "CSS", "W3C", "CSS", "#1572b6", "#fff", "Estilo e layout.", "Layout responsivo em todo projeto web, do TCC da ETEC aos sistemas da Estácio."),
+  ext("Linguagens", "XML", "W3C", "XML", "#f5a623", "#000", "Formato de dados estruturados.", "Estudado e usado desde a ETEC."),
+  ext("Linguagens", "C++", "ISO C++", "C++", "#00599c", "#fff", "C com orientação a objetos.", "Meu primeiro contato foi na ETEC."),
+  ext("Linguagens", "C", "ISO C", "C", "#283593", "#fff", "A linguagem base da computação.", "Meu primeiro contato com programação de baixo nível, na ETEC."),
 
   ext("Back-end", "Node.js", "OpenJS Foundation", "node", "#2b3a2b", "#8cc84b", "JavaScript no servidor.", "Onde eu passo a maior parte do tempo, entre API, fila, job agendado e integração."),
   ext("Back-end", "NestJS", "NestJS", "Ns", "#1a1a1a", "#ea2845", "Framework para back-end escalável.", "É o que mais uso no back-end. Na CroSoften foram mais de 20 projetos com Nest e Clean Architecture."),
-  ext("Back-end", "FastAPI", "Sebastián Ramírez", "FA", "#009688", "#fff", "APIs rápidas em Python.", "APIs internas na EMS e a BookAPI que está no meu GitHub."),
-  ext("Back-end", "Flask", "Pallets", "Fl", "#000", "#fff", "Microframework em Python.", "Aplicações internas na EMS."),
+  ext("Back-end", "Express.js", "OpenJS Foundation", "ex", "#353535", "#fff", "Framework web minimalista.", "Back-end do MundoPet, meu TCC, e da plataforma da CUBE."),
   ext("Back-end", "Prisma", "Prisma Data", "Pr", "#0c344b", "#fff", "ORM com tipagem de ponta a ponta.", "Migrations versionadas no CUBE."),
   ext("Back-end", "APIs REST", "REST", "API", "#0a5c91", "#fff", "Padrão de APIs sobre HTTP.", "Endpoints versionados e documentados no Swagger."),
-  ext("Back-end", "Redis e BullMQ", "Redis Ltd.", "Rd", "#dc382d", "#fff", "Cache e filas.", "Fila para tirar tarefa pesada de dentro da requisição."),
   ext("Back-end", "Swagger", "SmartBear", "Sw", "#173647", "#85ea2d", "Documentação de APIs.", "Minhas APIs saem documentadas. Na CroSoften o time de iOS e o de Angular consumiam tudo pelo Swagger."),
+  ext("Back-end", "Redis e BullMQ", "Redis Ltd.", "Rd", "#dc382d", "#fff", "Cache e filas.", "Fila para tirar tarefa pesada de dentro da requisição."),
+  ext("Back-end", "FastAPI", "Sebastián Ramírez", "FA", "#009688", "#fff", "APIs rápidas em Python.", "APIs internas na EMS e a BookAPI que está no meu GitHub."),
+  ext("Back-end", "Flask", "Pallets", "Fl", "#000", "#fff", "Microframework em Python.", "Aplicações internas na EMS."),
 
-  ext("Segurança", "JWT, OAuth2 e RBAC", "IETF", "JWT", "#000", "#d63aff", "Autenticação e permissões.", "Refresh token com rotação e permissão por rota e por perfil."),
+  ext("Front-end", "React", "Meta", "Re", "#20232a", "#61dafb", "Interfaces com componentes.", "Dashboards e painéis administrativos, como os do CUBE."),
+  ext("Front-end", "Next.js", "Vercel", "N", "#000", "#fff", "O framework React para a web.", "Base da plataforma que construí na Freecook e das telas que modernizei na DBS. Esse portfólio também é Next.js."),
+  ext("Front-end", "Tailwind CSS", "Tailwind Labs", "Tw", "#0b1120", "#38bdf8", "CSS utilitário.", "É o que eu uso na maioria dos projetos para estilizar rápido."),
+  ext("Front-end", "React Native", "Meta", "RN", "#20232a", "#61dafb", "Apps nativos com React.", "Apps para iOS e Android consumindo as mesmas APIs da web."),
+  ext("Front-end", "Angular", "Google", "A", "#dd0031", "#fff", "Framework web do Google.", "Front-ends corporativos que consumiam as APIs que eu documentava no Swagger na CroSoften."),
+  ext("Front-end", "Bootstrap", "Bootstrap Team", "B", "#7952b3", "#fff", "Componentes responsivos prontos.", "Usei no MundoPet."),
+  ext("Front-end", "Redux", "Redux Team", "Rx", "#764abc", "#fff", "Gerenciamento de estado.", "Usei no MundoPet, meu TCC."),
+  ext("Front-end", "Axios", "Axios", "Ax", "#5a29e4", "#fff", "Cliente HTTP.", "Consumo das APIs nos front-ends, desde a faculdade."),
 
+  ext("Bancos de dados", "Banco de dados", "Conceito", "BD", "#336791", "#fff", "Modelagem e armazenamento de dados.", "Modelagem e consultas na Freecook, na DBS e nos projetos de clientes."),
   ext("Bancos de dados", "PostgreSQL", "PostgreSQL Global Development Group", "Pg", "#336791", "#fff", "Banco relacional open source.", "Meu banco padrão hoje."),
   ext("Bancos de dados", "MySQL", "Oracle", "My", "#00758f", "#f29111", "Banco relacional popular na web.", "E-commerce legado e APIs em PHP e Node."),
-  ext("Bancos de dados", "SQL Server", "Microsoft", "SS", "#a91d22", "#fff", "Banco relacional da Microsoft.", "Ambientes corporativos."),
   ext("Bancos de dados", "MongoDB", "MongoDB Inc.", "Mg", "#023430", "#00ed64", "Banco de documentos.", "Usei no MundoPet."),
+  ext("Bancos de dados", "SQL Server", "Microsoft", "SS", "#a91d22", "#fff", "Banco relacional da Microsoft.", "Ambientes corporativos."),
+  ext("Bancos de dados", "Oracle", "Oracle", "Or", "#c74634", "#fff", "Banco relacional corporativo.", "Ambientes corporativos."),
   ext("Bancos de dados", "SQLite", "SQLite Consortium", "Lt", "#003b57", "#fff", "Banco leve e embutido.", "Protótipo e teste."),
   ext("Bancos de dados", "Supabase", "Supabase", "Sb", "#1c1c1c", "#3ecf8e", "Postgres com back-end pronto.", "Integração de dados na EMS."),
   ext("Bancos de dados", "Firebase", "Google", "Fb", "#1a2b34", "#ffca28", "Plataforma de apps do Google.", "Integração de dados na EMS."),
   ext("Bancos de dados", "NoSQL", "Conceito", "NoS", "#023430", "#00ed64", "Bancos não relacionais.", "Uso quando o modelo pede documento ou chave e valor."),
-  ext("Bancos de dados", "Oracle", "Oracle", "Or", "#c74634", "#fff", "Banco relacional corporativo.", "Ambientes corporativos."),
   ext("Bancos de dados", "phpMyAdmin", "phpMyAdmin", "pA", "#f89c0e", "#000", "Administração de MySQL pelo navegador.", "Apoio em projetos PHP e WordPress."),
 
-  ext("DevOps e Cloud", "Linux e Bash", "Linux Foundation", "$_", "#333", "#fcc624", "O sistema dos servidores.", "Administro minhas VPS e as rotinas de backup."),
-  ext("DevOps e Cloud", "VPS", "Servidor", "VPS", "#333", "#fff", "Servidor virtual privado.", "Mantenho minha própria infraestrutura."),
+  ext("Segurança", "JWT, OAuth2 e RBAC", "IETF", "JWT", "#000", "#d63aff", "Autenticação e permissões.", "Refresh token com rotação e permissão por rota e por perfil."),
+  ext("Segurança", "Cibersegurança", "Segurança", "CS", "#7f0000", "#fff", "Proteção de sistemas e dados.", "Comecei no time de Cibersegurança do Grupo EMS e levo esse cuidado para o desenho dos sistemas."),
+  ext("Segurança", "Segurança de nuvem", "Conceito", "SN", "#0078d4", "#fff", "Proteção de ambientes na nuvem.", "Certificação Microsoft SC-900, Fundamentos de Segurança em Nuvem."),
+
   ext("DevOps e Cloud", "Docker", "Docker Inc.", "Dk", "#1d63ed", "#fff", "Containers.", "Tudo que eu subo em VPS roda em Docker."),
   ext("DevOps e Cloud", "Docker Compose", "Docker Inc.", "DC", "#1d63ed", "#fff", "Vários containers em um arquivo.", "Sobe API, banco e fila juntos."),
   ext("DevOps e Cloud", "Nginx", "F5", "Nx", "#009639", "#fff", "Servidor web e proxy reverso.", "Na frente das APIs em produção, com SSL."),
+  ext("DevOps e Cloud", "DevOps", "Prática", "DO", "#2088ff", "#fff", "Desenvolvimento e operação juntos.", "Pipelines, Docker e deploy automatizado, visto no AZ-900 e no Microsoft AI for Tech."),
   ext("DevOps e Cloud", "CI/CD", "Prática", "CI", "#2088ff", "#fff", "Integração e entrega contínuas.", "Build, teste e deploy automatizados."),
+  ext("DevOps e Cloud", "Azure DevOps", "Microsoft", "AD", "#0078d4", "#fff", "Repositórios, boards e pipelines.", "Visto no AZ-900 e no Microsoft AI for Tech."),
   ext("DevOps e Cloud", "AWS", "Amazon Web Services", "aws", "#232f3e", "#ff9900", "Nuvem da Amazon.", "Amazon S3 com presigned URLs na Freecook."),
+  ext("DevOps e Cloud", "Amazon S3", "Amazon Web Services", "S3", "#232f3e", "#e05243", "Armazenamento de arquivos na nuvem.", "Arquivos com presigned URLs na Freecook."),
   ext("DevOps e Cloud", "Microsoft Azure", "Microsoft", "Az", "#0078d4", "#fff", "Nuvem da Microsoft.", "Tenho as certificações AZ-900, AI-900 e SC-900."),
   ext("DevOps e Cloud", "Google Cloud", "Google", "GC", "#4285f4", "#fff", "Nuvem do Google.", "Serviços de nuvem do Google."),
+  ext("DevOps e Cloud", "Computação em nuvem", "Conceito", "Cl", "#0078d4", "#fff", "Serviços sob demanda na nuvem.", "Certificações Microsoft AI-900 e SC-900."),
+  ext("DevOps e Cloud", "Aplicativos em nuvem", "Conceito", "AN", "#0078d4", "#fff", "Aplicações rodando na nuvem.", "Certificações Microsoft AI-900 e SC-900."),
+
+  ext("Redes e infraestrutura", "Linux e Bash", "Linux Foundation", "$_", "#333", "#fcc624", "O sistema dos servidores.", "Administro minhas VPS e as rotinas de backup."),
+  ext("Redes e infraestrutura", "VPS", "Servidor", "VPS", "#333", "#fff", "Servidor virtual privado.", "Mantenho minha própria infraestrutura."),
+  ext("Redes e infraestrutura", "Infraestrutura", "Servidor", "In", "#333", "#fff", "Servidores e ambiente de execução.", "Do Grupo EMS e do SENAI à minha própria infraestrutura na Freecook."),
+  ext("Redes e infraestrutura", "Redes", "Computação", "Net", "#333", "#fff", "Comunicação entre sistemas.", "Base para infraestrutura e APIs."),
+  ext("Redes e infraestrutura", "Arquitetura de rede", "Redes", "AR", "#2e7d32", "#fff", "Como as redes são desenhadas.", "Estudo no SENAI e prática no Grupo EMS."),
+  ext("Redes e infraestrutura", "Administração de redes", "Redes", "AD", "#2e7d32", "#fff", "Operação e manutenção de redes.", "Experiência no Grupo EMS."),
+
+  ext("Integrações", "Integração de sistemas", "Arquitetura", "Int", "#0a5c91", "#fff", "Sistemas conversando entre si.", "ERP, e-commerce, CRM e logística integrados, sem ninguém copiando dado de um lugar para o outro."),
+  ext("Integrações", "ERPs", "Bling, OMIE, ERPFLEX e TOTVS", "ERP", "#0a5c91", "#fff", "Sistemas de gestão.", "Já integrei Bling, OMIE, ERPFLEX e Datasul/TOTVS, inclusive migrando do ERPFLEX para o OMIE."),
+  ext("Integrações", "RD Station", "RD Station", "RD", "#19c4b4", "#fff", "CRM e marketing.", "Fluxos automáticos entre CRM e ERP com n8n."),
+  ext("Integrações", "WooCommerce", "Automattic", "Wc", "#7f54b3", "#fff", "E-commerce no WordPress.", "Manutenção do e-commerce legado durante a migração."),
+  ext("Integrações", "Frenet", "Frenet", "Fr", "#ff6b00", "#fff", "Cotação de frete.", "Integração de logística em e-commerce."),
+  ext("Integrações", "PayPal", "PayPal", "PP", "#003087", "#fff", "Pagamentos online.", "Integração de pagamento em e-commerce."),
+  ext("Integrações", "Mercado Livre", "Mercado Livre", "ML", "#ffe600", "#2d3277", "Marketplace e API de vendas.", "Integração com o marketplace."),
+  ext("Integrações", "BB Developer", "Banco do Brasil", "BB", "#fcfc30", "#003882", "APIs do Banco do Brasil.", "Integração com serviços bancários."),
 
   ext("Automação e IA", "n8n", "n8n GmbH", "n8n", "#ea4b71", "#fff", "Automação de workflows.", "Na Freecook ligo ERP, CRM e sistemas internos com n8n."),
   ext("Automação e IA", "Playwright", "Microsoft", "Pw", "#2d4552", "#45ba4b", "Automação de navegador.", "Web scraping e automação de portais."),
@@ -866,29 +874,53 @@ export const extensions: Ext[] = [
   ext("Automação e IA", "Apify", "Apify", "Ap", "#0a2540", "#97d700", "Plataforma de scraping e automação.", "Coleta de dados da web."),
   ext("Automação e IA", "LLMs", "Conceito", "LLM", "#412991", "#fff", "Modelos de linguagem.", "Análise de texto e sentimento."),
   ext("Automação e IA", "Google Gemini", "Google", "Gm", "#1a73e8", "#fff", "IA generativa do Google.", "Análise de sentimento no CUBE e alguns projetos meus no GitHub."),
-
-  ext("Integrações", "ERPs", "Bling, OMIE, ERPFLEX e TOTVS", "ERP", "#0a5c91", "#fff", "Sistemas de gestão.", "Já integrei Bling, OMIE, ERPFLEX e Datasul/TOTVS, inclusive migrando do ERPFLEX para o OMIE."),
-  ext("Integrações", "RD Station", "RD Station", "RD", "#19c4b4", "#fff", "CRM e marketing.", "Fluxos automáticos entre CRM e ERP com n8n."),
-  ext("Integrações", "WooCommerce", "Automattic", "Wc", "#7f54b3", "#fff", "E-commerce no WordPress.", "Manutenção do e-commerce legado durante a migração."),
-  ext("Integrações", "Frenet", "Frenet", "Fr", "#ff6b00", "#fff", "Cotação de frete.", "Integração de logística em e-commerce."),
-  ext("Integrações", "BB Developer", "Banco do Brasil", "BB", "#fcfc30", "#003882", "APIs do Banco do Brasil.", "Integração com serviços bancários."),
-  ext("Integrações", "PayPal", "PayPal", "PP", "#003087", "#fff", "Pagamentos online.", "Integração de pagamento em e-commerce."),
-  ext("Integrações", "Mercado Livre", "Mercado Livre", "ML", "#ffe600", "#2d3277", "Marketplace e API de vendas.", "Integração com o marketplace."),
+  ext("Automação e IA", "Inteligência artificial", "Conceito", "IA", "#7e57c2", "#fff", "Modelos que aprendem com dados.", "Cyberbot e o certificado de IA Generativa aplicada à programação."),
+  ext("Automação e IA", "PLN", "Conceito", "PLN", "#7e57c2", "#fff", "Processamento de linguagem natural.", "Chatbot do Cyberbot e análise de sentimento."),
 
   ext("Dados e BI", "Power BI", "Microsoft", "BI", "#f2c811", "#000", "BI da Microsoft.", "Relatórios e indicadores."),
   ext("Dados e BI", "Azure Databricks", "Microsoft", "Db", "#ff3621", "#fff", "Plataforma de dados na nuvem.", "Processamento de dados no Azure."),
+  ext("Dados e BI", "Streamlit", "Snowflake", "St", "#ff4b4b", "#fff", "Apps de dados em Python.", "Interface do Cyberbot e aplicações internas no Grupo EMS."),
+  ext("Dados e BI", "Jupyter", "Project Jupyter", "Jp", "#f37626", "#fff", "Notebooks interativos.", "Programação em Python e análise de dados."),
+  ext("Dados e BI", "Manipulação de dados", "Conceito", "MD", "#150458", "#e70488", "Limpar, transformar e analisar dados.", "Python Essentials 1 e os cursos de Python para Data Science."),
 
-  ext("Ferramentas", "Git e GitHub", "GitHub", "Git", "#f05033", "#fff", "Controle de versão.", "Commit pequeno e mensagem que explica o porquê."),
+  ext("Ferramentas", "Git", "Git", "Git", "#f05033", "#fff", "Controle de versão.", "Commit pequeno e mensagem que explica o porquê."),
+  ext("Ferramentas", "GitHub", "GitHub", "GH", "#181717", "#fff", "Repositórios e colaboração.", "Fluxo de pull request e CI. É onde ficam meus repositórios públicos."),
   ext("Ferramentas", "Figma", "Figma", "Fg", "#1e1e1e", "#a259ff", "Design de interfaces.", "Fiz formação de UX e UI pelo SENAI e pela DIO."),
   ext("Ferramentas", "Postman", "Postman", "Pm", "#ff6c37", "#fff", "Teste de APIs.", "Coleção para cada API que eu construo."),
   ext("Ferramentas", "XAMPP", "Apache Friends", "Xp", "#fb7a24", "#fff", "Ambiente local PHP e MySQL.", "Desenvolvimento local em PHP."),
-  ext("Ferramentas", "Arduino e IoT", "Arduino", "Ar", "#00979d", "#fff", "Eletrônica e dispositivos conectados.", "Projetos com microcontroladores e IoT."),
-  ext("Ferramentas", "UI/UX responsivo", "Design", "UX", "#1e1e1e", "#a259ff", "Interfaces que se adaptam à tela.", "Telas pensadas para celular e desktop."),
-  ext("Ferramentas", "Estrutura de dados", "Computação", "ED", "#333", "#fff", "Organização eficiente de dados.", "Base para escolher a solução certa."),
-  ext("Ferramentas", "Design de software", "Engenharia", "DS", "#333", "#fff", "Arquitetura e padrões de projeto.", "Estudo na faculdade de Engenharia de Software."),
-  ext("Ferramentas", "Redes", "Computação", "Net", "#333", "#fff", "Comunicação entre sistemas.", "Base para infraestrutura e APIs."),
-  ext("Ferramentas", "Scrum", "Scrum.org", "Sc", "#009fda", "#fff", "Metodologia ágil.", "Sprints e entregas incrementais."),
-  ext("Ferramentas", "Kanban", "Prática", "Kb", "#0079bf", "#fff", "Fluxo visual de tarefas.", "Acompanhamento do trabalho em quadro."),
+  ext("Ferramentas", "WordPress", "WordPress Foundation", "WP", "#21759b", "#fff", "CMS.", "Tema próprio em PHP, como o da SGI, e a migração para stack própria na Freecook."),
+  ext("Ferramentas", "Arduino", "Arduino", "Ar", "#00979d", "#fff", "Prototipagem com microcontroladores.", "Meu primeiro contato foi na ETEC."),
+  ext("Ferramentas", "Internet das Coisas", "Conceito", "IoT", "#00979d", "#fff", "Dispositivos conectados.", "Certificado Soluções Integradas com IoT."),
+
+  ext("Fundamentos", "Programação (computação)", "Computação", "Pg", "#333", "#fff", "Escrever código que resolve problemas.", "Grupo EMS, Estácio e os fundamentos do Python."),
+  ext("Fundamentos", "Linguagens de programação", "Computação", "LP", "#333", "#ffd43b", "Várias linguagens, cada uma para o que serve.", "Estudadas na Estácio e usadas no trabalho."),
+  ext("Fundamentos", "Sistemas operacionais", "Computação", "SO", "#333", "#fff", "Como o sistema por baixo funciona.", "Estudado na Estácio, com Linux no dia a dia."),
+  ext("Fundamentos", "Algoritmos", "Computação", "Alg", "#333", "#fff", "Lógica para resolver problemas.", "Base de todo software, estudado na Estácio."),
+  ext("Fundamentos", "Estrutura de dados", "Computação", "ED", "#333", "#fff", "Organização eficiente de dados.", "Base para escolher a solução certa."),
+  ext("Fundamentos", "Raciocínio lógico", "Computação", "RL", "#2e7d32", "#fff", "Quebrar problemas em passos.", "Fundamentos do Python, Grupo EMS e Estácio."),
+
+  ext("Design", "UI/UX responsivo", "Design", "UX", "#1e1e1e", "#a259ff", "Interfaces que se adaptam à tela.", "Telas pensadas para celular e desktop."),
+  ext("Design", "Design de experiência do usuário (UX)", "Design", "UX", "#1e1e1e", "#a259ff", "Pensar a experiência de quem usa.", "Formação UX Designer e curso de Design UX e UI."),
+  ext("Design", "UI", "Design", "UI", "#1e1e1e", "#a259ff", "Interface visual.", "Curso de Design UX e UI."),
+
+  ext("Práticas", "Scrum", "Scrum.org", "Sc", "#009fda", "#fff", "Metodologia ágil.", "Sprints e entregas incrementais."),
+  ext("Práticas", "Kanban", "Prática", "Kb", "#0079bf", "#fff", "Fluxo visual de tarefas.", "Acompanhamento do trabalho em quadro."),
+  ext("Práticas", "Arquitetura MVC", "Padrão", "MVC", "#1a1a1a", "#ffca28", "Model, View e Controller.", "Estudado na Estácio e usado em temas e APIs."),
+  ext("Práticas", "Design de software", "Engenharia", "DS", "#333", "#fff", "Arquitetura e padrões de projeto.", "Estudo na faculdade de Engenharia de Software."),
+  ext("Práticas", "Gestão de projetos", "Gestão", "GP", "#333", "#fff", "Planejamento e acompanhamento.", "Visto no SENAI e aplicado nos projetos de clientes."),
+  ext("Práticas", "Liderança", "Gestão", "Ld", "#333", "#fff", "Conduzir pessoas e times.", "Desenvolvida no programa do Mackenzie."),
+
+  ext("Áreas de atuação", "Engenharia de Software", "Estácio", "ES", "#1565c0", "#fff", "Construir sistemas robustos.", "Meu bacharelado, na Estácio."),
+  ext("Áreas de atuação", "Desenvolvedor de Software", "Carreira", "Dev", "#1565c0", "#fff", "Transformar problema em software.", "Da formação na Estácio à prática nas empresas por onde passei."),
+  ext("Áreas de atuação", "Desenvolvimento full stack", "Carreira", "FS", "#1565c0", "#fff", "Do banco de dados à tela.", "Na DBS System e na Freecook, da API à interface."),
+  ext("Áreas de atuação", "Desenvolvimento de back-end", "Carreira", "BE", "#2e7d32", "#fff", "APIs, regras de negócio e dados.", "A área em que mais atuo, da Estácio ao MundoPet e à CroSoften."),
+  ext("Áreas de atuação", "Desenvolvimento de front-end", "Carreira", "FE", "#0277bd", "#fff", "Interfaces para quem usa.", "Estudado na Estácio e aplicado em React, Next.js e Angular."),
+  ext("Áreas de atuação", "Desenvolvimento web", "Carreira", "Web", "#0277bd", "#fff", "Sistemas e sites na web.", "Comecei na ETEC e sigo desde então."),
+
+  ext("Idiomas", "Inglês", "Mackenzie", "EN", "#1565c0", "#fff", "Nível avançado.", "Programa Cidadão Pró-Mundo, no Mackenzie, por parceria da Microsoft com o SENAI."),
+  ext("Idiomas", "Comunicação oral em inglês", "Mackenzie", "Fala", "#1565c0", "#fff", "Conversação.", "Treinada no Mackenzie, em situações reais do dia a dia."),
+  ext("Idiomas", "Compreensão auditiva (Listening)", "Mackenzie", "Ou", "#1565c0", "#fff", "Escuta ativa.", "Treinada no Mackenzie."),
+  ext("Idiomas", "Escrita e leitura em inglês", "Mackenzie", "RW", "#1565c0", "#fff", "Ler e escrever.", "Treinada no Mackenzie."),
 ];
 
 export const TERMINAL: Record<string, string> = {
@@ -925,24 +957,26 @@ Para pedir um orçamento, digite orcamento`,
   repos: `Repositórios públicos em https://github.com/yyhago
 
 Para ver mais, digite open repositorios.md`,
-  habilidades: `linguagens   TypeScript, JavaScript, Python, PHP, SQL
-front-end    React, Next.js, React Native, Angular, Tailwind CSS,
+  habilidades: `principais   TypeScript, Node.js, NestJS, PostgreSQL,
+             Integração de sistemas
+linguagens   TypeScript, JavaScript, Python, PHP, SQL
+back-end     Node.js, NestJS, Prisma, APIs REST, Swagger, Redis, BullMQ,
+             FastAPI, Flask
+front-end    React, Next.js, Tailwind CSS, React Native, Angular,
              Bootstrap
-back-end     Node.js, NestJS, FastAPI, Flask, Prisma, APIs REST, Redis,
-             BullMQ, Swagger
+bancos       PostgreSQL, MySQL, MongoDB, SQL Server, Oracle, SQLite,
+             Supabase, Firebase, NoSQL, phpMyAdmin
 segurança    JWT, OAuth2, RBAC
-bancos       PostgreSQL, MySQL, SQL Server, MongoDB, SQLite, Supabase,
-             Firebase, NoSQL, Oracle, phpMyAdmin
-devops       Linux, Bash, VPS, Docker, Docker Compose, Nginx, CI/CD, AWS,
+devops       Docker, Docker Compose, Nginx, Linux, Bash, VPS, CI/CD, AWS,
              Azure, Google Cloud
+integrações  OMIE, ERPFLEX, Datasul/TOTVS, Bling, RD Station, WooCommerce,
+             Frenet, PayPal, Mercado Livre, BB Developer
 automação    n8n, Playwright, Puppeteer, Selenium, BeautifulSoup, Apify,
              LLMs, Google Gemini
-integrações  Bling, OMIE, ERPFLEX, Datasul/TOTVS, RD Station, WooCommerce,
-             Frenet, BB Developer, PayPal, Mercado Livre
 dados e BI   Power BI, Azure Databricks
-ferramentas  Git, GitHub, Figma, Postman, XAMPP, Arduino, IoT,
-             UI/UX responsivo, Estrutura de dados, Design de software,
-             Redes, Scrum, Kanban
+ferramentas  Git, GitHub, Figma, Postman, XAMPP, Arduino, IoT
+práticas     Scrum, Kanban, UI/UX responsivo, Estrutura de dados,
+             Design de software, Redes
 
 Para ver mais, digite open habilidades.md`,
   formacao: `Engenharia de Software        Estácio     2025 a 2028

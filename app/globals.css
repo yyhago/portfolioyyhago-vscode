@@ -1904,6 +1904,14 @@ body {
   margin: 22px 0 10px;
   font-size: 17px;
 }
+.md h2 {
+  padding-left: 14px;
+  border-left: 4px solid #3794ff;
+}
+.md h3 {
+  padding-left: 11px;
+  border-left: 3px solid #6796e6;
+}
 .vsc .md h1 .codicon,
 .vsc .md h2 .codicon,
 .vsc .md h3 .codicon {
@@ -1967,18 +1975,36 @@ body {
   border-color: rgba(55, 148, 255, 0.5);
 }
 .md-skills .md-chips {
-  gap: 12px;
-  margin: 14px 0 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(236px, 1fr));
+  gap: 10px;
+  margin: 14px 0 26px;
 }
 .md-skills .md-chips code {
-  padding: 8px 18px 8px 14px;
-  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 9px 12px;
+  font-size: 13px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.md-skills .md-chips code:hover {
+  transform: translateY(-1px);
+}
+.md-skills h2:first-of-type + .md-chips code {
+  background: rgba(55, 148, 255, 0.14);
+  border-color: rgba(55, 148, 255, 0.55);
+  color: #fff;
 }
 .md-skills .chip-logo {
-  width: 26px;
-  height: 26px;
-  margin-right: 9px;
-  vertical-align: -7px;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin: 0;
 }
 .md blockquote {
   margin: 0 0 16px;

@@ -66,6 +66,9 @@ export function Icon({ name }: { name: string }) {
   return <i className={`codicon codicon-${name}`} />;
 }
 
+// só ícones de marca e de link externo; o resto some, os títulos usam linha de cor
+const KEEP_ICONS = new Set(["link-external", "github", "linkedin", "instagram", "mail"]);
+
 type Ctx = { open: (path: string) => void; isFile: (path: string) => boolean; L: (pt: string, en: string) => string };
 
 function inline(s: string, ctx: Ctx, key = "k"): ReactNode[] {
@@ -82,7 +85,7 @@ function inline(s: string, ctx: Ctx, key = "k"): ReactNode[] {
     else if (m[4] !== undefined) {
       const href = m[5];
       const file = href.split("#")[0];
-      const internal = href.startsWith("#") || ctx.isFile(file);
+      const internal = href.startsWith("#") || href === "extensoes" || ctx.isFile(file);
       out.push(
         <a
           key={k}
@@ -95,7 +98,9 @@ function inline(s: string, ctx: Ctx, key = "k"): ReactNode[] {
           {inline(m[4], ctx, k)}
         </a>,
       );
-    } else if (m[6] !== undefined) out.push(<Icon key={k} name={m[6]} />);
+    } else if (m[6] !== undefined) {
+      if (KEEP_ICONS.has(m[6])) out.push(<Icon key={k} name={m[6]} />);
+    }
     else out.push(<br key={k} />);
     last = re.lastIndex;
   }

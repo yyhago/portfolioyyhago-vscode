@@ -123,6 +123,7 @@ export default function VSCode(p: Props) {
     if (!tabs.includes(id)) setTabs([...tabs, id]);
   };
   const open = (target: string, pin = true, line?: number) => {
+    if (target === "extensoes") return show("extensions");
     const [raw0, anchor] = target.split("#");
     if (!raw0 && anchor) return scrollToAnchor(anchor);
     const id = resolve(raw0);

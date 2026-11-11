@@ -8,7 +8,7 @@ export const EN_DOCS: Record<string, string> = {
 * :terminal-bash: Full Stack Software Engineer, back-end focused
 * :location: Hortolândia, São Paulo, Brazil
 * :mortar-board: Software Engineering, Estácio
-* :globe: Native Portuguese, intermediate English
+* :globe: Native Portuguese, advanced English
 * :briefcase: Working with many clients, across many industries
 * :file-pdf: {{cv-link}}
 
@@ -28,19 +28,17 @@ The **Guide** button on the blue bar at the bottom shows you where everything is
 
 ## :person: About me
 
-I'm Yhago Felipe, a full stack software engineer, and the back-end is where I feel at home. My job is to take manual processes and systems that don't talk to each other and turn them into software the company can use and grow with. I have two technical degrees in Systems Development, from **SENAI** and **ETEC**, and I'm doing my bachelor's in **Software Engineering** at Estácio.
+I'm a full stack Software Engineer, with most of my experience in the back-end. My job is to take manual processes and systems that don't talk to each other and turn all of it into software that the company or the client can use and grow with.
 
-My story with programming really started at **ETEC Hortolândia**, where I took the technical course alongside high school and built **MundoPet**, a pet marketplace, as my final project. In 2025 I joined the **Cybersecurity team at Grupo EMS** as an apprentice and built **Python** automations that cut the team's manual work by **40%**. That's where an idea I bring to every project was born, *automate before you scale*.
+I started my career on the Cybersecurity team of a pharmaceutical company, building **Python** automations that cut the time spent on manual operations by **40%**. That's where a rule I still follow came from: before scaling a process, automate what is still manual.
 
-Then came consulting. At **DBS System** I built screens in **Next.js and TypeScript** and functions integrated with the Datasul ERP (TOTVS) for industrial clients. At **CroSoften** I worked on **23 projects** at the same time, always with APIs in **Node.js and NestJS**, Clean Architecture and requirements gathered straight from the client, across agribusiness, healthcare, financial management and logistics.
+Since then, I've built the back-end of **more than 23 projects**, with well structured REST APIs, business rules designed end to end, authentication and role based access control. I've built from scratch systems that manage a company's entire operation, from the purchase on the e-commerce to the invoice issued in the ERP, and I've led ERP and database migrations without interrupting the operation.
 
-I know how to take care of the architecture of a company's whole IT ecosystem, as I did at **Freecook Brasil**. I designed from scratch the platform that runs the entire operation, from the purchase on the online store to the invoice, in **Next.js, NestJS and TypeScript**, and it replaced a legacy WordPress setup without stopping sales. Along the way we migrated the ERP from ERPFLEX to OMIE. I also take care of the **n8n** automations and the infrastructure, from the server to the deploy.
+I have experience integrating ERPs such as **OMIE, ERPFLEX, Datasul/TOTVS and Bling**, with **n8n** automations, and I run my own infrastructure: Linux VPS servers with **Docker**, **Nginx** as a reverse proxy, SSL, Cloudflare, AWS S3 storage, automated backups and CI/CD pipelines.
 
-I like being close to the people who use what I build. I work from gathering requirements with the client all the way to the final delivery, with systems published on the web and consumed by mobile apps, in teams running Scrum, Kanban or just dailies and weeklies.
+I like sharing what I know and, even more, being around people who like sharing knowledge and explaining how they do things. I work from gathering requirements, together with the company or the client, to the final delivery, with systems published on the web and also accessible on mobile. Most projects were built using Scrum, Kanban or daily and weekly routines for alignment.
 
-On the side, I work with many clients on a project basis, across all kinds of industries, from businesses that are just starting out to big companies like **CUBE Inteligência**, **JCFireWall**, with SafetyKeeper, and **CoJurOS**, which is coming soon. Those are just a few names, the list is much longer and keeps growing. If you want to know how I can help your company, take a look at [services.md](services.md).
-
-Outside of code, I study English at **Mackenzie** on a scholarship from the Cidadão Pró-Mundo program, a partnership between Microsoft and SENAI that selected only 20 students in the region, and I hold the **Microsoft Azure AZ-900, AI-900 and SC-900** certifications.
+My education includes a Bachelor's in Software Engineering and two technical degrees in Systems Development, from SENAI and ETEC. I'm a full scholarship student in an English program at Mackenzie, where I was accepted through a partnership with Microsoft and SENAI. I also hold several certifications in development, Data Science, Cloud, DevOps, databases, BI, UI/UX, AI and Microsoft Azure.
 
 ## :tools: What I do
 
@@ -76,8 +74,6 @@ I deploy and keep everything running, with VPS, **Docker** and **Nginx**, SSL, a
 * **23 certificates**, including Microsoft Azure AZ-900, AI-900 and SC-900
 * {{github}}
 
-{{depoimentos}}
-
 ## :checklist: How I work
 
 * I like to understand the problem before opening the editor. I gather requirements straight from the people who will use the system and only then design the architecture.
@@ -100,17 +96,15 @@ I started as an apprentice in 2025 and since then I've worked in consulting, at 
 **Full Stack Software Developer**, full time
 *Mar 2026 to present, Campinas, SP, on site*
 
-I'm responsible for the architecture and technical evolution of the company's whole IT ecosystem, with a focus on performance, scalability and process automation.
+Responsible for the architecture and technical evolution of the company's whole IT ecosystem, with a focus on performance, scalability and process automation.
 
-When I joined, the online store and the management side ran on WordPress, connected to ERPFLEX. As the software engineer, I designed the architecture of the new system from scratch, with the online store, admin dashboard, sales portal and company website, covering the whole path from the purchase to the invoice integrated with the ERP. Along the way, we migrated from ERPFLEX to OMIE without stopping the sales of a store that sells a lot. Today I maintain the platform I built and automate the processes that were still done by hand.
-
-* Architecture and development of the entire platform in **Next.js, NestJS and TypeScript**, bringing the store, dashboard, sales portal and company website together in a single system.
-* Complete flow from the order to the **invoice** in **NestJS**, integrated with **OMIE** and the stock update.
-* Move from legacy **WordPress** to a custom stack, defining code standards, API structure and the migration strategy, and migration from **ERPFLEX** to **OMIE**, keeping stock, orders and customers consistent, all without stopping the operation.
-* Maintenance of the legacy **PHP and MySQL** e-commerce while the transition happened.
-* **n8n** automations connecting the ERP, CRM (RD Station) and internal systems, taking manual work off marketing and operations.
-* Our own infrastructure, with **VPS** servers, **Docker**, **Nginx** as a reverse proxy, **SSL**, domains, **Cloudflare** and automated database backups.
-* Files on **Amazon S3** with presigned URLs and integrations with payment gateways and shipping (Frenet).
+* I architected and built from scratch the digital platform that supports the operation end to end, from the e-commerce order to the stock update, with the online store, admin dashboard, sales portal and company website in a single system.
+* I led the move from legacy **WordPress** to a proprietary stack in **Next.js, NestJS and TypeScript**, defining code standards, API structure and the migration strategy without interrupting the operation.
+* Back-end development in **PHP/MySQL** for the legacy e-commerce during the transition, with custom modules and integrations.
+* Architecture of **n8n** automations, orchestrating flows between the ERP, CRM and internal systems.
+* Migration of the legacy ERP integration (**ERPFLEX**) to the current ERP (**OMIE**), ensuring consistency of stock, orders and customers.
+* File storage on **Amazon S3** with presigned URLs and management of our own infrastructure (**VPS, Docker, Nginx, SSL**) with automated backups.
+* Integration with payment gateways, REST APIs and logistics systems (**Frenet**).
 
 Some of the systems that are live.
 
@@ -127,14 +121,15 @@ Some of the systems that are live.
 **Back-end Software Developer**, contractor
 *Jan 2026 to Aug 2026, São Paulo, SP, remote*
 
-I joined as a contractor to build the back-end of Angular and iOS applications. It was **23 projects** for different clients, almost always at the same time, from agribusiness to healthcare, finance, retail and logistics, which got me used to complex business rules and requirements gathered straight from the client.
+Contractor, part time. Development and maintenance of scalable RESTful APIs in a corporate environment, serving more than 20 different client projects at the same time.
 
-* REST APIs in **Node.js, NestJS and TypeScript**, organized with **Clean Architecture**, with business rules, authentication, access control and external integrations.
-* Database modeling in **MySQL** on the projects I worked on.
-* Complete **Swagger** documentation, consumed at the same time by the iOS and Angular teams.
-* On some projects I also built the interfaces in **Angular**, from the prototypes the design team delivered in **Figma**.
-* Direct contact with clients to gather requirements and define the technical scope, turning business needs into architecture.
-* Several demands in parallel, with continuous delivery and a focus on code quality, using Scrum and Kanban.
+* Architecture and development of APIs with **Node.js, NestJS and TypeScript**, applying **Clean Architecture** to ensure maintainability and scalability in long term projects.
+* Implementation of complex business rules, authentication/authorization and integration with multiple external APIs.
+* Complete technical documentation via **Swagger**, enabling simultaneous consumption by mobile (iOS) and front-end (**Angular**) applications.
+* Working directly with clients to gather requirements and define the technical scope, turning business needs into system architecture.
+* Managing multiple concurrent demands with a focus on continuous delivery and code quality, within agile methodologies (Scrum/Kanban).
+
+Projects delivered across varied domains: agribusiness (Vitrine do Campo), healthcare (Cardio Shop), financial management (SAFE/ERICA), logistics (Ships Manager), among others.
 
 The 23 projects I worked on.
 
@@ -157,11 +152,13 @@ The 23 projects I worked on.
 **Full Stack Software Developer**, contractor
 *Sep 2025 to Dec 2025, Campinas, SP, remote*
 
-A 4 month contract at a consulting firm that serves industrial companies. It was my first contact with a large ERP, working from the screen to the business rule.
+Modernization of legacy corporate applications for an industrial environment, focused on system integration and replacing manual flows with automated APIs.
 
-* Built screens in **Next.js and TypeScript** and business logic functions integrated with **TOTVS Datasul**.
-* Followed closely the development in **Progress**, the Datasul language used for the ERP's queries and rules.
-* Fixed scope project, delivered within the 4 month contract.
+* Rebuilding integrations with the **Datasul (TOTVS)** ERP, replacing manual data exchanges with direct API consumption, reducing the risk of inconsistency between systems.
+* Development of RESTful APIs in **PHP and Node.js**, with persistence in **MySQL and PostgreSQL**, to support the new integrations.
+* Rebuilding legacy interfaces with **Next.js and TypeScript**, modernizing the experience without interrupting production.
+* Technical requirements gathering with the business team, identifying bottlenecks in the legacy application and proposing a replacement architecture.
+* Delivery of a fixed scope project in 4 months, with full autonomy over technical decisions and schedule.
 
 Some of the clients I built for.
 
@@ -176,13 +173,13 @@ Some of the clients I built for.
 **IT Apprentice, Cybersecurity**, full time
 *Jan 2025 to Sep 2025, Hortolândia, SP, on site*
 
-My first job, at a pharmaceutical company. I joined the Cybersecurity team, but since my goal was development, I was moved to process automation. That's where the idea I bring to every project was born, *automate before you scale*.
+First corporate experience, working on the Cybersecurity team focused on internal process automation and data protection.
 
-* **Python** automations that connected to **Excel** spreadsheets, extracted the data and generated ready to use reports for the teams, cutting the time of those tasks by **40%**.
-* Internal applications in Python, with **Streamlit, FastAPI and Flask**, for the security team's needs.
-* **CI/CD** pipelines to run and monitor the automations.
-* Integration with Supabase, Firebase, PostgreSQL and MySQL to connect the data flow between systems.
-* Support on information security practices, focused on handling sensitive data properly.
+* Development of internal applications in **Python** (**Streamlit, FastAPI, Flask**) to support specific demands of the security area.
+* Creation of automations that cut the team's manual operations time by **40%**, my first real contact with the idea of *automating before scaling*, which I carry to this day.
+* Setup of simple pipelines (**CI/CD**) for continuous execution and monitoring of the automations.
+* Integration with multiple databases (**Supabase, Firebase, PostgreSQL, MySQL**) to consolidate data flow between systems.
+* Support in information security practices, focused on proper handling of sensitive data.
 `,
 
   "docs/projetos.md": `# :project: Projects
@@ -338,8 +335,6 @@ The client list is much longer than what fits here, and many projects are under 
 * **Vitrine do Campo**, **2Clicks**, **Minha Revenda**, **Cupom Clube** and more than 20 projects in agribusiness, healthcare, finance, retail and logistics
 * And many other clients, in commerce, services, industry and startups, that I work with per project or with ongoing maintenance
 
-{{depoimentos}}
-
 ## :tools: What I can do for you
 
 ### :layers: Custom systems
@@ -382,47 +377,9 @@ Tell me what you need right below. The message goes straight to my inbox and I'l
 
   "docs/habilidades.md": `# :tools: Skills
 
-The tools I use every day, grouped by area. In the **Extensions** tab, right here on the side, each technology has a page about where and how I used it.
+This page is under construction. My skills are at the gym, working out to come back stronger, and they only get listed here once I really master them. If the coffee helps, I will be back soon with everything organized.
 
-## :code: Languages
-
-\`TypeScript\` \`JavaScript\` \`Python\` \`PHP\` \`SQL\`
-
-## :browser: Front-end
-
-\`React\` \`Next.js\` \`React Native\` \`Angular\` \`Tailwind CSS\` \`Bootstrap\`
-
-## :server-process: Back-end
-
-\`Node.js\` \`NestJS\` \`FastAPI\` \`Flask\` \`Prisma\` \`REST APIs\` \`Redis\` \`BullMQ\` \`Swagger\`
-
-## :shield: Security
-
-\`JWT\` \`OAuth2\` \`RBAC\`
-
-## :database: Databases
-
-\`PostgreSQL\` \`MySQL\` \`SQL Server\` \`MongoDB\` \`SQLite\` \`Supabase\` \`Firebase\` \`NoSQL\` \`Oracle\` \`phpMyAdmin\`
-
-## :cloud: DevOps and Cloud
-
-\`Linux\` \`Bash\` \`VPS\` \`Docker\` \`Docker Compose\` \`Nginx\` \`CI/CD\` \`AWS\` \`Azure\` \`Google Cloud\`
-
-## :robot: Automation and AI
-
-\`n8n\` \`Playwright\` \`Puppeteer\` \`Selenium\` \`BeautifulSoup\` \`Apify\` \`LLMs\` \`Google Gemini\`
-
-## :plug: Integrations
-
-\`Bling\` \`OMIE\` \`ERPFLEX\` \`Datasul/TOTVS\` \`RD Station\` \`WooCommerce\` \`Frenet\` \`BB Developer\` \`PayPal\` \`Mercado Livre\`
-
-## :graph: Data and BI
-
-\`Power BI\` \`Azure Databricks\`
-
-## :wrench: Tools and practices
-
-\`Git\` \`GitHub\` \`Figma\` \`Postman\` \`XAMPP\` \`Arduino\` \`IoT\` \`Responsive UI/UX\` \`Data structures\` \`Software design\` \`Networking\` \`Scrum\` \`Kanban\`
+Want to see everything I have already worked with? Just open the [Extensions](extensoes) tab, right here on the side. Each technology has a page about where and how I used it.
 `,
 
   "docs/formacao.md": `# :mortar-board: Education
@@ -460,7 +417,7 @@ My final project was **MundoPet**, a complete pet marketplace with Node.js, Expr
 ## :globe: Languages
 
 * **Portuguese**, native
-* **English**, intermediate, working towards fluency
+* **English**, advanced level
 `,
 
   "docs/certificados.md": `# :verified-filled: Certificates
@@ -590,9 +547,65 @@ const CATS: Record<string, string> = {
   "Dados e BI": "Data and BI",
   Segurança: "Security",
   Ferramentas: "Tools",
+  Práticas: "Practices",
+  "Áreas de atuação": "Areas of work",
+  Idiomas: "Languages",
+  "Redes e infraestrutura": "Networks and infrastructure",
+  Fundamentos: "Fundamentals",
+  Design: "Design",
 };
 
 const EXT_EN: Record<string, { desc: string; about: string; name?: string; publisher?: string }> = {
+  html5: { desc: "Markup for the web.", about: "Semantic HTML, with SEO and accessibility in mind. I learned it at ETEC." },
+  css: { desc: "Styling and layout.", about: "Responsive layouts on every web project, from the ETEC final project to the Estácio systems." },
+  xml: { desc: "Structured data format.", about: "Studied and used since ETEC." },
+  cpp: { desc: "C with object orientation.", about: "My first contact was at ETEC." },
+  c: { desc: "The base language of computing.", about: "My first contact with low level programming, at ETEC." },
+  expressjs: { desc: "Minimalist web framework.", about: "The back-end of MundoPet, my final project, and of the CUBE platform." },
+  redux: { desc: "State management.", about: "I used it on MundoPet, my final project." },
+  axios: { desc: "HTTP client.", about: "Consuming APIs from the front-ends, since college." },
+  bancodedados: { name: "Databases", desc: "Data modeling and storage.", about: "Modeling and queries at Freecook, at DBS and on client projects." },
+  cibersegurana: { name: "Cybersecurity", desc: "Protecting systems and data.", about: "I started on the Cybersecurity team at Grupo EMS and carry that care into system design." },
+  infraestrutura: { name: "Infrastructure", desc: "Servers and runtime environment.", about: "From Grupo EMS and SENAI to my own infrastructure at Freecook." },
+  devops: { desc: "Development and operations together.", about: "Pipelines, Docker and automated deploys, covered in the AZ-900 and Microsoft AI for Tech." },
+  azuredevops: { desc: "Repos, boards and pipelines.", about: "Covered in the AZ-900 and Microsoft AI for Tech." },
+  amazons3: { desc: "Cloud file storage.", about: "Files with presigned URLs at Freecook." },
+  computaoemnuvem: { name: "Cloud computing", desc: "On demand services in the cloud.", about: "Microsoft AI-900 and SC-900 certifications." },
+  seguranadenuvem: { name: "Cloud security", desc: "Protecting cloud environments.", about: "Microsoft SC-900 certification, Security Fundamentals in the Cloud." },
+  aplicativosemnuvem: { name: "Cloud applications", desc: "Applications running in the cloud.", about: "Microsoft AI-900 and SC-900 certifications." },
+  arquiteturaderede: { name: "Network architecture", desc: "How networks are designed.", about: "Studied at SENAI and practiced at Grupo EMS." },
+  administraoderedes: { name: "Network administration", desc: "Operating and maintaining networks.", about: "Experience at Grupo EMS." },
+  intelignciaartificial: { name: "Artificial intelligence", desc: "Models that learn from data.", about: "Cyberbot and the Generative AI applied to programming certificate." },
+  pln: { name: "NLP", desc: "Natural language processing.", about: "The Cyberbot chatbot and sentiment analysis." },
+  streamlit: { desc: "Data apps in Python.", about: "The Cyberbot interface and internal applications at Grupo EMS." },
+  jupyter: { desc: "Interactive notebooks.", about: "Python programming and data analysis." },
+  manipulaodedados: { name: "Data manipulation", desc: "Cleaning, transforming and analyzing data.", about: "Python Essentials 1 and the Python for Data Science courses." },
+  git: { desc: "Version control.", about: "Small commits and messages that explain why." },
+  github: { desc: "Repositories and collaboration.", about: "Pull request flow and CI. It's where my public repositories live." },
+  wordpress: { desc: "CMS.", about: "Custom PHP themes, like SGI's, and the migration to a custom stack at Freecook." },
+  arduino: { desc: "Prototyping with microcontrollers.", about: "My first contact was at ETEC." },
+  internetdascoisas: { name: "Internet of Things", desc: "Connected devices.", about: "Integrated Solutions with IoT certificate." },
+  arquiteturamvc: { name: "MVC architecture", desc: "Model, View and Controller.", about: "Studied at Estácio and used in themes and APIs." },
+  algoritmos: { name: "Algorithms", desc: "Logic to solve problems.", about: "The base of any software, studied at Estácio." },
+  raciocniolgico: { name: "Logical reasoning", desc: "Breaking problems into steps.", about: "Python fundamentals, Grupo EMS and Estácio." },
+  designdeexperinciadousurioux: { name: "User experience design (UX)", desc: "Designing the experience of the people who use it.", about: "UX Designer program and the UX and UI Design course." },
+  ui: { desc: "Visual interface.", about: "UX and UI Design course." },
+  gestodeprojetos: { name: "Project management", desc: "Planning and tracking.", about: "Studied at SENAI and applied on client projects." },
+  liderana: { name: "Leadership", desc: "Leading people and teams.", about: "Developed in the Mackenzie program." },
+  engenhariadesoftware: { name: "Software Engineering", desc: "Building robust systems.", about: "My bachelor's degree, at Estácio." },
+  desenvolvedordesoftware: { name: "Software Developer", desc: "Turning problems into software.", about: "From my studies at Estácio to the practice in the companies I've worked at." },
+  desenvolvimentofullstack: { name: "Full stack development", desc: "From the database to the screen.", about: "At DBS System and Freecook, from the API to the interface." },
+  desenvolvimentodebackend: { name: "Back-end development", desc: "APIs, business rules and data.", about: "The area I work in the most, from Estácio to MundoPet and CroSoften." },
+  desenvolvimentodefrontend: { name: "Front-end development", desc: "Interfaces for the people who use them.", about: "Studied at Estácio and applied in React, Next.js and Angular." },
+  desenvolvimentoweb: { name: "Web development", desc: "Systems and sites on the web.", about: "I started at ETEC and have kept at it since." },
+  programaocomputao: { name: "Programming", desc: "Writing code that solves problems.", about: "Grupo EMS, Estácio and the Python fundamentals." },
+  linguagensdeprogramao: { name: "Programming languages", desc: "Several languages, each for what it's good at.", about: "Studied at Estácio and used at work." },
+  sistemasoperacionais: { name: "Operating systems", desc: "How the system underneath works.", about: "Studied at Estácio, with Linux day to day." },
+  ingls: { name: "English", desc: "Advanced level.", about: "Cidadão Pró-Mundo program, at Mackenzie, through a Microsoft and SENAI partnership." },
+  comunicaooralemingls: { name: "Speaking English", desc: "Speaking.", about: "Practiced at Mackenzie, in real everyday situations." },
+  compreensoauditivalistening: { name: "Listening comprehension", desc: "Active listening.", about: "Practiced at Mackenzie." },
+  escritaeleituraemingls: { name: "Reading and writing in English", desc: "Reading and writing.", about: "Practiced at Mackenzie." },
+  integraodesistemas: { name: "System integration", desc: "Systems talking to each other.", about: "ERP, e-commerce, CRM and logistics integrated, with nobody copying data from one place to another." },
   typescript: { desc: "JavaScript with static types.", about: "It's the language I use the most, on the front and the back. Well defined types and Zod validating data at the door prevent a lot of bugs." },
   javascript: { desc: "The language of the web.", about: "It's where I started on the web, back at ETEC." },
   python: { desc: "Automation, data and APIs.", about: "My first job was with Python, on the Grupo EMS Cybersecurity automations that cut 40% of the manual work." },
@@ -633,7 +646,6 @@ const EXT_EN: Record<string, { desc: string; about: string; name?: string; publi
   rdstation: { desc: "CRM and marketing.", about: "Automatic flows between CRM and ERP with n8n." },
   woocommerce: { desc: "E-commerce on WordPress.", about: "Maintaining the legacy e-commerce during the migration." },
   powerbi: { desc: "Microsoft's BI.", about: "Reports and KPIs." },
-  gitegithub: { name: "Git and GitHub", desc: "Version control.", about: "Small commits and messages that explain why." },
   figma: { desc: "Interface design.", about: "I took UX and UI courses at SENAI and DIO." },
   postman: { desc: "API testing.", about: "A collection for every API I build." },
   apisrest: { desc: "The standard for APIs over HTTP.", about: "Versioned endpoints documented in Swagger." },
@@ -659,7 +671,6 @@ const EXT_EN: Record<string, { desc: string; about: string; name?: string; publi
   bbdeveloper: { desc: "Banco do Brasil APIs.", about: "Integration with banking services." },
   paypal: { desc: "Online payments.", about: "Payment integration on e-commerce." },
   mercadolivre: { desc: "Marketplace and sales API.", about: "Integration with the marketplace." },
-  arduinoeiot: { name: "Arduino and IoT", desc: "Electronics and connected devices.", about: "Projects with microcontrollers and IoT." },
 };
 
 const EXT_LIST: Record<Locale, Ext[]> = {
@@ -704,24 +715,25 @@ To ask for a quote, type quote`,
   repos: `Public repositories at https://github.com/yyhago
 
 To see more, type open repositories.md`,
-  habilidades: `languages    TypeScript, JavaScript, Python, PHP, SQL
-front-end    React, Next.js, React Native, Angular, Tailwind CSS,
+  habilidades: `core         TypeScript, Node.js, NestJS, PostgreSQL, System integration
+languages    TypeScript, JavaScript, Python, PHP, SQL
+back-end     Node.js, NestJS, Prisma, REST APIs, Swagger, Redis, BullMQ,
+             FastAPI, Flask
+front-end    React, Next.js, Tailwind CSS, React Native, Angular,
              Bootstrap
-back-end     Node.js, NestJS, FastAPI, Flask, Prisma, REST APIs, Redis,
-             BullMQ, Swagger
+databases    PostgreSQL, MySQL, MongoDB, SQL Server, Oracle, SQLite,
+             Supabase, Firebase, NoSQL, phpMyAdmin
 security     JWT, OAuth2, RBAC
-databases    PostgreSQL, MySQL, SQL Server, MongoDB, SQLite, Supabase,
-             Firebase, NoSQL, Oracle, phpMyAdmin
-devops       Linux, Bash, VPS, Docker, Docker Compose, Nginx, CI/CD, AWS,
+devops       Docker, Docker Compose, Nginx, Linux, Bash, VPS, CI/CD, AWS,
              Azure, Google Cloud
+integrations OMIE, ERPFLEX, Datasul/TOTVS, Bling, RD Station, WooCommerce,
+             Frenet, PayPal, Mercado Livre, BB Developer
 automation   n8n, Playwright, Puppeteer, Selenium, BeautifulSoup, Apify,
              LLMs, Google Gemini
-integrations Bling, OMIE, ERPFLEX, Datasul/TOTVS, RD Station, WooCommerce,
-             Frenet, BB Developer, PayPal, Mercado Livre
 data and BI  Power BI, Azure Databricks
-tools        Git, GitHub, Figma, Postman, XAMPP, Arduino, IoT,
-             Responsive UI/UX, Data structures, Software design,
-             Networking, Scrum, Kanban
+tools        Git, GitHub, Figma, Postman, XAMPP, Arduino, IoT
+practices    Scrum, Kanban, Responsive UI/UX, Data structures,
+             Software design, Networking
 
 To see more, type open skills.md`,
   formacao: `Software Engineering          Estácio     2025 to 2028
