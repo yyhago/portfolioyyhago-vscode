@@ -33,14 +33,14 @@ export const files: VFile[] = [
     content: `![Yhago Felipe](/yhago.jpg)
 
 * :account: Yhago Felipe Rocha Teles
-* :terminal-bash: Engenheiro de Software Full Stack, com foco em back-end
+* :terminal-bash: Desenvolvedor Full Stack, com foco em back-end
+* :code: TypeScript, Node.js, NestJS, Next.js e PostgreSQL
 * :location: Hortolândia, São Paulo, Brasil
-* :mortar-board: Engenharia de Software, Estácio
+* :mortar-board: Engenharia de Software na Estácio, em andamento
 * :globe: Português nativo, inglês avançado
-* :briefcase: Atendendo muitos clientes, de vários nichos
 * :file-pdf: {{cv-link}}
 
-> Opa, tudo bem? Seja bem-vindo! Aqui eu guardo um pouco de tudo que construí, os sistemas que coloquei no ar, os clientes que atendo e as tecnologias do meu dia a dia. Se a sua empresa precisa de um sistema, de uma integração ou de um site, fica à vontade para fuçar e me chamar. {{cv-frase}}
+> Opa, tudo bem? Seja bem-vindo! Aqui eu guardo um pouco de tudo que construí, os sistemas que coloquei no ar, os clientes que atendi e as tecnologias do meu dia a dia. Se a sua empresa precisa de um sistema, de uma integração ou de um site, fica à vontade para fuçar e me chamar. {{cv-frase}}
 
 ## :compass: Por onde começar
 
@@ -56,7 +56,7 @@ Na barra azul lá embaixo tem o botão **Guia**, que mostra onde está cada cois
 
 ## :person: Sobre mim
 
-Sou Engenheiro de Software, full stack, com a maior parte da minha experiência no back-end. Meu trabalho é pegar processos manuais e sistemas que não conversam entre si e transformar tudo isso em software que a empresa ou o cliente consiga utilizar e fazer crescer.
+Sou Desenvolvedor Full Stack, com a maior parte da minha experiência no back-end. Meu trabalho é pegar processos manuais e sistemas que não conversam entre si e transformar tudo isso em software que a empresa ou o cliente consiga utilizar e fazer crescer.
 
 Comecei minha carreira no time de Cibersegurança de uma indústria farmacêutica, criando automações em **Python** que reduziram em **40%** o tempo gasto em operações manuais. Foi ali que surgiu uma regra que sigo até hoje: antes de escalar um processo, automatize o que ainda é manual.
 
@@ -66,17 +66,17 @@ Tenho experiência com integrações de ERPs como **OMIE, ERPFLEX, Datasul/TOTVS
 
 Gosto de compartilhar o que sei e, mais ainda, de estar perto de pessoas que gostam de compartilhar conhecimento e explicar como fazem as coisas. Trabalho desde o levantamento de requisitos, junto à empresa ou ao cliente, até a entrega final, com sistemas publicados na web e também com possibilidade de acesso mobile. A maioria dos projetos foi desenvolvida utilizando Scrum, Kanban ou rotinas de dailies e weeklies para alinhamento.
 
-Minha formação inclui Bacharelado em Engenharia de Software e dois cursos técnicos em Desenvolvimento de Sistemas, pelo SENAI e pela ETEC. Sou bolsista integral em um programa de inglês do Mackenzie, no qual fui aprovado por meio de uma parceria com a Microsoft e o SENAI. Também possuo diversas certificações nas áreas de desenvolvimento, Data Science, Cloud, DevOps, bancos de dados, BI, UI/UX, IA e Microsoft Azure.
+Minha formação inclui dois cursos técnicos em Desenvolvimento de Sistemas, pelo SENAI e pela ETEC, e estou cursando o Bacharelado em Engenharia de Software. Sou bolsista integral em um programa de inglês do Mackenzie, no qual fui aprovado por meio de uma parceria com a Microsoft e o SENAI. Também tenho diversos cursos e certificados nas áreas de desenvolvimento, Data Science, Cloud, DevOps, bancos de dados, BI, UI/UX, IA e Microsoft Azure.
 
 ## :tools: O que eu faço
 
 ### :server-process: APIs e back-end
 
-Desenho e construo APIs RESTful em **Node.js** e **NestJS**, organizadas com **Clean Architecture** para a regra de negócio não depender do framework. Cuido de autenticação com JWT e refresh token, permissão por perfil (RBAC), multitenancy, filas com Redis e BullMQ e documentação completa no Swagger, para quem for consumir não precisar me perguntar nada.
+Desenho e construo APIs RESTful em **Node.js** e **NestJS**, organizadas com **Clean Architecture** para a regra de negócio não depender do framework. Cuido de autenticação com JWT e refresh token, permissão por perfil (RBAC), multitenancy, filas com Redis e BullMQ, validação com Zod e documentação completa no Swagger, para quem for consumir não precisar me perguntar nada.
 
 ### :layers: Plataformas completas
 
-Levo o projeto do banco de dados até a tela, com modelagem em PostgreSQL ou MySQL, API e front-end em **Next.js**, **React** ou **Angular**, com TypeScript de ponta a ponta. Foi assim que construí do zero uma loja virtual, um painel administrativo e um portal comercial que hoje rodam como um sistema só.
+Levo o projeto do banco de dados até a tela, com modelagem em PostgreSQL ou MySQL, API e front-end em **Next.js**, **React** ou **Angular**, com TypeScript de ponta a ponta. Foi assim que construí do zero uma loja virtual, um painel administrativo e um portal comercial que hoje rodam como um sistema só, e o novo e-commerce ficou **90% mais rápido** que a loja antiga.
 
 ### :plug: Integração de sistemas
 
@@ -84,7 +84,7 @@ Conecto os sistemas que a empresa já usa, como os ERPs **Bling, OMIE, ERPFLEX e
 
 ### :robot: Automação de processos
 
-Tiro tarefa repetitiva das mãos das pessoas com **n8n**, **Python** e web scraping (Playwright, Puppeteer e Selenium). Foi automatizando processo que eu comecei, e continua sendo uma das partes que eu mais gosto.
+Tiro tarefa repetitiva das mãos das pessoas com **n8n**, **Python** e coleta de dados com **Apify**. Foi automatizando processo que eu comecei, e continua sendo uma das partes que eu mais gosto.
 
 ### :history: Modernização de legado
 
@@ -92,20 +92,21 @@ Troco sistema antigo por stack própria, em **Next.js, NestJS e TypeScript**, se
 
 ### :cloud: Infraestrutura
 
-Coloco e mantenho tudo no ar, com VPS, **Docker** e **Nginx**, SSL, backup automatizado, CI/CD com GitHub Actions, arquivos no Amazon S3 e serviços na Azure.
+Coloco e mantenho tudo no ar, com VPS Linux, **Docker** e **Nginx**, SSL, Cloudflare, backup automatizado, CI/CD e arquivos no Amazon S3.
 
 ## :rocket: Alguns números
 
-* **Mais de 20 projetos** de clientes atendidos com APIs em Node.js e NestJS
+* **Mais de 23 projetos** com back-end em Node.js e NestJS
+* **90% mais rápido**, o novo e-commerce da Freecook comparado à loja antiga
 * **40% menos tempo** gasto em operações manuais com as automações em Python
 * **4 ERPs integrados**, Bling, OMIE, ERPFLEX e Datasul/TOTVS
-* **23 certificados**, incluindo Microsoft Azure AZ-900, AI-900 e SC-900
+* **23 cursos e certificados**, incluindo os preparatórios Microsoft Azure AZ-900, AI-900 e SC-900
 * {{github}}
 
 ## :checklist: Como eu trabalho
 
 * Gosto de entender o problema antes de abrir o editor. Levanto requisito direto com quem vai usar o sistema e só depois desenho a arquitetura.
-* Regra de negócio não pertence ao framework. Uso controller fino e lógica isolada, que dá para testar e trocar de lugar sem reescrever o núcleo.
+* Regra de negócio não pertence ao framework. Uso controller fino e lógica isolada, que dá para trocar de lugar sem reescrever o núcleo.
 * O dado errado precisa morrer na entrada, com validação em Zod, e não três camadas depois.
 * O schema é a decisão mais cara do projeto, então modelo o banco com calma e versiono tudo em migrations.
 * O que eu entrego sai documentado e com deploy reproduzível em Docker.
@@ -119,7 +120,7 @@ Se quiser trocar uma ideia sobre arquitetura, automação ou algum projeto, me c
     path: "docs/experiencia.md",
     content: `# :briefcase: Experiência
 
-Comecei como jovem aprendiz em 2025 e, de lá para cá, passei por consultoria, por uma software house atendendo dezenas de clientes ao mesmo tempo e sei cuidar de toda a tecnologia de uma empresa. Aqui está o que eu fiz em cada lugar, com alguns dos sistemas que estão no ar. {{cv-frase}}
+Comecei como jovem aprendiz em 2025 e, de lá para cá, passei por uma consultoria que atende indústrias, por uma software house onde desenvolvi o back-end de 23 projetos de clientes, e hoje cuido de toda a tecnologia de uma empresa. Aqui está o que eu fiz em cada lugar, com alguns dos sistemas que estão no ar. {{cv-frase}}
 
 ## Freecook Brasil
 
@@ -129,10 +130,11 @@ Comecei como jovem aprendiz em 2025 e, de lá para cá, passei por consultoria, 
 Responsável pela arquitetura e evolução técnica de todo o ecossistema de TI da empresa, com foco em performance, escalabilidade e automação de processos.
 
 * Arquitetei e construí do zero a plataforma digital que sustenta a operação de ponta a ponta, do pedido no e-commerce até a baixa no estoque, com loja virtual, painel administrativo, portal comercial e site institucional em um sistema único.
-* Conduzi a saída do legado em **WordPress** para uma stack proprietária em **Next.js, NestJS e TypeScript**, definindo padrões de código, estrutura de API e estratégia de migração sem interromper a operação.
+* Conduzi a saída do legado em **WordPress** para uma stack própria em **Next.js, NestJS e TypeScript**, definindo padrões de código, estrutura de API e estratégia de migração sem interromper a operação. O novo e-commerce ficou **90% mais rápido** que a loja anterior.
 * Desenvolvimento back-end em **PHP/MySQL** para o e-commerce legado durante a transição, com módulos e integrações sob medida.
 * Arquitetura de automações via **n8n**, orquestrando fluxos entre ERP, CRM e sistemas internos.
 * Migração de integração de ERP legado (**ERPFLEX**) para ERP atual (**OMIE**), garantindo consistência de estoque, pedidos e clientes.
+* Filas e processamento assíncrono com **Redis e BullMQ** para as tarefas em segundo plano da plataforma.
 * Armazenamento de arquivos via **Amazon S3** com presigned URLs e gestão de infraestrutura própria (**VPS, Docker, Nginx, SSL**) com backups automatizados.
 * Integração com gateways de pagamento, APIs REST e sistemas de logística (**Frenet**).
 
@@ -217,33 +219,35 @@ Primeira experiência corporativa, atuando no time de Cibersegurança com foco e
     git: "M",
     content: `# :project: Projetos
 
-Aqui está uma seleção dos projetos que entreguei, de inteligência política a segurança do trabalho, advocacia e comunicação jurídica, cada um com o problema que precisava ser resolvido e como eu resolvi. É só uma parte, atendo muitos outros clientes que não aparecem aqui. Projeto de cliente fica em repositório privado, por contrato, então quando não dá para mostrar o código eu mostro as telas. Clica em qualquer imagem para ver maior. Meus projetos pessoais e de estudo ficam em [repositorios.md](repositorios.md), direto do GitHub.
+Aqui está uma seleção dos projetos que entreguei, de inteligência política a segurança do trabalho e advocacia, cada um com o problema que precisava ser resolvido e como eu resolvi. Projeto de cliente fica em repositório privado, por contrato, então quando não dá para mostrar o código eu mostro as telas. Clica em qualquer imagem para ver maior. Meus projetos pessoais e de estudo ficam em [repositorios.md](repositorios.md), direto do GitHub.
 
 ## CoJurOS, comunicação jurídica
 
 *Full Stack, em desenvolvimento*
 
-Projeto novo que estou desenvolvendo agora, o CoJurOS, voltado para comunicação jurídica. Em breve conto mais por aqui, com telas e detalhes.
+Sistema voltado para comunicação jurídica, que estou desenvolvendo agora. Assim que estiver no ar, conto aqui o problema, a solução e a stack.
 
 {{prints:cojuros|CoJurOS, telas do sistema}}
 
 ## SafetyKeeper, gestão de SST
 
-*Full Stack, cliente JCFireWall*
+*Full Stack, freelance, cliente JCFireWall*
 
 \`NestJS\` \`TypeScript\` \`Node.js\` \`Next.js\` \`PostgreSQL\` \`APIs REST\` \`Swagger\` \`Multitenancy\` \`RBAC\` \`Docker\` \`Nginx\` \`VPS\`
 
-**Dor do cliente.** A JCFireWall atendia vários clientes corporativos e controlava a conformidade de SST de todos eles em planilha, sem separação confiável entre empresas, sem histórico de quem alterou o quê e sem visibilidade de vencimentos. Precisava de uma plataforma em que cada cliente enxergasse só os próprios dados, com trilha de auditoria para a fiscalização e base pronta para crescer junto com a carteira.
+**Dor do cliente.** A JCFireWall atende vários clientes corporativos e controlava a conformidade de Segurança e Saúde do Trabalho de todos eles em planilha, sem separação confiável entre empresas, sem histórico de quem alterou o quê e sem visibilidade de vencimentos. Precisava de uma plataforma em que cada cliente enxergasse só os próprios dados, com trilha de auditoria para a fiscalização.
 
 **Solução.**
 
-* Back-end modular em **NestJS e TypeScript**, rodando em **Node.js**, separando clientes, usuários, conformidade e documentação de segurança em módulos independentes e testáveis.
+* Back-end modular em **NestJS e TypeScript**, rodando em **Node.js**, separando clientes, usuários, conformidade e documentação de segurança em módulos independentes.
 * API REST documentada no **Swagger**, com versionamento e respostas padronizadas, para o front-end consumir sem surpresa.
 * **Multitenancy** com isolamento de dados por empresa e **RBAC** por perfil, então cada cliente só enxerga o que é dele.
-* **PostgreSQL** com modelagem relacional e índices pensados para as consultas de conformidade e para o histórico de auditoria, sem perder performance.
-* Validação de dados e tratamento de erros centralizado no **NestJS**, evitando inconsistência em informação crítica de segurança do trabalho.
+* **PostgreSQL** com modelagem relacional e índices pensados para as consultas de conformidade e para o histórico de auditoria.
+* Validação de dados e tratamento de erros centralizado, evitando inconsistência em informação crítica de segurança do trabalho.
 * Front-end em **Next.js** para documentos, vencimentos e status de conformidade por cliente, com telas diferentes para cada perfil.
-* Deploy em VPS com Docker, Nginx, SSL e backup automatizado, pronto para receber novos clientes sem mexer na arquitetura.
+* Deploy em VPS com Docker, Nginx, SSL e backup automatizado.
+
+**Resultado.** As planilhas foram substituídas por um sistema único, com dados isolados por cliente, histórico completo de alterações e uma base pronta para receber novos clientes sem retrabalho de arquitetura.
 
 O sistema é interno e fica atrás de login. [:link-external: Site da JCFireWall](https://jcfirewall.com.br)
 
@@ -252,9 +256,9 @@ O sistema é interno e fica atrás de login. [:link-external: Site da JCFireWall
 
 ## CUBE, análise política
 
-*Full Stack, cliente CUBE Inteligência*
+*Full Stack, freelance, cliente CUBE Inteligência*
 
-\`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`Node.js\` \`Express\` \`Prisma\` \`PostgreSQL\` \`APIs REST\` \`JWT\` \`RBAC\` \`Apify\` \`Gemini AI\` \`Nginx\` \`VPS\` \`PM2\`
+\`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`Node.js\` \`Express\` \`Prisma\` \`PostgreSQL\` \`APIs REST\` \`JWT\` \`RBAC\` \`Zod\` \`Apify\` \`Gemini AI\` \`Nginx\` \`VPS\` \`PM2\`
 
 **Dor do cliente.** A CUBE precisava acompanhar em tempo real o que saía sobre temas e figuras políticas, medir o tom dessas menções e mostrar tudo em painéis que aguentassem pico de acesso em período eleitoral, com permissões diferentes para a equipe interna e para os clientes.
 
@@ -269,6 +273,8 @@ O sistema é interno e fica atrás de login. [:link-external: Site da JCFireWall
 * Agregador de RSS com node-cron para atualizar tudo em segundo plano, e validação com Zod.
 * Deploy em VPS dedicada, com Nginx e firewall gerenciados pelo HestiaCP e Node em cluster mode com **PM2**, usando todos os núcleos do servidor.
 
+**Resultado.** Uma plataforma que monitora menções políticas em tempo real, classifica o sentimento com IA e entrega painéis preparados para o pico eleitoral, com acesso separado entre a equipe e os clientes.
+
 A plataforma é privada, por contrato. [:link-external: Site da CUBE](https://cubeinteligencia.com.br)
 
 {{prints:cube|CUBE, telas da plataforma}}
@@ -276,7 +282,7 @@ A plataforma é privada, por contrato. [:link-external: Site da CUBE](https://cu
 
 ## Landing page, Raquel Ribeiro Advocacia
 
-*Front-end, cliente Raquel Ribeiro Advocacia*
+*Front-end, freelance, cliente Raquel Ribeiro Advocacia*
 
 \`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`HTML5\` \`Vercel\`
 
@@ -286,17 +292,19 @@ A plataforma é privada, por contrato. [:link-external: Site da CUBE](https://cu
 
 * React 18, TypeScript e Vite, com Tailwind e layout mobile first testado em aparelho de verdade.
 * SEO técnico com React Helmet, HTML semântico e dados estruturados schema.org para advocacia.
-* Lazy loading de componentes **React** e imagens WebP com fallback, chegando a **Lighthouse acima de 95** em todas as categorias e **LCP abaixo de 2,5 s**.
+* Lazy loading de componentes e imagens WebP com fallback.
 * Acessibilidade **WCAG 2.1 nível A**, com contraste adequado, navegação por teclado, ARIA labels e foco visível.
-* Deploy na Vercel com preview a cada pull request.
+* Deploy na Vercel com CI/CD via Git e preview a cada pull request.
+
+**Resultado.** **Lighthouse acima de 95** em todas as categorias e **LCP abaixo de 2,5 s**.
 
 [:link-external: Ver a landing page no ar](https://raquel-ribeiro-advocacia-psi.vercel.app/)
 
 {{prints:advocacia|Landing page da Raquel Ribeiro Advocacia}}
 
-## Site da SGI Treinamentos e Assessoria
+## Site da SGI Treinamentos & Assessoria
 
-*Full Stack, consultoria, cliente SGI Treinamentos e Assessoria*
+*Full Stack, freelance, cliente SGI Treinamentos & Assessoria*
 
 \`PHP\` \`WordPress\` \`MySQL\` \`Sass\` \`Git\`
 
@@ -305,25 +313,27 @@ A plataforma é privada, por contrato. [:link-external: Site da CUBE](https://cu
 **Solução.**
 
 * WordPress com tema próprio em **PHP 8**, aproveitando que a equipe já conhecia o painel e mantendo controle total do código.
-* Tema em **PHP** organizado com separação de responsabilidades inspirada em MVC, para a manutenção ficar simples.
+* Tema organizado com separação de responsabilidades inspirada em MVC, para a manutenção ficar simples.
 * SCSS com Grid e Flexbox para o layout responsivo e os componentes.
 * Formulários via AJAX, em **JavaScript e PHP**, com nonce e sanitização, prevenindo CSRF e XSS.
 * Tabelas próprias no **MySQL** para os dados estruturados, sem lotar a wp_postmeta e mantendo as consultas rápidas.
 * Deploy automatizado via Git na Hostinger, com versionamento e rollback.
 
+**Resultado.** Site entregue no prazo, com a equipe da SGI atualizando o conteúdo sozinha e formulários protegidos.
+
 [:link-external: sgitreinamentosassessoria.com](https://sgitreinamentosassessoria.com/)
 
-{{prints:sgi|Site da SGI Treinamentos e Assessoria}}
+{{prints:sgi|Site da SGI Treinamentos & Assessoria}}
 
 ## Cyberbot, assistente de cibersegurança
 
-*Trabalho de curso, em equipe*
+*Protótipo em equipe, quatro desenvolvedores, Grupo EMS*
 
 \`Python\` \`PLN\` \`Streamlit\` \`Git\` \`GitHub\`
 
-Trabalho de curso que fizemos em quatro desenvolvedores para ajudar na conscientização sobre segurança digital.
+Protótipo que fizemos em quatro desenvolvedores para apoiar a conscientização sobre segurança digital, com uma ferramenta simples para quem não é da área.
 
-* Três módulos, um chatbot para dúvidas de segurança digital e boas práticas, um gerador e verificador de senhas fortes e um simulador educativo de phishing.
+* Três módulos: um chatbot para dúvidas de segurança digital e boas práticas, um gerador e verificador de senhas fortes e um simulador educativo de phishing.
 * Feito em Python com processamento de linguagem natural, em arquitetura modular pronta para receber APIs de segurança no futuro.
 * Interface em Streamlit, pensada para quem não é da área achar tudo rápido.
 * Versionamento no Git e GitHub, com gestão ágil das tarefas.
@@ -334,7 +344,7 @@ Trabalho de curso que fizemos em quatro desenvolvedores para ajudar na conscient
 
 ## MundoPet, meu TCC
 
-*Full Stack, projeto acadêmico, ETEC Hortolândia*
+*Full Stack, TCC do técnico em Desenvolvimento de Sistemas, ETEC Hortolândia*
 
 \`Node.js\` \`Express\` \`MongoDB\` \`React\` \`Redux\` \`Bootstrap\` \`PayPal\` \`AWS\`
 
@@ -355,21 +365,19 @@ Trabalho de Conclusão do técnico em Desenvolvimento de Sistemas, um marketplac
     git: "U",
     content: `# :rocket: Serviços
 
-Hoje atendo muitos clientes ao mesmo tempo, de empresas grandes a negócios que estão começando, nos mais diferentes nichos. Se a sua empresa precisa de um sistema, de uma integração ou de um site que traga resultado, é aqui que eu posso ajudar.
+Atendo empresas por projeto ou com manutenção contínua, de negócios que estão começando a operações com ERP, e-commerce e vários sistemas rodando juntos. Se a sua empresa precisa de um sistema, de uma integração ou de um site que traga resultado, é aqui que eu posso ajudar.
 
 [:comment-discussion: Pedir um orçamento](#orcamento)
 
 ## :organization: Quem já confia no meu trabalho
 
-A lista de clientes é bem maior do que cabe aqui, e boa parte dos projetos tem contrato de sigilo, então trago só alguns nomes.
+Boa parte dos projetos tem contrato de sigilo, então trago os nomes que posso mostrar.
 
 * **CUBE Inteligência**, inteligência política, com uma plataforma de monitoramento e análise de sentimento com IA
 * **JCFireWall**, segurança do trabalho, com o SafetyKeeper, sistema de gestão de SST para vários clientes corporativos
-* **CoJurOS**, comunicação jurídica, um projeto novo que está vindo aí
 * **NG Metalúrgica** e **Pronutrition**, indústria e nutrição, com integrações ao TOTVS Datasul e telas em Next.js
-* **Raquel Ribeiro Advocacia** e **SGI Treinamentos**, advocacia e segurança do trabalho, com sites rápidos e fáceis de manter, em React e WordPress
-* **Vitrine do Campo**, **2Clicks**, **Minha Revenda**, **Cupom Clube** e mais de 20 projetos de agronegócio, saúde, finanças, varejo e logística
-* E muitos outros clientes, de comércio, serviços, indústria e startups, que atendo por projeto ou com manutenção contínua
+* **Raquel Ribeiro Advocacia** e **SGI Treinamentos & Assessoria**, advocacia e segurança do trabalho, com sites rápidos e fáceis de manter, em React e WordPress
+* **Vitrine do Campo**, **2Clicks**, **Minha Revenda**, **Cupom Clube** e outros dos 23 projetos de agronegócio, saúde, finanças, varejo e logística em que desenvolvi o back-end
 
 ## :tools: O que eu posso fazer por você
 
@@ -391,11 +399,11 @@ Site institucional ou página de captação rápida no celular, bem posicionada 
 
 ### :history: E-commerce e saída de sistema legado
 
-Troco o sistema antigo por uma plataforma própria sem parar a operação, migrando por partes. Já fiz isso com uma operação inteira, do pedido no e-commerce até a nota fiscal, em **Next.js, NestJS e TypeScript**.
+Troco o sistema antigo por uma plataforma própria sem parar a operação, migrando por partes. Já fiz isso com uma operação inteira, do pedido no e-commerce até a nota fiscal, em **Next.js, NestJS e TypeScript**, e o novo e-commerce ficou 90% mais rápido que o antigo.
 
 ### :robot: Automação de processos
 
-Tarefa repetitiva que toma horas da sua equipe vira processo automático com n8n, Python e robôs de coleta de dados. Minhas primeiras automações cortaram 40% do tempo de operações manuais.
+Tarefa repetitiva que toma horas da sua equipe vira processo automático com n8n, Python e coleta de dados. Minhas primeiras automações cortaram 40% do tempo de operações manuais.
 
 ## :checklist: Como funciona
 
@@ -428,7 +436,7 @@ Estudo desde 2022 sem parar, com um técnico junto com o ensino médio, outro t�
 
 ## Bacharelado em Engenharia de Software
 
-*Centro Universitário Estácio de Sá, remoto, jan. de 2025 a dez. de 2028, em andamento*
+*Centro Universitário Estácio de Sá, EAD, jan. de 2025 a dez. de 2028, em andamento*
 
 Curso focado em construir sistemas robustos e escaláveis. Estou me aprofundando em arquitetura de software, padrões de projeto, engenharia de requisitos e metodologias ágeis como Scrum e Kanban, passando por análise, modelagem, implementação e manutenção de sistemas, com ênfase em segurança, performance e usabilidade.
 
@@ -436,7 +444,7 @@ Muito do que vi no curso eu apliquei na prática no CUBE, uma plataforma full st
 
 ## Inglês, Programa Cidadão Pró-Mundo
 
-*Universidade Presbiteriana Mackenzie, Campinas, SP, jul. de 2025 a dez. de 2029, em andamento*
+*Universidade Presbiteriana Mackenzie, Campinas, SP, jul. de 2025 a dez. de 2030, em andamento*
 
 Passei num concurso seletivo da **Microsoft com o SENAI Sumaré** que deu bolsa para só **20 alunos** da região. Estou fazendo inglês no Mackenzie, do A2 até a fluência, com foco em conversação, escuta ativa, leitura e escrita, usando ferramentas digitais num ambiente multicultural para situações reais do dia a dia.
 
@@ -464,9 +472,9 @@ Meu TCC foi o **MundoPet**, um marketplace pet completo com Node.js, Express, Re
     path: "docs/certificados.md",
     content: `# :verified-filled: Certificados
 
-São 23 no total, de Microsoft Azure a Python, dados, UX e IA. Gosto de complementar o que vejo no trabalho com curso, e dá para conferir todos no meu [LinkedIn](https://www.linkedin.com/in/yhagofelipe).
+São 23 cursos e certificados no total, de Microsoft Azure a Python, dados, UX e IA. Gosto de complementar o que vejo no trabalho com curso, e dá para conferir todos no meu [LinkedIn](https://www.linkedin.com/in/yhagofelipe).
 
-## :azure: Microsoft Azure
+## :azure: Microsoft Azure, cursos preparatórios
 
 1. **AZ-900, Implantação de Serviços em Nuvem**, SENAI São Paulo, mar. de 2025
 2. **AI-900, Serviços de Inteligência Artificial em Nuvem**, SENAI São Paulo, jun. de 2025
@@ -634,9 +642,9 @@ export class GithubService {
 
 export const perfil: Desenvolvedor = {
   nome: "Yhago Felipe Rocha Teles",
-  titulo: "Engenheiro de Software Full Stack",
+  titulo: "Desenvolvedor Full Stack, com foco em back-end",
   local: "Hortolândia, SP",
-  stack: ["TypeScript", "NestJS", "Next.js", "Python", "PHP"],
+  stack: ["TypeScript", "Node.js", "NestJS", "Next.js", "PostgreSQL"],
   contato: {
     email: "yhago.felipe.teles@gmail.com",
     linkedin: "https://www.linkedin.com/in/yhagofelipe",
@@ -676,7 +684,7 @@ app.listen(env.PORT, () => {
     content: `{
   "name": "portfolio-yhago",
   "version": "1.0.0",
-  "description": "Portfólio do Yhago Felipe, engenheiro de software Full Stack",
+  "description": "Portfólio do Yhago Felipe, Desenvolvedor Full Stack com foco em back-end",
   "author": "Yhago Felipe <yhago.felipe.teles@gmail.com>",
   "main": "dist/main.js",
   "scripts": {
@@ -771,6 +779,7 @@ export const SKILL_LOGOS: Record<string, string> = {
   "Linguagens de programação": "langs", "Sistemas operacionais": "os", "Comunicação oral em inglês": "speaking",
   "Compreensão auditiva (Listening)": "listening", "Escrita e leitura em inglês": "reading", "Docker Compose": "docker", "Git and GitHub": "git",
   "Google Cloud": "gcp", "Linux and Bash": "linux", "Redis and BullMQ": "redis", "HTML5, CSS3 and Sass": "html",
+  "JWT e RBAC": "jwt", "JWT and RBAC": "jwt", "Clean Architecture": "architecture", "MVC architecture": "mvc", Cybersecurity: "cyber",
 };
 
 export type Ext = {
@@ -791,144 +800,87 @@ const ext = (cat: string, name: string, publisher: string, label: string, bg: st
 });
 
 export const extensions: Ext[] = [
-  ext("Linguagens", "TypeScript", "Microsoft", "TS", "#3178c6", "#fff", "JavaScript com tipagem estática.", "É a linguagem que eu mais uso, no front e no back. Tipo bem definido e Zod validando os dados na entrada evitam muito bug."),
-  ext("Linguagens", "JavaScript", "Ecma International", "JS", "#f7df1e", "#000", "A linguagem da web.", "Foi por onde eu comecei na web, ainda na ETEC."),
-  ext("Linguagens", "Python", "Python Software Foundation", "Py", "#3776ab", "#ffd43b", "Automação, dados e APIs.", "Meu primeiro trabalho foi com Python, nas automações da Cibersegurança do Grupo EMS que cortaram 40% do trabalho manual."),
-  ext("Linguagens", "PHP", "The PHP Group", "php", "#777bb4", "#fff", "A linguagem que move boa parte da web.", "Uso bastante em e-commerce legado, tema de WordPress e integração com ERP."),
-  ext("Linguagens", "SQL", "ISO/IEC", "SQL", "#4479a1", "#fff", "A linguagem dos bancos relacionais.", "Modelagem, índice e consulta pensados para performance e auditoria."),
-  ext("Linguagens", "HTML5", "W3C", "H5", "#e34f26", "#fff", "Marcação da web.", "HTML semântico, pensando em SEO e acessibilidade. Aprendi na ETEC."),
-  ext("Linguagens", "CSS", "W3C", "CSS", "#1572b6", "#fff", "Estilo e layout.", "Layout responsivo em todo projeto web, do TCC da ETEC aos sistemas da Estácio."),
-  ext("Linguagens", "XML", "W3C", "XML", "#f5a623", "#000", "Formato de dados estruturados.", "Estudado e usado desde a ETEC."),
-  ext("Linguagens", "C++", "ISO C++", "C++", "#00599c", "#fff", "C com orientação a objetos.", "Meu primeiro contato foi na ETEC."),
-  ext("Linguagens", "C", "ISO C", "C", "#283593", "#fff", "A linguagem base da computação.", "Meu primeiro contato com programação de baixo nível, na ETEC."),
+  ext("Linguagens", "TypeScript", "Microsoft", "TS", "#3178c6", "#fff", "JavaScript com tipagem estática.", "É a linguagem que eu mais uso, no front e no back. Na Freecook, na CroSoften e na DBS, tudo foi escrito em TypeScript, com Zod validando os dados na entrada."),
+  ext("Linguagens", "JavaScript", "Ecma International", "JS", "#f7df1e", "#000", "A linguagem da web.", "Foi por onde eu comecei na web, ainda na ETEC, e é a base de tudo que eu faço em TypeScript."),
+  ext("Linguagens", "Python", "Python Software Foundation", "Py", "#3776ab", "#ffd43b", "Automação, dados e APIs.", "Meu primeiro trabalho foi com Python, nas automações da Cibersegurança do Grupo EMS que cortaram 40% do tempo de operações manuais."),
+  ext("Linguagens", "PHP", "The PHP Group", "php", "#777bb4", "#fff", "A linguagem que move boa parte da web.", "E-commerce legado da Freecook durante a migração, APIs na DBS e o tema próprio em WordPress da SGI."),
+  ext("Linguagens", "SQL", "ISO/IEC", "SQL", "#4479a1", "#fff", "A linguagem dos bancos relacionais.", "Modelagem, índices e consultas pensados para performance e auditoria, como no SafetyKeeper."),
+  ext("Linguagens", "HTML5", "W3C", "H5", "#e34f26", "#fff", "Marcação da web.", "HTML semântico, pensando em SEO e acessibilidade, como na landing page da Raquel Ribeiro."),
+  ext("Linguagens", "CSS", "W3C", "CSS", "#1572b6", "#fff", "Estilo e layout.", "Layout responsivo em todo projeto web, com Tailwind e SCSS."),
 
-  ext("Back-end", "Node.js", "OpenJS Foundation", "node", "#2b3a2b", "#8cc84b", "JavaScript no servidor.", "Onde eu passo a maior parte do tempo, entre API, fila, job agendado e integração."),
-  ext("Back-end", "NestJS", "NestJS", "Ns", "#1a1a1a", "#ea2845", "Framework para back-end escalável.", "É o que mais uso no back-end. Na CroSoften foram mais de 20 projetos com Nest e Clean Architecture."),
-  ext("Back-end", "Express.js", "OpenJS Foundation", "ex", "#353535", "#fff", "Framework web minimalista.", "Back-end do MundoPet, meu TCC, e da plataforma da CUBE."),
-  ext("Back-end", "Prisma", "Prisma Data", "Pr", "#0c344b", "#fff", "ORM com tipagem de ponta a ponta.", "Migrations versionadas no CUBE."),
-  ext("Back-end", "APIs REST", "REST", "API", "#0a5c91", "#fff", "Padrão de APIs sobre HTTP.", "Endpoints versionados e documentados no Swagger."),
+  ext("Back-end", "Node.js", "OpenJS Foundation", "node", "#2b3a2b", "#8cc84b", "JavaScript no servidor.", "Onde eu passo a maior parte do tempo, entre API, fila, job agendado e integração. Base de todos os meus back-ends em TypeScript."),
+  ext("Back-end", "NestJS", "NestJS", "Ns", "#1a1a1a", "#ea2845", "Framework para back-end escalável.", "É o que mais uso no back-end: a plataforma da Freecook, o SafetyKeeper e os 23 projetos da CroSoften com Clean Architecture."),
+  ext("Back-end", "Express.js", "OpenJS Foundation", "ex", "#353535", "#fff", "Framework web minimalista.", "Back-end da plataforma da CUBE e do MundoPet, meu TCC."),
+  ext("Back-end", "APIs REST", "REST", "API", "#0a5c91", "#fff", "Padrão de APIs sobre HTTP.", "Endpoints versionados, respostas padronizadas e documentação no Swagger em todos os projetos."),
+  ext("Back-end", "Prisma", "Prisma Data", "Pr", "#0c344b", "#fff", "ORM com tipagem de ponta a ponta.", "Migrations versionadas e consultas com índices na plataforma da CUBE."),
+  ext("Back-end", "TypeORM", "TypeORM", "TO", "#e83524", "#fff", "ORM para TypeScript.", "Modelagem e acesso a dados em projetos NestJS."),
+  ext("Back-end", "Zod", "Colin McDonnell", "Zod", "#274d82", "#fff", "Validação com tipagem.", "O dado errado morre na entrada. Validação de todas as requisições na CUBE."),
   ext("Back-end", "Swagger", "SmartBear", "Sw", "#173647", "#85ea2d", "Documentação de APIs.", "Minhas APIs saem documentadas. Na CroSoften o time de iOS e o de Angular consumiam tudo pelo Swagger."),
-  ext("Back-end", "Redis e BullMQ", "Redis Ltd.", "Rd", "#dc382d", "#fff", "Cache e filas.", "Fila para tirar tarefa pesada de dentro da requisição."),
-  ext("Back-end", "FastAPI", "Sebastián Ramírez", "FA", "#009688", "#fff", "APIs rápidas em Python.", "APIs internas na EMS e a BookAPI que está no meu GitHub."),
-  ext("Back-end", "Flask", "Pallets", "Fl", "#000", "#fff", "Microframework em Python.", "Aplicações internas na EMS."),
+  ext("Back-end", "Redis e BullMQ", "Redis Ltd.", "Rd", "#dc382d", "#fff", "Cache e filas.", "Filas e processamento assíncrono na Freecook, para tirar tarefa pesada de dentro da requisição."),
+  ext("Back-end", "FastAPI", "Sebastián Ramírez", "FA", "#009688", "#fff", "APIs rápidas em Python.", "APIs internas na Cibersegurança do Grupo EMS."),
+  ext("Back-end", "Flask", "Pallets", "Fl", "#000", "#fff", "Microframework em Python.", "Aplicações internas no Grupo EMS."),
 
-  ext("Front-end", "React", "Meta", "Re", "#20232a", "#61dafb", "Interfaces com componentes.", "Dashboards e painéis administrativos, como os do CUBE."),
-  ext("Front-end", "Next.js", "Vercel", "N", "#000", "#fff", "O framework React para a web.", "Base da plataforma que construí na Freecook e das telas que modernizei na DBS. Esse portfólio também é Next.js."),
-  ext("Front-end", "Tailwind CSS", "Tailwind Labs", "Tw", "#0b1120", "#38bdf8", "CSS utilitário.", "É o que eu uso na maioria dos projetos para estilizar rápido."),
-  ext("Front-end", "React Native", "Meta", "RN", "#20232a", "#61dafb", "Apps nativos com React.", "Apps para iOS e Android consumindo as mesmas APIs da web."),
-  ext("Front-end", "Angular", "Google", "A", "#dd0031", "#fff", "Framework web do Google.", "Front-ends corporativos que consumiam as APIs que eu documentava no Swagger na CroSoften."),
-  ext("Front-end", "Bootstrap", "Bootstrap Team", "B", "#7952b3", "#fff", "Componentes responsivos prontos.", "Usei no MundoPet."),
+  ext("Front-end", "Next.js", "Vercel", "N", "#000", "#fff", "O framework React para a web.", "Base da plataforma que construí na Freecook, do SafetyKeeper e das telas que modernizei na DBS. Este portfólio também é Next.js."),
+  ext("Front-end", "React", "Meta", "Re", "#20232a", "#61dafb", "Interfaces com componentes.", "Dashboards da CUBE, a landing page da Raquel Ribeiro e o MundoPet."),
+  ext("Front-end", "Angular", "Google", "A", "#dd0031", "#fff", "Framework web do Google.", "Front-ends dos projetos da CroSoften, que consumiam as APIs que eu documentava no Swagger."),
   ext("Front-end", "Redux", "Redux Team", "Rx", "#764abc", "#fff", "Gerenciamento de estado.", "Usei no MundoPet, meu TCC."),
-  ext("Front-end", "Axios", "Axios", "Ax", "#5a29e4", "#fff", "Cliente HTTP.", "Consumo das APIs nos front-ends, desde a faculdade."),
+  ext("Front-end", "Vite", "VoidZero", "Vi", "#646cff", "#fff", "Build rápido para o front-end.", "Front-end da CUBE e da landing page da Raquel Ribeiro, com code splitting."),
+  ext("Front-end", "Tailwind CSS", "Tailwind Labs", "Tw", "#0b1120", "#38bdf8", "CSS utilitário.", "É o que eu uso na maioria dos projetos para estilizar rápido."),
 
-  ext("Bancos de dados", "Banco de dados", "Conceito", "BD", "#336791", "#fff", "Modelagem e armazenamento de dados.", "Modelagem e consultas na Freecook, na DBS e nos projetos de clientes."),
-  ext("Bancos de dados", "PostgreSQL", "PostgreSQL Global Development Group", "Pg", "#336791", "#fff", "Banco relacional open source.", "Meu banco padrão hoje."),
-  ext("Bancos de dados", "MySQL", "Oracle", "My", "#00758f", "#f29111", "Banco relacional popular na web.", "E-commerce legado e APIs em PHP e Node."),
-  ext("Bancos de dados", "MongoDB", "MongoDB Inc.", "Mg", "#023430", "#00ed64", "Banco de documentos.", "Usei no MundoPet."),
-  ext("Bancos de dados", "SQL Server", "Microsoft", "SS", "#a91d22", "#fff", "Banco relacional da Microsoft.", "Ambientes corporativos."),
-  ext("Bancos de dados", "Oracle", "Oracle", "Or", "#c74634", "#fff", "Banco relacional corporativo.", "Ambientes corporativos."),
-  ext("Bancos de dados", "SQLite", "SQLite Consortium", "Lt", "#003b57", "#fff", "Banco leve e embutido.", "Protótipo e teste."),
-  ext("Bancos de dados", "Supabase", "Supabase", "Sb", "#1c1c1c", "#3ecf8e", "Postgres com back-end pronto.", "Integração de dados na EMS."),
-  ext("Bancos de dados", "Firebase", "Google", "Fb", "#1a2b34", "#ffca28", "Plataforma de apps do Google.", "Integração de dados na EMS."),
-  ext("Bancos de dados", "NoSQL", "Conceito", "NoS", "#023430", "#00ed64", "Bancos não relacionais.", "Uso quando o modelo pede documento ou chave e valor."),
-  ext("Bancos de dados", "phpMyAdmin", "phpMyAdmin", "pA", "#f89c0e", "#000", "Administração de MySQL pelo navegador.", "Apoio em projetos PHP e WordPress."),
+  ext("Bancos de dados", "PostgreSQL", "PostgreSQL Global Development Group", "Pg", "#336791", "#fff", "Banco relacional open source.", "Meu banco padrão hoje: SafetyKeeper, CUBE e as APIs da DBS."),
+  ext("Bancos de dados", "MySQL", "Oracle", "My", "#00758f", "#f29111", "Banco relacional popular na web.", "E-commerce legado da Freecook, APIs da DBS e o site da SGI."),
+  ext("Bancos de dados", "MongoDB", "MongoDB Inc.", "Mg", "#023430", "#00ed64", "Banco de documentos.", "Usei no MundoPet, meu TCC."),
+  ext("Bancos de dados", "Supabase", "Supabase", "Sb", "#1c1c1c", "#3ecf8e", "Postgres com back-end pronto.", "Integração de dados no Grupo EMS."),
+  ext("Bancos de dados", "Firebase", "Google", "Fb", "#1a2b34", "#ffca28", "Plataforma de apps do Google.", "Integração de dados no Grupo EMS."),
 
-  ext("Segurança", "JWT, OAuth2 e RBAC", "IETF", "JWT", "#000", "#d63aff", "Autenticação e permissões.", "Refresh token com rotação e permissão por rota e por perfil."),
+  ext("Segurança", "JWT e RBAC", "IETF", "JWT", "#000", "#d63aff", "Autenticação e permissões.", "Refresh token com rotação, senhas com bcrypt e permissão por rota e por perfil, como na CUBE."),
+  ext("Segurança", "Multitenancy", "Arquitetura", "MT", "#0a5c91", "#fff", "Vários clientes, dados isolados.", "No SafetyKeeper cada empresa enxerga só os próprios dados."),
   ext("Segurança", "Cibersegurança", "Segurança", "CS", "#7f0000", "#fff", "Proteção de sistemas e dados.", "Comecei no time de Cibersegurança do Grupo EMS e levo esse cuidado para o desenho dos sistemas."),
-  ext("Segurança", "Segurança de nuvem", "Conceito", "SN", "#0078d4", "#fff", "Proteção de ambientes na nuvem.", "Certificação Microsoft SC-900, Fundamentos de Segurança em Nuvem."),
 
-  ext("DevOps e Cloud", "Docker", "Docker Inc.", "Dk", "#1d63ed", "#fff", "Containers.", "Tudo que eu subo em VPS roda em Docker."),
-  ext("DevOps e Cloud", "Docker Compose", "Docker Inc.", "DC", "#1d63ed", "#fff", "Vários containers em um arquivo.", "Sobe API, banco e fila juntos."),
-  ext("DevOps e Cloud", "Nginx", "F5", "Nx", "#009639", "#fff", "Servidor web e proxy reverso.", "Na frente das APIs em produção, com SSL."),
-  ext("DevOps e Cloud", "DevOps", "Prática", "DO", "#2088ff", "#fff", "Desenvolvimento e operação juntos.", "Pipelines, Docker e deploy automatizado, visto no AZ-900 e no Microsoft AI for Tech."),
-  ext("DevOps e Cloud", "CI/CD", "Prática", "CI", "#2088ff", "#fff", "Integração e entrega contínuas.", "Build, teste e deploy automatizados."),
-  ext("DevOps e Cloud", "Azure DevOps", "Microsoft", "AD", "#0078d4", "#fff", "Repositórios, boards e pipelines.", "Visto no AZ-900 e no Microsoft AI for Tech."),
-  ext("DevOps e Cloud", "AWS", "Amazon Web Services", "aws", "#232f3e", "#ff9900", "Nuvem da Amazon.", "Amazon S3 com presigned URLs na Freecook."),
-  ext("DevOps e Cloud", "Amazon S3", "Amazon Web Services", "S3", "#232f3e", "#e05243", "Armazenamento de arquivos na nuvem.", "Arquivos com presigned URLs na Freecook."),
-  ext("DevOps e Cloud", "Microsoft Azure", "Microsoft", "Az", "#0078d4", "#fff", "Nuvem da Microsoft.", "Tenho as certificações AZ-900, AI-900 e SC-900."),
-  ext("DevOps e Cloud", "Google Cloud", "Google", "GC", "#4285f4", "#fff", "Nuvem do Google.", "Serviços de nuvem do Google."),
-  ext("DevOps e Cloud", "Computação em nuvem", "Conceito", "Cl", "#0078d4", "#fff", "Serviços sob demanda na nuvem.", "Certificações Microsoft AI-900 e SC-900."),
-  ext("DevOps e Cloud", "Aplicativos em nuvem", "Conceito", "AN", "#0078d4", "#fff", "Aplicações rodando na nuvem.", "Certificações Microsoft AI-900 e SC-900."),
-
-  ext("Redes e infraestrutura", "Linux e Bash", "Linux Foundation", "$_", "#333", "#fcc624", "O sistema dos servidores.", "Administro minhas VPS e as rotinas de backup."),
-  ext("Redes e infraestrutura", "VPS", "Servidor", "VPS", "#333", "#fff", "Servidor virtual privado.", "Mantenho minha própria infraestrutura."),
-  ext("Redes e infraestrutura", "Infraestrutura", "Servidor", "In", "#333", "#fff", "Servidores e ambiente de execução.", "Do Grupo EMS e do SENAI à minha própria infraestrutura na Freecook."),
-  ext("Redes e infraestrutura", "Redes", "Computação", "Net", "#333", "#fff", "Comunicação entre sistemas.", "Base para infraestrutura e APIs."),
-  ext("Redes e infraestrutura", "Arquitetura de rede", "Redes", "AR", "#2e7d32", "#fff", "Como as redes são desenhadas.", "Estudo no SENAI e prática no Grupo EMS."),
-  ext("Redes e infraestrutura", "Administração de redes", "Redes", "AD", "#2e7d32", "#fff", "Operação e manutenção de redes.", "Experiência no Grupo EMS."),
+  ext("DevOps e infraestrutura", "Linux e Bash", "Linux Foundation", "$_", "#333", "#fcc624", "O sistema dos servidores.", "Administro minhas VPS e as rotinas de backup."),
+  ext("DevOps e infraestrutura", "Docker", "Docker Inc.", "Dk", "#1d63ed", "#fff", "Containers.", "Tudo que eu subo em VPS roda em Docker."),
+  ext("DevOps e infraestrutura", "Docker Compose", "Docker Inc.", "DC", "#1d63ed", "#fff", "Vários containers em um arquivo.", "Sobe API, banco e fila juntos."),
+  ext("DevOps e infraestrutura", "Nginx", "F5", "Nx", "#009639", "#fff", "Servidor web e proxy reverso.", "Na frente das APIs em produção, com SSL."),
+  ext("DevOps e infraestrutura", "VPS", "Servidor", "VPS", "#333", "#fff", "Servidor virtual privado.", "Mantenho minha própria infraestrutura, da Freecook aos projetos de clientes."),
+  ext("DevOps e infraestrutura", "Cloudflare", "Cloudflare", "CF", "#f38020", "#fff", "DNS, proxy e proteção.", "Domínios e proteção dos sistemas da Freecook."),
+  ext("DevOps e infraestrutura", "PM2", "Keymetrics", "PM2", "#2b037a", "#fff", "Gerenciador de processos Node.", "Node em cluster mode na plataforma da CUBE, usando todos os núcleos do servidor."),
+  ext("DevOps e infraestrutura", "Amazon S3", "Amazon Web Services", "S3", "#232f3e", "#e05243", "Armazenamento de arquivos na nuvem.", "Arquivos com presigned URLs na Freecook."),
+  ext("DevOps e infraestrutura", "CI/CD", "Prática", "CI", "#2088ff", "#fff", "Integração e entrega contínuas.", "Build e deploy automatizados na Freecook e pipelines das automações no Grupo EMS."),
+  ext("DevOps e infraestrutura", "Vercel", "Vercel", "V", "#000", "#fff", "Deploy de front-end.", "Landing page da Raquel Ribeiro, com preview a cada pull request. Este portfólio também está na Vercel."),
 
   ext("Integrações", "Integração de sistemas", "Arquitetura", "Int", "#0a5c91", "#fff", "Sistemas conversando entre si.", "ERP, e-commerce, CRM e logística integrados, sem ninguém copiando dado de um lugar para o outro."),
-  ext("Integrações", "ERPs", "Bling, OMIE, ERPFLEX e TOTVS", "ERP", "#0a5c91", "#fff", "Sistemas de gestão.", "Já integrei Bling, OMIE, ERPFLEX e Datasul/TOTVS, inclusive migrando do ERPFLEX para o OMIE."),
-  ext("Integrações", "RD Station", "RD Station", "RD", "#19c4b4", "#fff", "CRM e marketing.", "Fluxos automáticos entre CRM e ERP com n8n."),
-  ext("Integrações", "WooCommerce", "Automattic", "Wc", "#7f54b3", "#fff", "E-commerce no WordPress.", "Manutenção do e-commerce legado durante a migração."),
-  ext("Integrações", "Frenet", "Frenet", "Fr", "#ff6b00", "#fff", "Cotação de frete.", "Integração de logística em e-commerce."),
-  ext("Integrações", "PayPal", "PayPal", "PP", "#003087", "#fff", "Pagamentos online.", "Integração de pagamento em e-commerce."),
-  ext("Integrações", "Mercado Livre", "Mercado Livre", "ML", "#ffe600", "#2d3277", "Marketplace e API de vendas.", "Integração com o marketplace."),
-  ext("Integrações", "BB Developer", "Banco do Brasil", "BB", "#fcfc30", "#003882", "APIs do Banco do Brasil.", "Integração com serviços bancários."),
+  ext("Integrações", "ERPs", "Bling, OMIE, ERPFLEX e TOTVS", "ERP", "#0a5c91", "#fff", "Sistemas de gestão.", "Já integrei Bling, OMIE, ERPFLEX e Datasul/TOTVS, inclusive migrando do ERPFLEX para o OMIE sem parar as vendas."),
+  ext("Integrações", "RD Station", "RD Station", "RD", "#19c4b4", "#fff", "CRM e marketing.", "Fluxos automáticos entre CRM e ERP com n8n, na Freecook."),
+  ext("Integrações", "WooCommerce", "Automattic", "Wc", "#7f54b3", "#fff", "E-commerce no WordPress.", "Manutenção do e-commerce legado da Freecook durante a migração."),
+  ext("Integrações", "Frenet", "Frenet", "Fr", "#ff6b00", "#fff", "Cotação de frete.", "Integração de logística no e-commerce da Freecook."),
+  ext("Integrações", "PayPal", "PayPal", "PP", "#003087", "#fff", "Pagamentos online.", "Pagamento do MundoPet, meu TCC."),
 
   ext("Automação e IA", "n8n", "n8n GmbH", "n8n", "#ea4b71", "#fff", "Automação de workflows.", "Na Freecook ligo ERP, CRM e sistemas internos com n8n."),
-  ext("Automação e IA", "Playwright", "Microsoft", "Pw", "#2d4552", "#45ba4b", "Automação de navegador.", "Web scraping e automação de portais."),
-  ext("Automação e IA", "Puppeteer", "Google", "Pp", "#40b5a4", "#fff", "Chrome controlado por código.", "Coleta de dados em portais."),
-  ext("Automação e IA", "Selenium", "Software Freedom Conservancy", "Se", "#43b02a", "#fff", "Automação de navegador.", "Automação de tarefa repetitiva em sistema web."),
-  ext("Automação e IA", "BeautifulSoup", "Leonard Richardson", "BS", "#3776ab", "#ffd43b", "Leitura de HTML em Python.", "Web scraping de dados públicos."),
-  ext("Automação e IA", "Apify", "Apify", "Ap", "#0a2540", "#97d700", "Plataforma de scraping e automação.", "Coleta de dados da web."),
-  ext("Automação e IA", "LLMs", "Conceito", "LLM", "#412991", "#fff", "Modelos de linguagem.", "Análise de texto e sentimento."),
-  ext("Automação e IA", "Google Gemini", "Google", "Gm", "#1a73e8", "#fff", "IA generativa do Google.", "Análise de sentimento no CUBE e alguns projetos meus no GitHub."),
-  ext("Automação e IA", "Inteligência artificial", "Conceito", "IA", "#7e57c2", "#fff", "Modelos que aprendem com dados.", "Cyberbot e o certificado de IA Generativa aplicada à programação."),
-  ext("Automação e IA", "PLN", "Conceito", "PLN", "#7e57c2", "#fff", "Processamento de linguagem natural.", "Chatbot do Cyberbot e análise de sentimento."),
+  ext("Automação e IA", "Apify", "Apify", "Ap", "#0a2540", "#97d700", "Plataforma de coleta de dados.", "Coleta de dados públicos na plataforma da CUBE."),
+  ext("Automação e IA", "Google Gemini", "Google", "Gm", "#1a73e8", "#fff", "IA generativa do Google.", "Análise de sentimento na CUBE e alguns projetos meus no GitHub."),
+  ext("Automação e IA", "Streamlit", "Snowflake", "St", "#ff4b4b", "#fff", "Apps de dados em Python.", "Aplicações internas no Grupo EMS e a interface do Cyberbot."),
 
-  ext("Dados e BI", "Power BI", "Microsoft", "BI", "#f2c811", "#000", "BI da Microsoft.", "Relatórios e indicadores."),
-  ext("Dados e BI", "Azure Databricks", "Microsoft", "Db", "#ff3621", "#fff", "Plataforma de dados na nuvem.", "Processamento de dados no Azure."),
-  ext("Dados e BI", "Streamlit", "Snowflake", "St", "#ff4b4b", "#fff", "Apps de dados em Python.", "Interface do Cyberbot e aplicações internas no Grupo EMS."),
-  ext("Dados e BI", "Jupyter", "Project Jupyter", "Jp", "#f37626", "#fff", "Notebooks interativos.", "Programação em Python e análise de dados."),
-  ext("Dados e BI", "Manipulação de dados", "Conceito", "MD", "#150458", "#e70488", "Limpar, transformar e analisar dados.", "Python Essentials 1 e os cursos de Python para Data Science."),
+  ext("Práticas", "Clean Architecture", "Robert C. Martin", "CA", "#1a1a1a", "#fff", "Regra de negócio independente do framework.", "Aplicada nos 23 projetos da CroSoften."),
+  ext("Práticas", "Arquitetura MVC", "Padrão", "MVC", "#1a1a1a", "#ffca28", "Model, View e Controller.", "Tema da SGI e APIs em camadas."),
+  ext("Práticas", "Scrum", "Scrum.org", "Sc", "#009fda", "#fff", "Metodologia ágil.", "Sprints e entregas incrementais na CroSoften."),
+  ext("Práticas", "Kanban", "Prática", "Kb", "#0079bf", "#fff", "Fluxo visual de tarefas.", "Acompanhamento das demandas simultâneas na CroSoften."),
 
   ext("Ferramentas", "Git", "Git", "Git", "#f05033", "#fff", "Controle de versão.", "Commit pequeno e mensagem que explica o porquê."),
-  ext("Ferramentas", "GitHub", "GitHub", "GH", "#181717", "#fff", "Repositórios e colaboração.", "Fluxo de pull request e CI. É onde ficam meus repositórios públicos."),
-  ext("Ferramentas", "Figma", "Figma", "Fg", "#1e1e1e", "#a259ff", "Design de interfaces.", "Fiz formação de UX e UI pelo SENAI e pela DIO."),
+  ext("Ferramentas", "GitHub", "GitHub", "GH", "#181717", "#fff", "Repositórios e colaboração.", "Fluxo de pull request. É onde ficam meus repositórios públicos."),
   ext("Ferramentas", "Postman", "Postman", "Pm", "#ff6c37", "#fff", "Teste de APIs.", "Coleção para cada API que eu construo."),
-  ext("Ferramentas", "XAMPP", "Apache Friends", "Xp", "#fb7a24", "#fff", "Ambiente local PHP e MySQL.", "Desenvolvimento local em PHP."),
+  ext("Ferramentas", "Figma", "Figma", "Fg", "#1e1e1e", "#a259ff", "Design de interfaces.", "Na CroSoften construí telas a partir dos protótipos do time de design."),
   ext("Ferramentas", "WordPress", "WordPress Foundation", "WP", "#21759b", "#fff", "CMS.", "Tema próprio em PHP, como o da SGI, e a migração para stack própria na Freecook."),
-  ext("Ferramentas", "Arduino", "Arduino", "Ar", "#00979d", "#fff", "Prototipagem com microcontroladores.", "Meu primeiro contato foi na ETEC."),
-  ext("Ferramentas", "Internet das Coisas", "Conceito", "IoT", "#00979d", "#fff", "Dispositivos conectados.", "Certificado Soluções Integradas com IoT."),
 
-  ext("Fundamentos", "Programação (computação)", "Computação", "Pg", "#333", "#fff", "Escrever código que resolve problemas.", "Grupo EMS, Estácio e os fundamentos do Python."),
-  ext("Fundamentos", "Linguagens de programação", "Computação", "LP", "#333", "#ffd43b", "Várias linguagens, cada uma para o que serve.", "Estudadas na Estácio e usadas no trabalho."),
-  ext("Fundamentos", "Sistemas operacionais", "Computação", "SO", "#333", "#fff", "Como o sistema por baixo funciona.", "Estudado na Estácio, com Linux no dia a dia."),
-  ext("Fundamentos", "Algoritmos", "Computação", "Alg", "#333", "#fff", "Lógica para resolver problemas.", "Base de todo software, estudado na Estácio."),
-  ext("Fundamentos", "Estrutura de dados", "Computação", "ED", "#333", "#fff", "Organização eficiente de dados.", "Base para escolher a solução certa."),
-  ext("Fundamentos", "Raciocínio lógico", "Computação", "RL", "#2e7d32", "#fff", "Quebrar problemas em passos.", "Fundamentos do Python, Grupo EMS e Estácio."),
-
-  ext("Design", "UI/UX responsivo", "Design", "UX", "#1e1e1e", "#a259ff", "Interfaces que se adaptam à tela.", "Telas pensadas para celular e desktop."),
-  ext("Design", "Design de experiência do usuário (UX)", "Design", "UX", "#1e1e1e", "#a259ff", "Pensar a experiência de quem usa.", "Formação UX Designer e curso de Design UX e UI."),
-  ext("Design", "UI", "Design", "UI", "#1e1e1e", "#a259ff", "Interface visual.", "Curso de Design UX e UI."),
-
-  ext("Práticas", "Scrum", "Scrum.org", "Sc", "#009fda", "#fff", "Metodologia ágil.", "Sprints e entregas incrementais."),
-  ext("Práticas", "Kanban", "Prática", "Kb", "#0079bf", "#fff", "Fluxo visual de tarefas.", "Acompanhamento do trabalho em quadro."),
-  ext("Práticas", "Arquitetura MVC", "Padrão", "MVC", "#1a1a1a", "#ffca28", "Model, View e Controller.", "Estudado na Estácio e usado em temas e APIs."),
-  ext("Práticas", "Design de software", "Engenharia", "DS", "#333", "#fff", "Arquitetura e padrões de projeto.", "Estudo na faculdade de Engenharia de Software."),
-  ext("Práticas", "Gestão de projetos", "Gestão", "GP", "#333", "#fff", "Planejamento e acompanhamento.", "Visto no SENAI e aplicado nos projetos de clientes."),
-  ext("Práticas", "Liderança", "Gestão", "Ld", "#333", "#fff", "Conduzir pessoas e times.", "Desenvolvida no programa do Mackenzie."),
-
-  ext("Áreas de atuação", "Engenharia de Software", "Estácio", "ES", "#1565c0", "#fff", "Construir sistemas robustos.", "Meu bacharelado, na Estácio."),
-  ext("Áreas de atuação", "Desenvolvedor de Software", "Carreira", "Dev", "#1565c0", "#fff", "Transformar problema em software.", "Da formação na Estácio à prática nas empresas por onde passei."),
-  ext("Áreas de atuação", "Desenvolvimento full stack", "Carreira", "FS", "#1565c0", "#fff", "Do banco de dados à tela.", "Na DBS System e na Freecook, da API à interface."),
-  ext("Áreas de atuação", "Desenvolvimento de back-end", "Carreira", "BE", "#2e7d32", "#fff", "APIs, regras de negócio e dados.", "A área em que mais atuo, da Estácio ao MundoPet e à CroSoften."),
-  ext("Áreas de atuação", "Desenvolvimento de front-end", "Carreira", "FE", "#0277bd", "#fff", "Interfaces para quem usa.", "Estudado na Estácio e aplicado em React, Next.js e Angular."),
-  ext("Áreas de atuação", "Desenvolvimento web", "Carreira", "Web", "#0277bd", "#fff", "Sistemas e sites na web.", "Comecei na ETEC e sigo desde então."),
-
-  ext("Idiomas", "Inglês", "Mackenzie", "EN", "#1565c0", "#fff", "Nível avançado.", "Programa Cidadão Pró-Mundo, no Mackenzie, por parceria da Microsoft com o SENAI."),
-  ext("Idiomas", "Comunicação oral em inglês", "Mackenzie", "Fala", "#1565c0", "#fff", "Conversação.", "Treinada no Mackenzie, em situações reais do dia a dia."),
-  ext("Idiomas", "Compreensão auditiva (Listening)", "Mackenzie", "Ou", "#1565c0", "#fff", "Escuta ativa.", "Treinada no Mackenzie."),
-  ext("Idiomas", "Escrita e leitura em inglês", "Mackenzie", "RW", "#1565c0", "#fff", "Ler e escrever.", "Treinada no Mackenzie."),
+  ext("Idiomas", "Inglês", "Mackenzie", "EN", "#1565c0", "#fff", "Nível avançado.", "Bolsista integral no Programa Cidadão Pró-Mundo, no Mackenzie, por parceria da Microsoft com o SENAI."),
 ];
 
 export const TERMINAL: Record<string, string> = {
-  sobre: `Yhago Felipe Rocha Teles, engenheiro de software Full Stack
+  sobre: `Yhago Felipe Rocha Teles, Desenvolvedor Full Stack, com foco em back-end
 Hortolândia, São Paulo, Brasil
 
 Transformo operação manual e sistema fragmentado em plataforma
-própria e integrada. Back-end é onde eu mais trabalho.
+própria e integrada. Back-end é onde eu mais trabalho, com
+TypeScript, Node.js, NestJS, Next.js e PostgreSQL.
 
 Para ver mais, digite open sobre-mim.md`,
   experiencia: `Freecook Brasil          Full Stack       mar. de 2026 até hoje
@@ -942,50 +894,45 @@ SafetyKeeper   gestão de SST multitenant (NestJS, Next.js, PostgreSQL)
 CUBE           análise política com IA (React, Node.js, PostgreSQL, Gemini)
 Advocacia      landing page com Lighthouse acima de 95 (React, Vite)
 SGI            site em WordPress com tema próprio (PHP, MySQL)
-Cyberbot       assistente de cibersegurança (Python, Streamlit)
+Cyberbot       assistente de cibersegurança, em equipe (Python, Streamlit)
 MundoPet       marketplace pet, meu TCC (Node.js, React, MongoDB)
 
 Para ver mais, digite open projetos.md`,
   servicos: `Sistemas sob medida, integrações e APIs, dashboards com IA,
 sites e landing pages, saída de sistema legado e automação.
 
-Atendo muitos clientes, em vários nichos. Entre eles CUBE Inteligência,
-JCFireWall, com o SafetyKeeper, CoJurOS, que vem aí, e vários outros.
+Entre os clientes estão CUBE Inteligência, JCFireWall, com o
+SafetyKeeper, NG Metalúrgica, Pronutrition e Raquel Ribeiro Advocacia.
 
 Para ver mais, digite open servicos.md
 Para pedir um orçamento, digite orcamento`,
   repos: `Repositórios públicos em https://github.com/yyhago
 
 Para ver mais, digite open repositorios.md`,
-  habilidades: `principais   TypeScript, Node.js, NestJS, PostgreSQL,
-             Integração de sistemas
+  habilidades: `principais   TypeScript, Node.js, NestJS, Next.js, PostgreSQL
 linguagens   TypeScript, JavaScript, Python, PHP, SQL
-back-end     Node.js, NestJS, Prisma, APIs REST, Swagger, Redis, BullMQ,
-             FastAPI, Flask
-front-end    React, Next.js, Tailwind CSS, React Native, Angular,
-             Bootstrap
-bancos       PostgreSQL, MySQL, MongoDB, SQL Server, Oracle, SQLite,
-             Supabase, Firebase, NoSQL, phpMyAdmin
-segurança    JWT, OAuth2, RBAC
-devops       Docker, Docker Compose, Nginx, Linux, Bash, VPS, CI/CD, AWS,
-             Azure, Google Cloud
+back-end     Node.js, NestJS, Express, APIs REST, Prisma, TypeORM, Zod,
+             Swagger, Redis, BullMQ, FastAPI, Flask
+front-end    Next.js, React, Angular, Redux, Vite, Tailwind CSS
+bancos       PostgreSQL, MySQL, MongoDB, Supabase, Firebase
+segurança    JWT, RBAC, multitenancy, bcrypt
+infra        Linux, Docker, Docker Compose, Nginx, VPS, Cloudflare, PM2,
+             AWS S3, CI/CD, Vercel
 integrações  OMIE, ERPFLEX, Datasul/TOTVS, Bling, RD Station, WooCommerce,
-             Frenet, PayPal, Mercado Livre, BB Developer
-automação    n8n, Playwright, Puppeteer, Selenium, BeautifulSoup, Apify,
-             LLMs, Google Gemini
-dados e BI   Power BI, Azure Databricks
-ferramentas  Git, GitHub, Figma, Postman, XAMPP, Arduino, IoT
-práticas     Scrum, Kanban, UI/UX responsivo, Estrutura de dados,
-             Design de software, Redes
+             Frenet, pagamentos
+automação    n8n, Apify, Google Gemini, Streamlit
+práticas     Clean Architecture, MVC, Scrum, Kanban
+ferramentas  Git, GitHub, Postman, Figma, WordPress
 
-Para ver mais, digite open habilidades.md`,
+Para ver mais, abra a aba Extensões`,
   formacao: `Engenharia de Software        Estácio     2025 a 2028
-Inglês, Programa CPM          Mackenzie   2025 a 2029
+Inglês, Programa CPM          Mackenzie   2025 a 2030
 Técnico em Desenv. Sistemas   SENAI       2025
 Técnico em Desenv. Sistemas   ETEC        2022 a 2024
 
 Para ver mais, digite open formacao.md`,
-  certificados: `23 certificados, incluindo Microsoft AZ-900, AI-900 e SC-900.
+  certificados: `23 cursos e certificados, incluindo os preparatórios
+Microsoft AZ-900, AI-900 e SC-900.
 
 Para ver mais, digite open certificados.md`,
   contato: `email      yhago.felipe.teles@gmail.com

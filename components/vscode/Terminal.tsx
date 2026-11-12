@@ -38,7 +38,7 @@ const HELP: [pt: string, en: string, ptDesc: string, enDesc: string][] = [
   ["orcamento", "quote", "abre o formulário de orçamento", "opens the quote form"],
   ["habilidades", "skills", "tecnologias que uso", "the tech I use"],
   ["formacao", "education", "estudos e idiomas", "studies and languages"],
-  ["certificados", "certificates", "meus 23 certificados", "my 23 certificates"],
+  ["certificados", "certificates", "meus 23 cursos e certificados", "my 23 courses and certificates"],
   ["repos", "repos", "repositórios públicos, ao vivo do GitHub", "public repositories, live from GitHub"],
   ["cv", "cv", "abre meu currículo em PDF", "opens my resume in PDF"],
   ["contato", "contact", "onde me encontrar", "where to find me"],
@@ -117,9 +117,9 @@ const Neofetch = ({ gh, locale }: { gh: GitHubData | null; locale: Locale }) => 
   const L = pick(locale);
   const fetch: [string, string][] = [
     [L("Nome", "Name"), "Yhago Felipe Rocha Teles"],
-    [L("Cargo", "Role"), L("Engenheiro de Software Full Stack", "Full Stack Software Engineer")],
+    [L("Cargo", "Role"), L("Desenvolvedor Full Stack, com foco em back-end", "Full Stack Developer, back-end focus")],
     [L("Local", "Location"), L("Hortolândia, São Paulo, Brasil", "Hortolândia, São Paulo, Brazil")],
-    ["Stack", "TypeScript, NestJS, Next.js, Python, PHP"],
+    ["Stack", "TypeScript, Node.js, NestJS, Next.js, PostgreSQL"],
     [L("Estudo", "Studies"), L("Engenharia de Software", "Software Engineering")],
     [L("Contato", "Contact"), EMAIL],
   ];

@@ -13,4 +13,4 @@ export const SITE_URL = valid(clean(process.env.NEXT_PUBLIC_SITE_URL)) ?? valid(
 export const SITE_NAME = "Yhago Felipe";
 export const SITE_TITLE = "Yhago Felipe, Desenvolvedor Full Stack";
 export const SITE_DESCRIPTION =
-  "Desenvolvedor Full Stack em Hortolândia, SP. Sistemas sob medida, integrações com ERP, APIs em NestJS, sites e automação para empresas de vários nichos. Portfólio interativo com projetos, serviços e currículo.";
+  "Desenvolvedor Full Stack com foco em back-end, em Hortolândia, SP. TypeScript, Node.js, NestJS e Next.js, integrações com ERP, APIs, sites e automação de processos. Portfólio interativo com experiência, projetos, serviços e currículo.";

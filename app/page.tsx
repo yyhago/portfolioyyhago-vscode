@@ -13,7 +13,7 @@ const SERVICES = [
   ["Dados, dashboards e IA", "Painéis em tempo real, coleta de dados públicos e análise de texto com IA."],
   ["Sites e landing pages", "Sites rápidos no celular, bem posicionados no Google e fáceis de atualizar."],
   ["E-commerce e saída de sistema legado", "Migração de sistemas antigos para uma plataforma própria sem parar a operação."],
-  ["Automação de processos", "Automação de tarefas repetitivas com n8n, Python e robôs de coleta de dados."],
+  ["Automação de processos", "Automação de tarefas repetitivas com n8n, Python e coleta de dados."],
 ];
 
 function jsonLd() {
@@ -36,7 +36,7 @@ function jsonLd() {
       { "@type": "EducationalOrganization", name: "SENAI Dr. Celso Charuri" },
     ],
     knowsAbout: ["TypeScript", "Node.js", "NestJS", "Next.js", "React", "Python", "PHP", "PostgreSQL", "MySQL", "Docker", "Nginx", "n8n", "Integração com ERP", "Clean Architecture", "Automação de processos"],
-    hasCredential: ["Microsoft Azure AZ-900", "Microsoft Azure AI-900", "Microsoft Azure SC-900"].map((name) => ({ "@type": "EducationalOccupationalCredential", name })),
+    hasCredential: ["AZ-900", "AI-900", "SC-900"].map((c) => ({ "@type": "EducationalOccupationalCredential", name: `Curso preparatório Microsoft Azure ${c}`, recognizedBy: { "@type": "EducationalOrganization", name: "SENAI São Paulo" } })),
   };
   const service = {
     "@type": "ProfessionalService",

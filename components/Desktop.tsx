@@ -272,7 +272,7 @@ export default function Desktop({ live }: { live: Record<Locale, Live> }) {
     ["-", ""],
     ["habilidades.md", L("Habilidades", "Skills")],
     ["curriculo.md", L("Meu currículo", "My resume"), true],
-    ["certificados.md", L("Certificações", "Certificates")],
+    ["certificados.md", L("Certificados", "Certificates")],
     ["repositorios.md", L("Repositórios", "Repositories")],
   ];
 
@@ -414,11 +414,11 @@ export default function Desktop({ live }: { live: Record<Locale, Live> }) {
           </b>
           {locale === "en" ? (
             <p>
-              This is my portfolio. Double click <b>Visual Studio Code</b> right here to see what I do, some of the many clients I work with and my resume. On a phone, just tap.
+              This is my portfolio. Double click <b>Visual Studio Code</b> right here to see what I do, some of the clients I have worked with and my resume. On a phone, just tap.
             </p>
           ) : (
             <p>
-              Esse é meu portfólio. Dá dois cliques no <b>Visual Studio Code</b> aqui do lado para ver o que eu faço, alguns dos muitos clientes que atendo e meu currículo. No celular, é só tocar.
+              Esse é meu portfólio. Dá dois cliques no <b>Visual Studio Code</b> aqui do lado para ver o que eu faço, alguns dos clientes que já atendi e meu currículo. No celular, é só tocar.
             </p>
           )}
           <button className="xp-balloon-lang" onClick={() => setLocale(locale === "en" ? "pt" : "en")}>

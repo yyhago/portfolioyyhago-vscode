@@ -5,14 +5,14 @@ export const EN_DOCS: Record<string, string> = {
   "docs/sobre-mim.md": `![Yhago Felipe](/yhago.jpg)
 
 * :account: Yhago Felipe Rocha Teles
-* :terminal-bash: Full Stack Software Engineer, back-end focused
+* :terminal-bash: Full Stack Developer, back-end focus
+* :code: TypeScript, Node.js, NestJS, Next.js and PostgreSQL
 * :location: Hortolândia, São Paulo, Brazil
-* :mortar-board: Software Engineering, Estácio
+* :mortar-board: Software Engineering at Estácio, in progress
 * :globe: Native Portuguese, advanced English
-* :briefcase: Working with many clients, across many industries
 * :file-pdf: {{cv-link}}
 
-> Hey, welcome! This is where I keep a bit of everything I've built, the systems I've shipped, the clients I work with and the tech I use every day. If your company needs a system, an integration or a website, feel free to look around and get in touch. {{cv-frase}}
+> Hey, welcome! This is where I keep a bit of everything I've built, the systems I've shipped, the clients I've worked with and the tech I use every day. If your company needs a system, an integration or a website, feel free to look around and get in touch. {{cv-frase}}
 
 ## :compass: Where to start
 
@@ -28,7 +28,7 @@ The **Guide** button on the blue bar at the bottom shows you where everything is
 
 ## :person: About me
 
-I'm a full stack Software Engineer, with most of my experience in the back-end. My job is to take manual processes and systems that don't talk to each other and turn all of it into software that the company or the client can use and grow with.
+I'm a Full Stack Developer, with most of my experience in the back-end. My job is to take manual processes and systems that don't talk to each other and turn all of it into software that the company or the client can use and grow with.
 
 I started my career on the Cybersecurity team of a pharmaceutical company, building **Python** automations that cut the time spent on manual operations by **40%**. That's where a rule I still follow came from: before scaling a process, automate what is still manual.
 
@@ -38,17 +38,17 @@ I have experience integrating ERPs such as **OMIE, ERPFLEX, Datasul/TOTVS and Bl
 
 I like sharing what I know and, even more, being around people who like sharing knowledge and explaining how they do things. I work from gathering requirements, together with the company or the client, to the final delivery, with systems published on the web and also accessible on mobile. Most projects were built using Scrum, Kanban or daily and weekly routines for alignment.
 
-My education includes a Bachelor's in Software Engineering and two technical degrees in Systems Development, from SENAI and ETEC. I'm a full scholarship student in an English program at Mackenzie, where I was accepted through a partnership with Microsoft and SENAI. I also hold several certifications in development, Data Science, Cloud, DevOps, databases, BI, UI/UX, AI and Microsoft Azure.
+My education includes two technical degrees in Systems Development, from SENAI and ETEC, and I'm currently pursuing a Bachelor's in Software Engineering. I'm a full scholarship student in an English program at Mackenzie, where I was accepted through a partnership with Microsoft and SENAI. I also have several courses and certificates in development, Data Science, Cloud, DevOps, databases, BI, UI/UX, AI and Microsoft Azure.
 
 ## :tools: What I do
 
 ### :server-process: APIs and back-end
 
-I design and build RESTful APIs in **Node.js** and **NestJS**, organized with **Clean Architecture** so the business rules don't depend on the framework. I handle authentication with JWT and refresh tokens, role based access (RBAC), multitenancy, queues with Redis and BullMQ and complete Swagger docs, so whoever consumes the API never has to ask me anything.
+I design and build RESTful APIs in **Node.js** and **NestJS**, organized with **Clean Architecture** so the business rules don't depend on the framework. I handle authentication with JWT and refresh tokens, role based access (RBAC), multitenancy, queues with Redis and BullMQ, Zod validation and complete Swagger docs, so whoever consumes the API never has to ask me anything.
 
 ### :layers: Complete platforms
 
-I take a project from the database all the way to the screen, with data modeling in PostgreSQL or MySQL, the API and a front-end in **Next.js**, **React** or **Angular**, with TypeScript end to end. That's how I built from scratch an online store, an admin dashboard and a sales portal that now run as a single system.
+I take a project from the database all the way to the screen, with data modeling in PostgreSQL or MySQL, the API and a front-end in **Next.js**, **React** or **Angular**, with TypeScript end to end. That's how I built from scratch an online store, an admin dashboard and a sales portal that now run as a single system, and the new e-commerce is **90% faster** than the old store.
 
 ### :plug: Systems integration
 
@@ -56,28 +56,29 @@ I connect the systems a company already uses, like the **Bling, OMIE, ERPFLEX an
 
 ### :robot: Process automation
 
-I take repetitive work off people's hands with **n8n**, **Python** and web scraping (Playwright, Puppeteer and Selenium). Automating processes is how I started, and it's still one of the parts I enjoy the most.
+I take repetitive work off people's hands with **n8n**, **Python** and data collection with **Apify**. Automating processes is how I started, and it's still one of the parts I enjoy the most.
 
 ### :history: Legacy modernization
 
-I replace old systems with a custom stack, in **Next.js, NestJS and TypeScript**, without stopping the operation. I study the legacy system, find the bottlenecks with the people who use it every day and migrate piece by piece, keeping the old system running until the new one takes over.
+I replace old systems with an in-house stack, in **Next.js, NestJS and TypeScript**, without stopping the operation. I study the legacy system, find the bottlenecks with the people who use it every day and migrate piece by piece, keeping the old system running until the new one takes over.
 
 ### :cloud: Infrastructure
 
-I deploy and keep everything running, with VPS, **Docker** and **Nginx**, SSL, automated backups, CI/CD with GitHub Actions, files on Amazon S3 and services on Azure.
+I deploy and keep everything running, with Linux VPS, **Docker** and **Nginx**, SSL, Cloudflare, automated backups, CI/CD and files on Amazon S3.
 
 ## :rocket: Some numbers
 
-* **More than 20 client projects** delivered with APIs in Node.js and NestJS
+* **More than 23 projects** with back-ends in Node.js and NestJS
+* **90% faster**, Freecook's new e-commerce compared to the old store
 * **40% less time** spent on manual work thanks to the Python automations
 * **4 ERPs integrated**, Bling, OMIE, ERPFLEX and Datasul/TOTVS
-* **23 certificates**, including Microsoft Azure AZ-900, AI-900 and SC-900
+* **23 courses and certificates**, including the Microsoft Azure AZ-900, AI-900 and SC-900 prep courses
 * {{github}}
 
 ## :checklist: How I work
 
 * I like to understand the problem before opening the editor. I gather requirements straight from the people who will use the system and only then design the architecture.
-* Business rules don't belong to the framework. I keep controllers thin and logic isolated, so it can be tested and moved around without rewriting the core.
+* Business rules don't belong to the framework. I keep controllers thin and logic isolated, so it can be moved around without rewriting the core.
 * Bad data has to die at the door, with Zod validation, not three layers later.
 * The schema is the most expensive decision in a project, so I model the database carefully and version everything in migrations.
 * What I deliver comes documented, with a reproducible Docker deploy.
@@ -89,7 +90,7 @@ If you want to talk about architecture, automation or a project, reach me on [Li
 
   "docs/experiencia.md": `# :briefcase: Experience
 
-I started as an apprentice in 2025 and since then I've worked in consulting, at a software house serving dozens of clients at the same time, and I know how to take care of all the technology of a company. Here's what I did at each place, with some of the systems that are live. {{cv-frase}}
+I started as an apprentice in 2025 and since then I've worked at a consulting firm serving industrial clients, at a software house where I built the back-end of 23 client projects, and today I take care of all the technology of a company. Here's what I did at each place, with some of the systems that are live. {{cv-frase}}
 
 ## Freecook Brasil
 
@@ -99,10 +100,11 @@ I started as an apprentice in 2025 and since then I've worked in consulting, at 
 Responsible for the architecture and technical evolution of the company's whole IT ecosystem, with a focus on performance, scalability and process automation.
 
 * I architected and built from scratch the digital platform that supports the operation end to end, from the e-commerce order to the stock update, with the online store, admin dashboard, sales portal and company website in a single system.
-* I led the move from legacy **WordPress** to a proprietary stack in **Next.js, NestJS and TypeScript**, defining code standards, API structure and the migration strategy without interrupting the operation.
+* I led the move from legacy **WordPress** to an in-house stack in **Next.js, NestJS and TypeScript**, defining code standards, API structure and the migration strategy without interrupting the operation. The new e-commerce is **90% faster** than the previous store.
 * Back-end development in **PHP/MySQL** for the legacy e-commerce during the transition, with custom modules and integrations.
 * Architecture of **n8n** automations, orchestrating flows between the ERP, CRM and internal systems.
 * Migration of the legacy ERP integration (**ERPFLEX**) to the current ERP (**OMIE**), ensuring consistency of stock, orders and customers.
+* Queues and asynchronous processing with **Redis and BullMQ** for the platform's background jobs.
 * File storage on **Amazon S3** with presigned URLs and management of our own infrastructure (**VPS, Docker, Nginx, SSL**) with automated backups.
 * Integration with payment gateways, REST APIs and logistics systems (**Frenet**).
 
@@ -184,33 +186,35 @@ First corporate experience, working on the Cybersecurity team focused on interna
 
   "docs/projetos.md": `# :project: Projects
 
-Here's a selection of the projects I've delivered, from political intelligence to workplace safety, law and legal communication, each with the problem that needed solving and how I solved it. It's just a part of it, I work with many other clients who don't show up here. Client projects live in private repositories, by contract, so when I can't show the code I show the screens. Click any image to see it larger. My personal and study projects are in [repositories.md](repositories.md), straight from GitHub.
+Here's a selection of the projects I've delivered, from political intelligence to workplace safety and law, each with the problem that needed solving and how I solved it. Client projects live in private repositories, by contract, so when I can't show the code I show the screens. Click any image to see it larger. My personal and study projects are in [repositories.md](repositories.md), straight from GitHub.
 
 ## CoJurOS, legal communication
 
 *Full Stack, in development*
 
-A new project I'm building right now, CoJurOS, focused on legal communication. I'll share more here soon, with screens and details.
+A system focused on legal communication that I'm building right now. Once it's live, I'll share the problem, the solution and the stack here.
 
 {{prints:cojuros|CoJurOS, system screens}}
 
 ## SafetyKeeper, workplace safety management
 
-*Full Stack, client JCFireWall*
+*Full Stack, freelance, client JCFireWall*
 
 \`NestJS\` \`TypeScript\` \`Node.js\` \`Next.js\` \`PostgreSQL\` \`REST APIs\` \`Swagger\` \`Multitenancy\` \`RBAC\` \`Docker\` \`Nginx\` \`VPS\`
 
-**The client's problem.** JCFireWall served several corporate clients and tracked the workplace safety compliance of all of them in spreadsheets, with no reliable separation between companies, no history of who changed what and no visibility into deadlines. They needed a platform where each client only sees its own data, with an audit trail for inspections and a base ready to grow with their client list.
+**The client's problem.** JCFireWall serves several corporate clients and tracked the workplace safety and health compliance of all of them in spreadsheets, with no reliable separation between companies, no history of who changed what and no visibility into deadlines. They needed a platform where each client only sees its own data, with an audit trail for inspections.
 
 **Solution.**
 
-* Modular back-end in **NestJS and TypeScript**, running on **Node.js**, splitting clients, users, compliance and safety documents into independent, testable modules.
+* Modular back-end in **NestJS and TypeScript**, running on **Node.js**, splitting clients, users, compliance and safety documents into independent modules.
 * REST API documented in **Swagger**, with versioning and standardized responses, so the front-end consumes it without surprises.
 * **Multitenancy** with data isolation per company and **RBAC** per role, so each client only sees what belongs to them.
-* **PostgreSQL** with relational modeling and indexes designed for the compliance queries and the audit history, without losing performance.
-* Data validation and centralized error handling in **NestJS**, avoiding inconsistencies in critical safety information.
+* **PostgreSQL** with relational modeling and indexes designed for the compliance queries and the audit history.
+* Data validation and centralized error handling, avoiding inconsistencies in critical safety information.
 * **Next.js** front-end for documents, deadlines and compliance status per client, with different screens for each role.
-* Deployed on a VPS with Docker, Nginx, SSL and automated backups, ready to take on new clients without touching the architecture.
+* Deployed on a VPS with Docker, Nginx, SSL and automated backups.
+
+**Result.** The spreadsheets were replaced by a single system, with data isolated per client, a full change history and a base ready for new clients without reworking the architecture.
 
 The system is internal and sits behind a login. [:link-external: JCFireWall website](https://jcfirewall.com.br)
 
@@ -219,9 +223,9 @@ The system is internal and sits behind a login. [:link-external: JCFireWall webs
 
 ## CUBE, political analysis
 
-*Full Stack, client CUBE Inteligência*
+*Full Stack, freelance, client CUBE Inteligência*
 
-\`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`Node.js\` \`Express\` \`Prisma\` \`PostgreSQL\` \`REST APIs\` \`JWT\` \`RBAC\` \`Apify\` \`Gemini AI\` \`Nginx\` \`VPS\` \`PM2\`
+\`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`Node.js\` \`Express\` \`Prisma\` \`PostgreSQL\` \`REST APIs\` \`JWT\` \`RBAC\` \`Zod\` \`Apify\` \`Gemini AI\` \`Nginx\` \`VPS\` \`PM2\`
 
 **The client's problem.** CUBE needed to follow in real time what was being published about political topics and figures, measure the tone of those mentions and show everything in dashboards that could handle peak traffic during elections, with different permissions for the internal team and for clients.
 
@@ -236,6 +240,8 @@ The system is internal and sits behind a login. [:link-external: JCFireWall webs
 * RSS aggregator with node-cron to keep everything updated in the background, and validation with Zod.
 * Deployed on a dedicated VPS, with Nginx and firewall managed through HestiaCP and Node in cluster mode with **PM2**, using every core on the server.
 
+**Result.** A platform that monitors political mentions in real time, classifies sentiment with AI and delivers dashboards ready for election peaks, with separate access for the team and clients.
+
 The platform is private, by contract. [:link-external: CUBE website](https://cubeinteligencia.com.br)
 
 {{prints:cube|CUBE, platform screens}}
@@ -243,7 +249,7 @@ The platform is private, by contract. [:link-external: CUBE website](https://cub
 
 ## Landing page, Raquel Ribeiro Advocacia
 
-*Front-end, client Raquel Ribeiro Advocacia*
+*Front-end, freelance, client Raquel Ribeiro Advocacia*
 
 \`React\` \`TypeScript\` \`Vite\` \`Tailwind CSS\` \`HTML5\` \`Vercel\`
 
@@ -253,17 +259,19 @@ The platform is private, by contract. [:link-external: CUBE website](https://cub
 
 * React 18, TypeScript and Vite, with Tailwind and a mobile first layout tested on real devices.
 * Technical SEO with React Helmet, semantic HTML and schema.org structured data for law firms.
-* Lazy loaded **React** components and WebP images with fallback, reaching **Lighthouse above 95** in every category and **LCP under 2.5 s**.
+* Lazy loaded components and WebP images with fallback.
 * **WCAG 2.1 level A** accessibility, with proper contrast, keyboard navigation, ARIA labels and visible focus.
-* Deploy on Vercel with a preview for every pull request.
+* Deploy on Vercel with CI/CD via Git and a preview for every pull request.
+
+**Result.** **Lighthouse above 95** in every category and **LCP under 2.5 s**.
 
 [:link-external: See the landing page live](https://raquel-ribeiro-advocacia-psi.vercel.app/)
 
 {{prints:advocacia|Raquel Ribeiro Advocacia landing page}}
 
-## SGI Treinamentos e Assessoria website
+## SGI Treinamentos & Assessoria website
 
-*Full Stack, consulting, client SGI Treinamentos e Assessoria*
+*Full Stack, freelance, client SGI Treinamentos & Assessoria*
 
 \`PHP\` \`WordPress\` \`MySQL\` \`Sass\` \`Git\`
 
@@ -272,25 +280,27 @@ The platform is private, by contract. [:link-external: CUBE website](https://cub
 **Solution.**
 
 * WordPress with a custom theme in **PHP 8**, taking advantage of the team already knowing the admin while keeping full control of the code.
-* **PHP** theme organized with an MVC inspired separation of concerns, so maintenance stays simple.
+* Theme organized with an MVC inspired separation of concerns, so maintenance stays simple.
 * SCSS with Grid and Flexbox for the responsive layout and components.
 * AJAX forms, in **JavaScript and PHP**, with nonce and sanitization, preventing CSRF and XSS.
 * Custom **MySQL** tables for structured data, keeping wp_postmeta clean and queries fast.
 * Automated deploy via Git on Hostinger, with versioning and rollback.
 
+**Result.** Website delivered on time, with the SGI team updating the content on its own and protected forms.
+
 [:link-external: sgitreinamentosassessoria.com](https://sgitreinamentosassessoria.com/)
 
-{{prints:sgi|SGI Treinamentos e Assessoria website}}
+{{prints:sgi|SGI Treinamentos & Assessoria website}}
 
 ## Cyberbot, cybersecurity assistant
 
-*Course project, team of four*
+*Team prototype, four developers, Grupo EMS*
 
 \`Python\` \`NLP\` \`Streamlit\` \`Git\` \`GitHub\`
 
-A course project we built as a team of four developers to raise awareness about digital security.
+A prototype we built as a team of four developers to raise awareness about digital security, with a simple tool for non technical users.
 
-* Three modules, a chatbot for digital security questions and good practices, a strong password generator and checker and an educational phishing simulator.
+* Three modules: a chatbot for digital security questions and good practices, a strong password generator and checker and an educational phishing simulator.
 * Built in Python with natural language processing, in a modular architecture ready to plug in security APIs later.
 * Streamlit interface, designed so non technical users find everything fast.
 * Versioned on Git and GitHub, with agile task management.
@@ -301,7 +311,7 @@ A course project we built as a team of four developers to raise awareness about 
 
 ## MundoPet, my final project
 
-*Full Stack, academic project, ETEC Hortolândia*
+*Full Stack, final project of the Systems Development technical degree, ETEC Hortolândia*
 
 \`Node.js\` \`Express\` \`MongoDB\` \`React\` \`Redux\` \`Bootstrap\` \`PayPal\` \`AWS\`
 
@@ -319,21 +329,19 @@ The final project of my Systems Development technical degree, a complete marketp
 
   "docs/servicos.md": `# :rocket: Services
 
-Today I work with many clients at the same time, from big companies to businesses that are just starting out, across all kinds of industries. If your company needs a system, an integration or a website that brings results, this is where I can help.
+I work with companies per project or with ongoing maintenance, from businesses just starting out to operations with an ERP, e-commerce and several systems running together. If your company needs a system, an integration or a website that brings results, this is where I can help.
 
 [:comment-discussion: Get a quote](#orcamento)
 
 ## :organization: Who already trusts my work
 
-The client list is much longer than what fits here, and many projects are under NDA, so I'm only sharing a few names.
+Many projects are under NDA, so I'm sharing the names I can show.
 
 * **CUBE Inteligência**, political intelligence, with a monitoring and AI sentiment analysis platform
 * **JCFireWall**, workplace safety, with SafetyKeeper, a safety compliance system for several corporate clients
-* **CoJurOS**, legal communication, a new project coming soon
 * **NG Metalúrgica** and **Pronutrition**, industry and nutrition, with TOTVS Datasul integrations and Next.js screens
-* **Raquel Ribeiro Advocacia** and **SGI Treinamentos**, law and workplace safety, with fast, easy to maintain websites, in React and WordPress
-* **Vitrine do Campo**, **2Clicks**, **Minha Revenda**, **Cupom Clube** and more than 20 projects in agribusiness, healthcare, finance, retail and logistics
-* And many other clients, in commerce, services, industry and startups, that I work with per project or with ongoing maintenance
+* **Raquel Ribeiro Advocacia** and **SGI Treinamentos & Assessoria**, law and workplace safety, with fast, easy to maintain websites, in React and WordPress
+* **Vitrine do Campo**, **2Clicks**, **Minha Revenda**, **Cupom Clube** and others among the 23 projects in agribusiness, healthcare, finance, retail and logistics where I built the back-end
 
 ## :tools: What I can do for you
 
@@ -355,11 +363,11 @@ A company website or a lead capture page that's fast on mobile, ranks well on Go
 
 ### :history: E-commerce and legacy replacement
 
-I replace the old system with a custom platform without stopping the operation, migrating piece by piece. I've done it with an entire operation, from the e-commerce order to the invoice, in **Next.js, NestJS and TypeScript**.
+I replace the old system with a custom platform without stopping the operation, migrating piece by piece. I've done it with an entire operation, from the e-commerce order to the invoice, in **Next.js, NestJS and TypeScript**, and the new e-commerce is 90% faster than the old one.
 
 ### :robot: Process automation
 
-Repetitive tasks that eat hours of your team's time become automatic processes with n8n, Python and data collection bots. My first automations cut manual work time by 40%.
+Repetitive tasks that eat hours of your team's time become automatic processes with n8n, Python and data collection. My first automations cut manual work time by 40%.
 
 ## :checklist: How it works
 
@@ -388,7 +396,7 @@ I've been studying nonstop since 2022, with a technical course alongside high sc
 
 ## Bachelor's in Software Engineering
 
-*Centro Universitário Estácio de Sá, remote, Jan 2025 to Dec 2028, in progress*
+*Centro Universitário Estácio de Sá, online, Jan 2025 to Dec 2028, in progress*
 
 A program focused on building robust and scalable systems. I'm going deeper into software architecture, design patterns, requirements engineering and agile methods like Scrum and Kanban, covering analysis, modeling, implementation and maintenance of systems, with an emphasis on security, performance and usability.
 
@@ -396,7 +404,7 @@ A lot of what I learned in the course I applied in practice at CUBE, a full stac
 
 ## English, Cidadão Pró-Mundo Program
 
-*Universidade Presbiteriana Mackenzie, Campinas, SP, Jul 2025 to Dec 2029, in progress*
+*Universidade Presbiteriana Mackenzie, Campinas, SP, Jul 2025 to Dec 2030, in progress*
 
 I passed a selection process by **Microsoft and SENAI Sumaré** that gave scholarships to only **20 students** in the region. I'm studying English at Mackenzie, from A2 to fluency, focused on speaking, active listening, reading and writing, using digital tools in a multicultural environment for real everyday situations.
 
@@ -422,9 +430,9 @@ My final project was **MundoPet**, a complete pet marketplace with Node.js, Expr
 
   "docs/certificados.md": `# :verified-filled: Certificates
 
-23 in total, from Microsoft Azure to Python, data, UX and AI. I like to complement what I see at work with courses, and you can check all of them on my [LinkedIn](https://www.linkedin.com/in/yhagofelipe).
+23 courses and certificates in total, from Microsoft Azure to Python, data, UX and AI. I like to complement what I see at work with courses, and you can check all of them on my [LinkedIn](https://www.linkedin.com/in/yhagofelipe).
 
-## :azure: Microsoft Azure
+## :azure: Microsoft Azure, prep courses
 
 1. **AZ-900, Cloud Services Deployment**, SENAI São Paulo, Mar 2025
 2. **AI-900, Artificial Intelligence Services in the Cloud**, SENAI São Paulo, Jun 2025
@@ -494,7 +502,7 @@ Fill this in and the message goes straight to my inbox, no email app needed.
   "package.json": `{
   "name": "portfolio-yhago",
   "version": "1.0.0",
-  "description": "Portfolio of Yhago Felipe, Full Stack Software Engineer",
+  "description": "Portfolio of Yhago Felipe, Full Stack Developer with a back-end focus",
   "author": "Yhago Felipe <yhago.felipe.teles@gmail.com>",
   "main": "dist/main.js",
   "scripts": {
@@ -541,136 +549,78 @@ Hi, I'm Yhago! Here you'll see what I do, the projects I've delivered and how to
 const CATS: Record<string, string> = {
   Linguagens: "Languages",
   "Bancos de dados": "Databases",
-  "DevOps e Cloud": "DevOps and Cloud",
-  "Automação e IA": "Automation and AI",
-  Integrações: "Integrations",
-  "Dados e BI": "Data and BI",
   Segurança: "Security",
-  Ferramentas: "Tools",
+  "DevOps e infraestrutura": "DevOps and infrastructure",
+  Integrações: "Integrations",
+  "Automação e IA": "Automation and AI",
   Práticas: "Practices",
-  "Áreas de atuação": "Areas of work",
-  Idiomas: "Languages",
-  "Redes e infraestrutura": "Networks and infrastructure",
-  Fundamentos: "Fundamentals",
-  Design: "Design",
+  Ferramentas: "Tools",
+  Idiomas: "Languages (spoken)",
 };
 
 const EXT_EN: Record<string, { desc: string; about: string; name?: string; publisher?: string }> = {
-  html5: { desc: "Markup for the web.", about: "Semantic HTML, with SEO and accessibility in mind. I learned it at ETEC." },
-  css: { desc: "Styling and layout.", about: "Responsive layouts on every web project, from the ETEC final project to the Estácio systems." },
-  xml: { desc: "Structured data format.", about: "Studied and used since ETEC." },
-  cpp: { desc: "C with object orientation.", about: "My first contact was at ETEC." },
-  c: { desc: "The base language of computing.", about: "My first contact with low level programming, at ETEC." },
-  expressjs: { desc: "Minimalist web framework.", about: "The back-end of MundoPet, my final project, and of the CUBE platform." },
-  redux: { desc: "State management.", about: "I used it on MundoPet, my final project." },
-  axios: { desc: "HTTP client.", about: "Consuming APIs from the front-ends, since college." },
-  bancodedados: { name: "Databases", desc: "Data modeling and storage.", about: "Modeling and queries at Freecook, at DBS and on client projects." },
-  cibersegurana: { name: "Cybersecurity", desc: "Protecting systems and data.", about: "I started on the Cybersecurity team at Grupo EMS and carry that care into system design." },
-  infraestrutura: { name: "Infrastructure", desc: "Servers and runtime environment.", about: "From Grupo EMS and SENAI to my own infrastructure at Freecook." },
-  devops: { desc: "Development and operations together.", about: "Pipelines, Docker and automated deploys, covered in the AZ-900 and Microsoft AI for Tech." },
-  azuredevops: { desc: "Repos, boards and pipelines.", about: "Covered in the AZ-900 and Microsoft AI for Tech." },
-  amazons3: { desc: "Cloud file storage.", about: "Files with presigned URLs at Freecook." },
-  computaoemnuvem: { name: "Cloud computing", desc: "On demand services in the cloud.", about: "Microsoft AI-900 and SC-900 certifications." },
-  seguranadenuvem: { name: "Cloud security", desc: "Protecting cloud environments.", about: "Microsoft SC-900 certification, Security Fundamentals in the Cloud." },
-  aplicativosemnuvem: { name: "Cloud applications", desc: "Applications running in the cloud.", about: "Microsoft AI-900 and SC-900 certifications." },
-  arquiteturaderede: { name: "Network architecture", desc: "How networks are designed.", about: "Studied at SENAI and practiced at Grupo EMS." },
-  administraoderedes: { name: "Network administration", desc: "Operating and maintaining networks.", about: "Experience at Grupo EMS." },
-  intelignciaartificial: { name: "Artificial intelligence", desc: "Models that learn from data.", about: "Cyberbot and the Generative AI applied to programming certificate." },
-  pln: { name: "NLP", desc: "Natural language processing.", about: "The Cyberbot chatbot and sentiment analysis." },
-  streamlit: { desc: "Data apps in Python.", about: "The Cyberbot interface and internal applications at Grupo EMS." },
-  jupyter: { desc: "Interactive notebooks.", about: "Python programming and data analysis." },
-  manipulaodedados: { name: "Data manipulation", desc: "Cleaning, transforming and analyzing data.", about: "Python Essentials 1 and the Python for Data Science courses." },
-  git: { desc: "Version control.", about: "Small commits and messages that explain why." },
-  github: { desc: "Repositories and collaboration.", about: "Pull request flow and CI. It's where my public repositories live." },
-  wordpress: { desc: "CMS.", about: "Custom PHP themes, like SGI's, and the migration to a custom stack at Freecook." },
-  arduino: { desc: "Prototyping with microcontrollers.", about: "My first contact was at ETEC." },
-  internetdascoisas: { name: "Internet of Things", desc: "Connected devices.", about: "Integrated Solutions with IoT certificate." },
-  arquiteturamvc: { name: "MVC architecture", desc: "Model, View and Controller.", about: "Studied at Estácio and used in themes and APIs." },
-  algoritmos: { name: "Algorithms", desc: "Logic to solve problems.", about: "The base of any software, studied at Estácio." },
-  raciocniolgico: { name: "Logical reasoning", desc: "Breaking problems into steps.", about: "Python fundamentals, Grupo EMS and Estácio." },
-  designdeexperinciadousurioux: { name: "User experience design (UX)", desc: "Designing the experience of the people who use it.", about: "UX Designer program and the UX and UI Design course." },
-  ui: { desc: "Visual interface.", about: "UX and UI Design course." },
-  gestodeprojetos: { name: "Project management", desc: "Planning and tracking.", about: "Studied at SENAI and applied on client projects." },
-  liderana: { name: "Leadership", desc: "Leading people and teams.", about: "Developed in the Mackenzie program." },
-  engenhariadesoftware: { name: "Software Engineering", desc: "Building robust systems.", about: "My bachelor's degree, at Estácio." },
-  desenvolvedordesoftware: { name: "Software Developer", desc: "Turning problems into software.", about: "From my studies at Estácio to the practice in the companies I've worked at." },
-  desenvolvimentofullstack: { name: "Full stack development", desc: "From the database to the screen.", about: "At DBS System and Freecook, from the API to the interface." },
-  desenvolvimentodebackend: { name: "Back-end development", desc: "APIs, business rules and data.", about: "The area I work in the most, from Estácio to MundoPet and CroSoften." },
-  desenvolvimentodefrontend: { name: "Front-end development", desc: "Interfaces for the people who use them.", about: "Studied at Estácio and applied in React, Next.js and Angular." },
-  desenvolvimentoweb: { name: "Web development", desc: "Systems and sites on the web.", about: "I started at ETEC and have kept at it since." },
-  programaocomputao: { name: "Programming", desc: "Writing code that solves problems.", about: "Grupo EMS, Estácio and the Python fundamentals." },
-  linguagensdeprogramao: { name: "Programming languages", desc: "Several languages, each for what it's good at.", about: "Studied at Estácio and used at work." },
-  sistemasoperacionais: { name: "Operating systems", desc: "How the system underneath works.", about: "Studied at Estácio, with Linux day to day." },
-  ingls: { name: "English", desc: "Advanced level.", about: "Cidadão Pró-Mundo program, at Mackenzie, through a Microsoft and SENAI partnership." },
-  comunicaooralemingls: { name: "Speaking English", desc: "Speaking.", about: "Practiced at Mackenzie, in real everyday situations." },
-  compreensoauditivalistening: { name: "Listening comprehension", desc: "Active listening.", about: "Practiced at Mackenzie." },
-  escritaeleituraemingls: { name: "Reading and writing in English", desc: "Reading and writing.", about: "Practiced at Mackenzie." },
-  integraodesistemas: { name: "System integration", desc: "Systems talking to each other.", about: "ERP, e-commerce, CRM and logistics integrated, with nobody copying data from one place to another." },
-  typescript: { desc: "JavaScript with static types.", about: "It's the language I use the most, on the front and the back. Well defined types and Zod validating data at the door prevent a lot of bugs." },
-  javascript: { desc: "The language of the web.", about: "It's where I started on the web, back at ETEC." },
-  python: { desc: "Automation, data and APIs.", about: "My first job was with Python, on the Grupo EMS Cybersecurity automations that cut 40% of the manual work." },
-  php: { desc: "The language behind a big part of the web.", about: "I use it a lot on legacy e-commerce, WordPress themes and ERP integrations." },
-  sql: { desc: "The language of relational databases.", about: "Modeling, indexes and queries designed for performance and auditing." },
-  react: { desc: "Component based interfaces.", about: "Dashboards and admin panels, like the ones at CUBE." },
-  nextjs: { desc: "The React framework for the web.", about: "The base of the platform I built at Freecook and of the screens I modernized at DBS. This portfolio is Next.js too." },
-  reactnative: { desc: "Native apps with React.", about: "iOS and Android apps consuming the same APIs as the web." },
-  angular: { desc: "Google's web framework.", about: "Corporate front-ends that consumed the APIs I documented in Swagger at CroSoften." },
-  tailwindcss: { desc: "Utility first CSS.", about: "It's what I use on most projects to style things quickly." },
-  bootstrap: { desc: "Ready made responsive components.", about: "I used it on MundoPet." },
-  nodejs: { desc: "JavaScript on the server.", about: "Where I spend most of my time, between APIs, queues, scheduled jobs and integrations." },
-  nestjs: { desc: "A framework for scalable back-ends.", about: "It's what I use the most on the back-end. At CroSoften it was more than 20 projects with Nest and Clean Architecture." },
-  fastapi: { desc: "Fast APIs in Python.", about: "Internal APIs at EMS and the BookAPI on my GitHub." },
-  flask: { desc: "Python microframework.", about: "Internal applications at EMS." },
-  prisma: { desc: "ORM with end to end types.", about: "Versioned migrations at CUBE." },
-  redisebullmq: { name: "Redis and BullMQ", desc: "Cache and queues.", about: "Queues to take heavy work out of the request." },
+  typescript: { desc: "JavaScript with static types.", about: "The language I use the most, on the front and the back. At Freecook, CroSoften and DBS everything was written in TypeScript, with Zod validating data at the edge." },
+  javascript: { desc: "The language of the web.", about: "Where I started on the web, back at ETEC, and the base of everything I do in TypeScript." },
+  python: { desc: "Automation, data and APIs.", about: "My first job was in Python, on the Cybersecurity automations at Grupo EMS that cut 40% of the time spent on manual operations." },
+  php: { desc: "The language behind a big part of the web.", about: "Freecook's legacy e-commerce during the migration, APIs at DBS and SGI's custom WordPress theme." },
+  sql: { desc: "The language of relational databases.", about: "Modeling, indexes and queries designed for performance and auditing, as in SafetyKeeper." },
+  html5: { desc: "Markup for the web.", about: "Semantic HTML, with SEO and accessibility in mind, as on the Raquel Ribeiro landing page." },
+  css: { desc: "Styling and layout.", about: "Responsive layouts on every web project, with Tailwind and SCSS." },
+  nodejs: { desc: "JavaScript on the server.", about: "Where I spend most of my time, between APIs, queues, scheduled jobs and integrations. The base of all my TypeScript back-ends." },
+  nestjs: { desc: "Framework for scalable back-ends.", about: "What I use the most on the back-end: Freecook's platform, SafetyKeeper and the 23 CroSoften projects with Clean Architecture." },
+  expressjs: { desc: "Minimalist web framework.", about: "The back-end of the CUBE platform and of MundoPet, my final project." },
+  apisrest: { name: "REST APIs", desc: "API standard over HTTP.", about: "Versioned endpoints, standardized responses and Swagger docs on every project." },
+  prisma: { desc: "ORM with end to end types.", about: "Versioned migrations and indexed queries on the CUBE platform." },
+  typeorm: { desc: "ORM for TypeScript.", about: "Data modeling and access in NestJS projects." },
+  zod: { desc: "Validation with types.", about: "Bad data dies at the edge. Every request validated on CUBE." },
   swagger: { desc: "API documentation.", about: "My APIs ship documented. At CroSoften the iOS and Angular teams consumed everything through Swagger." },
-  jwtoauth2erbac: { name: "JWT, OAuth2 and RBAC", desc: "Authentication and permissions.", about: "Refresh token rotation and permissions per route and per role." },
-  postgresql: { desc: "Open source relational database.", about: "My default database today." },
-  mysql: { desc: "Relational database popular on the web.", about: "Legacy e-commerce and APIs in PHP and Node." },
-  sqlserver: { desc: "Microsoft's relational database.", about: "Corporate environments." },
-  mongodb: { desc: "Document database.", about: "I used it on MundoPet." },
-  sqlite: { desc: "Light, embedded database.", about: "Prototypes and tests." },
-  supabase: { desc: "Postgres with a ready made back-end.", about: "Data integration at EMS." },
-  firebase: { desc: "Google's app platform.", about: "Data integration at EMS." },
-  docker: { desc: "Containers.", about: "Everything I deploy on a VPS runs on Docker." },
+  redisebullmq: { name: "Redis and BullMQ", desc: "Cache and queues.", about: "Queues and asynchronous processing at Freecook, moving heavy work out of the request." },
+  fastapi: { desc: "Fast APIs in Python.", about: "Internal APIs for the Cybersecurity team at Grupo EMS." },
+  flask: { desc: "Python microframework.", about: "Internal applications at Grupo EMS." },
+  nextjs: { desc: "The React framework for the web.", about: "The base of the platform I built at Freecook, of SafetyKeeper and of the screens I modernized at DBS. This portfolio is Next.js too." },
+  react: { desc: "Component based interfaces.", about: "CUBE's dashboards, the Raquel Ribeiro landing page and MundoPet." },
+  angular: { desc: "Google's web framework.", about: "The front-ends of the CroSoften projects, which consumed the APIs I documented in Swagger." },
+  redux: { desc: "State management.", about: "I used it on MundoPet, my final project." },
+  vite: { desc: "Fast front-end builds.", about: "The CUBE front-end and the Raquel Ribeiro landing page, with code splitting." },
+  tailwindcss: { desc: "Utility first CSS.", about: "What I use on most projects to style quickly." },
+  postgresql: { desc: "Open source relational database.", about: "My default database today: SafetyKeeper, CUBE and the DBS APIs." },
+  mysql: { desc: "Popular relational database on the web.", about: "Freecook's legacy e-commerce, the DBS APIs and SGI's website." },
+  mongodb: { desc: "Document database.", about: "I used it on MundoPet, my final project." },
+  supabase: { desc: "Postgres with a ready back-end.", about: "Data integration at Grupo EMS." },
+  firebase: { desc: "Google's app platform.", about: "Data integration at Grupo EMS." },
+  jwterbac: { name: "JWT and RBAC", desc: "Authentication and permissions.", about: "Refresh token rotation, bcrypt passwords and permissions per route and per role, as on CUBE." },
+  multitenancy: { desc: "Many clients, isolated data.", about: "On SafetyKeeper each company sees only its own data." },
+  cibersegurana: { name: "Cybersecurity", desc: "Protecting systems and data.", about: "I started on the Cybersecurity team at Grupo EMS and carry that care into system design." },
+  linuxebash: { name: "Linux and Bash", desc: "The servers' operating system.", about: "I run my own VPS and the backup routines." },
+  docker: { desc: "Containers.", about: "Everything I deploy on a VPS runs in Docker." },
+  dockercompose: { desc: "Several containers in one file.", about: "Brings up the API, database and queue together." },
   nginx: { desc: "Web server and reverse proxy.", about: "In front of the production APIs, with SSL." },
-  linuxebash: { name: "Linux and Bash", desc: "The servers' operating system.", about: "I manage my own VPS and the backup routines." },
-  aws: { desc: "Amazon's cloud.", about: "Amazon S3 with presigned URLs at Freecook." },
-  microsoftazure: { desc: "Microsoft's cloud.", about: "I hold the AZ-900, AI-900 and SC-900 certifications." },
+  vps: { desc: "Virtual private server.", about: "I run my own infrastructure, from Freecook to client projects." },
+  cloudflare: { desc: "DNS, proxy and protection.", about: "Domains and protection for Freecook's systems." },
+  pm2: { desc: "Node process manager.", about: "Node in cluster mode on the CUBE platform, using every core on the server." },
+  amazons3: { desc: "Cloud file storage.", about: "Files with presigned URLs at Freecook." },
+  cicd: { desc: "Continuous integration and delivery.", about: "Automated builds and deploys at Freecook and the automation pipelines at Grupo EMS." },
+  vercel: { desc: "Front-end deployment.", about: "The Raquel Ribeiro landing page, with a preview on every pull request. This portfolio is on Vercel too." },
+  integraodesistemas: { name: "System integration", desc: "Systems talking to each other.", about: "ERP, e-commerce, CRM and logistics integrated, with nobody copying data from one place to another." },
+  erps: { desc: "Management systems.", about: "I've integrated Bling, OMIE, ERPFLEX and Datasul/TOTVS, including the migration from ERPFLEX to OMIE without stopping sales." },
+  rdstation: { desc: "CRM and marketing.", about: "Automated flows between CRM and ERP with n8n, at Freecook." },
+  woocommerce: { desc: "E-commerce on WordPress.", about: "Maintaining Freecook's legacy e-commerce during the migration." },
+  frenet: { desc: "Shipping quotes.", about: "Logistics integration on Freecook's e-commerce." },
+  paypal: { desc: "Online payments.", about: "Payments on MundoPet, my final project." },
   n8n: { desc: "Workflow automation.", about: "At Freecook I connect the ERP, CRM and internal systems with n8n." },
-  playwright: { desc: "Browser automation.", about: "Web scraping and portal automation." },
-  puppeteer: { desc: "Chrome controlled by code.", about: "Data collection from portals." },
-  selenium: { desc: "Browser automation.", about: "Automating repetitive tasks in web systems." },
-  googlegemini: { desc: "Google's generative AI.", about: "Sentiment analysis at CUBE and a few of my own projects on GitHub." },
-  erps: { publisher: "Bling, OMIE, ERPFLEX and TOTVS", desc: "Business management systems.", about: "I've integrated Bling, OMIE, ERPFLEX and Datasul/TOTVS, including a migration from ERPFLEX to OMIE." },
-  rdstation: { desc: "CRM and marketing.", about: "Automatic flows between CRM and ERP with n8n." },
-  woocommerce: { desc: "E-commerce on WordPress.", about: "Maintaining the legacy e-commerce during the migration." },
-  powerbi: { desc: "Microsoft's BI.", about: "Reports and KPIs." },
-  figma: { desc: "Interface design.", about: "I took UX and UI courses at SENAI and DIO." },
+  apify: { desc: "Data collection platform.", about: "Public data collection on the CUBE platform." },
+  googlegemini: { desc: "Google's generative AI.", about: "Sentiment analysis on CUBE and some of my own projects on GitHub." },
+  streamlit: { desc: "Data apps in Python.", about: "Internal applications at Grupo EMS and the Cyberbot interface." },
+  cleanarchitecture: { desc: "Business rules independent of the framework.", about: "Applied on the 23 CroSoften projects." },
+  arquiteturamvc: { name: "MVC architecture", desc: "Model, View and Controller.", about: "SGI's theme and layered APIs." },
+  scrum: { desc: "Agile methodology.", about: "Sprints and incremental delivery at CroSoften." },
+  kanban: { desc: "Visual task flow.", about: "Tracking parallel demands at CroSoften." },
+  git: { desc: "Version control.", about: "Small commits and messages that explain why." },
+  github: { desc: "Repositories and collaboration.", about: "Pull request flow. It's where my public repositories live." },
   postman: { desc: "API testing.", about: "A collection for every API I build." },
-  apisrest: { desc: "The standard for APIs over HTTP.", about: "Versioned endpoints documented in Swagger." },
-  nosql: { desc: "Non-relational databases.", about: "I use them when the model calls for documents or key-value." },
-  oracle: { desc: "Enterprise relational database.", about: "Corporate environments." },
-  phpmyadmin: { desc: "MySQL administration in the browser.", about: "Support on PHP and WordPress projects." },
-  dockercompose: { desc: "Multiple containers in one file.", about: "Brings up the API, database and queue together." },
-  vps: { desc: "Virtual private server.", about: "I run my own infrastructure." },
-  cicd: { desc: "Continuous integration and delivery.", about: "Automated build, test and deploy." },
-  googlecloud: { desc: "Google's cloud.", about: "Google cloud services." },
-  beautifulsoup: { desc: "HTML parsing in Python.", about: "Web scraping of public data." },
-  apify: { desc: "Scraping and automation platform.", about: "Collecting data from the web." },
-  llms: { desc: "Large language models.", about: "Text and sentiment analysis." },
-  frenet: { desc: "Shipping quotes.", about: "Logistics integration for e-commerce." },
-  azuredatabricks: { desc: "Cloud data platform.", about: "Data processing on Azure." },
-  xampp: { desc: "Local PHP and MySQL environment.", about: "Local PHP development." },
-  scrum: { desc: "Agile methodology.", about: "Sprints and incremental delivery." },
-  kanban: { desc: "Visual task flow.", about: "Tracking work on a board." },
-  uiuxresponsivo: { name: "Responsive UI/UX", desc: "Interfaces that adapt to the screen.", about: "Screens designed for mobile and desktop." },
-  estruturadedados: { name: "Data structures", desc: "Efficient data organization.", about: "The base for choosing the right solution." },
-  designdesoftware: { name: "Software design", desc: "Architecture and design patterns.", about: "Studied in the Software Engineering degree." },
-  redes: { name: "Networking", desc: "Communication between systems.", about: "The base for infrastructure and APIs." },
-  bbdeveloper: { desc: "Banco do Brasil APIs.", about: "Integration with banking services." },
-  paypal: { desc: "Online payments.", about: "Payment integration on e-commerce." },
-  mercadolivre: { desc: "Marketplace and sales API.", about: "Integration with the marketplace." },
+  figma: { desc: "Interface design.", about: "At CroSoften I built screens from the design team's prototypes." },
+  wordpress: { desc: "CMS.", about: "Custom PHP themes, like SGI's, and the migration to an in-house stack at Freecook." },
+  ingls: { name: "English", desc: "Advanced level.", about: "Full scholarship in the Cidadão Pró-Mundo Program at Mackenzie, through a Microsoft and SENAI partnership." },
 };
 
 const EXT_LIST: Record<Locale, Ext[]> = {
@@ -681,11 +631,12 @@ const EXT_LIST: Record<Locale, Ext[]> = {
 export const extensionsFor = (locale: Locale) => EXT_LIST[locale];
 
 const TERMINAL_EN: Record<string, string> = {
-  sobre: `Yhago Felipe Rocha Teles, Full Stack Software Engineer
+  sobre: `Yhago Felipe Rocha Teles, Full Stack Developer, back-end focus
 Hortolândia, São Paulo, Brazil
 
 I turn manual work and scattered systems into a custom,
-integrated platform. The back-end is where I work the most.
+integrated platform. The back-end is where I work the most,
+with TypeScript, Node.js, NestJS, Next.js and PostgreSQL.
 
 To see more, type open about-me.md`,
   experiencia: `Freecook Brasil          Full Stack       Mar 2026 to present
@@ -699,50 +650,45 @@ SafetyKeeper   multitenant safety management (NestJS, Next.js, PostgreSQL)
 CUBE           political analysis with AI (React, Node.js, PostgreSQL, Gemini)
 Law firm       landing page with Lighthouse above 95 (React, Vite)
 SGI            WordPress website with a custom theme (PHP, MySQL)
-Cyberbot       cybersecurity assistant (Python, Streamlit)
+Cyberbot       cybersecurity assistant, team project (Python, Streamlit)
 MundoPet       pet marketplace, my final project (Node.js, React, MongoDB)
 
 To see more, type open projects.md`,
   servicos: `Custom systems, integrations and APIs, AI dashboards,
 websites and landing pages, legacy replacement and automation.
 
-I work with many clients, across many industries. Among them CUBE
-Inteligência, JCFireWall, with SafetyKeeper, CoJurOS, coming soon,
-and many others.
+Clients include CUBE Inteligência, JCFireWall, with SafetyKeeper,
+NG Metalúrgica, Pronutrition and Raquel Ribeiro Advocacia.
 
 To see more, type open services.md
 To ask for a quote, type quote`,
   repos: `Public repositories at https://github.com/yyhago
 
 To see more, type open repositories.md`,
-  habilidades: `core         TypeScript, Node.js, NestJS, PostgreSQL, System integration
+  habilidades: `core         TypeScript, Node.js, NestJS, Next.js, PostgreSQL
 languages    TypeScript, JavaScript, Python, PHP, SQL
-back-end     Node.js, NestJS, Prisma, REST APIs, Swagger, Redis, BullMQ,
-             FastAPI, Flask
-front-end    React, Next.js, Tailwind CSS, React Native, Angular,
-             Bootstrap
-databases    PostgreSQL, MySQL, MongoDB, SQL Server, Oracle, SQLite,
-             Supabase, Firebase, NoSQL, phpMyAdmin
-security     JWT, OAuth2, RBAC
-devops       Docker, Docker Compose, Nginx, Linux, Bash, VPS, CI/CD, AWS,
-             Azure, Google Cloud
+back-end     Node.js, NestJS, Express, REST APIs, Prisma, TypeORM, Zod,
+             Swagger, Redis, BullMQ, FastAPI, Flask
+front-end    Next.js, React, Angular, Redux, Vite, Tailwind CSS
+databases    PostgreSQL, MySQL, MongoDB, Supabase, Firebase
+security     JWT, RBAC, multitenancy, bcrypt
+infra        Linux, Docker, Docker Compose, Nginx, VPS, Cloudflare, PM2,
+             AWS S3, CI/CD, Vercel
 integrations OMIE, ERPFLEX, Datasul/TOTVS, Bling, RD Station, WooCommerce,
-             Frenet, PayPal, Mercado Livre, BB Developer
-automation   n8n, Playwright, Puppeteer, Selenium, BeautifulSoup, Apify,
-             LLMs, Google Gemini
-data and BI  Power BI, Azure Databricks
-tools        Git, GitHub, Figma, Postman, XAMPP, Arduino, IoT
-practices    Scrum, Kanban, Responsive UI/UX, Data structures,
-             Software design, Networking
+             Frenet, payments
+automation   n8n, Apify, Google Gemini, Streamlit
+practices    Clean Architecture, MVC, Scrum, Kanban
+tools        Git, GitHub, Postman, Figma, WordPress
 
-To see more, type open skills.md`,
+To see more, open the Extensions tab`,
   formacao: `Software Engineering          Estácio     2025 to 2028
-English, CPM Program          Mackenzie   2025 to 2029
+English, CPM Program          Mackenzie   2025 to 2030
 Tech. Degree, Systems Dev.    SENAI       2025
 Tech. Degree, Systems Dev.    ETEC        2022 to 2024
 
 To see more, type open education.md`,
-  certificados: `23 certificates, including Microsoft AZ-900, AI-900 and SC-900.
+  certificados: `23 courses and certificates, including the Microsoft
+AZ-900, AI-900 and SC-900 prep courses.
 
 To see more, type open certificates.md`,
   contato: TERMINAL.contato,
